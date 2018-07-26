@@ -18,7 +18,6 @@ module Cfa
       end
 
       def stylesheets_path
-        puts "assets_path", assets_path
         File.join assets_path, 'stylesheets'
       end
 

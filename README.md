@@ -22,6 +22,10 @@ Or install it yourself as:
 
 1. Add `@import 'cfa_styleguide_main';` to application.scss.
 
+1. Add `mount Cfa::Styleguide::Engine => "/cfa"` to routes.rb.
+
+1. Visit `<your hostname>/cfa/styleguide` to view the styleguide
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
