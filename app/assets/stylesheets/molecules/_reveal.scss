@@ -1,0 +1,40 @@
+.reveal__link {
+  display: inline-block;
+  text-decoration: none;
+  color: $color-darkest-grey;
+  background-color: rgba($color-teal, .08);
+  border-radius: 10px;
+  padding: .2em .5em .3em .7em;
+
+  &:after {
+    position: relative;
+    top: .1em;
+    font-family: $font-icon;
+    content: '\a0\e313';
+  }
+}
+
+.reveal__content {
+  margin-top: 1em;
+  background-color: $color-background;
+  border: 1px solid $color-light-grey;
+  border-radius: 10px;
+  padding: .5em 1em;
+  *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.reveal {
+  margin-bottom: 1em;
+  &.is-hidden {
+    .reveal__link {
+      &:after {
+        content: '\a0\e315';
+      }
+    }
+    .reveal__content {
+      display: none;
+    }
+  }
+}

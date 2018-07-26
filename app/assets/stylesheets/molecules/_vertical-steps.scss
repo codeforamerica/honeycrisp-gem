@@ -1,0 +1,28 @@
+.vertical-steps {
+  position :relative;
+
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    left: 50%;
+    background-color: $color-light-grey;
+  }
+}
+
+.vertical-steps__step {
+  position: relative;
+  padding: $padding-small;
+  background-color: #fff;
+
+  h3 {
+    margin: 0;
+  }
+}
+
+.vertical-steps__step:not(:last-child) {
+  margin-bottom: $padding-large;
+}

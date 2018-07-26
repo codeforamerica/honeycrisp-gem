@@ -1,0 +1,15 @@
+.example {
+  display: inline-block;
+  border-radius: 10px;
+  background-color: $color-light-grey;
+  font-weight: bold;
+  padding: .3em .5em;
+  margin-bottom: .5em;
+  margin-right: .3em;
+  font-size: $font-size-small;
+}
+
+.example--wider {
+  display: block;
+  margin-right: 0;
+}
