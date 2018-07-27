@@ -22,6 +22,8 @@ Or install it yourself as:
 
 1. Add `@import 'cfa_styleguide_main';` to application.scss.
 
+1. Add `//= require cfa_styleguide_main` to application.js.
+
 1. Add `mount Cfa::Styleguide::Engine => "/cfa"` to routes.rb.
 
 1. Visit `<your hostname>/cfa/styleguide` to view the styleguide
@@ -37,6 +39,8 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 1. Copy `app/assets` from [gcf-backend](https://github.com/codeforamerica/gcf-backend) into `app/assets` here.
 
 1. Rename `main.scss` to `cfa_styleguide_main.scss`
+
+1. Rename `application.js` to `cfa_styleguide_main.js`
 
 ## Contributing
 

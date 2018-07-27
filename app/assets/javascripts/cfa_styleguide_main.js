@@ -211,6 +211,7 @@ var inputGroupSelector = (function() {
 })();
 
 $(document).ready(function() {
+  incrementer.init();
   radioSelector.init();
   checkboxSelector.init();
   followUpQuestion.init();
