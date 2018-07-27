@@ -1,0 +1,44 @@
+<form action="POST">
+  <div class="question-with-follow-up">
+    <div class="question-with-follow-up__question">
+      <fieldset class="form-group">
+        <label class="form-question" for="example_form_question">Did you have a CalFresh interview?</label>
+        <p class="text--help">Answering no will trigger a follow-up question.</p>
+        <radiogroup class="input-group--inline">
+          <label for="example_radio_inline_4_1" class="radio-button">
+            <input type="radio" name="example_radio_inline_4" id="example_radio_inline_4_1">
+            Yes
+          </label>
+          <label for="example_radio_inline_4_2" class="radio-button">
+            <input type="radio" name="example_radio_inline_4" id="example_radio_inline_4_2" data-follow-up="#interview-follow-up">
+            No
+          </label>
+        </radiogroup>
+      </fieldset>
+    </div>
+    <div class="question-with-follow-up__follow-up" id="interview-follow-up">
+      <fieldset class="form-group">
+        <label class="form-question" for="enrollment_survey_interview_follow_up">Do you know why?</label>
+        <p class="text--help">Check all that apply</p>
+        <radiogroup class="input-group--block">
+          <label for="enrollment_survey_interview_follow_up_notified_too_late" class="radio-button">
+            <input type="radio" name="enrollment_survey[interview_follow_up]" id="enrollment_survey_interview_follow_up_notified_too_late">
+            Notified too late
+          </label>
+          <label for="enrollment_survey_interview_follow_up_never_received_call" class="radio-button">
+            <input type="radio" name="enrollment_survey[interview_follow_up]" id="enrollment_survey_interview_follow_up_never_received_call">
+            Never received a call
+          </label>
+          <label for="enrollment_survey_interview_follow_up_no_phone" class="radio-button">
+            <input type="radio" name="enrollment_survey[interview_follow_up]" id="enrollment_survey_interview_follow_up_no_phone">
+            Don’t have a phone
+          </label>
+          <label for="enrollment_survey_could_not_attend" class="radio-button">
+            <input type="radio" name="enrollment_survey[interview_follow_up]" id="enrollment_survey_could_not_attend">
+            Missed the interview
+          </label>
+        </radiogroup>
+      </fieldset>
+    </div>
+  </div>
+</form>
