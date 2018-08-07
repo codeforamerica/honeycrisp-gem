@@ -417,3 +417,47 @@
     </div>
   </footer>
 </div>
+
+<%= javascript_include_tag 'application' %>
+<%= javascript_include_tag 'prism' %>
+
+<!-- Show code snippets for each styleguide component -->
+<script>
+  var pattern = (function() {
+    /**
+     <div class="pattern">
+     <div class="pattern__example">
+     PATTERN HTML GOES HERE
+     </div>
+     </div>
+     **/
+    var p = {
+      parseCode: function(preview) {
+        var sampleCode = $('<div>');
+        $(sampleCode).html($(preview).html())
+        $(sampleCode).find('.pattern__peripheral').remove();
+        return sampleCode;
+      },
+      render: function(preview, sampleCode) {
+        var sampleCodeBox = $('<div class="pattern__code"><a href="#" class="pattern__button"><i class="icon-arrow_drop_down"></i></a><pre><code class="language-markup"></code></pre></div>');
+        $(sampleCodeBox).find('code').text($(sampleCode).html());
+        $(preview).after(sampleCodeBox);
+      },
+      init: function() {
+        $('.pattern').each(function(index, pattern) {
+          var preview = $(this).find('.pattern__example');
+          var sampleCode = p.parseCode(preview);
+          p.render(preview, sampleCode);
+          $(this).find('.pattern__button').click(function(e) {
+            e.preventDefault();
+            $(this).parent().toggleClass('is-open');
+          })
+        });
+      }
+    };
+    return {
+      init: p.init
+    }
+  })();
+  pattern.init();
+</script>

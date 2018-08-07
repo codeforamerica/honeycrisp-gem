@@ -6,12 +6,12 @@ require "cfa/styleguide/version"
 Gem::Specification.new do |spec|
   spec.name          = "cfa-styleguide"
   spec.version       = Cfa::Styleguide::VERSION
-  spec.authors       = ["Whitney Schaefer"]
-  spec.email         = ["whitney@codeforamerica.org"]
+  spec.authors       = ["Christa Hartsock", "Whitney Schaefer"]
+  spec.email         = ["christa@codeforamerica.org", "whitney@codeforamerica.org"]
 
-  spec.summary       = "A generic styleguide for CfA products"
-  spec.description   = "Styleguide"
-  spec.homepage      = "http://www.example.com"
+  spec.summary       = "A pattern library for CfA products, based on the GetCalFresh styleguide"
+  spec.description   = "Code for America Styleguide"
+  spec.homepage      = "https://github.com/codeforamerica/cfa-styleguide-gem"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
@@ -35,6 +35,7 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency "bourbon"
   spec.add_runtime_dependency "jquery-rails"
   spec.add_runtime_dependency "neat", "~> 1.8.0"
+  spec.add_runtime_dependency "prism-rails"
   spec.add_development_dependency "bundler", "~> 1.16"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "capybara"

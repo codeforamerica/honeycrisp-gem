@@ -40,6 +40,8 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 1. Rename `main.scss` to `cfa_styleguide_main.scss`
 
+1. Add `@import 'prism';` in the list of vendor imports in `cfa_styleguide_main.scss`
+
 1. Rename `application.js` to `cfa_styleguide_main.js`
 
 ## Contributing
