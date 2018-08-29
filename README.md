@@ -7,7 +7,7 @@ Gem including base styles and javascript for Code for America products, for use 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'cfa-styleguide'
+gem 'cfa-styleguide', git: 'https://github.com/codeforamerica/cfa-styleguide-gem'
 ```
 
 And then execute:
