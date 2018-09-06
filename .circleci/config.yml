@@ -21,13 +21,14 @@ jobs:
           paths:
             - vendor/bundle
       # Create place to store test results
-      - run: mkdir ~/rspec
+      - run: mkdir /tmp/test-results
       # Run the tests
       - type: shell
         command: |
           gem install rspec && \
           bundle exec rspec --profile 10 \
                             --require ./spec/support/pre_documentation_formatter.rb \
+                            --format RspecJunitFormatter \
                             --out /tmp/test-results/rspec.xml \
                             --format PreDocumentationFormatter \
                             $(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)
