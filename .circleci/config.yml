@@ -6,8 +6,6 @@ jobs:
     working_directory: ~/repo
     docker:
       - image: circleci/ruby:2.5.1-node-browsers
-        environment:
-          RAILS_ENV: test
     steps:
       - checkout
       # Restore Cached Dependencies
@@ -27,14 +25,14 @@ jobs:
       # Run the tests
       - type: shell
         command: |
+          gem install rspec && \
           bundle exec rspec --profile 10 \
                             --require ./spec/support/pre_documentation_formatter.rb \
-                            --format RspecJunitFormatter \
-                            --out ~/rspec/rspec.xml \
+                            --out /tmp/test-results/rspec.xml \
                             --format PreDocumentationFormatter \
                             $(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)
       - store_test_results:
-          path: ~/rspec
+          path: /tmp/test-results
       - store_artifacts:
           path: tmp/screenshots
           destination: screenshots
