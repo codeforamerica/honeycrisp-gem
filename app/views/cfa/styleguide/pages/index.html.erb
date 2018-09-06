@@ -1,0 +1,467 @@
+<body class="template--styleguide">
+  <div class="page-wrapper">
+    <header class="main-header">
+      <div class="toolbar">
+        <div class="toolbar__left">
+          <h1 class="main-header__title"><a class="main-header__logo" href="#">GetCalFresh.org</a></h1>
+        </div>
+        <div class="toolbar__right">
+          <a href="#atoms" class="toolbar__item text--small link--subtle">Atoms</a>
+          <a href="#molecules" class="toolbar__item text--small link--subtle">Molecules</a>
+          <a href="#organisms" class="toolbar__item text--small link--subtle">Organisms</a>
+        </div>
+      </div>
+    </header>
+    <section class="slab slab--styleguide" id="atoms">
+      <div class="grid">
+        <div class="grid__item width-one-half shift-one-fourth">
+          <h1>Atoms</h1>
+          <p class="text--help">Atoms are the basic building blocks of matter. Applied to web interfaces, atoms are our HTML tags, such as a form label, an input or a button.</p>
+          <p class="text--help">Atoms can also include more abstract elements like color palettes, fonts and even more invisible aspects of an interface like animations.</p>
+          <p class="text--help">Like atoms in nature they’re fairly abstract and often not terribly useful on their own. However, they’re good as a reference in the context of a pattern library as you can see all your global styles laid out at a glance.</p>
+        </div>
+      </div>
+    </section>
+    <section class="slab">
+      <div class="grid">
+        <div class="grid__item width-one-fourth">
+          <p class="text--help">Slab Layout</p>
+        </div>
+        <div class="grid__item width-three-fourths">
+        <p>This is an example slab, it's used to section out content, especially on marketing pages. Inside of slabs, use the grid component to lay things out. Almost everything on this page is laid out using slabs and grids.</p>
+        </div>
+      </div>
+    </section>
+    <section class="slab">
+      <div class="grid">
+        <div class="grid__item width-one-fourth">
+          <p class="text--help">Grid Layout</p>
+        </div>
+        <div class="grid__item width-three-fourths">
+          <%= styleguide_example { render partial: 'examples/atoms/grid' } %>
+        </div>
+      </div>
+    </section>
+    <section class="slab">
+      <div class="grid">
+        <div class="grid__item width-one-fourth">
+          <p class="text--help">Card</p>
+        </div>
+        <div class="grid__item width-three-fourths">
+          <%= styleguide_example { render partial: 'examples/atoms/card' } %>
+        </div>
+      </div>
+    </section>
+    <section class="slab">
+      <div class="grid">
+        <div class="grid__item width-one-fourth">
+          <p class="text--help">Notice</p>
+        </div>
+        <div class="grid__item width-three-fourths">
+          <%= styleguide_example { render partial: 'examples/atoms/notice' } %>
+        </div>
+      </div>
+    </section>
+    <section class="slab">
+      <div class="grid">
+        <div class="grid__item width-one-fourth">
+          <p class="text--help">Colors</p>
+        </div>
+        <div class="grid__item width-three-fourths">
+          <%= styleguide_example { render partial: 'examples/atoms/colors' } %>
+        </div>
+      </div>
+    </section>
+    <section class="slab">
+      <div class="grid">
+        <div class="grid__item width-one-fourth">
+          <p class="text--help">Icons</p>
+        </div>
+        <div class="grid__item width-three-fourths text--pullquote">
+          <%= styleguide_example { render partial: 'examples/atoms/icons' } %>
+        </div>
+      </div>
+    </section>
+    <section class="slab">
+      <div class="grid">
+        <div class="grid__item width-one-fourth">
+          <p class="text--help">Typography</p>
+        </div>
+        <div class="grid__item width-three-fourths">
+          <%= styleguide_example { render partial: 'examples/atoms/typography' } %>
+        </div>
+      </div>
+    </section>
+    <section class="slab">
+      <div class="grid">
+        <div class="grid__item width-one-fourth">
+          <p class="text--help">Labels</p>
+        </div>
+        <div class="grid__item width-three-fourths">
+          <%= styleguide_example { render partial: 'examples/atoms/labels' } %>
+        </div>
+      </div>
+    </section>
+    <section class="slab">
+      <div class="grid">
+        <div class="grid__item width-one-fourth">
+          <p class="text--help">Buttons</p>
+        </div>
+        <div class="grid__item width-three-fourths">
+          <%= styleguide_example { render partial: 'examples/atoms/buttons' } %>
+        </div>
+      </div>
+    </section>
+    <section class="slab">
+      <div class="grid">
+        <div class="grid__item width-one-fourth">
+          <p class="text--help">Form Elements</p>
+        </div>
+        <div class="grid__item width-three-fourths">
+          <%= styleguide_example { render partial: 'examples/atoms/form_elements' } %>
+
+          <p class="text--help"><em>General atomic form elements have no knowledge about their size and default to full width. Form molecules and organisms or modifier classes should be used to define form element sizes and layout.</em></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="slab">
+      <div class="grid">
+        <div class="grid__item width-one-fourth">
+          <p class="text--help">Example Pills</p>
+        </div>
+        <div class="grid__item width-three-fourths">
+          <%= styleguide_example { render partial: 'examples/atoms/examples' } %>
+        </div>
+      </div>
+    </section>
+
+    <section class="slab slab--styleguide" id="molecules">
+      <div class="grid">
+        <div class="grid__item width-one-half shift-one-fourth">
+          <h1>Molecules</h1>
+          <p class="text--help">Things start getting more interesting and tangible when we start combining atoms together. Molecules are groups of atoms bonded together and are the smallest fundamental units of a compound. These molecules take on their own properties and serve as the backbone of our design systems.</p>
+          <p class="text--help">For example, a form label, input or button aren’t too useful by themselves, but combine them together as a form and now they can actually do something together.</p>
+          <p class="text--help">Building up to molecules from atoms encourages a “do one thing and do it well” mentality. While molecules can be complex, as a rule of thumb they are relatively simple combinations of atoms built for reuse.</p>
+        </div>
+      </div>
+    </section>
+    <section class="slab">
+      <div class="grid">
+        <div class="grid__item width-one-fourth">
+          <p class="text--help">Media Box</p>
+        </div>
+        <div class="grid__item width-three-fourths">
+          <%= styleguide_example { render partial: 'examples/molecules/media_box' } %>
+        </div>
+      </div>
+    </section>
+    <section class="slab">
+      <div class="grid">
+        <div class="grid__item width-one-fourth">
+          <p class="text--help">Toolbar</p>
+        </div>
+        <div class="grid__item width-three-fourths">
+          <%= styleguide_example { render partial: 'examples/molecules/toolbar' } %>
+        </div>
+      </div>
+    </section>
+    <section class="slab">
+      <div class="grid">
+        <div class="grid__item width-one-fourth">
+          <p class="text--help">Tab bar</p>
+        </div>
+        <div class="grid__item width-three-fourths">
+          <%= styleguide_example { render partial: 'examples/molecules/tab_bar' } %>
+        </div>
+      </div>
+    </section>
+    <section class="slab">
+      <div class="grid">
+        <div class="grid__item width-one-fourth">
+          <p class="text--help">Flash messages</p>
+        </div>
+        <div class="grid__item width-three-fourths">
+          <%= styleguide_example { render partial: 'examples/molecules/flash_messages' } %>
+        </div>
+      </div>
+    </section>
+    <section class="slab">
+      <div class="grid">
+        <div class="grid__item width-one-fourth">
+          <p class="text--help">Progress indicator</p>
+        </div>
+        <div class="grid__item width-three-fourths">
+          <%= styleguide_example { render partial: 'examples/molecules/progress_indicator' } %>
+        </div>
+      </div>
+    </section>
+    <section class="slab">
+      <div class="grid">
+        <div class="grid__item width-one-fourth">
+          <p class="text--help">Summary Table</p>
+        </div>
+        <div class="grid__item width-three-fourths">
+          <%= styleguide_example { render partial: 'examples/molecules/summary_table' } %>
+        </div>
+      </div>
+    </section>
+    <section class="slab">
+      <div class="grid">
+        <div class="grid__item width-one-fourth">
+          <p class="text--help">Data Table</p>
+        </div>
+        <div class="grid__item width-three-fourths">
+          <%= styleguide_example { render partial: 'examples/molecules/data_table' } %>
+        </div>
+      </div>
+    </section>
+    <section class="slab">
+      <div class="grid">
+        <div class="grid__item width-one-fourth">
+          <p class="text--help">Searchbar</p>
+        </div>
+        <div class="grid__item width-three-fourths">
+          <%= styleguide_example { render partial: 'examples/molecules/searchbar' } %>
+        </div>
+      </div>
+    </section>
+    <section class="slab">
+      <div class="grid">
+        <div class="grid__item width-one-fourth">
+          <p class="text--help">Text Input Group</p>
+        </div>
+        <div class="grid__item width-three-fourths">
+          <%= styleguide_example { render partial: 'examples/molecules/text_input_group' } %>
+        </div>
+      </div>
+    </section>
+    <section class="slab">
+      <div class="grid">
+        <div class="grid__item width-one-fourth">
+          <p class="text--help">Incrementer</p>
+        </div>
+        <div class="grid__item width-three-fourths">
+          <%= styleguide_example { render partial: 'examples/molecules/incrementer' } %>
+        </div>
+      </div>
+    </section>
+    <section class="slab">
+      <div class="grid">
+        <div class="grid__item width-one-fourth">
+          <p class="text--help">Block Input Group</p>
+        </div>
+        <div class="grid__item width-three-fourths">
+          <%= styleguide_example { render partial: 'examples/molecules/block_input_group' } %>
+        </div>
+      </div>
+    </section>
+    <section class="slab">
+      <div class="grid">
+        <div class="grid__item width-one-fourth">
+          <p class="text--help">Inline Input Group</p>
+        </div>
+        <div class="grid__item width-three-fourths">
+          <%= styleguide_example { render partial: 'examples/molecules/inline_input_group' } %>
+        </div>
+      </div>
+    </section>
+    <section class="slab">
+      <div class="grid">
+        <div class="grid__item width-one-fourth">
+          <p class="text--help">Two-up Input Group</p>
+        </div>
+        <div class="grid__item width-three-fourths">
+          <%= styleguide_example { render partial: 'examples/molecules/two_up_input_group' } %>
+        </div>
+      </div>
+    </section>
+    <section class="slab">
+      <div class="grid">
+        <div class="grid__item width-one-fourth">
+          <p class="text--help">Form Group</p>
+        </div>
+        <div class="grid__item width-three-fourths">
+          <%= styleguide_example { render partial: 'examples/molecules/form_group' } %>
+        </div>
+      </div>
+    </section>
+    <section class="slab">
+      <div class="grid">
+        <div class="grid__item width-one-fourth">
+          <p class="text--help">Form Group Error State</p>
+        </div>
+        <div class="grid__item width-three-fourths">
+          <%= styleguide_example { render partial: 'examples/molecules/form_group_error_state' } %>
+        </div>
+      </div>
+    </section>
+    <section class="slab">
+      <div class="grid">
+        <div class="grid__item width-one-fourth">
+          <p class="text--help">Follow Up Question</p>
+        </div>
+        <div class="grid__item width-three-fourths">
+          <%= styleguide_example { render partial: 'examples/molecules/follow_up_question' } %>
+
+          <p class="text--help">How it works: the proceeding question requires an additional class "form-group--with-follow-up. Any answer that triggers a follow up should contain an additional attribute 'data-follow-up' with the value being the id of the follow-up question (starting with #).</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="slab slab--styleguide" id="organisms">
+      <div class="grid">
+        <div class="grid__item width-one-half shift-one-fourth">
+          <h1>Organisms</h1>
+          <p class="text--help">Molecules give us some building blocks to work with, and we can now combine them together to form organisms. Organisms are groups of molecules joined together to form a relatively complex, distinct section of an interface.</p>
+          <p class="text--help">Organisms can consist of similar and/or different molecule types. For example, a masthead organism might consist of diverse components like a logo, primary navigation, search form, and list of social media channels. But a “product grid” organism might consist of the same molecule (possibly containing a product image, product title and price) repeated over and over again.</p>
+          <p class="text--help">Building up from molecules to organisms encourages creating standalone, portable, reusable components.</p>
+        </div>
+      </div>
+    </section>
+    <section class="slab">
+      <div class="grid">
+        <div class="grid__item width-one-fourth">
+          <p class="text--help">Pagination</p>
+        </div>
+        <div class="grid__item width-three-fourths">
+          <%= styleguide_example { render partial: 'examples/organisms/pagination' } %>
+        </div>
+      </div>
+    </section>
+    <section class="slab">
+      <div class="grid">
+        <div class="grid__item width-one-fourth">
+          <p class="text--help">Reveal</p>
+        </div>
+        <div class="grid__item width-three-fourths">
+          <%= styleguide_example { render partial: 'examples/organisms/reveal' } %>
+        </div>
+      </div>
+    </section>
+    <section class="slab">
+      <div class="grid">
+        <div class="grid__item width-one-fourth">
+          <p class="text--help">Steps</p>
+        </div>
+        <div class="grid__item width-three-fourths">
+          <%= styleguide_example { render partial: 'examples/organisms/steps' } %>
+        </div>
+      </div>
+    </section>
+    <section class="slab">
+      <div class="grid">
+        <div class="grid__item width-one-fourth">
+          <p class="text--help">Vertical Steps</p>
+        </div>
+        <div class="grid__item width-three-fourths">
+          <%= styleguide_example { render partial: 'examples/organisms/vertical_steps' } %>
+        </div>
+      </div>
+    </section>
+    <section class="slab">
+      <div class="grid">
+        <div class="grid__item width-one-fourth">
+          <p class="text--help">Statistics Card</p>
+        </div>
+        <div class="grid__item width-three-fourths">
+          <%= styleguide_example { render partial: 'examples/organisms/statistics_card' } %>
+        </div>
+      </div>
+    </section>
+    <section class="slab">
+      <div class="grid">
+        <div class="grid__item width-one-fourth">
+          <p class="text--help">Admin Application Card</p>
+        </div>
+        <div class="grid__item width-three-fourths">
+          <%= styleguide_example { render partial: 'examples/organisms/admin_application_card' } %>
+        </div>
+      </div>
+    </section>
+    <section class="slab">
+      <div class="grid">
+        <div class="grid__item width-one-fourth">
+          <p class="text--help">Form Card</p>
+        </div>
+        <div class="grid__item width-three-fourths">
+          <%= styleguide_example { render partial: 'examples/organisms/form_card_1' } %>
+
+          <hr>
+
+          <%= styleguide_example { render partial: 'examples/organisms/form_card_2' } %>
+
+          <hr>
+
+          <%= styleguide_example { render partial: 'examples/organisms/form_card_3' } %>
+
+          <hr>
+
+          <%= styleguide_example { render partial: 'examples/organisms/form_card_4' } %>
+        </div>
+      </div>
+    </section>
+
+    <footer class="main-footer">
+      <div class="grid">
+        <div class="grid__item">
+          <div class="main-footer__legal">
+            <p>GetCalFresh.org is a service delivered by <a class="link--subtle" href="#">Code for America</a> on behalf of the people of California.</p>
+            <p>Read our <a class="link--subtle" href="#">Privacy Policy</a> and <a class="link--subtle" href="#">Nondiscrimination Statement.</a></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <%= javascript_include_tag 'prism' %>
+
+  <script>
+  var pattern = (function() {
+
+    /**
+    <div class="pattern">
+      <div class="pattern__example">
+        PATTERN HTML GOES HERE
+      </div>
+    </div>
+    **/
+
+    var p = {
+
+      parseCode: function(preview) {
+        var sampleCode = $('<div>');
+        $(sampleCode).html($(preview).html())
+        $(sampleCode).find('.pattern__peripheral').remove();
+        return sampleCode;
+      },
+
+      render: function(preview, sampleCode) {
+        var sampleCodeBox = $('<div class="pattern__code"><a href="#" class="pattern__button"><i class="icon-arrow_drop_down"></i></a><pre><code class="language-markup"></code></pre></div>');
+        $(sampleCodeBox).find('code').text($(sampleCode).html());
+        $(preview).after(sampleCodeBox);
+      },
+
+      init: function() {
+        $('.pattern').each(function(index, pattern) {
+          var preview = $(this).find('.pattern__example');
+          var sampleCode = p.parseCode(preview);
+          p.render(preview, sampleCode);
+
+          $(this).find('.pattern__button').click(function(e) {
+            e.preventDefault();
+            $(this).parent().toggleClass('is-open');
+          })
+
+        });
+      }
+    };
+
+    return {
+      init: p.init
+    }
+  })();
+
+  pattern.init();
+  </script>
+</body>

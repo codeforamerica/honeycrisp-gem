@@ -1,10 +1,8 @@
 .form-card {
   @extend .card;
-
+  border-top: 8px solid $color-tan;
   margin-left: -.5em;
   margin-right: -.5em;
-
-
   @include media($tablet-up) {
     margin-left: 0;
     margin-right: 0;
@@ -85,17 +83,12 @@
 }
 
 .form-card--transition {
-  border-top: 8px solid $color-tan;
   text-align: center;
   padding-top: 2em;
   padding-bottom: 2em;
 
   .text-input-group-container {
     display: inline-block;
-  }
-
-  .text-input-group {
-    max-width: 6em;
   }
 
   .text-input {

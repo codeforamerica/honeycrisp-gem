@@ -43,6 +43,7 @@
 }
 
 .text-input-group {
+    @include outline-within;
     display: table;
     margin-bottom: 1em;
     font-size: $font-size-h3;
@@ -65,7 +66,8 @@
         margin-top: 0;
         background-color: $color-light-grey;
         &:focus {
-          background-color: rgba($color-teal, .1);
+          outline: none;
+          box-shadow: none;
         }
     }
     .text-input-group__postfix {
@@ -76,12 +78,6 @@
         padding: .5em .3em .5em 0;
         vertical-align: middle;
         background-color: $color-light-grey;
-    }
-
-    &.is-focused {
-      .text-input-group__prefix, .text-input-group__postfix {
-        background-color: rgba($color-teal, .1);
-      }
     }
 }
 
@@ -158,6 +154,7 @@
 
   .select__button {
     border-width: 2px;
+    box-shadow: none;
     @include media($tablet-up) {
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
@@ -229,6 +226,12 @@
     margin-bottom: 1em;
   }
 
+  .radio-button input {
+    display: none;
+  }
+}
+
+#interview-yes-follow-up {
   .radio-button input {
     display: none;
   }

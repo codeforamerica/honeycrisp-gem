@@ -2,7 +2,6 @@
 @import 'bourbon';
 @import 'neat';
 @import "normalize";
-@import 'prism';
 
 /* Variables */
 @import 'atoms/variables';
@@ -43,8 +42,6 @@
 @import 'molecules/tooltip';
 @import 'molecules/complex-list';
 @import 'molecules/vertical-steps';
-@import 'molecules/show-more';
-
 
 /* Organisms */
 @import 'organisms/assister-message';
@@ -75,4 +72,3 @@
 
 /* Shame */
 @import 'ie-hacks';
-@import 'shame';

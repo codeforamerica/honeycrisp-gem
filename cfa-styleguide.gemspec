@@ -32,6 +32,7 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
+  spec.add_runtime_dependency "autoprefixer-rails"
   spec.add_runtime_dependency "bourbon"
   spec.add_runtime_dependency "jquery-rails"
   spec.add_runtime_dependency "neat", "~> 1.8.0"

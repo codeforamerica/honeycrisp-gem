@@ -327,6 +327,12 @@
   height: 86px;
 }
 
+.illustration--tulare {
+  @include retina-bg(county_seals/tulare_seal, 100% auto);
+  width: 86px;
+  height: 86px;
+}
+
 .illustration--ventura {
   @include retina-bg(county_seals/ventura_seal, 100% auto);
   width: 86px;

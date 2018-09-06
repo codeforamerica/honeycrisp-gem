@@ -1,6 +1,6 @@
 module Cfa
   module Styleguide
-    module StyleguideHelper
+    module PagesHelper
       def styleguide_example
         content_tag :div, class: 'pattern' do
           content_tag :div, class: 'pattern__example' do

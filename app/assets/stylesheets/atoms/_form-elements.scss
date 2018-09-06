@@ -1,62 +1,60 @@
 fieldset {
-	border: 0;
-	padding: 0;
-	margin: 0;
+  border: 0;
+  padding: 0;
+  margin: 0;
 }
 
 label {
-	line-height: $line-height-normal;
+  line-height: $line-height-normal;
 }
 
 .form-question {
-	display: block;
-	margin-bottom: 1em;
+  display: block;
+  margin-bottom: 1em;
   font-weight: 500;
 }
 
 .text-input {
-	display: block;
-	width: 100%;
-	font-size: $font-size-h3;
-	font-weight: 500;
-	margin-bottom: 1em;
-	padding: .5em;
-	border: 0;
-	border-bottom: 2px solid #000;
+  @include outline;
+  display: block;
+  width: 100%;
+  font-size: $font-size-h3;
+  font-weight: 500;
+  margin-bottom: 1em;
+  padding: .5em;
+  border: 0;
+  border-bottom: 2px solid #000;
   border-radius: 0;
-	background-color: $color-light-grey;
-	outline: none;
-	&:focus {
-		background-color: rgba($color-teal, .1);
-	}
-    &::placeholder {
-		color: $color-grey;
-	}
+  background-color: $color-light-grey;
+  &::placeholder {
+    color: $color-grey;
+  }
 }
 
 .radio-button {
-	transition: $animation-fast all;
+  @include outline-within();
+  transition: $animation-fast all;
   user-select: none;
   position: relative;
-	display: block;
-	cursor: pointer;
-	font-size: $font-size-h3;
-	font-weight: 500;
-	margin-bottom: .5em;
-	padding: .3em .7em;
+  display: block;
+  cursor: pointer;
+  font-size: $font-size-h3;
+  font-weight: 500;
+  margin-bottom: .5em;
+  padding: .3em .7em;
   padding-left: 2em;
-	background-color: #FFFFFF;
-	border: 2px solid $color-light-grey;
-	border-radius: $border-radius;
-	input[type='radio'] {
-		position: absolute;
-		top: .6em;
-		left: .7em;
+  background-color: #FFFFFF;
+  border: 2px solid $color-light-grey;
+  border-radius: $border-radius;
+  input[type='radio'] {
+    @include outline;
+    position: absolute;
+    top: .6em;
+    left: .7em;
     appearance: none;
-    outline: none;
     display: inline-block;
     background-color: #fff;
-    border: 1px solid $color-darkest-grey;
+    border: 2px solid $color-darkest-grey;
     height: 22px;
     width: 22px;
     border-radius: 50%;
@@ -75,78 +73,75 @@ label {
         background-color: $color-teal;
       }
     }
-	}
-	&:hover {
-		background-color: $color-light-grey;
-	}
+  }
+  &:hover {
+    background-color: $color-light-grey;
+  }
 
-	&.is-selected {
-		background-color: rgba($color-teal, .1);
-		border-color: rgba($color-teal, .1);
-		color: #000;
-	}
+  &.is-selected {
+    background-color: rgba($color-teal, .1);
+    border-color: rgba($color-teal, .2);
+    color: #000;
+  }
 }
 
 .checkbox {
-	transition: $animation-fast all;
+  @include outline-within();
+  transition: $animation-fast all;
   user-select: none;
   position: relative;
-	cursor: pointer;
-	display: block;
-	font-size: $font-size-h3;
-	font-weight: 500;
-	background-color: #FFFFFF;
-	margin-bottom: .5em;
-	padding: .3em .7em;
+  cursor: pointer;
+  display: block;
+  font-size: $font-size-h3;
+  font-weight: 500;
+  background-color: #FFFFFF;
+  margin-bottom: .5em;
+  padding: .3em .7em;
   padding-left: 2em;
-	border: 2px solid $color-light-grey;
-	border-radius: $border-radius;
-	input[type='checkbox'] {
+  border: 2px solid $color-light-grey;
+  border-radius: $border-radius;
+  input[type='checkbox'] {
+    @include outline;
     position: absolute;
     top: .6em;
     left: .7em;
     appearance: none;
-    outline: none;
     display: inline-block;
     background-color: #fff;
-    border: 1px solid $color-darkest-grey;
-    height: 20px;
-    width: 20px;
+    border: 2px solid $color-darkest-grey;
+    height: 22px;
+    width: 22px;
     border-radius: $border-radius;
     &:checked {
       &:before {
         font-family: $font-icon;
         font-size: .8em;
         content: '\e5ca';
-        top: -.5em;
+        top: -.55em;
         display: inline-block;
         position: relative;
         color: $color-teal;
       }
-	 }
+    }
   }
-	&:hover {
-		background-color: $color-light-grey;
-	}
-	&.is-selected {
+  &:hover {
+    background-color: $color-light-grey;
+  }
+  &.is-selected {
     background-color: rgba($color-teal, .1);
-    border-color: rgba($color-teal, .1);
+    border-color: rgba($color-teal, .2);
     color: #000;
-	}
+  }
 }
 
 .textarea {
-	border: 2px solid $color-dark-grey;
-	border-radius: $border-radius;
-	width: 100%;
-	outline: 0;
-	padding: 1em;
-	line-height: $line-height-normal;
-	margin-bottom: .5em;
-
-	&:focus {
-		border-color: $color-teal;
-	}
+  @include outline;
+  border: 2px solid $color-dark-grey;
+  border-radius: $border-radius;
+  width: 100%;
+  padding: 1em;
+  line-height: $line-height-normal;
+  margin-bottom: .5em;
 }
 
 .select {
@@ -165,10 +160,11 @@ label {
     padding-top: .5em;
     display: block;
     font-family: $font-icon;
-    content: '\e313';
+    content: '\e5c5';
     background-color: $color-light-grey;
-    color: $color-teal;
-    border: 2px solid $color-light-grey;
+    color: #000;
+    border: 2px solid #000;
+    border-left: 0;
     border-top-right-radius: $border-radius;
     border-bottom-right-radius: $border-radius;
     width: 2em;
@@ -178,51 +174,41 @@ label {
 
   &:hover {
     &:before {
-      background-color: tint($color-light-grey, 30%);
-      border-color: tint($color-light-grey, 30%);
-    } 
+      background-color: rgba($color-teal, .1);
+    }
   }
 
   &:active {
     &:before {
-      background-color: shade($color-light-grey, 10%);
-      border-color: shade($color-light-grey, 10%);
+      background-color: rgba($color-teal, .2);
     }
   }
 }
 
 .select__element {
+  @include outline;
   appearance: none;
   position: relative;
   z-index: 1;
-  border: 2px solid $color-light-grey;
+  border: 2px solid #000;
   border-radius: $border-radius;
   padding: .5em 2.7em .5em .7em;
   font-family: $font-system;
   font-size: $font-size-h3;
   font-weight: 500;
-  outline: 0;
   background-color: transparent;
-
-  &:focus {
-    border-color: $color-teal;
-  }
 }
 
 .file-upload {
-	
+  @include outline-within();
+  display: inline-block;
 }
 
 .file-upload__input {
-	width: .1px;
-	height: .1px;
-	opacity: 0;
-	overflow: hidden;
-	position: absolute;
-	z-index: -1;
-	&:focus {
-		+ .file-upload__label {
-			outline: 2px solid tint($color-teal, 50%);
-		}
-	}
+  width: .1px;
+  height: .1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
 }

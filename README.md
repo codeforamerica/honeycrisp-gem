@@ -26,7 +26,15 @@ Or install it yourself as:
 
 1. Add `mount Cfa::Styleguide::Engine => "/cfa"` to routes.rb.
 
-1. Visit `<your hostname>/cfa/styleguide` to view the styleguide
+1. Visit any of the following routes to view the styleguides:
+
+    ```
+    `<your hostname>/cfa/styleguide`
+    `<your hostname>/cfa/styleguide/cbo-dashboard`
+    `<your hostname>/cfa/styleguide/cbo-analytics`
+    `<your hostname>/cfa/styleguide/current`
+    `<your hostname>/cfa/styleguide/custom-docs`
+    ```
 
 ## Development
 
@@ -38,11 +46,19 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 1. Copy `app/assets` from [gcf-backend](https://github.com/codeforamerica/gcf-backend) into `app/assets` here.
 
-1. Rename `main.scss` to `cfa_styleguide_main.scss`
+    With `gcf-backend` locally, and `cfa-styleguide-gem` as the current directory:
+    ```
+    rm -r app/assets
+    cp -r ../gcf-backend/assets app/
+    ```
 
-1. Add `@import 'prism';` in the list of vendor imports in `cfa_styleguide_main.scss`
+1. Rename `main.scss` to `cfa_styleguide_main.scss` and `application.js` to `cfa_styleguide_main.js`
 
-1. Rename `application.js` to `cfa_styleguide_main.js`
+    ```
+    mv app/assets/stylesheets/main.scss app/assets/stylesheets/cfa_styleguide_main.scss
+    mv app/assets/javascripts/application.js app/assets/javascripts/cfa_styleguide_main.js
+    ```
+
 
 ## Contributing
 

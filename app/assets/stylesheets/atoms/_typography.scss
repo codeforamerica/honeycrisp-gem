@@ -34,7 +34,7 @@ h3, .h3 {
   &:first-child {
     margin-top: 0em;
   }
-  b {
+  b, strong {
     font-weight: 700;
   }
 }
@@ -51,6 +51,7 @@ h4, .h4 {
 }
 
 a {
+  @include outline;
   color: $color-teal;
   &:hover {
     color: shade($color-teal, 20%);
