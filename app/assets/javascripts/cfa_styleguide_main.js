@@ -154,19 +154,6 @@ var revealer = (function() {
   }
 })();
 
-var showMore = (function() {
-  return {
-    init: function() {
-      $('.show-more').each(function(index, showmore) {
-        $(showmore).find('.show-more__button').click(function(e) {
-          e.preventDefault();
-          $(showmore).addClass('is-open');
-        })
-      });
-    }
-  }
-})();
-
 var immediateUpload = (function() {
   var uploader = function() {
     var $formInputs = $('input[type="file"][data-upload-immediately]');
@@ -211,12 +198,10 @@ var inputGroupSelector = (function() {
 })();
 
 $(document).ready(function() {
-  incrementer.init();
   radioSelector.init();
   checkboxSelector.init();
   followUpQuestion.init();
   immediateUpload.init();
   revealer.init();
-  showMore.init();
   inputGroupSelector.init();
 });

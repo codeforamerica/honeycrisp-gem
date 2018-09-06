@@ -1,11 +1,12 @@
 .button {
+    @include outline;
     transition: $animation-fast background-color;
     display: inline-block;
     position: relative;
     cursor: pointer;
     font-weight: 500;
-    border: 1px solid $color-tan;
-    border-bottom: 2px solid shade($color-tan, 15%);
+    border: 1px solid #000;
+    box-shadow: 0 2px 2px $color-grey;
     background-color: #FFFFFF;
     padding: .5em 1em;
     border-radius: $border-radius;
@@ -15,14 +16,13 @@
     color: #000000;
 
     &:hover {
-        background-color: tint($color-tan, 20%);
+        background-color: tint($color-light-grey, 20%);
         color: #000000;
     }
     &:active {
-        background-color: shade($color-tan, 15%);
-    }
-    &:focus {
-        outline: 2px solid tint($color-teal, 50%);
+        background-color: $color-light-grey;
+        box-shadow: none;
+        top: 1px;
     }
 }
 
@@ -30,13 +30,15 @@
   color: #FFFFFF;
   background-color: $color-magenta;
   border-color: $color-magenta;
-  border-bottom-color: shade($color-magenta, 15%);
+  box-shadow: 0 2px 2px shade($color-magenta, 40%);
   &:hover {
       background-color: tint($color-magenta, 20%);
+      border-color: tint($color-magenta, 20%);
       color: #FFFFFF;
   }
   &:active {
       background-color: shade($color-magenta, 15%);
+      border-color: shade($color-magenta, 15%);
   }
 }
 
@@ -44,13 +46,15 @@
     color: #FFFFFF;
     background-color: $color-teal;
     border-color: $color-teal;
-    border-bottom-color: shade($color-teal, 15%);
+    box-shadow: 0 2px 2px shade($color-teal,40%);
     &:hover {
         background-color: tint($color-teal, 20%);
+        border-color: tint($color-teal, 20%);
         color: #FFFFFF;
     }
     &:active {
         background-color: shade($color-teal, 15%);
+        border-color: shade($color-teal, 15%);
     }
 }
 
@@ -81,6 +85,7 @@
 .button--link {
   background: transparent;
   border: none;
+  box-shadow: none;
   text-decoration: underline;
   padding: 0;
   cursor: pointer;

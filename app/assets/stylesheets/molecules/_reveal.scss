@@ -1,7 +1,8 @@
 .reveal__link {
+  @include outline;
   display: inline-block;
   text-decoration: none;
-  color: $color-darkest-grey;
+  color: #000;
   background-color: rgba($color-teal, .08);
   border-radius: 10px;
   padding: .2em .5em .3em .7em;

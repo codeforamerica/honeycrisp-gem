@@ -13,6 +13,7 @@
 
   .pagination__selected {
     @extend .button--primary;
+    @include outline;
   }
 
   .pagination__ellipsis {

@@ -1,8 +1,7 @@
 .example {
   display: inline-block;
   border-radius: 10px;
-  background-color: $color-light-grey;
-  font-weight: bold;
+  border: 2px dotted $color-grey;
   padding: .3em .5em;
   margin-bottom: .5em;
   margin-right: .3em;

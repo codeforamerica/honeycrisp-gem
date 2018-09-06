@@ -32,13 +32,13 @@
 @function opposite-position($directions) {
   $opposite-directions: ();
   $direction-map: (
-  'top':    'bottom',
-  'right':  'left',
-  'bottom': 'top',
-  'left':   'right',
-  'center': 'center',
-  'ltr':    'rtl',
-  'rtl':    'ltr'
+          'top':    'bottom',
+          'right':  'left',
+          'bottom': 'top',
+          'left':   'right',
+          'center': 'center',
+          'ltr':    'rtl',
+          'rtl':    'ltr'
   );
 
   @each $direction in $directions {
@@ -77,6 +77,20 @@
   } @else if $direction == right or $direction == left {
     border-bottom: $perpendicular-borders;
     border-top:    $perpendicular-borders;
+  }
+}
+
+@mixin outline() {
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px $color-yellow;
+  }
+}
+
+@mixin outline-within() {
+  &:focus-within {
+    outline: none;
+    box-shadow: 0 0 0 3px $color-yellow;
   }
 }
 

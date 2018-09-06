@@ -89,8 +89,16 @@
   background-image: image-url('emojis/260e.png');
 }
 
+.emoji--receiver {
+  background-image: image-url('emojis/1f4de.png');
+}
+
 .emoji--mail {
   background-image: image-url('emojis/1f4eb.png');
+}
+
+.emoji--mail-open {
+  background-image: image-url('emojis/1f4ec.png');
 }
 
 .emoji--bust {
@@ -173,10 +181,6 @@
   background-image: image-url('emojis/1f469-1f33e.png')
 }
 
-.emoji-pair--jobs {
-  background-image: image-url('emojis/emoji_jobs.png')
-}
-
 .emoji--construction-worker {
   background-image: image-url('emojis/1f477.png')
 }
@@ -229,4 +233,16 @@
 
 .emoji--warning {
   background-image: image_url('emojis/26a0.png')
+}
+
+.emoji--car {
+  background-image: image_url('emojis/1f697.png');
+}
+
+.emoji-pair--jobs {
+  background-image: image-url('emoji_pairs/emoji_jobs.png')
+}
+
+.emoji-pair--dependent_care {
+  background-image: image-url('emoji_pairs/emoji_dependent_care.png')
 }

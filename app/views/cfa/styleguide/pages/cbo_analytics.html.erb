@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= display_meta_tags %>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <%= stylesheet_link_tag 'main', media: 'all' %>
+    <%= javascript_include_tag 'application', async: true  %>
+
+    <%= csrf_meta_tags %>
+  </head>
+  <body class="template--dashboard">
+    <div class="page-wrapper">
+      <header class="main-header">
+        <div class="toolbar">
+          <div class="toolbar__left">
+            <h1 class="main-header__title"><a class="main-header__logo" href="#"><b>GetCalFresh.org</b> | SF Marin Food Bank</a></h1>
+          </div>
+          <div class="toolbar__right">
+            <a href="#" class="toolbar__item text--help">Assister dashboard</a>
+            <a href="#" class="toolbar__item text--help">Log out</a>
+          </div>
+        </div>
+      </header>
+      <div class="tab-bar">
+        <a href="#" class="tab-bar__tab">Clients</a>
+        <a href="#" class="tab-bar__tab is-selected">Analytics</a>
+        <a href="#" class="tab-bar__tab">Team</a>
+      </div>
+      <div class="dashboard-main">
+        <div class="slab with-padding-med">
+          <h2 class="with-padding-med">Overall numbers</h2>
+          <div class="grid">
+            <div class="grid__item width-one-third">
+              <div class="statistic-card">
+                <p class="statistic-card__label">Applications submitted</p>
+                <p class="statistic-card__number">47 apps</p>
+              </div>
+              <div class="statistic-card">
+                <p class="statistic-card__label">Average completion time</p>
+                <p class="statistic-card__number">10 mins</p>
+              </div>
+            </div>
+            <div class="grid__item width-two-thirds">
+              <div class="statistic-card" style="height: 18.3em;">
+                <p class="statistic-card__label">By the day</p>
+                <p class="statistic-card__number"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="slab with-padding-med">
+          <h2 class="with-padding-med">Client demographics</h2>
+          <div class="grid">
+            <div class="grid__item width-one-fourth">
+              <div class="statistic-card">
+                <p class="statistic-card__label">Total people helped</p>
+                <p class="statistic-card__number">47 👤</p>
+              </div>
+            </div>
+            <div class="grid__item width-one-fourth">
+              <div class="statistic-card">
+                <p class="statistic-card__label">Students</p>
+                <p class="statistic-card__number">8  🎓</p>
+              </div>
+            </div>
+            <div class="grid__item width-one-fourth">
+              <div class="statistic-card">
+                <p class="statistic-card__label">Children</p>
+                <p class="statistic-card__number">12 👶</p>
+              </div>
+            </div>
+            <div class="grid__item width-one-fourth">
+              <div class="statistic-card">
+                <p class="statistic-card__label">Seniors</p>
+                <p class="statistic-card__number">5 👵</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="main-footer">
+        <div class="grid">
+          <div class="grid__item width-three-fourths">
+            <div class="main-footer__legal">
+              <p>GetCalFresh.org is a service delivered by <a class="link--subtle" href="https://www.codeforamerica.org">Code for America</a> on behalf of the people of California.</p>
+              <p>Read our <a class="link--subtle" href="/privacy">Privacy Policy</a> and <a class="link--subtle" href="/nondiscrimination">Nondiscrimination Statement.</a> Learn more <a class="link--subtle" href="/about">about this site</a>.</p>
+            </div>
+          </div>
+          <div class="grid__item width-one-sixth shift-one-twelfth">
+            <div class="main-footer__cfa-logo">
+              <a href="https://www.codeforamerica.org"><img src="<%= image_path('cfa_logo.png') %>" alt="Code for America"></a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
