@@ -69,9 +69,9 @@ var radioSelector = (function() {
           $(this).addClass('is-selected');
         }
 
-        $(this).find('input').click(function(e) {
-          $(this).parent().siblings().removeClass('is-selected');
-          $(this).parent().addClass('is-selected');
+        $(this).find('input').click(function (e) {
+          $(this).closest('.radio-button').siblings().removeClass('is-selected')
+          $(this).closest('.radio-button').addClass('is-selected')
         })
       })
     }
