@@ -55,7 +55,7 @@ To run, run `rake` or `rspec spec`.
     With `gcf-backend` locally, and `cfa-styleguide-gem` as the current directory:
     ```
     rm -r app/assets
-    cp -r ../gcf-backend/assets app/
+    cp -r ../gcf-backend/app/assets app/
     ```
 
 1. Rename `main.scss` to `cfa_styleguide_main.scss` and `application.js` to `cfa_styleguide_main.js`

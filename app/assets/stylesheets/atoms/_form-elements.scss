@@ -1,56 +1,56 @@
 fieldset {
-  border: 0;
-  padding: 0;
-  margin: 0;
+	border: 0;
+	padding: 0;
+	margin: 0;
 }
 
 label {
-  line-height: $line-height-normal;
+	line-height: $line-height-normal;
 }
 
 .form-question {
-  display: block;
-  margin-bottom: 1em;
+	display: block;
+	margin-bottom: 1em;
   font-weight: 500;
 }
 
 .text-input {
   @include outline;
-  display: block;
-  width: 100%;
-  font-size: $font-size-h3;
-  font-weight: 500;
-  margin-bottom: 1em;
-  padding: .5em;
-  border: 0;
-  border-bottom: 2px solid #000;
+	display: block;
+	width: 100%;
+	font-size: $font-size-h3;
+	font-weight: 500;
+	margin-bottom: 1em;
+	padding: .5em;
+	border: 0;
+	border-bottom: 2px solid #000;
   border-radius: 0;
-  background-color: $color-light-grey;
-  &::placeholder {
-    color: $color-grey;
-  }
+	background-color: $color-light-grey;
+    &::placeholder {
+		color: $color-grey;
+	}
 }
 
 .radio-button {
   @include outline-within();
-  transition: $animation-fast all;
+	transition: $animation-fast all;
   user-select: none;
   position: relative;
-  display: block;
-  cursor: pointer;
-  font-size: $font-size-h3;
-  font-weight: 500;
-  margin-bottom: .5em;
-  padding: .3em .7em;
+	display: block;
+	cursor: pointer;
+	font-size: $font-size-h3;
+	font-weight: 500;
+	margin-bottom: .5em;
+	padding: .3em .7em;
   padding-left: 2em;
-  background-color: #FFFFFF;
-  border: 2px solid $color-light-grey;
-  border-radius: $border-radius;
-  input[type='radio'] {
+	background-color: #FFFFFF;
+	border: 2px solid $color-light-grey;
+	border-radius: $border-radius;
+	input[type='radio'] {
     @include outline;
-    position: absolute;
-    top: .6em;
-    left: .7em;
+		position: absolute;
+		top: .6em;
+		left: .7em;
     appearance: none;
     display: inline-block;
     background-color: #fff;
@@ -73,34 +73,34 @@ label {
         background-color: $color-teal;
       }
     }
-  }
-  &:hover {
-    background-color: $color-light-grey;
-  }
+	}
+	&:hover {
+		background-color: $color-light-grey;
+	}
 
-  &.is-selected {
-    background-color: rgba($color-teal, .1);
-    border-color: rgba($color-teal, .2);
-    color: #000;
-  }
+	&.is-selected {
+		background-color: rgba($color-teal, .1);
+		border-color: rgba($color-teal, .2);
+		color: #000;
+	}
 }
 
 .checkbox {
   @include outline-within();
-  transition: $animation-fast all;
+	transition: $animation-fast all;
   user-select: none;
   position: relative;
-  cursor: pointer;
-  display: block;
-  font-size: $font-size-h3;
-  font-weight: 500;
-  background-color: #FFFFFF;
-  margin-bottom: .5em;
-  padding: .3em .7em;
+	cursor: pointer;
+	display: block;
+	font-size: $font-size-h3;
+	font-weight: 500;
+	background-color: #FFFFFF;
+	margin-bottom: .5em;
+	padding: .3em .7em;
   padding-left: 2em;
-  border: 2px solid $color-light-grey;
-  border-radius: $border-radius;
-  input[type='checkbox'] {
+	border: 2px solid $color-light-grey;
+	border-radius: $border-radius;
+	input[type='checkbox'] {
     @include outline;
     position: absolute;
     top: .6em;
@@ -122,26 +122,26 @@ label {
         position: relative;
         color: $color-teal;
       }
-    }
+	  }
   }
-  &:hover {
-    background-color: $color-light-grey;
-  }
-  &.is-selected {
+	&:hover {
+		background-color: $color-light-grey;
+	}
+	&.is-selected {
     background-color: rgba($color-teal, .1);
     border-color: rgba($color-teal, .2);
     color: #000;
-  }
+	}
 }
 
 .textarea {
   @include outline;
-  border: 2px solid $color-dark-grey;
-  border-radius: $border-radius;
-  width: 100%;
-  padding: 1em;
-  line-height: $line-height-normal;
-  margin-bottom: .5em;
+	border: 2px solid $color-dark-grey;
+	border-radius: $border-radius;
+	width: 100%;
+	padding: 1em;
+	line-height: $line-height-normal;
+	margin-bottom: .5em;
 }
 
 .select {
@@ -151,7 +151,7 @@ label {
   font-size: $font-size-h3;
   background-color: #FFFFFF;
 
-  &:before {
+  &:after {
     transition: $animation-fast all;
     position: absolute;
     right: 0em;
@@ -173,13 +173,13 @@ label {
   }
 
   &:hover {
-    &:before {
+    &:after {
       background-color: rgba($color-teal, .1);
-    }
+    } 
   }
 
   &:active {
-    &:before {
+    &:after {
       background-color: rgba($color-teal, .2);
     }
   }
@@ -197,18 +197,20 @@ label {
   font-size: $font-size-h3;
   font-weight: 500;
   background-color: transparent;
+  width: 100%;
+  overflow-wrap: break-word;
 }
 
 .file-upload {
-  @include outline-within();
+	@include outline-within();
   display: inline-block;
 }
 
 .file-upload__input {
-  width: .1px;
-  height: .1px;
-  opacity: 0;
-  overflow: hidden;
-  position: absolute;
-  z-index: -1;
+	width: .1px;
+	height: .1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
 }
