@@ -1,91 +1,76 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <%= display_meta_tags %>
+<% content_for(:template_name) { "question" } %>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<header class="main-header">
+  <div class="toolbar">
+    <div class="toolbar__left">
+      <h1 class="main-header__title"><a href="#" class="main-header__logo"><b>GetCalFresh.org</b></a></h1>
+    </div>
+    <div class="toolbar__right">
+      <a href="#" class="toolbar__item text--small">Español</a>
+    </div>
+  </div>
+</header>
+<div class="slab">
+  <div class="grid">
+    <div class="grid__item width-five-sixths shift-one-twelfth">
 
-  <%= stylesheet_link_tag 'main', media: 'all' %>
-  <%= javascript_include_tag 'application'  %>
-
-  <%= csrf_meta_tags %>
-</head>
-<body class="template--question">
-  <div class="page-wrapper">
-    <header class="main-header">
-      <div class="toolbar">
-        <div class="toolbar__left">
-          <h1 class="main-header__title"><a href="#" class="main-header__logo"><b>GetCalFresh.org</b></a></h1>
+      <div class="form-card with-padding-large">
+        <div class="form-card__header form-card__header--with-icon">
+          <div class="form-card__icon emoji emoji--med emoji--page-facing-up"></div>
+          <h1 class="form-card__title">The legal stuff.</h1>
+          <p class="text--small">Scroll down to agree</p>
         </div>
-        <div class="toolbar__right">
-          <a href="#" class="toolbar__item text--small">Español</a>
+        <div class="form-card__content">
+          <h3>Summary</h3>
+          <ul class="list--bulleted">
+            <li>I have been honest on this report.</li>
+            <li>I have attached all required documents.</li>
+            <li>I understand the county may contact whomever to verify my eligibility.</li>
+            <li>I have read the <a href="#">CalFresh Program Rules and Penalties</a>.</li>
+          </ul>
+          <h3>Details</h3>
+          <ul class="list--bulleted">
+            <li>I understand and certify, under penalty of perjury, that all my answers on this report are correct and complete to the best of my knowledge.</li>
+            <li>I understand the penalties for fraud are as follows: I may be sent to prison for up to 20 years and fined up to $250,000. I may have to pay back benefits if I was not eligible to them. The first time I break the rules on purpose I will not be able to get CalFresh for one year; the second time two years; and after the third time I will not be able to get CalFresh again.</li>
+            <li>I understand and agree to give copies of all documents needed to complete my semi-annual report.</li>
+            <li>I understand that in some instances, I may be asked to give consent to the County to make whatever contacts are necessary todetermine eligibility.</li>
+            <li>I understand that if on purpose I do not report all facts or give wrong facts about my income, property, or family status to get or keep getting aid or benefits, I can be legally prosecuted. I may also be charged with committing a felony if more than $950 in Cash Aid, and/or CalFresh is wrongly paid out as a result of such an action. I have received a copy of the Instructions and Penalties for the SAR 7 Eligibility Status Report for Cash Aid and CalFresh.</li>
+          </ul>
+        </div>
+        <fieldset class="form-group input-group--inline">
+          <label class="checkbox">
+            <input type="checkbox"> Click to agree
+          </label>
+        </fieldset>
+        <div class="form-card__footer">
+          <a href="#" class="button button--primary">Continue</a>
         </div>
       </div>
-    </header>
-    <div class="slab">
-      <div class="grid">
-        <div class="grid__item width-five-sixths shift-one-twelfth">
 
-          <div class="form-card with-padding-large">
-            <div class="form-card__header form-card__header--with-icon">
-              <div class="form-card__icon emoji emoji--med emoji--page-facing-up"></div>
-              <h1 class="form-card__title">The legal stuff.</h1>
-              <p class="text--small">Scroll down to agree</p>
-            </div>
-            <div class="form-card__content">
-              <h3>Summary</h3>
-              <ul class="list--bulleted">
-                <li>I have been honest on this report.</li>
-                <li>I have attached all required documents.</li>
-                <li>I understand the county may contact whomever to verify my eligibility.</li>
-                <li>I have read the <a href="#">CalFresh Program Rules and Penalties</a>.</li>
-              </ul>
-              <h3>Details</h3>
-              <ul class="list--bulleted">
-                <li>I understand and certify, under penalty of perjury, that all my answers on this report are correct and complete to the best of my knowledge.</li>
-                <li>I understand the penalties for fraud are as follows: I may be sent to prison for up to 20 years and fined up to $250,000. I may have to pay back benefits if I was not eligible to them. The first time I break the rules on purpose I will not be able to get CalFresh for one year; the second time two years; and after the third time I will not be able to get CalFresh again.</li>
-                <li>I understand and agree to give copies of all documents needed to complete my semi-annual report.</li>
-                <li>I understand that in some instances, I may be asked to give consent to the County to make whatever contacts are necessary todetermine eligibility.</li>
-                <li>I understand that if on purpose I do not report all facts or give wrong facts about my income, property, or family status to get or keep getting aid or benefits, I can be legally prosecuted. I may also be charged with committing a felony if more than $950 in Cash Aid, and/or CalFresh is wrongly paid out as a result of such an action. I have received a copy of the Instructions and Penalties for the SAR 7 Eligibility Status Report for Cash Aid and CalFresh.</li>
-              </ul>
-            </div>
-            <fieldset class="form-group input-group--inline">
-              <label class="checkbox">
-                <input type="checkbox"> Click to agree
-              </label>
-            </fieldset>
-            <div class="form-card__footer">
-              <a href="#" class="button button--primary">Continue</a>
-            </div>
+      <div class="card form-card form-card--transition">
+        <div class="form-card__content">
+          <div class="emoji emoji--big emoji--money"></div>
+          <h3 class="with-padding-small">How much money do you get every month <b>not from jobs</b>?</h3>
+          <p class="text--small">Examples:</p>
+          <div class="text--centered">
+            <p>
+              <span class="example">Social Security</span>
+              <span class="example">Disability</span>
+              <span class="example">Unemployment</span>
+              <span class="example">Military BAH</span>
+              <span class="example">Child support</span>
+              <span class="example">Alimony</span>
+              <span class="example">Worker's Comp</span>
+              <span class="example">Money from friend or relative</span>
+            </p>
           </div>
+          <p>
+            <a href="#" class="button"><span class="button__icon--left emoji emoji--inline emoji--checkmark"></span> Yes</a>
+            <a href="#" class="button"><span class="button__icon--left emoji emoji--inline emoji--crossmark"></span> No</a>
+          </p>
+        </div>
+      </div>
 
-          <div class="card form-card form-card--transition">
-            <div class="form-card__content">
-              <div class="emoji emoji--big emoji--money"></div>
-              <h3 class="with-padding-small">How much money do you get every month <b>not from jobs</b>?</h3>
-              <p class="text--small">Examples:</p>
-              <div class="text--centered">
-                <p>
-                  <span class="example">Social Security</span>
-                  <span class="example">Disability</span>
-                  <span class="example">Unemployment</span>
-                  <span class="example">Military BAH</span>
-                  <span class="example">Child support</span>
-                  <span class="example">Alimony</span>
-                  <span class="example">Worker's Comp</span>
-                  <span class="example">Money from friend or relative</span>
-                </p>
-              </div>
-              <p>
-                <a href="#" class="button"><span class="button__icon--left emoji emoji--inline emoji--checkmark"></span> Yes</a>
-                <a href="#" class="button"><span class="button__icon--left emoji emoji--inline emoji--crossmark"></span> No</a>
-              </p>
-            </div>
-          </div>
-
-          </div> <!-- .grid item -->
-        </div> <!-- .grid -->
-      </div> <!-- .slab -->
-    </div> <!-- .page-wrapper -->
-  </body>
-</html>
+    </div> <!-- .grid item -->
+  </div> <!-- .grid -->
+</div> <!-- .slab -->
