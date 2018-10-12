@@ -6,13 +6,75 @@
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
 
-  <%= stylesheet_link_tag    'application', media: 'all' %>
-  <%= javascript_include_tag 'application' %>
+  <%= stylesheet_link_tag    'cfa_styleguide_main', media: 'all' %>
+  <%= stylesheet_link_tag    'prism', media: 'all' %>
+
+  <%= javascript_include_tag 'cfa_styleguide_main' %>
+  <%= javascript_include_tag 'prism' %>
 </head>
 
 <body class="template--<%= content_for(:template_name) if content_for?(:template_name) %>">
-<div class="page-wrapper">
-  <%= content_for?(:content) ? content_for(:content) : yield %>
-</div>
+  <div class="page-wrapper">
+    <%= yield %>
+  </div>
+
+  <footer class="main-footer">
+    <div class="grid">
+      <div class="grid__item">
+        <div class="main-footer__legal">
+          <p>The CfA Styleguide is a pattern library developed by <a class="link--subtle" href="#">Code for America</a>.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+      var pattern = (function() {
+
+          /**
+           <div class="pattern">
+           <div class="pattern__example">
+           PATTERN HTML GOES HERE
+           </div>
+           </div>
+           **/
+
+          var p = {
+
+              parseCode: function(preview) {
+                  var sampleCode = $('<div>');
+                  $(sampleCode).html($(preview).html())
+                  $(sampleCode).find('.pattern__peripheral').remove();
+                  return sampleCode;
+              },
+
+              render: function(preview, sampleCode) {
+                  var sampleCodeBox = $('<div class="pattern__code"><a href="#" class="pattern__button"><i class="icon-arrow_drop_down"></i></a><pre><code class="language-markup"></code></pre></div>');
+                  $(sampleCodeBox).find('code').text($(sampleCode).html());
+                  $(preview).after(sampleCodeBox);
+              },
+
+              init: function() {
+                  $('.pattern').each(function(index, pattern) {
+                      var preview = $(this).find('.pattern__example');
+                      var sampleCode = p.parseCode(preview);
+                      p.render(preview, sampleCode);
+
+                      $(this).find('.pattern__button').click(function(e) {
+                          e.preventDefault();
+                          $(this).parent().toggleClass('is-open');
+                      })
+
+                  });
+              }
+          };
+
+          return {
+              init: p.init
+          }
+      })();
+
+      pattern.init();
+  </script>
 </body>
 </html>
