@@ -201,6 +201,12 @@
   height: 86px;
 }
 
+.illustration--los-angeles {
+  @include retina-bg(county_seals/los_angeles_seal, 100% auto);
+  width: 86px;
+  height: 86px;
+}
+
 .illustration--marin {
   @include retina-bg(county_seals/marin_seal, 100% auto);
   width: 86px;
@@ -245,6 +251,12 @@
 
 .illustration--sacramento {
   @include retina-bg(county_seals/sacramento_seal, 100% auto);
+  width: 86px;
+  height: 86px;
+}
+
+.illustration--san-benito {
+  @include retina-bg(county_seals/san_benito_seal, 100% auto);
   width: 86px;
   height: 86px;
 }

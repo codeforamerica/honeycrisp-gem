@@ -32,13 +32,13 @@
 @function opposite-position($directions) {
   $opposite-directions: ();
   $direction-map: (
-          'top':    'bottom',
-          'right':  'left',
-          'bottom': 'top',
-          'left':   'right',
-          'center': 'center',
-          'ltr':    'rtl',
-          'rtl':    'ltr'
+  'top':    'bottom',
+  'right':  'left',
+  'bottom': 'top',
+  'left':   'right',
+  'center': 'center',
+  'ltr':    'rtl',
+  'rtl':    'ltr'
   );
 
   @each $direction in $directions {
