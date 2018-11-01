@@ -48,24 +48,6 @@ A small test suite is available—please add to it!
 
 To run, run `rake` or `rspec spec`.
 
-### Updating the Styleguide
-
-1. Copy `app/assets` from [gcf-backend](https://github.com/codeforamerica/gcf-backend) into `app/assets` here.
-
-    With `gcf-backend` locally, and `cfa-styleguide-gem` as the current directory:
-    ```
-    rm -r app/assets
-    cp -r ../gcf-backend/app/assets app/
-    ```
-
-1. Rename `main.scss` to `cfa_styleguide_main.scss` and `application.js` to `cfa_styleguide_main.js`
-
-    ```
-    mv app/assets/stylesheets/main.scss app/assets/stylesheets/cfa_styleguide_main.scss
-    mv app/assets/javascripts/application.js app/assets/javascripts/cfa_styleguide_main.js
-    ```
-
-
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/codeforamerica/cfa-styleguide-gem. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
