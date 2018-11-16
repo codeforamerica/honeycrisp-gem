@@ -103,7 +103,7 @@ GEM
     prism-rails (1.6.0.3)
       railties (>= 4.2, < 6)
     public_suffix (3.0.2)
-    rack (2.0.5)
+    rack (2.0.6)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
     rails (5.2.0)
