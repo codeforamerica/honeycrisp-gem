@@ -42,4 +42,17 @@ feature 'Pages' do
     expect(page.status_code).to eq 200
     expect(page).to have_content('First, we’ll need to figure out what proof you need to submit.')
   end
+
+  scenario 'can use the CfaFormBuilder' do
+    visit root_path
+
+    expect(page).to have_content('Example input')
+    expect(page).to have_content('Example choice 1')
+    expect(page).to have_content('Example choice 2')
+    expect(page).to have_content('Example radio set (regular)')
+    expect(page).to have_content('Example radio set with follow up')
+    expect(page).to have_content('Example range')
+    expect(page).to have_content('Example date select')
+    expect(page).to have_content('Example textarea')
+  end
 end
