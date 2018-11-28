@@ -647,4 +647,28 @@ RSpec.describe Cfa::Styleguide::CfaFormBuilder do
       HTML
     end
   end
+
+
+  describe "#cfa_single_tap_button" do
+    it "renders an submit button with given value" do
+      class SampleForm < Cfa::Styleguide::FormExample
+        attr_accessor :anyone_home
+      end
+
+      sample = SampleForm.new
+      form = described_class.new("sample", sample, template, {})
+      output = form.cfa_single_tap_button(
+          :anyone_home,
+          "Yes",
+          true,
+          classes: ["foo"]
+      )
+
+      expect(output).to be_html_safe
+
+      expect(output).to match_html <<-HTML
+        <button name="sample[anyone_home]" type="submit" value="true" class="foo button">Yes</button>
+      HTML
+    end
+  end
 end

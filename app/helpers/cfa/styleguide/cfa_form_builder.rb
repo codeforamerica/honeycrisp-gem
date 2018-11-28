@@ -328,6 +328,10 @@ module Cfa
         HTML
       end
 
+      def cfa_single_tap_button(method, label_text, value, classes: [])
+        button(label_text.html_safe, name: "#{object_name}[#{method}]", value: value, class: classes.push("button").join(" "))
+      end
+
       private
 
       def standard_options
