@@ -103,6 +103,84 @@ RSpec.describe Cfa::Styleguide::CfaFormBuilder do
     end
   end
 
+  describe "#cfa_checkbox_set" do
+    context "with validation error" do
+      it "renders an accessible set of checkbox inputs" do
+        class SampleForm < Cfa::Styleguide::FormExample
+          attr_accessor :tng, :ds9, :voyager, :tos
+
+          validate :custom_validation
+
+          def custom_validation
+            errors.add(:captains, "Pick a captain.")
+          end
+        end
+
+        sample = SampleForm.new
+        sample.validate
+        form = described_class.new("sample", sample, template, {})
+        output = form.cfa_checkbox_set(
+          :captains,
+          [
+            { method: :tng, label: "Picard" },
+            { method: :ds9, label: "Sisko" },
+            { method: :voyager, label: "Janeway" },
+            { method: :tos, label: "Kirk" },
+          ],
+          label_text: "Which captains do you think are cool?",
+          help_text: "like, really cool",
+        )
+
+        expect(output).to be_html_safe
+
+        expect(output).to match_html <<-HTML
+        <fieldset class="input-group form-group form-group--error">
+          <legend class="form-question "> Which captains do you think are cool? </legend>
+          <p class="text--help">like, really cool</p>
+          <label class="checkbox"><input name="sample[tng]" type="hidden" value="0" /><input type="checkbox" value="1" name="sample[tng]" id="sample_tng"/> Picard </label>
+          <label class="checkbox"><input name="sample[ds9]" type="hidden" value="0" /><input type="checkbox" value="1" name="sample[ds9]" id="sample_ds9"/> Sisko </label>
+          <label class="checkbox"><input name="sample[voyager]" type="hidden" value="0" /><input type="checkbox" value="1" name="sample[voyager]" id="sample_voyager"/> Janeway </label>
+          <label class="checkbox"><input name="sample[tos]" type="hidden" value="0" /><input type="checkbox" value="1" name="sample[tos]" id="sample_tos"/> Kirk </label>
+          <span class="text--error" id="sample_captains__errors"><i class="icon-warning"></i> Pick a captain. </span>        
+        </fieldset>
+        HTML
+      end
+    end
+
+    it "renders an accessible set of checkbox inputs" do
+      class SampleForm < Cfa::Styleguide::FormExample
+        attr_accessor :tng, :ds9, :voyager, :tos
+      end
+
+      sample = SampleForm.new
+      form = described_class.new("sample", sample, template, {})
+      output = form.cfa_checkbox_set(
+        :captains,
+        [
+          { method: :tng, label: "Picard" },
+          { method: :ds9, label: "Sisko" },
+          { method: :voyager, label: "Janeway" },
+          { method: :tos, label: "Kirk" },
+        ],
+        label_text: "Which captains do you think are cool?",
+        help_text: "like, really cool",
+      )
+
+      expect(output).to be_html_safe
+
+      expect(output).to match_html <<-HTML
+        <fieldset class="input-group form-group">
+          <legend class="form-question "> Which captains do you think are cool? </legend>
+          <p class="text--help">like, really cool</p>
+          <label class="checkbox"><input name="sample[tng]" type="hidden" value="0" /><input type="checkbox" value="1" name="sample[tng]" id="sample_tng"/> Picard </label>
+          <label class="checkbox"><input name="sample[ds9]" type="hidden" value="0" /><input type="checkbox" value="1" name="sample[ds9]" id="sample_ds9"/> Sisko </label>
+          <label class="checkbox"><input name="sample[voyager]" type="hidden" value="0" /><input type="checkbox" value="1" name="sample[voyager]" id="sample_voyager"/> Janeway </label>
+          <label class="checkbox"><input name="sample[tos]" type="hidden" value="0" /><input type="checkbox" value="1" name="sample[tos]" id="sample_tos"/> Kirk </label>
+        </fieldset>
+      HTML
+    end
+  end
+
   describe "#cfa_checkbox_set_with_none" do
     it "renders an accessible set of checkbox inputs" do
       class SampleForm < Cfa::Styleguide::FormExample

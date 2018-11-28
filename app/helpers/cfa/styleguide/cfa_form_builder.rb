@@ -26,6 +26,36 @@ module Cfa
         HTML
       end
 
+      def cfa_checkbox_set(
+        method,
+        collection,
+        label_text: "",
+        help_text: nil,
+        optional: false,
+        legend_class: ""
+      )
+        checkbox_html = collection.map do |item|
+          <<~HTML.html_safe
+        <label class="checkbox">
+          #{check_box(item[:method])} #{item[:label]}
+        </label>
+          HTML
+        end.join.html_safe
+
+        <<~HTML.html_safe
+      <fieldset class="input-group form-group#{error_state(object, method)}">
+        #{fieldset_label_contents(
+          label_text: label_text,
+          help_text: help_text,
+          legend_class: legend_class,
+          optional: optional,
+        )}
+        #{checkbox_html}
+        #{errors_for(object, method)}
+      </fieldset>
+        HTML
+      end
+
       def cfa_checkbox_set_with_none(
         collection,
         label_text: nil,
