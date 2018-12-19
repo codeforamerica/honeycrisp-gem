@@ -197,6 +197,30 @@ var inputGroupSelector = (function() {
   }
 })();
 
+var noneOfTheAbove = (function() {
+  var noneOf = {
+    init: function () {
+      var $noneCheckbox = $('#none__checkbox');
+      var $otherCheckboxes = $('input[type=checkbox]').not('#none__checkbox');
+
+      // Uncheck None if another checkbox is checked
+      $otherCheckboxes.click(function(e) {
+        $noneCheckbox.prop('checked', false);
+        $noneCheckbox.parent().removeClass('is-selected');
+      });
+
+      // Uncheck all others if None is checked
+      $noneCheckbox.click(function(e) {
+        $otherCheckboxes.prop('checked', false);
+        $otherCheckboxes.parent().removeClass('is-selected');
+      });
+    }
+  };
+  return {
+    init: noneOf.init
+  }
+})();
+
 $(document).ready(function() {
   radioSelector.init();
   checkboxSelector.init();
@@ -204,4 +228,5 @@ $(document).ready(function() {
   immediateUpload.init();
   revealer.init();
   inputGroupSelector.init();
+  noneOfTheAbove.init();
 });

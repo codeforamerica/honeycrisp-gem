@@ -17,7 +17,8 @@ module Cfa
                     :example_date_select_month,
                     :example_date_select_day,
                     :example_date_select_year,
-                    :example_textarea
+                    :example_textarea,
+                    :none
     end
   end
 end
