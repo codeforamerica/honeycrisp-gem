@@ -141,7 +141,7 @@ RSpec.describe Cfa::Styleguide::CfaFormBuilder do
           <label class="checkbox"><input name="sample[ds9]" type="hidden" value="0" /><input type="checkbox" value="1" name="sample[ds9]" id="sample_ds9"/> Sisko </label>
           <label class="checkbox"><input name="sample[voyager]" type="hidden" value="0" /><input type="checkbox" value="1" name="sample[voyager]" id="sample_voyager"/> Janeway </label>
           <label class="checkbox"><input name="sample[tos]" type="hidden" value="0" /><input type="checkbox" value="1" name="sample[tos]" id="sample_tos"/> Kirk </label>
-          <span class="text--error" id="sample_captains__errors"><i class="icon-warning"></i> Pick a captain. </span>        
+          <span class="text--error" id="sample_captains__errors"><i class="icon-warning"></i> Pick a captain. </span>
         </fieldset>
         HTML
       end
@@ -182,14 +182,57 @@ RSpec.describe Cfa::Styleguide::CfaFormBuilder do
   end
 
   describe "#cfa_checkbox_set_with_none" do
+    context "with validation error" do
+      it "renders an accessible set of checkbox inputs" do
+        class SampleForm < Cfa::Styleguide::FormExample
+          attr_accessor :tng, :ds9, :voyager, :tos, :none
+
+          validate :custom_validation
+
+          def custom_validation
+            errors.add(:captains, "Pick a captain.")
+          end
+        end
+
+        sample = SampleForm.new
+        sample.validate
+        form = described_class.new("sample", sample, template, {})
+        output = form.cfa_checkbox_set_with_none(
+          :captains,
+          [
+            { method: :tng, label: "Picard" },
+            { method: :ds9, label: "Sisko" },
+            { method: :voyager, label: "Janeway" },
+            { method: :tos, label: "Kirk" },
+          ],
+          label_text: "Which captains do you think are cool?",
+        )
+
+        expect(output).to be_html_safe
+
+        expect(output).to match_html <<-HTML
+        <fieldset class="input-group form-group form-group--error">
+          <legend class="sr-only"> Which captains do you think are cool? </legend>
+          <label class="checkbox"><input name="sample[tng]" type="hidden" value="0" /><input type="checkbox" value="1" name="sample[tng]" id="sample_tng"/> Picard </label>
+          <label class="checkbox"><input name="sample[ds9]" type="hidden" value="0" /><input type="checkbox" value="1" name="sample[ds9]" id="sample_ds9"/> Sisko </label>
+          <label class="checkbox"><input name="sample[voyager]" type="hidden" value="0" /><input type="checkbox" value="1" name="sample[voyager]" id="sample_voyager"/> Janeway </label>
+          <label class="checkbox"><input name="sample[tos]" type="hidden" value="0" /><input type="checkbox" value="1" name="sample[tos]" id="sample_tos"/> Kirk </label>
+          <label class="checkbox"><input name="sample[none]" type="hidden" value="0" /><input id="none__checkbox" type="checkbox" value="1" name="sample[none]" /> None of the above </label>
+          <span class="text--error" id="sample_captains__errors"><i class="icon-warning"></i> Pick a captain. </span>
+        </fieldset>
+        HTML
+      end
+    end
+
     it "renders an accessible set of checkbox inputs" do
       class SampleForm < Cfa::Styleguide::FormExample
-        attr_accessor :first, :second
+        attr_accessor :first, :second, :none
       end
 
       sample = SampleForm.new(first: "1", second: "0")
       form = described_class.new("sample", sample, template, {})
       output = form.cfa_checkbox_set_with_none(
+        :set_method_name,
         [
           { method: :first, label: "First value" },
           { method: :second, label: "Second value" },
@@ -200,12 +243,11 @@ RSpec.describe Cfa::Styleguide::CfaFormBuilder do
       expect(output).to be_html_safe
 
       expect(output).to match_html <<-HTML
-        <fieldset class="input-group">
+        <fieldset class="input-group form-group">
           <legend class="sr-only"> What values does this member have? </legend>
           <label class="checkbox"><input name="sample[first]" type="hidden" value="0" /><input type="checkbox" value="1" checked="checked" name="sample[first]" id="sample_first" /> First value </label>
           <label class="checkbox"><input name="sample[second]" type="hidden" value="0" /><input type="checkbox" value="1" name="sample[second]" id="sample_second" /> Second value </label>
-          <hr class="form-divider" />
-          <label class="checkbox"><input type="checkbox" name="" class="" id="none__checkbox" /> None of the above </label>
+          <label class="checkbox"><input name="sample[none]" type="hidden" value="0" /><input id="none__checkbox" type="checkbox" value="1" name="sample[none]" /> None of the above </label>
         </fieldset>
       HTML
     end
@@ -213,12 +255,13 @@ RSpec.describe Cfa::Styleguide::CfaFormBuilder do
     context "when enum is true" do
       it "sets checked value to yes and unchecked value to no" do
         class SampleForm < Cfa::Styleguide::FormExample
-          attr_accessor :first, :second
+          attr_accessor :first, :second, :none
         end
 
         sample = SampleForm.new(first: "yes", second: "no")
         form = described_class.new("sample", sample, template, {})
         output = form.cfa_checkbox_set_with_none(
+          :set_method_name,
           [
             { method: :first, label: "First value" },
             { method: :second, label: "Second value" },
@@ -230,12 +273,11 @@ RSpec.describe Cfa::Styleguide::CfaFormBuilder do
         expect(output).to be_html_safe
 
         expect(output).to match_html <<-HTML
-        <fieldset class="input-group">
+        <fieldset class="input-group form-group">
           <legend class="sr-only"> What values does this member have? </legend>
           <label class="checkbox"><input name="sample[first]" type="hidden" value="no" /><input type="checkbox" value="yes" checked="checked" name="sample[first]" id="sample_first" /> First value </label>
           <label class="checkbox"><input name="sample[second]" type="hidden" value="no" /><input type="checkbox" value="yes" name="sample[second]" id="sample_second" /> Second value </label>
-          <hr class="form-divider" />
-          <label class="checkbox"><input type="checkbox" name="" class="" id="none__checkbox" /> None of the above </label>
+          <label class="checkbox"><input name="sample[none]" type="hidden" value="0" /><input id="none__checkbox" type="checkbox" value="1" name="sample[none]" /> None of the above </label>
         </fieldset>
         HTML
       end
@@ -244,12 +286,13 @@ RSpec.describe Cfa::Styleguide::CfaFormBuilder do
     context "when none_text is given a custom string" do
       it "sets uses the string for the none input label" do
         class SampleForm < Cfa::Styleguide::FormExample
-          attr_accessor :first, :second
+          attr_accessor :first, :second, :none
         end
 
         sample = SampleForm.new(first: "1", second: "0")
         form = described_class.new("sample", sample, template, {})
         output = form.cfa_checkbox_set_with_none(
+          :set_method_name,
           [
             { method: :first, label: "First value" },
             { method: :second, label: "Second value" },
@@ -261,12 +304,11 @@ RSpec.describe Cfa::Styleguide::CfaFormBuilder do
         expect(output).to be_html_safe
 
         expect(output).to match_html <<-HTML
-        <fieldset class="input-group">
+        <fieldset class="input-group form-group">
           <legend class="sr-only"> What values does this member have? </legend>
           <label class="checkbox"><input name="sample[first]" type="hidden" value="0" /><input type="checkbox" value="1" checked="checked" name="sample[first]" id="sample_first" /> First value </label>
           <label class="checkbox"><input name="sample[second]" type="hidden" value="0" /><input type="checkbox" value="1" name="sample[second]" id="sample_second" /> Second value </label>
-          <hr class="form-divider" />
-          <label class="checkbox"><input type="checkbox" name="" class="" id="none__checkbox" /> I don't have either of these </label>
+          <label class="checkbox"><input name="sample[none]" type="hidden" value="0" /><input id="none__checkbox" type="checkbox" value="1" name="sample[none]" /> I don't have either of these </label>
         </fieldset>
         HTML
       end

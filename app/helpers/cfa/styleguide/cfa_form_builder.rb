@@ -57,6 +57,7 @@ module Cfa
       end
 
       def cfa_checkbox_set_with_none(
+        method,
         collection,
         label_text: nil,
         enum: false,
@@ -79,16 +80,15 @@ module Cfa
         end.join.html_safe
 
         <<~HTML.html_safe
-      <fieldset class="input-group">
+      <fieldset class="input-group form-group#{error_state(object, method)}">
         <legend class="sr-only">
           #{label_text}
         </legend>
         #{checkbox_collection_html}
-        <hr class="form-divider" />
         <label class="checkbox">
-          <input type="checkbox" name="" class="" id="none__checkbox">
-          #{none_text}
+          #{check_box(:none, options.merge(id: "none__checkbox"))} #{none_text}
         </label>
+        #{errors_for(object, method)}
       </fieldset>
         HTML
       end
