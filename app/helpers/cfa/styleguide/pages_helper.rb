@@ -9,6 +9,17 @@ module Cfa
         end
       end
 
+      def styleguide_example_with_code(code)
+        content = styleguide_example { ERB.new("<%= #{code} %>").result(binding).html_safe }
+        content << content_tag(:div, class: 'pattern__code') do
+          content_tag(:pre, class: 'language-ruby language-markup') do
+            content_tag(:code, class: 'language-ruby') do
+              code
+            end
+          end
+        end
+      end
+
       def status_icon(icon, successful: false, failure: false, not_applicable: false)
         classes = ["status"]
         classes << "successful" if successful

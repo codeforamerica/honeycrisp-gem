@@ -1,0 +1,11 @@
+<div class="progress-step-bar">
+  <% (1..step_count).each do |step_number| %>
+    <% if step_number < current_step %>
+      <div class="progress-step-bar__step progress-step-bar__step--completed"></div>
+    <% elsif step_number == current_step %>
+      <div class="progress-step-bar__step progress-step-bar__step--current"></div>
+    <% else %>
+      <div class="progress-step-bar__step"></div>
+    <% end %>
+  <% end %>
+</div>
