@@ -50,7 +50,7 @@
       }
     }
 
-    .pattern__code {
+    .pattern__html {
       @include clearfix();
       &.is-open {
         .pattern__button:before {
@@ -73,12 +73,14 @@
       }
     }
 
-    .pattern__preview + .pattern__code {
+    .pattern__preview + .pattern__html {
       margin-top: -2em;
       border-top: 0px;
     }
 
-
+    .pattern__code {
+      font-size: $font-size-smallest;
+    }
 
     .example-container {
       position: relative;

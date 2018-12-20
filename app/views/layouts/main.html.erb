@@ -49,7 +49,7 @@
               },
 
               render: function(preview, sampleCode) {
-                  var sampleCodeBox = $('<div class="pattern__code"><a href="#" class="pattern__button"><i class="icon-arrow_drop_down"></i></a><pre><code class="language-markup"></code></pre></div>');
+                  var sampleCodeBox = $('<div class="pattern__html"><a href="#" class="pattern__button"><i class="icon-arrow_drop_down"></i></a><pre><code class="language-markup"></code></pre></div>');
                   $(sampleCodeBox).find('code').text($(sampleCode).html());
                   $(preview).after(sampleCodeBox);
               },
