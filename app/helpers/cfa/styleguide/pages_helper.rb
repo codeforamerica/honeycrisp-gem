@@ -9,6 +9,15 @@ module Cfa
         end
       end
 
+      def styleguide_example_eval(code)
+        content = styleguide_example { eval(code) }
+        content << content_tag(:pre, class: 'language-ruby') do
+          content_tag(:code, class: 'language-ruby') do
+            code
+          end
+        end
+      end
+
       def status_icon(icon, successful: false, failure: false, not_applicable: false)
         classes = ["status"]
         classes << "successful" if successful
