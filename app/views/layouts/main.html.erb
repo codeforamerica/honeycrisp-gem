@@ -15,6 +15,24 @@
 
 <body class="template--<%= content_for(:template_name) if content_for?(:template_name) %>">
   <div class="page-wrapper">
+    <section class="slab">
+      <div class="grid">
+        <div class="grid__item width-one-fourth">
+          <p class="text--help">Styleguide Pages</p>
+        </div>
+        <div class="grid__item width-one-fourth">
+          <p><%= link_to "Main (here)", styleguide_main_path %></p>
+        </div>
+        <div class="grid__item width-one-fourth">
+          <p><%= link_to "CBO Dashboard", styleguide_cbo_dashboard_path %></p>
+          <p><%= link_to "CBO Analytics", styleguide_cbo_analytics_path %></p>
+        </div>
+        <div class="grid__item width-one-fourth">
+          <p><%= link_to "Current", styleguide_current_path %></p>
+          <p><%= link_to "Custom Docs", styleguide_custom_docs_path %></p>
+        </div>
+      </div>
+    </section>
     <%= yield %>
   </div>
 
