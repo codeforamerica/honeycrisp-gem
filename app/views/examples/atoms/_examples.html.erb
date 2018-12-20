@@ -1,12 +1,5 @@
 <p>
-  <span class="example">Social security</span>
-  <span class="example">State disability</span>
-  <span class="example">Military BAH</span>
-  <span class="example">Child support</span>
-  <span class="example">Worker's comp</span>
-  <span class="example">Alimony</span>
-  <span class="example">Unemployment</span>
-  <span class="example">VA Benefits</span>
-  <span class="example">Pensions</span>
-  <span class="example">Monetary gifts</span>
+  <% local_assigns.fetch(:examples).each do |example| %>
+    <span class="example"><%= example %></span>
+  <% end %>
 </p>

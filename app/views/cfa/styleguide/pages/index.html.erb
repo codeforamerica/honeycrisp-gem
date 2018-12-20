@@ -131,7 +131,7 @@
       <p class="text--help">Example Pills</p>
     </div>
     <div class="grid__item width-three-fourths">
-      <%= styleguide_example { render partial: 'examples/atoms/examples' } %>
+      <%= styleguide_example_with_code %q|render 'examples/atoms/examples', examples: ["Social security", "State disability", "Military BAH", "Child support", "Worker's comp", "Alimony", "Unemployment", "VA Benefits", "Pensions", "Monetary gifts"]| %>
     </div>
   </div>
 </section>
@@ -296,6 +296,7 @@
     </div>
   </div>
 </section>
+
 <section class="slab">
   <div class="grid">
     <div class="grid__item width-one-fourth">
@@ -315,6 +316,17 @@
       <%= styleguide_example { render partial: 'examples/molecules/follow_up_question' } %>
 
       <p class="text--help">How it works: the proceeding question requires an additional class "form-group--with-follow-up. Any answer that triggers a follow up should contain an additional attribute 'data-follow-up' with the value being the id of the follow-up question (starting with #).</p>
+    </div>
+  </div>
+</section>
+
+<section class="slab">
+  <div class="grid">
+    <div class="grid__item width-one-fourth">
+      <p class="text--help">Example Group</p>
+    </div>
+    <div class="grid__item width-three-fourths">
+      <%= styleguide_example_with_code %q|render 'examples/molecules/example_group', examples: ["Social security", "State disability", "Military BAH", "Child support", "Worker's comp", "Alimony", "Unemployment", "VA Benefits", "Pensions", "Monetary gifts"]| %>
     </div>
   </div>
 </section>
