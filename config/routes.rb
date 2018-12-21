@@ -4,4 +4,5 @@ Cfa::Styleguide::Engine.routes.draw do
   get '/styleguide/cbo-analytics' => 'pages#cbo_analytics', as: :styleguide_cbo_analytics
   get '/styleguide/current' => 'pages#current', as: :styleguide_current
   get '/styleguide/custom-docs' => 'pages#custom_docs', as: :styleguide_custom_docs
+  get '/styleguide/form-builder' => 'pages#form_builder', as: :styleguide_form_builder
 end

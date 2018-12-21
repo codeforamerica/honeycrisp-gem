@@ -9,9 +9,15 @@ module Cfa
         end
       end
 
-      def styleguide_example_with_code(code)
+      def styleguide_example_with_code(code, f = nil)
+        # This `f` arg is sneaky -- it's the form context for CfAFormBuilder, and ERB will need
+        # it when we are trying to render form elements (e.g. `f.cfa_input_field`)
         content = styleguide_example { ERB.new("<%= #{code} %>").result(binding).html_safe }
-        content << content_tag(:div, class: 'pattern__code') do
+        content << styleguide_described_code(code)
+      end
+
+      def styleguide_described_code(code)
+        content_tag(:div, class: 'pattern__code') do
           content_tag(:pre, class: 'language-ruby language-markup') do
             content_tag(:code, class: 'language-ruby') do
               code
