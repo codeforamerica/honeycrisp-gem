@@ -493,7 +493,7 @@ RSpec.describe Cfa::Styleguide::CfaFormBuilder do
       expect(output).to match_html <<~HTML
         <fieldset class="form-group">
           <legend class="form-question "> How many hours a week do you work? </legend>
-          <div class="input-group--inline">
+          <div class="input-group--range">
             <div class="form-group">
               <label class="sr-only" for="form_lower_hours_a_week_amount">
                 <p class="form-question">Lower amount</p>
@@ -530,7 +530,7 @@ RSpec.describe Cfa::Styleguide::CfaFormBuilder do
         expect(output).to match_html <<~HTML
           <fieldset class="form-group form-group--error">
             <legend class="form-question "> How many hours a week do you work? </legend>
-            <div class="input-group--inline">
+            <div class="input-group--range">
               <div class="form-group">
                 <label class="sr-only" for="form_lower_hours_a_week_amount">
                   <p class="form-question">Lower amount</p>

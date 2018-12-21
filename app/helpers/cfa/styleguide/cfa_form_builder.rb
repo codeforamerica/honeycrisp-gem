@@ -227,7 +227,7 @@ module Cfa
         <<~HTML.html_safe
       <fieldset class="form-group#{' form-group--error' if range_errors_present}">
         #{fieldset_label_contents(label_text: label_text, help_text: help_text)}
-        <div class="input-group--inline">
+        <div class="input-group--range">
           <div class="form-group">
             #{label_and_field(lower_method, 'Lower amount', text_field(lower_method, text_field_options), options: { class: 'sr-only' })}
           </div>
