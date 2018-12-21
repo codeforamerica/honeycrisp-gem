@@ -1,0 +1,13 @@
+<% title = local_assigns.fetch(:title) %>
+<% example = local_assigns.fetch(:example) %>
+
+<section class="slab">
+  <div class="grid">
+    <div class="grid__item width-one-fourth">
+      <p class="text--help"><%= title %></p>
+    </div>
+    <div class="grid__item width-three-fourths">
+      <%= styleguide_example_with_code("examples/#{example}") %>
+    </div>
+  </div>
+</section>

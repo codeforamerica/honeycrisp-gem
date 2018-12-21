@@ -9,12 +9,17 @@ module Cfa
         end
       end
 
-      def styleguide_example_with_code(code)
-        content = styleguide_example { ERB.new("<%= #{code} %>").result(binding).html_safe }
+      def styleguide_example_with_code(partial_path)
+        partial = lookup_context.find_template(partial_path, [], true)
+
+        filepath = partial.inspect
+        partial_contents = File.open(filepath, 'r') { |file| file.read }
+
+        content = styleguide_example { partial.render(self, {}) }
         content << content_tag(:div, class: 'pattern__code') do
           content_tag(:pre, class: 'language-ruby language-markup') do
             content_tag(:code, class: 'language-ruby') do
-              code
+              partial_contents
             end
           end
         end
