@@ -50,15 +50,15 @@
         <p class="text--help">Date select</p>
       </div>
       <div class="grid__item width-three-fourths">
-        <%= styleguide_example_with_code <<-CODE, f
-f.cfa_date_select(
-  :example_date_select,
-  'Example date select',
-  options: {
-    start_year: Time.now.year,
-    end_year: Time.now.year - 3,
-  }
-)
+        <%= styleguide_example_with_code <<~CODE, f
+          f.cfa_date_select(
+            :example_date_select,
+            'Example date select',
+            options: {
+              start_year: Time.now.year,
+              end_year: Time.now.year - 3,
+            }
+          )
         CODE
         %>
       </div>
@@ -70,14 +70,14 @@ f.cfa_date_select(
         <p class="text--help">Checkbox set</p>
       </div>
       <div class="grid__item width-three-fourths">
-        <%= styleguide_example_with_code <<-CODE, f
-f.cfa_checkbox_set(
-  :example_method_name,
-  [
-    { method: :example_checkbox_choice1, label: "Example choice 1" },
-    { method: :example_checkbox_choice2, label: "Example choice 2" }
-  ]
-)
+        <%= styleguide_example_with_code <<~CODE, f
+          f.cfa_checkbox_set(
+            :example_method_name,
+            [
+              { method: :example_checkbox_choice1, label: "Example choice 1" },
+              { method: :example_checkbox_choice2, label: "Example choice 2" }
+            ]
+          )
         CODE
         %>
       </div>
@@ -89,15 +89,15 @@ f.cfa_checkbox_set(
         <p class="text--help">Checkbox set with none</p>
       </div>
       <div class="grid__item width-three-fourths">
-        <%= styleguide_example_with_code <<-CODE, f
-f.cfa_checkbox_set_with_none(
-  :example_method_name,
-  [
-    { method: :example_checkbox_choice1, label: "Example choice 1" },
-    { method: :example_checkbox_choice2, label: "Example choice 2" }
-  ],
-  none_text: "Neither"
-)
+        <%= styleguide_example_with_code <<~CODE, f
+          f.cfa_checkbox_set_with_none(
+            :example_method_name,
+            [
+              { method: :example_checkbox_choice1, label: "Example choice 1" },
+              { method: :example_checkbox_choice2, label: "Example choice 2" }
+            ],
+            none_text: "Neither"
+          )
         CODE
         %>
       </div>
@@ -109,16 +109,16 @@ f.cfa_checkbox_set_with_none(
         <p class="text--help">Radio set</p>
       </div>
       <div class="grid__item width-three-fourths">
-        <%= styleguide_example_with_code <<-CODE, f
-f.cfa_radio_set(
-  :example_radio_set,
-  label_text: "Example radio set (regular)",
-  legend_class: "sr-only",
-  collection: [
-    { value: :option1, label: "Option 1" },
-    { value: :option2, label: "Option 2" },
-  ]
-)
+        <%= styleguide_example_with_code <<~CODE, f
+          f.cfa_radio_set(
+            :example_radio_set,
+            label_text: "Example radio set (regular)",
+            legend_class: "sr-only",
+            collection: [
+              { value: :option1, label: "Option 1" },
+              { value: :option2, label: "Option 2" },
+            ]
+          )
         CODE
         %>
       </div>
@@ -130,17 +130,17 @@ f.cfa_radio_set(
         <p class="text--help">Radio set with follow up</p>
       </div>
       <div class="grid__item width-three-fourths">
-        <%= styleguide_example_with_code <<-CODE, f
-f.cfa_radio_set_with_follow_up(
-  :example_radio_set_with_follow_up,
-  label_text: "Example radio set (with follow up)",
-  collection: [
-    { value: :yes, label: "Yes" },
-    { value: :no, label: "No" },
-  ],
-  first_follow_up: ->{ f.cfa_input_field :example_input, "Example input 1" },
-  second_follow_up: ->{ f.cfa_input_field :example_input, "Example input 2" }
-)
+        <%= styleguide_example_with_code <<~CODE, f
+          f.cfa_radio_set_with_follow_up(
+            :example_radio_set_with_follow_up,
+            label_text: "Example radio set (with follow up)",
+            collection: [
+              { value: :yes, label: "Yes" },
+              { value: :no, label: "No" },
+            ],
+            first_follow_up: ->{ f.cfa_input_field :example_input, "Example input 1" },
+            second_follow_up: ->{ f.cfa_input_field :example_input, "Example input 2" }
+          )
         CODE
         %>
       </div>
