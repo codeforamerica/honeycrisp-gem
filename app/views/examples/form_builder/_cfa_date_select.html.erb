@@ -1,7 +1,16 @@
-<%= fields_for(:form, Cfa::Styleguide::FormExample.new, builder: Cfa::Styleguide::CfaFormBuilder) do |f| %>
+<%= fields_for(:form, @form, builder: Cfa::Styleguide::CfaFormBuilder) do |f| %>
   <%= f.cfa_date_select(
-    :example_date_select,
+    :example_method_name,
     'Example date select',
+    options: {
+      start_year: Time.now.year,
+      end_year: Time.now.year - 3,
+    }
+  ) %>
+
+  <%= f.cfa_date_select(
+    :example_method_with_validation,
+    'Example date select with error',
     options: {
       start_year: Time.now.year,
       end_year: Time.now.year - 3,
