@@ -4,6 +4,13 @@
     [
       { method: :example_method_name, label: "Example choice 1" },
       { method: :example_method_name, label: "Example choice 2" }
+    ]) %>
+
+    <%= f.cfa_checkbox_set_with_none(
+    :example_method_name,
+    [
+      { method: :example_method_name, label: "Example choice 1" },
+      { method: :example_method_name, label: "Example choice 2" }
     ],
     none_text: "Neither") %>
 
@@ -12,6 +19,5 @@
     [
       { method: :example_method_name, label: "Example choice 1" },
       { method: :example_method_name, label: "Example choice 2" }
-    ],
-    none_text: "Neither") %>
+    ]) %>
 <% end %>
