@@ -1,0 +1,9 @@
+<%= fields_for(:form, Cfa::Styleguide::FormExample.new, builder: Cfa::Styleguide::CfaFormBuilder) do |f| %>
+  <%= f.cfa_checkbox_set(
+    :example_method_name,
+    [
+      { method: :example_checkbox_choice1, label: "Example choice 1" },
+      { method: :example_checkbox_choice2, label: "Example choice 2" }
+    ]
+  ) %>
+<% end %>

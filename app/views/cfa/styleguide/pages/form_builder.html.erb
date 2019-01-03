@@ -1,149 +1,18 @@
 <% content_for(:template_name) { "styleguide" } %>
 
-<%= fields_for(:form, Cfa::Styleguide::FormExample.new, builder: Cfa::Styleguide::CfaFormBuilder) do |f| %>
-  <section class="slab slab--styleguide">
-    <div class="grid">
-      <div class="grid__item">
-        <h1>CfaFormBuilder</h1>
-        <p class="text--help">CfAFormBuilder is a helper that generates accessible form fields for the styleguide.</p>
-        <p class="text--help">They can be used within a form as follows:</p>
-        <%= styleguide_described_code "\<%= fields_for(:form, Cfa::Styleguide::FormExample.new, builder: Cfa::Styleguide::CfaFormBuilder) do |f| %\>" %>
-        <%= styleguide_described_code "  \<%= f.cfa_input_field(:example_input, 'Example input') %\>" %>
-        <%= styleguide_described_code "\<% end %\>" %>
+<section class="slab slab--styleguide">
+  <div class="grid">
+    <div class="grid__item">
+      <h1>CfaFormBuilder</h1>
+      <p class="text--help">CfAFormBuilder is a helper that generates accessible form fields for the styleguide.</p>
     </div>
-  </section>
-  <section class="slab">
-    <div class="grid">
-      <div class="grid__item width-one-fourth">
-        <p class="text--help">Input Field</p>
-      </div>
-      <div class="grid__item width-three-fourths">
-          <%= styleguide_example_with_code "f.cfa_input_field(:example_input, 'Example input')", f %>
-          <%= styleguide_example_with_code "f.cfa_input_field(:example_input, 'Example input (with prefix and postfix)', prefix: '$', postfix: '/hr', classes: ['form-width--phone'])", f %>
-      </div>
-    </div>
-  </section>
-  <section class="slab">
-    <div class="grid">
-      <div class="grid__item width-one-fourth">
-        <p class="text--help">Range Field</p>
-      </div>
-      <div class="grid__item width-three-fourths">
-          <%= styleguide_example_with_code "f.cfa_range_field(:example_range_upper, :example_range_lower, 'Example range')", f %>
-          <%= styleguide_example_with_code "f.cfa_range_field(:example_range_upper, :example_range_lower, 'Example range (with help text)', help_text: 'Estimate if you are not sure.')", f %>
-      </div>
-    </div>
-  </section>
-  <section class="slab">
-    <div class="grid">
-      <div class="grid__item width-one-fourth">
-        <p class="text--help">Textarea</p>
-      </div>
-      <div class="grid__item width-three-fourths">
-          <%= styleguide_example_with_code "f.cfa_textarea :example_textarea, 'Example textarea', options: {rows: '2'}", f %>
-      </div>
-    </div>
-  </section>
-  <section class="slab">
-    <div class="grid">
-      <div class="grid__item width-one-fourth">
-        <p class="text--help">Date select</p>
-      </div>
-      <div class="grid__item width-three-fourths">
-        <%= styleguide_example_with_code <<~CODE, f
-          f.cfa_date_select(
-            :example_date_select,
-            'Example date select',
-            options: {
-              start_year: Time.now.year,
-              end_year: Time.now.year - 3,
-            }
-          )
-        CODE
-        %>
-      </div>
-    </div>
-  </section>
-  <section class="slab">
-    <div class="grid">
-      <div class="grid__item width-one-fourth">
-        <p class="text--help">Checkbox set</p>
-      </div>
-      <div class="grid__item width-three-fourths">
-        <%= styleguide_example_with_code <<~CODE, f
-          f.cfa_checkbox_set(
-            :example_method_name,
-            [
-              { method: :example_checkbox_choice1, label: "Example choice 1" },
-              { method: :example_checkbox_choice2, label: "Example choice 2" }
-            ]
-          )
-        CODE
-        %>
-      </div>
-    </div>
-  </section>
-  <section class="slab">
-    <div class="grid">
-      <div class="grid__item width-one-fourth">
-        <p class="text--help">Checkbox set with none</p>
-      </div>
-      <div class="grid__item width-three-fourths">
-        <%= styleguide_example_with_code <<~CODE, f
-          f.cfa_checkbox_set_with_none(
-            :example_method_name,
-            [
-              { method: :example_checkbox_choice1, label: "Example choice 1" },
-              { method: :example_checkbox_choice2, label: "Example choice 2" }
-            ],
-            none_text: "Neither"
-          )
-        CODE
-        %>
-      </div>
-    </div>
-  </section>
-  <section class="slab">
-    <div class="grid">
-      <div class="grid__item width-one-fourth">
-        <p class="text--help">Radio set</p>
-      </div>
-      <div class="grid__item width-three-fourths">
-        <%= styleguide_example_with_code <<~CODE, f
-          f.cfa_radio_set(
-            :example_radio_set,
-            label_text: "Example radio set (regular)",
-            legend_class: "sr-only",
-            collection: [
-              { value: :option1, label: "Option 1" },
-              { value: :option2, label: "Option 2" },
-            ]
-          )
-        CODE
-        %>
-      </div>
-    </div>
-  </section>
-  <section class="slab">
-    <div class="grid">
-      <div class="grid__item width-one-fourth">
-        <p class="text--help">Radio set with follow up</p>
-      </div>
-      <div class="grid__item width-three-fourths">
-        <%= styleguide_example_with_code <<~CODE, f
-          f.cfa_radio_set_with_follow_up(
-            :example_radio_set_with_follow_up,
-            label_text: "Example radio set (with follow up)",
-            collection: [
-              { value: :yes, label: "Yes" },
-              { value: :no, label: "No" },
-            ],
-            first_follow_up: ->{ f.cfa_input_field :example_input, "Example input 1" },
-            second_follow_up: ->{ f.cfa_input_field :example_input, "Example input 2" }
-          )
-        CODE
-        %>
-      </div>
-    </div>
-  </section>
-<% end %>
+  </div>
+</section>
+<%= render 'section', title: 'Input Field', example: 'form_builder/cfa_input_field' %>
+<%= render 'section', title: 'Range Field', example: 'form_builder/cfa_range_field' %>
+<%= render 'section', title: 'Text area', example: 'form_builder/cfa_textarea' %>
+<%= render 'section', title: 'Date select', example: 'form_builder/cfa_date_select' %>
+<%= render 'section', title: 'Checkbox set', example: 'form_builder/cfa_checkbox_set' %>
+<%= render 'section', title: 'Checkbox set with none', example: 'form_builder/cfa_checkbox_set_with_none' %>
+<%= render 'section', title: 'Radio set', example: 'form_builder/cfa_radio_set' %>
+<%= render 'section', title: 'Radio set with follow up', example: 'form_builder/cfa_radio_set_with_follow_up' %>

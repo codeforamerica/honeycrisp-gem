@@ -1,0 +1,10 @@
+<%= fields_for(:form, Cfa::Styleguide::FormExample.new, builder: Cfa::Styleguide::CfaFormBuilder) do |f| %>
+  <%= f.cfa_date_select(
+    :example_date_select,
+    'Example date select',
+    options: {
+      start_year: Time.now.year,
+      end_year: Time.now.year - 3,
+    }
+  ) %>
+<% end %>

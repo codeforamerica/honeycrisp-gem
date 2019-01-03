@@ -1,0 +1,4 @@
+<%= fields_for(:form, Cfa::Styleguide::FormExample.new, builder: Cfa::Styleguide::CfaFormBuilder) do |f| %>
+  <%= f.cfa_input_field(:example_input, 'Example input') %>
+  <%= f.cfa_input_field(:example_input, 'Example input (with prefix and postfix)', prefix: '$', postfix: '/hr', classes: ['form-width--phone']) %>
+<% end %>
