@@ -1,7 +1,7 @@
 ---
 version: 2
 jobs:
-  build:
+  build_and_specs:
     parallelism: 3
     working_directory: ~/repo
     docker:
