@@ -1,0 +1,12 @@
+<%= fields_for(:form, Cfa::Styleguide::FormExample.new, builder: Cfa::Styleguide::CfaFormBuilder) do |f| %>
+  <%= f.cfa_radio_set(
+    :example_radio_set,
+    label_text: "Example radio set (regular)",
+    legend_class: "sr-only",
+    collection: [
+      { value: :option1, label: "Option 1" },
+      { value: :option2, label: "Option 2" },
+    ]
+  )
+  %>
+<% end %>

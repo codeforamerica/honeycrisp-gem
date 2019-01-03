@@ -186,26 +186,8 @@
     </div>
   </div>
 </section>
-<section class="slab">
-  <div class="grid">
-    <div class="grid__item width-one-fourth">
-      <p class="text--help">Progress indicator</p>
-    </div>
-    <div class="grid__item width-three-fourths">
-      <%= styleguide_example { render partial: 'examples/molecules/progress_indicator' } %>
-    </div>
-  </div>
-</section>
-<section class="slab">
-  <div class="grid">
-    <div class="grid__item width-one-fourth">
-      <p class="text--help">Progress step bar</p>
-    </div>
-    <div class="grid__item width-three-fourths">
-      <%= styleguide_example_with_code("render partial: 'components/molecules/progress_step_bar', locals: { current_step: 3, step_count: 5 }") %>
-    </div>
-  </div>
-</section>
+<%= render 'section', title: 'Progress indicator', example: 'molecules/progress_indicator' %>
+<%= render 'section', title: 'Progress step bar', example: 'molecules/progress_step_bar' %>
 <section class="slab">
   <div class="grid">
     <div class="grid__item width-one-fourth">
