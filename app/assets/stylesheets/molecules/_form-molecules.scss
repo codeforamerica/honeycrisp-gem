@@ -42,6 +42,21 @@
   }
 }
 
+.input-group--range {
+  @include clearfix();
+  display: block;
+  margin-bottom: .5em;
+
+  .form-group {
+    display: inline-block;
+    margin-bottom: 0;
+  }
+
+  .range-text {
+    margin: 0 1em;
+  }
+}
+
 .text-input-group {
     @include outline-within;
     display: table;
