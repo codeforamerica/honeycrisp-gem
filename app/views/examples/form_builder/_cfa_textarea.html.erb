@@ -1,3 +1,5 @@
-<%= fields_for(:form, Cfa::Styleguide::FormExample.new, builder: Cfa::Styleguide::CfaFormBuilder) do |f| %>
-  <%= f.cfa_textarea :example_textarea, 'Example textarea', options: {rows: '2'} %>
+<%= fields_for(:form, @form, builder: Cfa::Styleguide::CfaFormBuilder) do |f| %>
+  <%= f.cfa_textarea :example_method_name, 'Example textarea', options: {rows: '2'} %>
+
+  <%= f.cfa_textarea :example_method_with_validation, 'Example textarea with error', options: {rows: '2'} %>
 <% end %>

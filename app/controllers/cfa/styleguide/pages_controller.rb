@@ -3,19 +3,9 @@ module Cfa
     class PagesController < ApplicationController
       layout "main"
 
-      def index
-      end
-
-      def cbo_dashboard
-      end
-
-      def cbo_analytics
-      end
-
-      def current
-      end
-
-      def custom_docs
+      def form_builder
+        @form = Cfa::Styleguide::FormExample.new
+        @form.valid?
       end
     end
   end

@@ -1,4 +1,6 @@
-<%= fields_for(:form, Cfa::Styleguide::FormExample.new, builder: Cfa::Styleguide::CfaFormBuilder) do |f| %>
-  <%= f.cfa_range_field(:example_range_upper, :example_range_lower, 'Example range') %>
-  <%= f.cfa_range_field(:example_range_upper, :example_range_lower, 'Example range (with help text)', help_text: 'Estimate if you are not sure.') %>
+<%= fields_for(:form, @form, builder: Cfa::Styleguide::CfaFormBuilder) do |f| %>
+  <%= f.cfa_range_field(:example_method_name, :example_method_name, 'Example range') %>
+  <%= f.cfa_range_field(:example_method_name, :example_method_name, 'Example range (with help text)', help_text: 'Estimate if you are not sure.') %>
+
+  <%= f.cfa_range_field(:example_method_with_validation, :example_method_name, 'Example range with error') %>
 <% end %>

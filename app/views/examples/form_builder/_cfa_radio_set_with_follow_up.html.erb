@@ -1,13 +1,24 @@
-<%= fields_for(:form, Cfa::Styleguide::FormExample.new, builder: Cfa::Styleguide::CfaFormBuilder) do |f| %>
+<%= fields_for(:form, @form, builder: Cfa::Styleguide::CfaFormBuilder) do |f| %>
   <%= f.cfa_radio_set_with_follow_up(
-    :example_radio_set_with_follow_up,
-    label_text: "Example radio set (with follow up)",
+    :example_method_name,
+    label_text: "Example radio set with follow up",
     collection: [
       { value: :yes, label: "Yes" },
       { value: :no, label: "No" },
     ],
-    first_follow_up: ->{ f.cfa_input_field :example_input, "Example input 1" },
-    second_follow_up: ->{ f.cfa_input_field :example_input, "Example input 2" }
+    first_follow_up: ->{ f.cfa_input_field :example_method_name, "Example input 1" },
+    second_follow_up: ->{ f.cfa_input_field :example_method_name, "Example input 2" }
+  )
+  %>
+  <%= f.cfa_radio_set_with_follow_up(
+    :example_method_with_validation,
+    label_text: "Example radio set with follow up - with error",
+    collection: [
+      { value: :yes, label: "Yes" },
+      { value: :no, label: "No" },
+    ],
+    first_follow_up: ->{ f.cfa_input_field :example_method_name, "Example input 1" },
+    second_follow_up: ->{ f.cfa_input_field :example_method_name, "Example input 2" }
   )
   %>
 <% end %>
