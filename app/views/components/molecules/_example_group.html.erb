@@ -1,0 +1,7 @@
+<% introduction = local_assigns.fetch(:introduction, "For example:") %>
+<% examples = local_assigns.fetch(:examples) %>
+
+<div class="text--help text--centered with-padding-small"><%= introduction %></div>
+<div class="text--centered with-padding-med">
+  <%= render 'components/atoms/examples', examples: examples %>
+</div>

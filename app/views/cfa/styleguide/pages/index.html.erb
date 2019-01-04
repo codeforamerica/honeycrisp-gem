@@ -92,16 +92,9 @@
     </div>
   </div>
 </section>
-<section class="slab">
-  <div class="grid">
-    <div class="grid__item width-one-fourth">
-      <p class="text--help">Labels</p>
-    </div>
-    <div class="grid__item width-three-fourths">
-      <%= styleguide_example { render partial: 'examples/atoms/labels' } %>
-    </div>
-  </div>
-</section>
+
+<%= render 'section', title: 'Labels', example: 'atoms/labels' %>
+
 <section class="slab">
   <div class="grid">
     <div class="grid__item width-one-fourth">
@@ -125,16 +118,7 @@
   </div>
 </section>
 
-<section class="slab">
-  <div class="grid">
-    <div class="grid__item width-one-fourth">
-      <p class="text--help">Example Pills</p>
-    </div>
-    <div class="grid__item width-three-fourths">
-      <%= styleguide_example { render partial: 'examples/atoms/examples' } %>
-    </div>
-  </div>
-</section>
+<%= render 'section', title: 'Example Pills', example: 'atoms/examples' %>
 
 <section class="slab slab--styleguide" id="molecules">
   <div class="grid">
@@ -186,8 +170,11 @@
     </div>
   </div>
 </section>
+<%= render 'section', title: 'Example Group', example: 'molecules/example_group' %>
 <%= render 'section', title: 'Progress indicator', example: 'molecules/progress_indicator' %>
 <%= render 'section', title: 'Progress step bar', example: 'molecules/progress_step_bar' %>
+<%= render 'section', title: 'Reveal', example: 'molecules/reveal' %>
+
 <section class="slab">
   <div class="grid">
     <div class="grid__item width-one-fourth">
@@ -318,16 +305,6 @@
     </div>
     <div class="grid__item width-three-fourths">
       <%= styleguide_example { render partial: 'examples/organisms/pagination' } %>
-    </div>
-  </div>
-</section>
-<section class="slab">
-  <div class="grid">
-    <div class="grid__item width-one-fourth">
-      <p class="text--help">Reveal</p>
-    </div>
-    <div class="grid__item width-three-fourths">
-      <%= styleguide_example { render partial: 'examples/organisms/reveal' } %>
     </div>
   </div>
 </section>

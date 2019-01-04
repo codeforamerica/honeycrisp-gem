@@ -1,0 +1,4 @@
+<% text = local_assigns[:text] %>
+<% variant = local_assigns[:variant] %>
+
+<span class="label <%= variant.present? ? "label--#{variant}" : '' %>"><%= text.presence || yield %></span>

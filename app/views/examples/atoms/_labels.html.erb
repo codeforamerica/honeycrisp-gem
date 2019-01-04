@@ -1,8 +1,8 @@
 <p>
-  <span class="label">Beta</span>
-  <span class="label label--magenta">Featured</span>
-  <span class="label label--teal">New</span>
-  <span class="label label--green">Done</span>
-  <span class="label label--orange">In Progress</span>
-  <span class="label label--red">Error</span>
-</p>
+  <%= render 'components/atoms/label', text: 'Beta' %>
+  <%= render 'components/atoms/label', text: 'Featured', variant: 'magenta' %>
+  <%= render 'components/atoms/label', text: 'New', variant: 'teal' %>
+  <%= render 'components/atoms/label', text: 'Green', variant: 'done' %>
+  <%= render 'components/atoms/label', text: 'In Progress', variant: 'orange' %>
+  <%= render 'components/atoms/label', text: 'Error', variant: 'red' %>
+</p
