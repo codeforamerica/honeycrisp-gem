@@ -1,0 +1,17 @@
+<%= fields_for(:form, Cfa::Styleguide::FormExample.new, builder: Cfa::Styleguide::CfaFormBuilder) do |f| %>
+  <%= f.cfa_single_tap_button(
+    :example_method_name,
+    "Yes",
+    true
+  ) %>
+  <%= f.cfa_single_tap_button(
+    :example_method_name,
+    "No",
+    false
+  ) %>
+  <%= f.cfa_single_tap_button(
+    :example_method_name,
+    "Maybe",
+    :shrug
+  ) %>
+<% end %>
