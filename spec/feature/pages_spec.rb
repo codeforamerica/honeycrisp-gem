@@ -60,5 +60,6 @@ feature 'Pages' do
     expect(page).to have_content('Example choice 2')
     expect(page).to have_content('Example radio set (regular)')
     expect(page).to have_content('Example radio set with follow up')
+    expect(page).to have_content('Example select')
   end
 end

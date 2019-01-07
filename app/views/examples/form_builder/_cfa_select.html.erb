@@ -1,0 +1,30 @@
+<%= fields_for(:form, @form, builder: Cfa::Styleguide::CfaFormBuilder) do |f| %>
+  <%= f.cfa_select(
+    :example_method_name,
+    "Example select - without label",
+    [
+    ["Blue", :blue],
+    ["Green", :green],
+    ],
+    hide_label: true,
+    help_text: "Choose your favorite",
+    ) %>
+  <%= f.cfa_select(
+    :example_method_name,
+    "Example select - with label",
+    [
+      ["Blue", :blue],
+      ["Green", :green],
+    ],
+    help_text: "Choose your favorite",
+  ) %>
+  <%= f.cfa_select(
+    :example_method_with_validation,
+    "Example select - with error",
+    [
+      ["Blue", :blue],
+      ["Green", :green],
+    ],
+    help_text: "Choose your favorite",
+  ) %>
+<% end %>
