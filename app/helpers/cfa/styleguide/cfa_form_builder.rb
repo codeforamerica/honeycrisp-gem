@@ -332,6 +332,42 @@ module Cfa
         button(label_text.html_safe, name: "#{object_name}[#{method}]", value: value, class: classes.push("button").join(" "))
       end
 
+      def cfa_select(
+        method,
+        label_text,
+        collection,
+        options = {},
+        &block
+      )
+
+        html_options = {
+          class: "select__element",
+        }
+
+        formatted_label = label(
+          method,
+          label_contents(
+            label_text,
+            options[:help_text],
+            options[:optional],
+          ),
+          class: options[:hide_label] ? "sr-only" : "",
+        )
+        html_options_with_errors = html_options.merge(error_attributes(method: method))
+
+        html_output = <<~HTML
+      <div class="form-group#{error_state(object, method)}">
+        #{formatted_label}
+        <div class="select">
+          #{select(method, collection, options, html_options_with_errors, &block)}
+        </div>
+        #{errors_for(object, method)}
+      </div>
+        HTML
+
+        html_output.html_safe
+      end
+
       private
 
       def standard_options
