@@ -1,20 +1,20 @@
 require 'spec_helper'
 
-feature 'Pages' do
-  scenario 'the test app root path redirects to /cfa/styleguide' do
+describe 'Pages' do
+  it 'the test app root path redirects to /cfa/styleguide' do
     visit '/'
 
     expect(current_path).to eq '/cfa/styleguide'
   end
 
-  scenario 'can load styleguide' do
+  it 'can load styleguide' do
     visit '/cfa/styleguide'
 
     expect(page.status_code).to eq 200
     expect(page).to have_content("CfA Styleguide v#{Cfa::Styleguide::VERSION}")
   end
 
-  scenario 'can load styleguide cbo dashboard' do
+  it 'can load styleguide cbo dashboard' do
     visit '/cfa/styleguide'
     click_on 'CBO Dashboard'
 
@@ -22,7 +22,7 @@ feature 'Pages' do
     expect(page).to have_content('Assister dashboard')
   end
 
-  scenario 'can load styleguide cbo analytics' do
+  it 'can load styleguide cbo analytics' do
     visit '/cfa/styleguide'
     click_on 'CBO Analytics'
 
@@ -30,7 +30,7 @@ feature 'Pages' do
     expect(page).to have_content('Overall numbers')
   end
 
-  scenario 'can load styleguide current' do
+  it 'can load styleguide current' do
     visit '/cfa/styleguide'
     click_on 'Current'
 
@@ -38,7 +38,7 @@ feature 'Pages' do
     expect(page).to have_content('The legal stuff')
   end
 
-  scenario 'can load styleguide custom docs' do
+  it 'can load styleguide custom docs' do
     visit '/cfa/styleguide'
     click_on 'Custom Docs'
 
@@ -46,7 +46,7 @@ feature 'Pages' do
     expect(page).to have_content('First, we’ll need to figure out what proof you need to submit.')
   end
 
-  scenario 'can use the CfaFormBuilder' do
+  it 'can use the CfaFormBuilder' do
     visit '/cfa/styleguide'
     click_on 'Form builder'
 
