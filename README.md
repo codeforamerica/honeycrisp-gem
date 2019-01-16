@@ -40,7 +40,7 @@ Or install it yourself as:
 
 After checking out the repo, run `bin/setup` to install dependencies. 
 
-Run `bin/rails s` to start a webserver with a test app that has the engine mounted, then visit `http://localhost:3000/cfa/styleguide`. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+Run `bin/rails s` to start a webserver with a test app that has the engine mounted, then visit `http://localhost:3000`.
 
 If the gem is being used in another project's Gemfile, the source can be locally overridden within the other project's Gemfile by running `bundle config local.cfa-styleguide /path/to/cfa-styleguide-gem`, and undone with `bundle config --delete local.cfa-styleguide`
 

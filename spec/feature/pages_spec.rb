@@ -1,6 +1,12 @@
 require 'spec_helper'
 
 feature 'Pages' do
+  scenario 'the test app root path redirects to /cfa/styleguide' do
+    visit '/'
+
+    expect(current_path).to eq '/cfa/styleguide'
+  end
+
   scenario 'can load styleguide' do
     visit '/cfa/styleguide'
 
