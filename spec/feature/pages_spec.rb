@@ -1,18 +1,17 @@
 require 'spec_helper'
 
 feature 'Pages' do
-  scenario 'can load root page' do
-    visit root_path
+  scenario 'the test app root path redirects to /cfa/styleguide' do
+    visit '/'
 
-    expect(page.status_code).to eq 200
-    expect(page).to have_content('CfA Styleguide')
+    expect(current_path).to eq '/cfa/styleguide'
   end
 
   scenario 'can load styleguide' do
     visit '/cfa/styleguide'
 
     expect(page.status_code).to eq 200
-    expect(page).to have_content('Atoms')
+    expect(page).to have_content("CfA Styleguide v#{Cfa::Styleguide::VERSION}")
   end
 
   scenario 'can load styleguide cbo dashboard' do
