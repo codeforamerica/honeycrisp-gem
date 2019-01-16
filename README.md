@@ -2,6 +2,8 @@
 
 Gem including base styles and javascript for Code for America products, for use in Rails applications.
 
+View the current version of the styleguide at [https://cfa-styleguide.herokuapp.com](https://cfa-styleguide.herokuapp.com).
+
 ## Installation
 
 Add this line to your application's Gemfile:
