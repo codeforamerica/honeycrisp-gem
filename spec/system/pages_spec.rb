@@ -14,6 +14,14 @@ describe 'Pages' do
     expect(page).to have_content("CfA Styleguide v#{Cfa::Styleguide::VERSION}")
   end
 
+  it 'can load emoji index' do
+    visit '/cfa/styleguide'
+    click_on 'Emojis'
+
+    expect(page.status_code).to eq 200
+    expect(page).to have_content('Emojis')
+  end
+
   it 'can use the CfaFormBuilder' do
     visit '/cfa/styleguide'
     click_link 'Form Builder'
