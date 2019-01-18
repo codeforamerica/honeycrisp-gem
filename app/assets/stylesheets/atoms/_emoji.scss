@@ -18,6 +18,11 @@
   height: 6em;
 }
 
+.emoji--bigger {
+  width: 4em;
+  height: 4em;
+}
+
 .emoji--big {
   width: 3em;
   height: 3em;
@@ -241,6 +246,10 @@
 
 .emoji--map {
   background-image: image_url('emojis/1f5fa.png')
+}
+
+.emoji--woman-detective-medium-dark-skin-tone {
+  background-image: image_url('emojis/1f575-1f3fe-2640.png')
 }
 
 .emoji-pair--jobs {
