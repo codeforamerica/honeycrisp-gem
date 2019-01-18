@@ -17,7 +17,7 @@ module Cfa
                     :example_method_with_validation_year,
                     :none
 
-      validates_presence_of :example_method_with_validation
+      validates_presence_of :example_method_with_validation, message: "This is an example error message."
     end
   end
 end
