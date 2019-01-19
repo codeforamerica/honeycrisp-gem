@@ -1,14 +1,28 @@
 <% content_for(:template_name) { "styleguide" } %>
 
-<section class="slab slab--styleguide">
+<section class="slab">
   <div class="grid">
     <div class="grid__item">
       <h1>Emoji Index</h1>
-      <p>All the emojis ✨</p>
+      <p>All the emojis ✨. License: EmojiOne 3.1</p>
     </div>
   </div>
 </section>
 
-<section>
-  <%= image_tag("emoji_pairs/emoji_students.png") %>
+<section class="slab">
+  <h1>Emojis</h1>
+  <span class="emoji--small">
+    <% @emojis.each do |path| %>
+      <%= image_tag path %>
+    <% end %>
+  </span>
+</section>
+
+<section class="slab">
+  <h1>Emoji Pairs</h1>
+  <span>
+    <% @emoji_pairs.each do |path| %>
+      <%= image_tag path %>
+    <% end %>
+  </span>
 </section>
