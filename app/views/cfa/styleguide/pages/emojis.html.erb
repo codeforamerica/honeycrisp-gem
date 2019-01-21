@@ -1,28 +1,56 @@
 <% content_for(:template_name) { "styleguide" } %>
 
-<section class="slab">
+<section class="slab slab--styleguide" id="atoms">
   <div class="grid">
-    <div class="grid__item">
+    <div class="grid__item width-one-half shift-one-fourth">
       <h1>Emoji Index</h1>
-      <p>All the emojis ✨. License: EmojiOne 3.1</p>
+      <p class="text--help">Emoji icons supplied by <%= link_to "EmojiOne", "https://www.emojione.com/emoji/v3" %>.</p>
+      <p class="text--help">License: EmojiOne 3.1</p>
     </div>
   </div>
 </section>
 
 <section class="slab">
-  <h1>Emojis</h1>
-  <span class="emoji--small">
-    <% @emojis.each do |path| %>
-      <%= image_tag path %>
-    <% end %>
-  </span>
+  <div class="grid">
+    <div class="grid__item width-one-fourth">
+      <p class="text--help">Emoji Sizes</p>
+    </div>
+    <div class="grid__item width-three-fourths">
+      <%= styleguide_example { render partial: 'examples/atoms/emojis'} %>
+    </div>
+  </div>
 </section>
 
 <section class="slab">
-  <h1>Emoji Pairs</h1>
-  <span>
-    <% @emoji_pairs.each do |path| %>
-      <%= image_tag path %>
-    <% end %>
-  </span>
+  <div class="grid">
+    <div class="grid__item width-one-fourth">
+      <p class="text--help">Emojis</p>
+    </div>
+    <div class="grid__item width-three-fourths">
+      <div class="grid">
+        <% @emojis.each do |path| %>
+          <div class="grid__item width-one-sixth">
+            <%= image_tag path, class: "emoji--big" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slab">
+  <div class="grid">
+    <div class="grid__item width-one-fourth">
+      <p class="text--help">Emoji Pairs</p>
+    </div>
+    <div class="grid__item width-three-fourths">
+      <div class="grid">
+        <% @emoji_pairs.each do |path| %>
+          <div class="grid__item width-one-sixth">
+            <%= image_tag path, class: "emoji--big" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </section>
