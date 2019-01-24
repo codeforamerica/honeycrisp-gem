@@ -14,41 +14,9 @@ describe 'Pages' do
     expect(page).to have_content("CfA Styleguide v#{Cfa::Styleguide::VERSION}")
   end
 
-  it 'can load styleguide cbo dashboard' do
-    visit '/cfa/styleguide'
-    click_on 'CBO Dashboard'
-
-    expect(page.status_code).to eq 200
-    expect(page).to have_content('Assister dashboard')
-  end
-
-  it 'can load styleguide cbo analytics' do
-    visit '/cfa/styleguide'
-    click_on 'CBO Analytics'
-
-    expect(page.status_code).to eq 200
-    expect(page).to have_content('Overall numbers')
-  end
-
-  it 'can load styleguide current' do
-    visit '/cfa/styleguide'
-    click_on 'Current'
-
-    expect(page.status_code).to eq 200
-    expect(page).to have_content('The legal stuff')
-  end
-
-  it 'can load styleguide custom docs' do
-    visit '/cfa/styleguide'
-    click_on 'Custom Docs'
-
-    expect(page.status_code).to eq 200
-    expect(page).to have_content('First, we’ll need to figure out what proof you need to submit.')
-  end
-
   it 'can use the CfaFormBuilder' do
     visit '/cfa/styleguide'
-    click_on 'Form builder'
+    click_link 'Form Builder'
 
     expect(page).to have_content('Example input')
     expect(page).to have_content('Example textarea')
