@@ -9,12 +9,25 @@ module Cfa
       end
 
       def emojis
-        @emojis = Dir.chdir(File.expand_path('../../../assets/images', File.dirname(__FILE__))) do
-          Dir.glob('emojis/*')
+        classes = Dir.chdir(File.expand_path('../../../assets/stylesheets/atoms', File.dirname(__FILE__))) do
+          File.read('_emoji.scss').scan(/\.(\S*) {.*/)
         end
-        @emoji_pairs = Dir.chdir(File.expand_path('../../../assets/images/', File.dirname(__FILE__))) do
-          Dir.glob('emoji_pairs/*')
+        emojis = []
+        emoji_pairs = []
+
+        classes.each do |c|
+          if c[0].include?('emoji-pair')
+            emoji_pairs.push(c[0])
+          else
+            emojis.push(c[0])
+          end
         end
+
+        emojis
+        emoji_pairs
+
+        @emojis = emojis
+        @emoji_pairs = emoji_pairs
       end
     end
   end
