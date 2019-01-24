@@ -15,25 +15,19 @@
 
 <body class="template--<%= content_for(:template_name) if content_for?(:template_name) %>">
   <div class="page-wrapper">
-    <section class="slab">
-      <div class="grid">
-        <div class="grid__item width-one-fourth">
-          <p class="text--help">Styleguide Pages</p>
+    <header class="main-header">
+      <div class="toolbar">
+        <div class="toolbar__left">
+          <h1 class="main-header__title"><a class="main-header__logo" href="#">CfA Styleguide v<%= Cfa::Styleguide::VERSION %></a></h1>
         </div>
-        <div class="grid__item width-one-fourth">
-          <p><%= link_to "Main (here)", styleguide_main_path %></p>
-          <p><%= link_to "Form builder", styleguide_form_builder_path %></p>
-        </div>
-        <div class="grid__item width-one-fourth">
-          <p><%= link_to "CBO Dashboard", styleguide_cbo_dashboard_path %></p>
-          <p><%= link_to "CBO Analytics", styleguide_cbo_analytics_path %></p>
-        </div>
-        <div class="grid__item width-one-fourth">
-          <p><%= link_to "Current", styleguide_current_path %></p>
-          <p><%= link_to "Custom Docs", styleguide_custom_docs_path %></p>
+        <div class="toolbar__right">
+          <%= link_to "Atoms", styleguide_main_path(anchor: "atoms"), class: %w{toolbar__item text--small link--subtle} %>
+          <%= link_to "Molecules", styleguide_main_path(anchor: "molecules"), class: %w{toolbar__item text--small link--subtle} %>
+          <%= link_to "Organisms", styleguide_main_path(anchor: "organisms"), class: %w{toolbar__item text--small link--subtle} %>
+          <%= link_to "Form Builder", styleguide_form_builder_path, class: %w{toolbar__item text--small link--subtle} %>
         </div>
       </div>
-    </section>
+    </header>
     <%= yield %>
   </div>
 
