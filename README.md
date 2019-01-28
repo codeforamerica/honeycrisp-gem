@@ -38,6 +38,15 @@ Or install it yourself as:
     `<your hostname>/cfa/styleguide/custom-docs`
     ```
 
+1. (Optional) To override the styleguide's variables (e.g. use `#000000` for `$color-background` rather than `#FAFAF9`, as defined in the gem), require your own file that redefines the variables in your application.scss like so:
+
+    ```scss
+    @import '@import 'my_variable_file'
+    @import '@import 'cfa_styleguide_main'
+
+    ```
+
+
 1. (Optional) To use variables provided by the style guide gem remove `require_tree` directives from your `application.scss` and use use `@import` statements instead ([from stack overflow](https://stackoverflow.com/questions/6269420/sass-global-variables-not-being-passed-to-partials/9055230#9055230))
 
     ```scss
