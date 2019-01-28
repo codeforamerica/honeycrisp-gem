@@ -2,80 +2,80 @@
 $font-system:         -apple-system, BlinkMacSystemFont,
                         "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
                         "Fira Sans", "Droid Sans", "Helvetica Neue",
-                        sans-serif;
+                        sans-serif !default;
 
-$font-icon:           'icomoon';
+$font-icon:           'icomoon' !default;
 
 
 // Typopgrahy
-$em-base:             10px;
-$font-size-normal:    1.9rem;
-$font-size-small:     1.6rem;
-$font-size-smallest:  1.2rem;
-$font-size-h1:        3.6rem;
-$font-size-h2:        2.8rem;
-$font-size-h3:        2.4rem;
-$font-size-h4:        1.9rem;
-$line-height-normal:  1.5em;
-$line-height-display: 1.3em;
+$em-base:             10px !default;
+$font-size-normal:    1.9rem !default;
+$font-size-small:     1.6rem !default;
+$font-size-smallest:  1.2rem !default;
+$font-size-h1:        3.6rem !default;
+$font-size-h2:        2.8rem !default;
+$font-size-h3:        2.4rem !default;
+$font-size-h4:        1.9rem !default;
+$line-height-normal:  1.5em !default;
+$line-height-display: 1.3em !default;
 
 
 // Colors
-$color-background:    #FAFAF9;
-$color-teal:          #01846F;
-$color-magenta:       #A6005E;
-$color-tan:           #DFD7CC;
-$color-darkest-grey:  #30302F;
-$color-dark-grey:     #666666;
-$color-grey:          #AAAAAA;
-$color-light-grey:    #EAEAE9;
-$color-green:         #009933;
-$color-yellow:        #FFB800;
-$color-orange:        #D48C00;
-$color-red:           #D40000;
+$color-background:    #FAFAF9 !default;
+$color-teal:          #01846F !default;
+$color-magenta:       #A6005E !default;
+$color-tan:           #DFD7CC !default;
+$color-darkest-grey:  #30302F !default;
+$color-dark-grey:     #666666 !default;
+$color-grey:          #AAAAAA !default;
+$color-light-grey:    #EAEAE9 !default;
+$color-green:         #009933 !default;
+$color-yellow:        #FFB800 !default;
+$color-orange:        #D48C00 !default;
+$color-red:           #D40000 !default;
 
 
 // Breakpoints
-$mobile-up:           481px;
-$tablet-up:           601px;
-$site-max-up:         961px;
+$mobile-up:           481px !default;
+$tablet-up:           601px !default;
+$site-max-up:         961px !default;
 
 // Magic Numbers
-$site-margins:        40px;
-$site-max-width:      960px;
-$border-radius:       2px;
-$footer-height-home:  340px;
-$footer-height:       100px;
-$tooltip-width:       250px;
+$site-margins:        40px !default;
+$site-max-width:      960px !default;
+$border-radius:       2px !default;
+$footer-height-home:  340px !default;
+$footer-height:       100px !default;
+$tooltip-width:       250px !default;
 
 
 // Padding Sizes
-$padding-small:   1rem;
-$padding-med:     3.8rem;
-$padding-large:   7.6rem;
-$padding-huge:    15.2rem;
+$padding-small:   1rem !default;
+$padding-med:     3.8rem !default;
+$padding-large:   7.6rem !default;
+$padding-huge:    15.2rem !default;
 
 
 // Image Sizes
-$width-image-icon:    1.5em;
-$width-image-small:   6em;
-$width-image-med:     8em;
-$width-image-large:   10em;
+$width-image-icon:    1.5em !default;
+$width-image-small:   6em !default;
+$width-image-med:     8em !default;
+$width-image-large:   10em !default;
 
 
 // Form Widths
-$width-form-med:	    12em;
-$width-form-long:	    20em;
-$width-form-short:     6em;
+$width-form-med:	    12em !default;
+$width-form-long:	    20em !default;
+$width-form-short:     6em !default;
 
-$width-form-casenumber: 8em;
-$width-form-phone:      9em;
-$width-form-name:       12em;
-$width-form-zip:        6em;
-$width-form-ssn:        8em;
-$width-form-searchbar:  30em;
+$width-form-casenumber: 8em !default;
+$width-form-phone:      9em !default;
+$width-form-name:       12em !default;
+$width-form-zip:        6em !default;
+$width-form-ssn:        8em !default;
+$width-form-searchbar:  30em !default;
 
 
 // Animations
-$animation-fast:      .1s ease-out;
-$animation-med:      .2s ease-out;             
+$animation-fast:      .1s ease-out !default;
+$animation-med:      .2s ease-out !default;
