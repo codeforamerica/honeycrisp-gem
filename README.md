@@ -38,6 +38,18 @@ Or install it yourself as:
     `<your hostname>/cfa/styleguide/custom-docs`
     ```
 
+1. (Optional) To use variables provided by the style guide gem remove `require_tree` directives from your `application.scss` and use use `@import` statements instead ([from stack overflow](https://stackoverflow.com/questions/6269420/sass-global-variables-not-being-passed-to-partials/9055230#9055230))
+
+    ```scss
+    # do not use
+    *= require_tree .
+    ```
+    
+    ```scss
+    # use instead
+    @import 'things_to_import'
+    ```
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. 
