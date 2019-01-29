@@ -12,22 +12,16 @@ module Cfa
         classes = Dir.chdir(File.expand_path('../../../assets/stylesheets/atoms', File.dirname(__FILE__))) do
           File.read('_emoji.scss').scan(/\.(\S*) {.*/)
         end
-        emojis = []
-        emoji_pairs = []
+        @emojis = []
+        @emoji_pairs = []
 
-        classes.each do |c|
-          if c[0].include?('emoji-pair')
-            emoji_pairs.push(c[0])
+        classes.each do |css_class|
+          if css_class[0].include?('emoji-pair')
+            @emoji_pairs.push(css_class[0])
           else
-            emojis.push(c[0])
+            @emojis.push(css_class[0])
           end
         end
-
-        emojis
-        emoji_pairs
-
-        @emojis = emojis
-        @emoji_pairs = emoji_pairs
       end
     end
   end

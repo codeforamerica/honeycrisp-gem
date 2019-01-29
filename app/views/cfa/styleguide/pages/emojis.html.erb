@@ -28,11 +28,11 @@
       <p class="text--help">Emojis</p>
     </div>
     <div class="grid__item width-three-fourths">
-      <div class="grid">
-        <% @emojis.each do |c| %>
+      <div class="emoji-container">
+        <% @emojis.each do |css_class| %>
           <div class="grid__item width-one-sixth">
-            <div class="emoji emoji--big <%= "#{c}" %>"></div>
-            <p><%= c %></p>
+            <div class="emoji emoji--big <%= "#{css_class}" %>"></div>
+            <p class="text--help"><%= css_class %></p>
           </div>
         <% end %>
       </div>
@@ -47,10 +47,10 @@
     </div>
     <div class="grid__item width-three-fourths">
       <div class="grid">
-        <% @emoji_pairs.each do |c| %>
+        <% @emoji_pairs.each do |css_class| %>
           <div class="grid__item width-one-fourth">
-            <div class="emoji emoji--big <%= "#{c}" %>"></div>
-            <p><%= c %></p>
+            <div class="emoji emoji--big <%= "#{css_class}" %>"></div>
+            <p class="text--help"><%= css_class %></p>
           </div>
         <% end %>
       </div>
