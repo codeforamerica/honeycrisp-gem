@@ -1,0 +1,44 @@
+.emoji {
+  display: inline-block;
+  text-indent: -9999px;
+  height: 1em;
+  width: 1em;
+  content: '';
+  background-size: 100% auto;
+  position: relative;
+  background-repeat: no-repeat;
+}
+
+.emoji--inline {
+  top: .2em;
+}
+
+.emoji--huge {
+  width: 6em;
+  height: 6em;
+}
+
+.emoji--bigger {
+  width: 4em;
+  height: 4em;
+}
+
+.emoji--big {
+  width: 3em;
+  height: 3em;
+}
+
+.emoji--med {
+  width: 2.4em;
+  height: 2.4em;
+}
+
+.emoji--small {
+  width: 1.8em;
+  height: 1.8em;
+}
+
+.emoji-container {
+  display: flex;
+  flex-wrap: wrap;
+}

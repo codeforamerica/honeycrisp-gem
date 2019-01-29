@@ -1,0 +1,59 @@
+<% content_for(:template_name) { "styleguide" } %>
+<%#= stylesheet_link_tag "atoms/_emojis" %>
+
+<section class="slab slab--styleguide" id="atoms">
+  <div class="grid">
+    <div class="grid__item width-one-half shift-one-fourth">
+      <h1>Emoji Index</h1>
+      <p class="text--help">Emoji icons supplied by <%= link_to "EmojiOne", "https://www.emojione.com/emoji/v3" %>.</p>
+      <p class="text--help">License: EmojiOne 3.1</p>
+    </div>
+  </div>
+</section>
+
+<section class="slab">
+  <div class="grid">
+    <div class="grid__item width-one-fourth">
+      <p class="text--help">Emoji Sizes</p>
+    </div>
+    <div class="grid__item width-three-fourths">
+      <%= styleguide_example { render partial: 'examples/atoms/emojis'} %>
+    </div>
+  </div>
+</section>
+
+<section class="slab">
+  <div class="grid">
+    <div class="grid__item width-one-fourth">
+      <p class="text--help">Emojis</p>
+    </div>
+    <div class="grid__item width-three-fourths">
+      <div class="emoji-container">
+        <% @emojis.each do |css_class| %>
+          <div class="grid__item width-one-sixth">
+            <div class="emoji emoji--big <%= "#{css_class}" %>"></div>
+            <p class="text--help"><%= css_class %></p>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slab">
+  <div class="grid">
+    <div class="grid__item width-one-fourth">
+      <p class="text--help">Emoji Pairs</p>
+    </div>
+    <div class="grid__item width-three-fourths">
+      <div class="grid">
+        <% @emoji_pairs.each do |css_class| %>
+          <div class="grid__item width-one-fourth">
+            <div class="emoji emoji--big <%= "#{css_class}" %>"></div>
+            <p class="text--help"><%= css_class %></p>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
