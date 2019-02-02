@@ -9,10 +9,9 @@ RSpec.describe 'Acessibility', js: true do
       example_path = File.dirname(example_filepath) + "/" + File.basename(example_filepath).sub(/^_/, '')
 
       it "is valid - #{example_path}" do
-        # Capybara.server = :webrick
-        # driven_by :selenium, using: :headless_chrome
         visit "/cfa/styleguide/#{example_path}"
         expect(page).to be_accessible.skipping(
+          'bypass',
           'document-title',
           'html-has-lang',
           'landmark-one-main',
