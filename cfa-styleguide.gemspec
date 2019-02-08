@@ -42,6 +42,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler", "~> 1.16"
   spec.add_development_dependency "capybara"
   spec.add_development_dependency "capybara-selenium"
+  spec.add_development_dependency "github_changelog_generator"
   spec.add_development_dependency "pry-byebug"
   spec.add_development_dependency "rails",  ">= 3.1"
   spec.add_development_dependency "rake", "~> 10.0"
