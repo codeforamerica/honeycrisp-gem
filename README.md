@@ -61,7 +61,7 @@ Or install it yourself as:
 
 ## Development
 
-After checking out the repo, run `bin/setup` to install dependencies. 
+After checking out the repo, run `bin/setup` to install dependencies. You must install Chromedriver to run tests; on MacOS with Homebrew, run `brew bundle install`
 
 Run `bin/rails s` to start a webserver with a test app that has the engine mounted, then visit `http://localhost:3000`.
 
