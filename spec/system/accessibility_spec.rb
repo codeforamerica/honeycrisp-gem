@@ -19,8 +19,6 @@ SPECIFIC_ACCESSIBILITY_SKIPS = {
 
 ## Examples with accessibility issues that must be fixed in the fullness of time
 FIXABLE_ACCESSIBILITY_EXAMPLES = [
-  "atoms/labels",
-  "atoms/typography",
   "form_builder/cfa_checkbox_set",
   "form_builder/cfa_checkbox_set_with_none",
   "form_builder/cfa_date_select",
@@ -30,8 +28,6 @@ FIXABLE_ACCESSIBILITY_EXAMPLES = [
   "form_builder/cfa_range_field",
   "form_builder/cfa_select",
   "form_builder/cfa_textarea",
-  "molecules/block_input_group",
-  "molecules/flash_messages",
   "molecules/follow_up_question",
   "molecules/form_group",
   "molecules/form_group_error_state",
@@ -39,9 +35,7 @@ FIXABLE_ACCESSIBILITY_EXAMPLES = [
   "molecules/inline_input_group",
   "molecules/searchbar",
   "molecules/text_input_group",
-  "molecules/toolbar",
   "molecules/two_up_input_group",
-  "organisms/pagination",
 ].freeze
 
 RSpec.describe "Acessibility", js: true do
