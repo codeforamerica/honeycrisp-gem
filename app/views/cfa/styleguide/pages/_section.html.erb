@@ -4,7 +4,7 @@
 <section class="slab">
   <div class="grid">
     <div class="grid__item width-one-fourth">
-      <p class="text--help"><%= title %></p>
+      <p class="text--help"><%= title %> <a href="#<%= example.parameterize %>" id="<%= example.parameterize %>" style="text-decoration: none;">#</a></p>
     </div>
     <div class="grid__item width-three-fourths">
       <%= styleguide_example_with_code("examples/#{example}") %>
