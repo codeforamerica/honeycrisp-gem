@@ -62,6 +62,6 @@ class PreDocumentationFormatter < RSpec::Core::Formatters::BaseTextFormatter
   end
 
   def current_indentation
-    '  ' * @group_level
+    "  " * @group_level
   end
 end

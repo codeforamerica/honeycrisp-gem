@@ -1,7 +1,7 @@
 RSpec::Matchers.define :match_html do |expected|
-  def clean_html(s)
-    s = s.squish.gsub(/>(\s)+</, "><")
-    Nokogiri::HTML.fragment(s).to_xhtml(
+  def clean_html(string)
+    string = string.squish.gsub(/>(\s)+</, "><")
+    Nokogiri::HTML.fragment(string).to_xhtml(
       indent: 2, save_options: Nokogiri::XML::Node::SaveOptions::AS_HTML,
     )
   end

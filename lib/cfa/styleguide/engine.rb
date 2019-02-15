@@ -1,7 +1,7 @@
 module Cfa
   module Styleguide
     class Engine < ::Rails::Engine
-      require 'prism-rails'
+      require "prism-rails"
 
       isolate_namespace Cfa::Styleguide
 

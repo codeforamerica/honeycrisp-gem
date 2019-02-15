@@ -1,12 +1,11 @@
-Gem.loaded_specs['cfa-styleguide'].runtime_dependencies.each do |d|
+Gem.loaded_specs["cfa-styleguide"].runtime_dependencies.each do |d|
   require d.name
 end
-require 'cfa/styleguide/version'
+require "cfa/styleguide/version"
 
 module Cfa
   module Styleguide
     class << self
-
       def load!
         register_rails_engine
         configure_sass
@@ -14,29 +13,29 @@ module Cfa
 
       # Paths
       def gem_path
-        @gem_path ||= File.expand_path '..', File.dirname(__FILE__)
+        @gem_path ||= File.expand_path "..", File.dirname(__FILE__)
       end
 
       def stylesheets_path
-        File.join assets_path, 'stylesheets'
+        File.join assets_path, "stylesheets"
       end
 
       def fonts_path
-        File.join assets_path, 'fonts'
+        File.join assets_path, "fonts"
       end
 
       def javascripts_path
-        File.join assets_path, 'javascripts'
+        File.join assets_path, "javascripts"
       end
 
       def assets_path
-        @assets_path ||= File.join gem_path, 'assets'
+        @assets_path ||= File.join gem_path, "assets"
       end
 
       private
 
       def configure_sass
-        require 'sass'
+        require "sass"
 
         ::Sass.load_paths << stylesheets_path
 
@@ -45,7 +44,7 @@ module Cfa
       end
 
       def register_rails_engine
-        require 'cfa/styleguide/engine'
+        require "cfa/styleguide/engine"
       end
     end
   end
