@@ -221,17 +221,17 @@ var noneOfTheAbove = (function() {
   }
 })();
 
-var showMore = (function() {
-    return {
-        init: function() {
-            $('.show-more').each(function(index, showmore) {
-                $(showmore).find('.show-more__button').click(function(e) {
-                    e.preventDefault();
-                    $(showmore).addClass('is-open');
-                })
-            });
-        }
+var showMore = (function () {
+  return {
+    init: function () {
+      $('.show-more').each(function (index, showmore) {
+        $(showmore).find('.show-more__button').click(function (e) {
+          e.preventDefault();
+          $(showmore).addClass('is-open');
+        })
+      });
     }
+  }
 })();
 
 
