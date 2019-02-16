@@ -373,7 +373,7 @@ RSpec.describe Cfa::Styleguide::CfaFormBuilder do
           ],
           first_follow_up: -> { form_builder.cfa_input_field(:wage, "What is your hourly wage?") },
           second_follow_up: -> { form_builder.cfa_input_field(:salary, "What is your salary?") },
-        )
+      )
       expect(output).to be_html_safe
 
       expect(output).to match_html <<-HTML
@@ -699,10 +699,10 @@ RSpec.describe Cfa::Styleguide::CfaFormBuilder do
       sample = SampleForm.new
       form = described_class.new("sample", sample, template, {})
       output = form.cfa_single_tap_button(
-          :anyone_home,
+        :anyone_home,
           "Yes",
           true,
-          classes: ["foo"]
+          classes: ["foo"],
       )
 
       expect(output).to be_html_safe

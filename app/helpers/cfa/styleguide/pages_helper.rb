@@ -2,8 +2,8 @@ module Cfa
   module Styleguide
     module PagesHelper
       def styleguide_example
-        content_tag :div, class: 'pattern' do
-          content_tag :div, class: 'pattern__example' do
+        content_tag :div, class: "pattern" do
+          content_tag :div, class: "pattern__example" do
             yield
           end
         end
@@ -13,12 +13,12 @@ module Cfa
         partial = lookup_context.find_template(partial_path, [], true)
 
         filepath = partial.inspect
-        partial_contents = File.open(filepath, 'r') { |file| file.read }
+        partial_contents = File.open(filepath, "r", &:read)
 
         content = styleguide_example { partial.render(self, {}) }
-        content << content_tag(:div, class: 'pattern__code') do
-          content_tag(:pre, class: 'language-ruby language-markup') do
-            content_tag(:code, class: 'language-ruby') do
+        content << content_tag(:div, class: "pattern__code") do
+          content_tag(:pre, class: "language-ruby language-markup") do
+            content_tag(:code, class: "language-ruby") do
               partial_contents
             end
           end

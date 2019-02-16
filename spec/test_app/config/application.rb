@@ -1,4 +1,4 @@
-require_relative 'boot'
+require_relative "boot"
 
 require "sprockets/railtie"
 require "action_controller/railtie"
@@ -17,4 +17,3 @@ module TestApp
     end
   end
 end
-
