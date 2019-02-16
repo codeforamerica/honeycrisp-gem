@@ -1,9 +1,24 @@
 # Change Log
 
-## [v0.5.9](https://github.com/codeforamerica/cfa-styleguide-gem/tree/v0.5.9) (2019-02-07)
+## [v0.5.10](https://github.com/codeforamerica/cfa-styleguide-gem/tree/v0.5.10) (2019-02-15)
+[Full Changelog](https://github.com/codeforamerica/cfa-styleguide-gem/compare/v0.5.9...v0.5.10)
 
-**Note: This is the start of the changelog (and tagging!), so this is really just a history of the repo to-date.** 
+**Implemented enhancements:**
 
+- Set up rubocop and add to CI [\#86](https://github.com/codeforamerica/cfa-styleguide-gem/issues/86)
+- Create links to individual components on reference page [\#53](https://github.com/codeforamerica/cfa-styleguide-gem/issues/53)
+- Add gem release rake task [\#52](https://github.com/codeforamerica/cfa-styleguide-gem/issues/52)
+- Add show-more component [\#30](https://github.com/codeforamerica/cfa-styleguide-gem/issues/30)
+
+**Merged pull requests:**
+
+- Add rubocop [\#87](https://github.com/codeforamerica/cfa-styleguide-gem/pull/87) ([hartsick](https://github.com/hartsick))
+- Add show more pattern to molecules [\#82](https://github.com/codeforamerica/cfa-styleguide-gem/pull/82) ([anule](https://github.com/anule))
+- Add anchorlink to individual examples [\#81](https://github.com/codeforamerica/cfa-styleguide-gem/pull/81) ([bensheldon](https://github.com/bensheldon))
+- Add Brewfile and instructions for Chromedriver [\#80](https://github.com/codeforamerica/cfa-styleguide-gem/pull/80) ([bensheldon](https://github.com/bensheldon))
+- Add changelog generation and instructions [\#73](https://github.com/codeforamerica/cfa-styleguide-gem/pull/73) ([hartsick](https://github.com/hartsick))
+
+## [v0.5.9](https://github.com/codeforamerica/cfa-styleguide-gem/tree/v0.5.9) (2019-02-08)
 **Implemented enhancements:**
 
 - Update error message examples [\#62](https://github.com/codeforamerica/cfa-styleguide-gem/issues/62)
