@@ -10,6 +10,7 @@
     </div>
   </div>
 </section>
+
 <section class="slab">
   <div class="grid">
     <div class="grid__item width-one-fourth">
@@ -20,92 +21,15 @@
     </div>
   </div>
 </section>
-<section class="slab">
-  <div class="grid">
-    <div class="grid__item width-one-fourth">
-      <p class="text--help">Grid Layout</p>
-    </div>
-    <div class="grid__item width-three-fourths">
-      <%= styleguide_example { render partial: 'examples/atoms/grid' } %>
-    </div>
-  </div>
-</section>
-<section class="slab">
-  <div class="grid">
-    <div class="grid__item width-one-fourth">
-      <p class="text--help">Card</p>
-    </div>
-    <div class="grid__item width-three-fourths">
-      <%= styleguide_example { render partial: 'examples/atoms/card' } %>
-    </div>
-  </div>
-</section>
-<section class="slab">
-  <div class="grid">
-    <div class="grid__item width-one-fourth">
-      <p class="text--help">Notice</p>
-    </div>
-    <div class="grid__item width-three-fourths">
-      <%= styleguide_example { render partial: 'examples/atoms/notice' } %>
-    </div>
-  </div>
-</section>
-<section class="slab">
-  <div class="grid">
-    <div class="grid__item width-one-fourth">
-      <p class="text--help">Colors</p>
-    </div>
-    <div class="grid__item width-three-fourths">
-      <%= styleguide_example { render partial: 'examples/atoms/colors' } %>
-    </div>
-  </div>
-</section>
-<section class="slab">
-  <div class="grid">
-    <div class="grid__item width-one-fourth">
-      <p class="text--help">Icons</p>
-    </div>
-    <div class="grid__item width-three-fourths text--pullquote">
-      <%= styleguide_example { render partial: 'examples/atoms/icons' } %>
-    </div>
-  </div>
-</section>
-<section class="slab">
-  <div class="grid">
-    <div class="grid__item width-one-fourth">
-      <p class="text--help">Typography</p>
-    </div>
-    <div class="grid__item width-three-fourths">
-      <%= styleguide_example { render partial: 'examples/atoms/typography' } %>
-    </div>
-  </div>
-</section>
-
+<%= render 'section', title: 'Grid Layout', example: 'atoms/grid' %>
+<%= render 'section', title: 'Card', example: 'atoms/card' %>
+<%= render 'section', title: 'Notice', example: 'atoms/notice' %>
+<%= render 'section', title: 'Colors', example: 'atoms/colors' %>
+<%= render 'section', title: 'Icons', example: 'atoms/icons' %>
+<%= render 'section', title: 'Typography', example: 'atoms/typography' %>
 <%= render 'section', title: 'Labels', example: 'atoms/labels' %>
-
-<section class="slab">
-  <div class="grid">
-    <div class="grid__item width-one-fourth">
-      <p class="text--help">Buttons</p>
-    </div>
-    <div class="grid__item width-three-fourths">
-      <%= styleguide_example { render partial: 'examples/atoms/buttons' } %>
-    </div>
-  </div>
-</section>
-<section class="slab">
-  <div class="grid">
-    <div class="grid__item width-one-fourth">
-      <p class="text--help">Form Elements</p>
-    </div>
-    <div class="grid__item width-three-fourths">
-      <%= styleguide_example { render partial: 'examples/atoms/form_elements' } %>
-
-      <p class="text--help"><em>General atomic form elements have no knowledge about their size and default to full width. Form molecules and organisms or modifier classes should be used to define form element sizes and layout.</em></p>
-    </div>
-  </div>
-</section>
-
+<%= render 'section', title: 'Buttons', example: 'atoms/buttons' %>
+<%= render 'section', title: 'Form Elements', example: 'atoms/form_elements', explanation: "General atomic form elements have no knowledge about their size and default to full width. Form molecules and organisms or modifier classes should be used to define form element sizes and layout." %>
 <%= render 'section', title: 'Example Pills', example: 'atoms/examples' %>
 
 <section class="slab slab--styleguide" id="molecules">
@@ -118,164 +42,26 @@
     </div>
   </div>
 </section>
-<section class="slab">
-  <div class="grid">
-    <div class="grid__item width-one-fourth">
-      <p class="text--help">Media Box</p>
-    </div>
-    <div class="grid__item width-three-fourths">
-      <%= styleguide_example { render partial: 'examples/molecules/media_box' } %>
-    </div>
-  </div>
-</section>
-<section class="slab">
-  <div class="grid">
-    <div class="grid__item width-one-fourth">
-      <p class="text--help">Toolbar</p>
-    </div>
-    <div class="grid__item width-three-fourths">
-      <%= styleguide_example { render partial: 'examples/molecules/toolbar' } %>
-    </div>
-  </div>
-</section>
-<section class="slab">
-  <div class="grid">
-    <div class="grid__item width-one-fourth">
-      <p class="text--help">Tab bar</p>
-    </div>
-    <div class="grid__item width-three-fourths">
-      <%= styleguide_example { render partial: 'examples/molecules/tab_bar' } %>
-    </div>
-  </div>
-</section>
-<section class="slab">
-  <div class="grid">
-    <div class="grid__item width-one-fourth">
-      <p class="text--help">Flash messages</p>
-    </div>
-    <div class="grid__item width-three-fourths">
-      <%= styleguide_example { render partial: 'examples/molecules/flash_messages' } %>
-    </div>
-  </div>
-</section>
+<%= render 'section', title: 'Media Box', example: 'molecules/media_box' %>
+<%= render 'section', title: 'Toolbar', example: 'molecules/toolbar' %>
+<%= render 'section', title: 'Tab bar', example: 'molecules/tab_bar' %>
+<%= render 'section', title: 'Flash messages', example: 'molecules/flash_messages' %>
 <%= render 'section', title: 'Example Group', example: 'molecules/example_group' %>
 <%= render 'section', title: 'Progress indicator', example: 'molecules/progress_indicator' %>
 <%= render 'section', title: 'Progress step bar', example: 'molecules/progress_step_bar' %>
 <%= render 'section', title: 'Reveal', example: 'molecules/reveal' %>
 <%= render 'section', title: 'Show More', example: 'molecules/show_more' %>
-
-<section class="slab">
-  <div class="grid">
-    <div class="grid__item width-one-fourth">
-      <p class="text--help">Summary Table</p>
-    </div>
-    <div class="grid__item width-three-fourths">
-      <%= styleguide_example { render partial: 'examples/molecules/summary_table' } %>
-    </div>
-  </div>
-</section>
-<section class="slab">
-  <div class="grid">
-    <div class="grid__item width-one-fourth">
-      <p class="text--help">Data Table</p>
-    </div>
-    <div class="grid__item width-three-fourths">
-      <%= styleguide_example { render partial: 'examples/molecules/data_table' } %>
-    </div>
-  </div>
-</section>
-<section class="slab">
-  <div class="grid">
-    <div class="grid__item width-one-fourth">
-      <p class="text--help">Searchbar</p>
-    </div>
-    <div class="grid__item width-three-fourths">
-      <%= styleguide_example { render partial: 'examples/molecules/searchbar' } %>
-    </div>
-  </div>
-</section>
-<section class="slab">
-  <div class="grid">
-    <div class="grid__item width-one-fourth">
-      <p class="text--help">Text Input Group</p>
-    </div>
-    <div class="grid__item width-three-fourths">
-      <%= styleguide_example { render partial: 'examples/molecules/text_input_group' } %>
-    </div>
-  </div>
-</section>
-<section class="slab">
-  <div class="grid">
-    <div class="grid__item width-one-fourth">
-      <p class="text--help">Incrementer</p>
-    </div>
-    <div class="grid__item width-three-fourths">
-      <%= styleguide_example { render partial: 'examples/molecules/incrementer' } %>
-    </div>
-  </div>
-</section>
-<section class="slab">
-  <div class="grid">
-    <div class="grid__item width-one-fourth">
-      <p class="text--help">Block Input Group</p>
-    </div>
-    <div class="grid__item width-three-fourths">
-      <%= styleguide_example { render partial: 'examples/molecules/block_input_group' } %>
-    </div>
-  </div>
-</section>
-<section class="slab">
-  <div class="grid">
-    <div class="grid__item width-one-fourth">
-      <p class="text--help">Inline Input Group</p>
-    </div>
-    <div class="grid__item width-three-fourths">
-      <%= styleguide_example { render partial: 'examples/molecules/inline_input_group' } %>
-    </div>
-  </div>
-</section>
-<section class="slab">
-  <div class="grid">
-    <div class="grid__item width-one-fourth">
-      <p class="text--help">Two-up Input Group</p>
-    </div>
-    <div class="grid__item width-three-fourths">
-      <%= styleguide_example { render partial: 'examples/molecules/two_up_input_group' } %>
-    </div>
-  </div>
-</section>
-<section class="slab">
-  <div class="grid">
-    <div class="grid__item width-one-fourth">
-      <p class="text--help">Form Group</p>
-    </div>
-    <div class="grid__item width-three-fourths">
-      <%= styleguide_example { render partial: 'examples/molecules/form_group' } %>
-    </div>
-  </div>
-</section>
-<section class="slab">
-  <div class="grid">
-    <div class="grid__item width-one-fourth">
-      <p class="text--help">Form Group Error State</p>
-    </div>
-    <div class="grid__item width-three-fourths">
-      <%= styleguide_example { render partial: 'examples/molecules/form_group_error_state' } %>
-    </div>
-  </div>
-</section>
-<section class="slab">
-  <div class="grid">
-    <div class="grid__item width-one-fourth">
-      <p class="text--help">Follow Up Question</p>
-    </div>
-    <div class="grid__item width-three-fourths">
-      <%= styleguide_example { render partial: 'examples/molecules/follow_up_question' } %>
-
-      <p class="text--help">How it works: the proceeding question requires an additional class "form-group--with-follow-up. Any answer that triggers a follow up should contain an additional attribute 'data-follow-up' with the value being the id of the follow-up question (starting with #).</p>
-    </div>
-  </div>
-</section>
+<%= render 'section', title: 'Summary Table', example: 'molecules/summary_table' %>
+<%= render 'section', title: 'Data Table', example: 'molecules/data_table' %>
+<%= render 'section', title: 'Searchbar', example: 'molecules/searchbar' %>
+<%= render 'section', title: 'Text Input Group', example: 'molecules/text_input_group' %>
+<%= render 'section', title: 'Incrementer', example: 'molecules/incrementer' %>
+<%= render 'section', title: 'Block Input Group', example: 'molecules/block_input_group' %>
+<%= render 'section', title: 'Inline Input Group', example: 'molecules/inline_input_group' %>
+<%= render 'section', title: 'Two-up Input Group', example: 'molecules/two_up_input_group' %>
+<%= render 'section', title: 'Form Group', example: 'molecules/form_group' %>
+<%= render 'section', title: 'Form Group Error State', example: 'molecules/form_group_error_state' %>
+<%= render 'section', title: 'Follow Up Question', example: 'molecules/follow_up_question', explanation: "How it works: the proceeding question requires an additional class 'form-group--with-follow-up'. Any answer that triggers a follow up should contain an additional attribute 'data-follow-up' with the value being the id of the follow-up question (starting with #)." %>
 
 <section class="slab slab--styleguide" id="organisms">
   <div class="grid">
@@ -287,75 +73,12 @@
     </div>
   </div>
 </section>
-<section class="slab">
-  <div class="grid">
-    <div class="grid__item width-one-fourth">
-      <p class="text--help">Pagination</p>
-    </div>
-    <div class="grid__item width-three-fourths">
-      <%= styleguide_example { render partial: 'examples/organisms/pagination' } %>
-    </div>
-  </div>
-</section>
-<section class="slab">
-  <div class="grid">
-    <div class="grid__item width-one-fourth">
-      <p class="text--help">Steps</p>
-    </div>
-    <div class="grid__item width-three-fourths">
-      <%= styleguide_example { render partial: 'examples/organisms/steps' } %>
-    </div>
-  </div>
-</section>
-<section class="slab">
-  <div class="grid">
-    <div class="grid__item width-one-fourth">
-      <p class="text--help">Vertical Steps</p>
-    </div>
-    <div class="grid__item width-three-fourths">
-      <%= styleguide_example { render partial: 'examples/organisms/vertical_steps' } %>
-    </div>
-  </div>
-</section>
-<section class="slab">
-  <div class="grid">
-    <div class="grid__item width-one-fourth">
-      <p class="text--help">Statistics Card</p>
-    </div>
-    <div class="grid__item width-three-fourths">
-      <%= styleguide_example { render partial: 'examples/organisms/statistics_card' } %>
-    </div>
-  </div>
-</section>
-<section class="slab">
-  <div class="grid">
-    <div class="grid__item width-one-fourth">
-      <p class="text--help">Admin Application Card</p>
-    </div>
-    <div class="grid__item width-three-fourths">
-      <%= styleguide_example { render partial: 'examples/organisms/admin_application_card' } %>
-    </div>
-  </div>
-</section>
-<section class="slab">
-  <div class="grid">
-    <div class="grid__item width-one-fourth">
-      <p class="text--help">Form Card</p>
-    </div>
-    <div class="grid__item width-three-fourths">
-      <%= styleguide_example { render partial: 'examples/organisms/form_card_1' } %>
-
-      <hr>
-
-      <%= styleguide_example { render partial: 'examples/organisms/form_card_2' } %>
-
-      <hr>
-
-      <%= styleguide_example { render partial: 'examples/organisms/form_card_3' } %>
-
-      <hr>
-
-      <%= styleguide_example { render partial: 'examples/organisms/form_card_4' } %>
-    </div>
-  </div>
-</section>
+<%= render 'section', title: 'Pagination', example: 'organisms/pagination' %>
+<%= render 'section', title: 'Steps', example: 'organisms/steps' %>
+<%= render 'section', title: 'Vertical Steps', example: 'organisms/vertical_steps' %>
+<%= render 'section', title: 'Statistics Card', example: 'organisms/statistics_card' %>
+<%= render 'section', title: 'Admin Application Card', example: 'organisms/admin_application_card' %>
+<%= render 'section', title: 'Form Card 1', example: 'organisms/form_card_1' %>
+<%= render 'section', title: 'Form Card 2', example: 'organisms/form_card_2' %>
+<%= render 'section', title: 'Form Card 3', example: 'organisms/form_card_3' %>
+<%= render 'section', title: 'Form Card 4', example: 'organisms/form_card_4' %>
