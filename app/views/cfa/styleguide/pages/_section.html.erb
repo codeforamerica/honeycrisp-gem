@@ -1,13 +1,22 @@
 <% title = local_assigns.fetch(:title) %>
 <% example = local_assigns.fetch(:example) %>
+<% explanation = local_assigns.fetch(:explanation, nil) %>
 
 <section class="slab">
   <div class="grid">
     <div class="grid__item width-one-fourth">
-      <p class="text--help"><%= title %> <a href="#<%= example.parameterize %>" id="<%= example.parameterize %>" style="text-decoration: none;">#</a></p>
+      <p class="text--help">
+        <%= title %>
+        <a href="#<%= example.parameterize %>" id="<%= example.parameterize %>" style="text-decoration: none;" aria-label="Anchor link">#</a>
+        <a href="<%= styleguide_example_path(example) %>" style="text-decoration: none;" aria-label="Isolated example link">◉</a>
+      </p>
     </div>
     <div class="grid__item width-three-fourths">
       <%= styleguide_example_with_code("examples/#{example}") %>
+
+      <% if explanation.present? %>
+        <p class="text--help"><%= explanation %></p>
+      <% end %>
     </div>
   </div>
 </section>
