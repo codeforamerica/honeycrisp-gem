@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>CfA Styleguide</title>
+  <% if content_for? :card_title %>
+    <title><%= strip_tags(content_for(:card_title)) %> | CfA Styleguide</title>
+  <% else %>
+    <title>CfA Styleguide</title>
+  <% end %>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
@@ -30,7 +34,7 @@
         </div>
       </div>
     </header>
-    <%= yield %>
+    <%= content_for(:content) ? content_for(:content) : yield %>
   </div>
 
   <footer class="main-footer">

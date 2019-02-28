@@ -1,0 +1,38 @@
+<% content_for(:content) do %>
+  <div class="slab">
+    <main class="form-card form-card--transition">
+
+      <div class="form-card__header text--centered">
+        <% if content_for? :card_icon %>
+          <div class="emoji emoji--bigger <%= yield :card_icon %>"></div>
+        <% end %>
+        <h1 class="form-card__title">
+          <%= yield :card_title %>
+        </h1>
+        <% if content_for? :card_help %>
+          <p class="text--help">
+            <%= yield :card_help %>
+          </p>
+        <% end %>
+      </div>
+
+      <div class="form-card__content">
+        <%= yield :card_body %>
+      </div>
+
+      <div class="form-card__footer">
+        <% if content_for? :card_footer %>
+          <%= yield :card_footer %>
+        <% else %>
+          <button class="button button--primary" type="submit">
+            <%= content_for(:card_footer_button_label) || "Continue" %>
+          </button>
+        <% end %>
+      </div>
+
+    </main>
+  </div>
+<% end %>
+
+<%= render template: 'layouts/main' %>
+

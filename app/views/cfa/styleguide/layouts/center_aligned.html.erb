@@ -1,0 +1,11 @@
+<% content_for(:template_name) { "transition" } %>
+<% content_for :card_title, 'Center aligned form card' %>
+<% content_for :card_icon, 'emoji--earth' %>
+<% content_for :card_help, 'Can have one or two questions' %>
+<% content_for :card_body do %>
+  <%= fields_for(:form, @form, builder: Cfa::Styleguide::CfaFormBuilder) do |f| %>
+    <%= f.cfa_input_field(:example_method_name, '') %>
+  <% end %>
+<% end %>
+
+<%= render template: 'layouts/center_aligned' %>
