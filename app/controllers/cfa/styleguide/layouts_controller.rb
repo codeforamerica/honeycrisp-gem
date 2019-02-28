@@ -5,6 +5,11 @@ module Cfa
 
       def index
       end
+
+      def center_aligned
+        @form = Cfa::Styleguide::FormExample.new
+        @form.valid?
+      end
     end
   end
 end
