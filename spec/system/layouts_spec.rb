@@ -24,4 +24,12 @@ describe 'Layouts' do
     expect(page.status_code).to eq 200
     expect(page.title).to include('Left aligned')
   end
+
+  it 'can load the confirmation layout page' do
+    visit '/cfa/styleguide/layouts'
+    click_on 'Confirmation form card'
+
+    expect(page.status_code).to eq 200
+    expect(page.title).to include('Confirmation')
+  end
 end
