@@ -10,6 +10,11 @@ module Cfa
         @form = Cfa::Styleguide::FormExample.new
         @form.valid?
       end
+
+      def left_aligned
+        @form = Cfa::Styleguide::FormExample.new
+        @form.valid?
+      end
     end
   end
 end
