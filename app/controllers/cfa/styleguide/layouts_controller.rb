@@ -15,6 +15,9 @@ module Cfa
         @form = Cfa::Styleguide::FormExample.new
         @form.valid?
       end
+
+      def confirmation
+      end
     end
   end
 end
