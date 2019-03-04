@@ -18,6 +18,11 @@ module Cfa
 
       def confirmation
       end
+
+      def progress_signpost
+        @current_step = 3
+        @step_count = 5
+      end
     end
   end
 end
