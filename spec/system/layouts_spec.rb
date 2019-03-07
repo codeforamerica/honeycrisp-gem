@@ -40,4 +40,12 @@ describe 'Layouts' do
     expect(page.status_code).to eq 200
     expect(page.title).to include('Progress Signpost')
   end
+
+  it 'can load the review signpost' do
+    visit '/cfa/styleguide/layouts'
+    click_on 'Review signpost card'
+
+    expect(page.status_code).to eq 200
+    expect(page.title).to include('Review Signpost')
+  end
 end
