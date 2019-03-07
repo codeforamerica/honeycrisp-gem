@@ -26,9 +26,10 @@
                          class: 'button' %>
           </p>
         </div>
-      <% when 'graphic' %>
-      <% end %>
 
+      <% when 'graphic' %>
+        <%= render "layouts/#{@status}" %>
+      <% end %>
     </main>
   </div>
 <% end %>

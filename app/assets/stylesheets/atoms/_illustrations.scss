@@ -465,3 +465,23 @@
   height: 156px;
   margin-left: 0;
 }
+
+.illustration--eligibility_chart {
+  width: 281px;
+  max-width: 100%;
+  height: 98px;
+  margin-bottom: 5rem;
+  margin-top: -1rem;
+}
+
+.illustration--eligible {
+  @include retina-bg(chart_likely_eligible, 100% auto);
+}
+
+.illustration--ineligible {
+  @include retina-bg(chart_likely_ineligible, 100% auto);
+}
+
+.illustration--maybe_eligible {
+  @include retina-bg(chart_maybe_eligible, 100% auto);
+}

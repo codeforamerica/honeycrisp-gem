@@ -26,7 +26,13 @@ module Cfa
 
       def review_signpost
         @info_card_type = 'review'
-        @content_for_review = '$600' # Save data for review with this instance variable
+        @content_for_review = '600' # Save data for review with this instance variable
+      end
+
+      def graphic_signpost
+        @info_card_type = 'graphic'
+        @income = '3000'
+        @status = 'ineligible'
       end
     end
   end
