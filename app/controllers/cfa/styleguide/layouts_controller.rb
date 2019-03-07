@@ -23,6 +23,11 @@ module Cfa
         @current_step = 3
         @step_count = 5
       end
+
+      def review_signpost
+        @info_card_type = 'review'
+        @content_for_review = '$600' # Save data for review with this instance variable
+      end
     end
   end
 end

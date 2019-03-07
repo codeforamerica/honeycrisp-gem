@@ -12,4 +12,5 @@ Cfa::Styleguide::Engine.routes.draw do
   get '/styleguide/layouts/left-aligned' => 'layouts#left_aligned', as: :layouts_left_aligned
   get '/styleguide/layouts/confirmation' => 'layouts#confirmation', as: :layouts_confirmation
   get '/styleguide/layouts/progress-signpost' => 'layouts#progress_signpost', as: :layouts_progress_signpost
+  get '/styleguide/layouts/review-signpost' => 'layouts#review_signpost', as: :layouts_review_signpost
 end
