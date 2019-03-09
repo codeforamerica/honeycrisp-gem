@@ -14,4 +14,5 @@ Cfa::Styleguide::Engine.routes.draw do
   get '/styleguide/layouts/progress-signpost' => 'layouts#progress_signpost', as: :layouts_progress_signpost
   get '/styleguide/layouts/review-signpost' => 'layouts#review_signpost', as: :layouts_review_signpost
   get '/styleguide/layouts/graphic-signpost' => 'layouts#graphic_signpost', as: :layouts_graphic_signpost
+  get '/styleguide/layouts/yes-no-signpost' => 'layouts#yes_no_signpost', as: :layouts_yes_no_signpost
 end
