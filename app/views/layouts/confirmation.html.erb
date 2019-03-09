@@ -1,7 +1,7 @@
 <% content_for(:template_name) { "question" } %>
 <% content_for :content do %>
   <div class="slab">
-    <main class="form-card text--centered">
+    <main class="form-card form-card--transition">
       <div class="form-card__header form-card__header--confirmation">
         <div class="emoji emoji--med emoji--checkmark with-padding-small"></div>
         <h1 class="form-card__title"><%= yield :card_title %></h1>
@@ -14,7 +14,7 @@
 
       <% if content_for? :card_footer %>
         <div class="form-card__footer">
-            <%= yield :card_footer %>
+          <%= yield :card_footer %>
         </div>
       <% end %>
     </main>
