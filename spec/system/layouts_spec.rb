@@ -56,4 +56,13 @@ describe 'Layouts' do
     expect(page.status_code).to eq 200
     expect(page.title).to include('Graphic Signpost')
   end
+
+  it 'can load the yes/no signpost' do
+    visit '/cfa/styleguide/layouts'
+    click_on 'Yes/No signpost card'
+
+    expect(page.status_code).to eq 200
+    expect(page.title).to include('Yes/No Signpost')
+    expect(page.body).not_to include('Continue')
+  end
 end

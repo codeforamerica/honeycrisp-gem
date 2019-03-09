@@ -34,6 +34,11 @@ module Cfa
         @income = '3000'
         @status = 'ineligible'
       end
+
+      def yes_no_signpost
+        @form = Cfa::Styleguide::FormExample.new
+        @form.valid?
+      end
     end
   end
 end
