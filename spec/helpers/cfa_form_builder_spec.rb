@@ -762,4 +762,32 @@ RSpec.describe Cfa::Styleguide::CfaFormBuilder do
       HTML
     end
   end
+
+  describe "#cfa_file_uploader" do
+    context "with no existing uploads" do
+      it "renders a file uploader component" do
+        class SampleForm < Cfa::Styleguide::FormExample
+          attr_accessor :uploads
+        end
+
+        sample = SampleForm.new
+        sample.validate
+        form = described_class.new("sample", sample, template, {})
+        output = form.cfa_file_uploader(
+          :uploads,
+        )
+        expect(output).to be_html_safe
+
+        expect(output).to match_html <<-HTML
+          <div class="text--centered">
+            <div class="illustration--upload"></div>
+            <div>
+              <button class="button is-tablet-hidden--inline upload-file-button">Pick a file from this computer</button>
+              <button class="button is-desktop-hidden--inline upload-file-button">Take a picture</button>
+            </div>
+          </div>
+        HTML
+      end
+    end
+  end
 end

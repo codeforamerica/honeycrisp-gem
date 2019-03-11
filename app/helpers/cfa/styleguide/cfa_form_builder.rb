@@ -367,6 +367,20 @@ module Cfa
         html_output.html_safe
       end
 
+      def cfa_file_uploader(method)
+        html_output = <<~HTML
+          <div class="text--centered">
+            <div class="illustration--upload"></div>
+            <div>
+              <button class="button is-tablet-hidden--inline upload-file-button">Pick a file from this computer</button>
+              <button class="button is-desktop-hidden--inline upload-file-button">Take a picture</button>
+            </div>
+          </div>
+        HTML
+
+        html_output.html_safe
+      end
+
       private
 
       def standard_options
