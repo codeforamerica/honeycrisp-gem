@@ -16,13 +16,23 @@ jobs:
     - checkout
     - restore_cache:
         keys:
-        - v1-dependencies-{{ checksum "Gemfile.lock" }}
-        - v1-dependencies-
+        - v1-bundler-{{ checksum "Gemfile.lock" }}
+        - v1-bundler-
     - run: bundle install --jobs=4 --retry=3 --path vendor/bundle
     - save_cache:
         paths:
         - ./vendor/bundle
-        key: v1-dependencies-{{ checksum "Gemfile.lock" }}
+        key: v1-bundler-{{ checksum "Gemfile.lock" }}
+    - restore_cache:
+        keys:
+          - v1-yarn-{{ checksum "yarn.lock" }}
+          - v1-yarn-
+    - run: yarn install
+    - save_cache:
+        key: v1-yarn-{{ checksum "yarn.lock" }}
+        paths:
+          - ~/.cache/yarn
+          - ./node_modules
 
   run_checks:
     <<: *defaults
@@ -30,8 +40,8 @@ jobs:
     - checkout
     - restore_cache:
         keys:
-        - v1-dependencies-{{ checksum "Gemfile.lock" }}
-        - v1-dependencies-
+        - v1-bundler-{{ checksum "Gemfile.lock" }}
+        - v1-bundler-
     - run: bundle --path vendor/bundle
     - run: bundle exec rubocop
 
@@ -43,18 +53,24 @@ jobs:
     - checkout
     - restore_cache:
         keys:
-        - v1-dependencies-{{ checksum "Gemfile.lock" }}
-        - v1-dependencies-
+        - v1-bundler-{{ checksum "Gemfile.lock" }}
+        - v1-bundler-
+    - restore_cache:
+        keys:
+        - v1-yarn-{{ checksum "yarn.lock" }}
+        - v1-yarn-
     - run: bundle --path vendor/bundle
+    - run: yarn install
     - run: mkdir /tmp/test-results
     - type: shell
       command: |
+        yarn run percy exec -- \
         bundle exec rspec --profile 10 \
                           --require ./spec/support/pre_documentation_formatter.rb \
                           --format RspecJunitFormatter \
                           --out /tmp/test-results/rspec.xml \
                           --format PreDocumentationFormatter \
-                          $(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)
+                          spec/**/*_spec.rb
     # collect reports
     - store_test_results:
         path: /tmp/test-results
@@ -73,3 +89,4 @@ workflows:
     - run_tests:
         requires:
         - install_dependencies
+

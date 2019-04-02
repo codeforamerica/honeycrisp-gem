@@ -39,19 +39,14 @@ FIXABLE_ACCESSIBILITY_EXAMPLES = [
 ].freeze
 
 RSpec.describe "Acessibility", js: true do
-  describe "example" do
-    example_files = Dir.glob File.expand_path("../../app/views/examples/**/*.html.erb", __dir__)
+  each_example do |example, example_path|
+    describe example do
+      it "passes Axe matchers" do
+        pending("temporarily ignoring accessibility checks") if FIXABLE_ACCESSIBILITY_EXAMPLES.include?(example)
 
-    example_files.each do |example_file|
-      example_filepath = example_file.match(/app\/views\/examples\/(.*)\.html.erb/)[1]
-      example_path = File.dirname(example_filepath) + "/" + File.basename(example_filepath).sub(/^_/, "")
+        visit example_path
 
-      it "is valid - #{example_path}" do
-        pending("temporarily ignoring accessibility checks") if FIXABLE_ACCESSIBILITY_EXAMPLES.include?(example_path)
-
-        visit "/cfa/styleguide/examples/#{example_path}"
-
-        accessibility_skips = GENERAL_ACCESSIBILITY_SKIPS + SPECIFIC_ACCESSIBILITY_SKIPS.fetch(example_path, [])
+        accessibility_skips = GENERAL_ACCESSIBILITY_SKIPS + SPECIFIC_ACCESSIBILITY_SKIPS.fetch(example, [])
         expect(page).to be_accessible.skipping(*accessibility_skips)
       end
     end

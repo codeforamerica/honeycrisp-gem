@@ -9,3 +9,6 @@
 /.idea
 /spec/test_app/tmp/
 /spec/test_app/log/
+/node_modules
+yarn-debug.log*
+.yarn-integrity
