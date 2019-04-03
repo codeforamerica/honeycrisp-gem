@@ -1,0 +1,8 @@
+<% content_for :card_title, 'Review Signpost' %>
+<% content_for :emoji, 'emoji--house' %>
+<% content_for :review_content, "#{@content_for_review}/month" %>
+<% content_for :review_content_type, 'Rent/Mortgage payments' %>
+
+<%= render template: 'layouts/info_card' %>
+
+<%# in your controller method, set @info_card_type = 'review' %>
