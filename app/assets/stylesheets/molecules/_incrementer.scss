@@ -3,6 +3,7 @@
   border-collapse: separate;
   border-spacing: 1em;
   margin-bottom: .5em;
+
   .text-input {
     appearance: none;
     display: table-cell;
@@ -15,6 +16,10 @@
     &::-webkit-inner-spin-button {
       display: none;
     }
+  }
+
+  input[type=number] {
+    -moz-appearance: textfield; // Remove stepper arrows in Firefox
   }
 }
 
