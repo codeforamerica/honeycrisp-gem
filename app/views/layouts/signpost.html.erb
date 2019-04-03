@@ -1,9 +1,12 @@
 <%= content_for(:template_name) { "question" } %>
+<% current_step = @current_step || 3 %>
+<% step_count =  @step_count || 5 %>
+
 <% content_for :content do %>
   <div class="slab">
     <main class="form-card form-card--transition text--centered">
       <div class="form-card__header">
-        <%= render partial: 'components/molecules/progress_step_bar', locals: { current_step: @current_step, step_count: @step_count } %>
+        <%= render partial: 'components/molecules/progress_step_bar', locals: { current_step: current_step, step_count: step_count } %>
         <h1 class="form-card__title"><%= yield :card_title %></h1>
         <p class="text--small"><%= yield :card_help %></p>
       </div>

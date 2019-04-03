@@ -1,0 +1,9 @@
+<% content_for :card_title, 'Graphic Signpost - You might be eligible!' %>
+<% content_for :graphic_description, 'Your pre-tax income' %>
+<% content_for :graphic_color, 'red' %>
+<% content_for :graphic_content, @income %>
+<% content_for :card_body, 'Sometimes, there might be text here. Sometimes, there might not' %>
+
+<%= render template: 'layouts/info_card' %>
+
+<%# in your controller action, set @info_card_type = 'graphic' %>

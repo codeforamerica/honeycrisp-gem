@@ -1,6 +1,7 @@
 module Cfa
   module Styleguide
     class LayoutsController < ApplicationController
+      helper Cfa::Styleguide::PagesHelper
       layout 'main'
 
       def index
