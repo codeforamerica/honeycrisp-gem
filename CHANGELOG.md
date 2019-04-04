@@ -1,6 +1,21 @@
 # Change Log
 
-## [v0.5.10](https://github.com/codeforamerica/cfa-styleguide-gem/tree/v0.5.10) (2019-02-15)
+## [v0.5.11](https://github.com/codeforamerica/cfa-styleguide-gem/tree/v0.5.11) (2019-04-03)
+[Full Changelog](https://github.com/codeforamerica/cfa-styleguide-gem/compare/v0.5.10...v0.5.11)
+
+**Fixed bugs:**
+
+- Incrementer has vestigial arrows in Firefox [\#94](https://github.com/codeforamerica/cfa-styleguide-gem/issues/94)
+- Hitting Command+0 in Firefox causes the page footer to move [\#14](https://github.com/codeforamerica/cfa-styleguide-gem/issues/14)
+
+**Merged pull requests:**
+
+- Remove stepper arrows for number input on Firefox [\#95](https://github.com/codeforamerica/cfa-styleguide-gem/pull/95) ([hartsick](https://github.com/hartsick))
+- Add Percy snapshot to CircleCI [\#93](https://github.com/codeforamerica/cfa-styleguide-gem/pull/93) ([bensheldon](https://github.com/bensheldon))
+- Refactor all styleguide examples to use partial; add link to isolated example [\#89](https://github.com/codeforamerica/cfa-styleguide-gem/pull/89) ([bensheldon](https://github.com/bensheldon))
+- Add link to Github repo and issue submission [\#88](https://github.com/codeforamerica/cfa-styleguide-gem/pull/88) ([hartsick](https://github.com/hartsick))
+
+## [v0.5.10](https://github.com/codeforamerica/cfa-styleguide-gem/tree/v0.5.10) (2019-02-16)
 [Full Changelog](https://github.com/codeforamerica/cfa-styleguide-gem/compare/v0.5.9...v0.5.10)
 
 **Implemented enhancements:**
@@ -13,6 +28,7 @@
 **Merged pull requests:**
 
 - Add rubocop [\#87](https://github.com/codeforamerica/cfa-styleguide-gem/pull/87) ([hartsick](https://github.com/hartsick))
+- Make accessibility improvements [\#83](https://github.com/codeforamerica/cfa-styleguide-gem/pull/83) ([bensheldon](https://github.com/bensheldon))
 - Add show more pattern to molecules [\#82](https://github.com/codeforamerica/cfa-styleguide-gem/pull/82) ([anule](https://github.com/anule))
 - Add anchorlink to individual examples [\#81](https://github.com/codeforamerica/cfa-styleguide-gem/pull/81) ([bensheldon](https://github.com/bensheldon))
 - Add Brewfile and instructions for Chromedriver [\#80](https://github.com/codeforamerica/cfa-styleguide-gem/pull/80) ([bensheldon](https://github.com/bensheldon))
