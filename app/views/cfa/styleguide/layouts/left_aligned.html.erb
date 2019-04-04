@@ -1,10 +1,1 @@
-<% content_for :card_title, 'Left aligned form card' %>
-<% content_for :card_help, 'Optional: help text' %> <%# Optional hook %>
-<% content_for :card_icon, 'emoji--clipboard' %>
-<% content_for :card_body do %>
-  <%= fields_for(:form, @form, builder: Cfa::Styleguide::CfaFormBuilder) do |f| %>
-    <%= f.cfa_input_field(:example_method_name, 'Example Input field', classes: ['form-width--short']) %>
-    <%= f.cfa_input_field(:example_method_name, 'Second Example Input field', classes: ['form-width--med']) %>
-  <% end %>
-<% end %>
-<%= render template: 'layouts/left_aligned' %>
+<%= render 'examples/layout_views/left_aligned' %>

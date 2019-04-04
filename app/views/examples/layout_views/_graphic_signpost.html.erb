@@ -1,9 +1,10 @@
-<% content_for :card_title, 'Graphic Signpost - You might be eligible!' %>
-<% content_for :graphic_description, 'Your pre-tax income' %>
-<% content_for :graphic_color, 'red' %>
-<% content_for :graphic_content, @income %>
-<% content_for :card_body, 'Sometimes, there might be text here. Sometimes, there might not' %>
+<%= render 'cfa/styleguide/layouts/info_card',
+           info_card_type: 'graphic',
+           card_title: 'Graphic Signpost - You might be eligible!',
+           graphic_description: 'Your pre-tax income',
+           graphic_color: 'red',
+           graphic_content: @income,
+           card_body: 'Sometimes, there might be text here. Sometimes, there might not',
+           next_path: layouts_path
+%>
 
-<%= render template: 'layouts/info_card' %>
-
-<%# in your controller action, set @info_card_type = 'graphic' %>

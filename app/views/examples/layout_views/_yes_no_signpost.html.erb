@@ -1,11 +1,9 @@
-<% content_for :card_title, 'Yes/No Signpost' %>
-<% content_for :card_icon, 'emoji-pair--emoji_students' %>
-<% content_for :card_body do %>
+<% card_body = capture do %>
   <p class="text--help">This card uses the center_aligned layout</p>
   <p class="text--help">And renders the yes/no buttons as content for the :card_footer</p>
 <% end %>
 
-<% content_for :card_footer do %>
+<% card_footer = capture do %>
   <%= fields_for(:form, @form, builder: Cfa::Styleguide::CfaFormBuilder) do |f| %>
     <%= f.cfa_single_tap_button(
             :example_method_name,
@@ -20,4 +18,9 @@
   <% end %>
 <% end %>
 
-<%= render template: 'layouts/center_aligned' %>
+<%= render 'cfa/styleguide/layouts/center_aligned_card',
+           card_title: 'Yes/No Signpost',
+           card_icon: 'emoji-pair--emoji_students',
+           card_body: card_body,
+           card_footer: card_footer
+%>

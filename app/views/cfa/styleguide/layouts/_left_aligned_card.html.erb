@@ -1,0 +1,31 @@
+<div class="slab">
+  <main class="form-card">
+    <div class="form-card__header form-card__header--with-icon">
+      <% if local_assigns[:card_icon] %>
+        <div class="form-card__icon emoji emoji--inline emoji--big <%= card_icon %>"></div>
+      <% end %>
+      <h1 class="form-card__title">
+        <%= local_assigns[:card_title] %>
+      </h1>
+      <% if local_assigns[:card_help] %>
+        <p class="text--help"><%= card_help %></p>
+      <% end %>
+    </div>
+
+    <div class="form-card__content">
+      <%= local_assigns[:card_body] || yield %>
+    </div>
+
+    <div class="form-card__footer">
+      <% if local_assigns[:card_footer] %>
+        <%= card_footer %>
+      <% else %>
+        <button class="button button--primary">
+          <%= local_assigns[:card_footer_button_label] || "Continue" %>
+        </button>
+      <% end %>
+    </div>
+  </main>
+</div>
+
+<% content_for(:template_name) { "question" } %>

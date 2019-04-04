@@ -1,0 +1,20 @@
+<% content_for(:template_name) { "question" } %>
+<div class="slab">
+  <main class="form-card form-card--transition">
+    <div class="form-card__header form-card__header--confirmation">
+      <div class="emoji emoji--med <%= local_assigns[:card_icon] || 'emoji--checkmark' %> with-padding-small"></div>
+      <h1 class="form-card__title"><%= local_assigns[:card_title] %></h1>
+      <p class="text--help"><%= local_assigns[:card_help] %></p>
+    </div>
+
+    <div class="form-card__content">
+      <%= local_assigns[:card_body] || yield %>
+    </div>
+
+    <% if local_assigns[:card_footer] %>
+      <div class="form-card__footer">
+        <%= card_footer %>
+      </div>
+    <% end %>
+  </main>
+</div>

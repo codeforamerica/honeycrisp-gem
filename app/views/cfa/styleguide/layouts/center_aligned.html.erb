@@ -1,15 +1,1 @@
-<% content_for :card_title, 'Center aligned form card' %>
-<% content_for :card_icon, 'emoji--earth' %> <%# Optional hook %>
-<% content_for :card_help, 'Can have one or two questions' %> <%# Optional hook %>
-<% content_for :card_body do %>
-  <%= fields_for(:form, @form, builder: Cfa::Styleguide::CfaFormBuilder) do |f| %>
-    <%= f.cfa_input_field(:example_method_name, '', classes: ['form-width--short']) %>
-  <% end %>
-<% end %>
-<% content_for :card_footer do %>
-  <button class="button button--primary" type="submit">
-    Continue
-  </button>
-<% end %>
-
-<%= render template: 'layouts/center_aligned' %>
+<%= render 'examples/layout_views/center_aligned' %>

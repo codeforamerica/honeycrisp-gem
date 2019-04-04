@@ -1,10 +1,12 @@
-<% content_for :card_title, 'Center aligned form card' %>
-<% content_for :card_icon, 'emoji--earth' %> <%# Optional hook %>
-<% content_for :card_help, 'Can have one or two questions' %> <%# Optional hook %>
-<% content_for :card_body do %>
+<% card_body = capture do %>
   <%= fields_for(:form, @form, builder: Cfa::Styleguide::CfaFormBuilder) do |f| %>
     <%= f.cfa_input_field(:example_method_name, '', classes: ['form-width--short']) %>
   <% end %>
 <% end %>
 
-<%= render template: 'layouts/center_aligned' %>
+<%= render 'cfa/styleguide/layouts/center_aligned_card',
+           card_icon: 'emoji--earth',
+           card_title: 'Center aligned form card',
+           card_help: 'Can have one or two questions',
+           card_body: card_body
+%>

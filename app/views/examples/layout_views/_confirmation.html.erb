@@ -1,8 +1,10 @@
-<% content_for :card_title, 'Confirmation page!' %>
-<% content_for :card_help, 'Confirmation page description' %>
-<% content_for :card_body do %>
+<% card_body = capture do %>
   <h3 class="with-padding-med">What to expect next</h3>
   <div class="emoji emoji--med emoji--phone with-padding-small"></div>
   <p class="with-padding-med">Your time on this website, though infinitely valuable, has come to an end. Please leave feedback, if you so choose</p>
 <% end %>
-<%= render template: 'layouts/confirmation' %>
+<%= render 'cfa/styleguide/layouts/confirmation_card',
+           card_title: 'Confirmation page!',
+           card_help: 'Confirmation page description',
+           card_body: card_body
+%>

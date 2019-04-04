@@ -1,8 +1,17 @@
-<% content_for :card_title, 'Review Signpost' %>
-<% content_for :emoji, 'emoji--house' %>
-<% content_for :review_content, "#{@content_for_review}/month" %>
-<% content_for :review_content_type, 'Rent/Mortgage payments' %>
-
-<%= render template: 'layouts/info_card' %>
-
-<%# in your controller method, set @info_card_type = 'review' %>
+<% card_body = capture do %>
+  <%= render partial: 'components/molecules/review_info',
+             locals: { emoji: 'emoji--house',
+                       review_content: "$#{@rent_for_review}/month",
+                       review_content_type: 'Rent/Mortgage payments'} %>
+  <%= render partial: 'components/molecules/review_info',
+             locals: { emoji: 'emoji--faucet',
+                       review_content: "$#{@utilities_for_review}/month",
+                       review_content_type: "Monthly utility costs" } %>
+<% end %>
+<%= render 'cfa/styleguide/layouts/info_card',
+           info_card_type: 'review',
+           card_title: 'Review Signpost',
+           card_body: card_body,
+           path_to_change_answers: layouts_path,
+           next_path: styleguide_main_path,
+%>

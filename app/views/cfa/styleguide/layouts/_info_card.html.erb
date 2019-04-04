@@ -1,0 +1,40 @@
+<%= content_for(:template_name) { "question" } %>
+
+<div class="slab">
+  <main class="form-card form-card--transition">
+    <div class="form-card__header">
+      <h1 class="h2 form-card__title"><%= local_assigns[:card_title] %></h1>
+    </div>
+
+    <% case local_assigns[:info_card_type] %>
+    <% when 'review' %>
+      <div class="form-card__content vertical-steps">
+        <%= local_assigns[:card_body] || yield %>
+      </div>
+
+      <div class="form-card__footer">
+        <p>
+          <%= link_to 'This looks correct',
+                      local_assigns[:next_path], # directs to next path in flow
+                      class: 'button button--primary' %>
+        </p>
+        <p>
+          <%= link_to 'Change my answers',
+                      local_assigns[:path_to_change_answers], # directs to form for correction
+                      class: 'button' %>
+        </p>
+      </div>
+
+    <% when 'graphic' %>
+      <%= render partial: "components/organisms/#{@status}",
+                 locals: {
+                     graphic_description: local_assigns[:graphic_description],
+                     graphic_color: local_assigns[:graphic_color],
+                     graphic_content: local_assigns[:graphic_content],
+                     card_body: local_assigns[:card_body],
+                     next_path: local_assigns[:next_path]
+                 }
+      %>
+    <% end %>
+  </main>
+</div>

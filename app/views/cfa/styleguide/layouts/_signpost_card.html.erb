@@ -1,0 +1,21 @@
+<%= content_for(:template_name) { "question" } %>
+
+<div class="slab">
+  <main class="form-card form-card--transition text--centered">
+    <div class="form-card__header">
+      <%= render partial: 'components/molecules/progress_step_bar', locals: { current_step: local_assigns[:current_step], step_count: local_assigns[:step_count] } %>
+      <h1 class="form-card__title"><%= local_assigns[:card_title] %></h1>
+      <p class="text--small"><%= local_assigns[:card_help] %></p>
+    </div>
+
+    <div class="form-card__content">
+      <%= local_assigns[:card_body] || yield %>
+    </div>
+
+    <div class="form-card__footer">
+      <button class="button button--primary">
+        <%= local_assigns[:card_footer_button_label] || "Continue" %>
+      </button>
+    </div>
+  </main>
+</div>

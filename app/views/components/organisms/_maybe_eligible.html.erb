@@ -1,10 +1,10 @@
 <div class="form-card__content">
   <div class="eligibility_result">
-    <p><%= yield :graphic_description %></p>
-    <p class="h2 color--orange">$<%= yield :graphic_content %></p>
+    <p><%= local_assigns[:graphic_description] %></p>
+    <p class="h2 color--orange">"$<%= local_assigns[:graphic_content] %></p>
     <div class="illustration illustration--eligibility_chart illustration--maybe_eligible"></div>
-    <% if content_for?(:card_body) %>
-      <%= yield :card_body %>
+    <% if local_assigns[:card_body] %>
+      <%= card_body %>
     <% end %>
   </div>
 </div>
