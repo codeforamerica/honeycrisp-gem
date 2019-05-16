@@ -12,3 +12,4 @@
 /node_modules
 yarn-debug.log*
 .yarn-integrity
+.git-authors
