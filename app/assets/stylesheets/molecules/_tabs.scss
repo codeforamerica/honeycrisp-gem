@@ -2,15 +2,15 @@
   @include clearfix();
   @include full-bleed();
 
-  border-bottom: 2px solid $color-tan;
+  border-bottom: 2px solid $color-grey-darkest;
   font-size: $font-size-small;
   margin-top: 1em;
 }
 
 .tab-bar__tab {
-  background-color: rgba($color-tan, 0.25);
-  border: 2px solid $color-tan;
-  color: $color-dark-grey;
+  background-color: $color-grey-light;
+  border: 2px solid $color-grey-darkest;
+  color: $color-grey-darkest;
   display: block;
   float: left;
   margin-bottom: -2px;
@@ -22,14 +22,13 @@
   text-decoration: none;
 
   &:hover {
-    background-color: rgba($color-teal, 0.1);
-    color: $color-dark-grey;
+    background-color: $color-teal-light;
   }
 }
 
 %tab-is-selected {
   background-color: $color-background;
-  color: #000000;
+  color: $color-grey-darkest;
   font-weight: 600;
   z-index: 2;
 

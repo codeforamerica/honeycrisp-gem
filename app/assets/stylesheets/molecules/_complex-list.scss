@@ -3,13 +3,13 @@
 }
 
 .list--complex > li {
-  border-bottom: 1px solid $color-light-grey;
+  border-bottom: 1px solid $color-grey-light;
   padding-bottom: .5em;
   margin-bottom: 1.5em;
 }
 
 .list--complex .toolbar__item {
-  color: $color-dark-grey;
+  color: $color-grey-dark;
   font-size: $font-size-small;
   margin-right: 0;
   &:not(:last-of-type) {

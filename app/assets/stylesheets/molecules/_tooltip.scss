@@ -20,7 +20,7 @@
     font-size: .6em;
     text-align: center;
     color: $color-teal;
-    border: 1px solid #000;
+    border: 1px solid $color-grey-darkest;
     border-radius: 50%;
   }
   &:hover {
@@ -40,7 +40,7 @@
   color: #fff;
   width: auto;
   padding: .7em .5em;
-  background-color: $color-darkest-grey;
+  background-color: $color-grey-darkest;
   white-space: normal;
   font-size: $font-size-small;
   line-height: $line-height-normal;
@@ -56,7 +56,7 @@
     width: $tooltip-width;
     margin-bottom: 2em;
     &:before {
-      @include triangle(bottom, $color: $color-darkest-grey, $size: 10px);
+      @include triangle(bottom, $color: $color-grey-darkest, $size: 10px);
       position: absolute;
       left: 50%;
       margin-left: -15px;

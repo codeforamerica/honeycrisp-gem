@@ -44,7 +44,7 @@
 
 .flash--error {
   color: $color-red;
-  border-color: tint($color-red, 75%);
+  border-color: $color-red;
   .flash__message:before {
     content: "\e002";
   }
@@ -52,7 +52,7 @@
     border-color: $color-red;
     &:hover {
       color: $color-red;
-      background-color: tint($color-red, 90%);
+      background-color: $color-red-light;
     }
   }
 }
@@ -77,11 +77,11 @@
   bottom: 0;
   width: 2.9em;
   line-height: 3.6em;
-  color: $color-dark-grey;
+  color: $color-grey-darkest;
   text-align: center;
   text-decoration: none;
   border-left: 0px solid $color-teal;
   &:hover {
-    background-color: tint($color-teal, 90%);
+    background-color: $color-teal-light;
   }
 }

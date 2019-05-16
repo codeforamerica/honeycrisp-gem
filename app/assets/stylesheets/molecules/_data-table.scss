@@ -20,7 +20,7 @@
   text-align: left;
   font-size: $font-size-small;
   border-collapse: collapse;
-  border-bottom: 2px solid $color-tan;
+  border-bottom: 2px solid $color-grey-darkest;
   margin-bottom: 1em;
 
   &.data-table--small {
@@ -68,7 +68,7 @@
   th {
     font-weight: 400;
     @extend .text--help;
-    border-bottom: 2px solid $color-tan;
+    border-bottom: 2px solid $color-grey-darkest;
   }
 
   tr {
@@ -84,16 +84,16 @@
     }
 
     &.row--error td {
-      background-color: tint($color-red, 40%);
+      background-color: $color-red-light;
     }
 
     &.row--warning td {
-      background-color: tint($color-yellow, 40%);
+      background-color: $color-yellow-light;
     }
   }
 
   td {
-    border-bottom: 1px solid $color-tan;
+    border-bottom: 1px solid $color-grey;
     &:first-child {
       font-weight: 700;
     }
@@ -119,7 +119,7 @@
 .data-table--selectable {
   tr:hover {
     td {
-      background-color: rgba($color-teal, .1);
+      background-color: $color-teal-light;
       cursor: pointer;
     }
   }
@@ -127,7 +127,7 @@
 
 .data-table--divided {
   td {
-    border-right: 1px solid $color-tan;
+    border-right: 1px solid $color-grey;
 
     &:first-child {
       border-right: none;
@@ -136,7 +136,7 @@
 }
 
 .data-table--border-left {
-  border-left: solid 1px $color-tan;
+  border-left: solid 1px $color-grey;
   padding-left: $site-margins / 2;
 }
 

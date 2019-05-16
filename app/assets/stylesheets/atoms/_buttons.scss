@@ -5,7 +5,7 @@
     position: relative;
     cursor: pointer;
     font-weight: 500;
-    border: 1px solid #000;
+    border: 2px solid $color-grey-darkest;
     box-shadow: 0 2px 2px $color-grey;
     background-color: #FFFFFF;
     padding: .5em 1em;
@@ -13,32 +13,37 @@
     margin-bottom: .5em;
     margin-right: .3em;
     text-decoration: none;
-    color: #000000;
+    color: $color-grey-darkest;
 
     &:hover {
-        background-color: tint($color-light-grey, 20%);
-        color: #000000;
+        background-color: $color-grey-light;
+        color: $color-grey-darkest;
     }
     &:active {
-        background-color: $color-light-grey;
+        background-color: $color-grey-light;
         box-shadow: none;
         top: 1px;
     }
+
+  .emoji--checkmark, .emoji--crossmark {
+    background-size: auto 100%;
+    width: 1.2em;
+  }
 }
 
 .button--cta {
   color: #FFFFFF;
   background-color: $color-magenta;
   border-color: $color-magenta;
-  box-shadow: 0 2px 2px shade($color-magenta, 40%);
+  box-shadow: 0 2px 2px $color-magenta-dark;
   &:hover {
-      background-color: tint($color-magenta, 20%);
-      border-color: tint($color-magenta, 20%);
+      background-color: $color-magenta-dark;
+      border-color: $color-magenta-dark;
       color: #FFFFFF;
   }
   &:active {
-      background-color: shade($color-magenta, 15%);
-      border-color: shade($color-magenta, 15%);
+      background-color: $color-magenta-dark;
+      border-color: $color-magenta-dark;
   }
 }
 
@@ -46,15 +51,15 @@
     color: #FFFFFF;
     background-color: $color-teal;
     border-color: $color-teal;
-    box-shadow: 0 2px 2px shade($color-teal,40%);
+    box-shadow: 0 2px 2px $color-teal-dark;
     &:hover {
-        background-color: tint($color-teal, 20%);
-        border-color: tint($color-teal, 20%);
+        background-color: $color-teal-dark;
+        border-color: $color-teal-dark;
         color: #FFFFFF;
     }
     &:active {
-        background-color: shade($color-teal, 15%);
-        border-color: shade($color-teal, 15%);
+        background-color: $color-teal-dark;
+        border-color: $color-teal-dark;
     }
 }
 
@@ -64,22 +69,21 @@
 }
 
 .button--danger {
-    color: $color-red;
-    &:hover {
-        color: $color-red;
-    }
+  color: $color-red;
+  &:hover {
+      background-color: $color-red;
+      color: #fff;
+  }
 }
 
 .button--small {
   font-size: $font-size-small;
   padding: .2em .7em;
-  border-bottom-width: 1px;
 }
 
 .button--inline {
   font-size: .8em;
   padding: .2em;
-  border-bottom-width: 1px;
 }
 
 .button--link {

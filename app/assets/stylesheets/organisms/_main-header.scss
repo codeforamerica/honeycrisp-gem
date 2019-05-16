@@ -5,7 +5,7 @@
     bottom: 1em;
   }
   
-  border-bottom: 1px solid $color-tan;
+  border-bottom: 1px solid $color-grey;
 }
 
 .main-header__title {
@@ -13,7 +13,7 @@
   line-height: $line-height-normal;
   margin-bottom: 0;
   font-weight: 500;
-  color: #000;
+  color: $color-grey-darkest;
 
   .main-header__cbo-title {
     display: inline-block;
@@ -33,7 +33,7 @@
     position: relative;
     text-decoration: none;
     display: inline-block;
-    color: #000;
+    color: $color-grey-darkest;
     padding-left: 1.8em;
 
     &:before {

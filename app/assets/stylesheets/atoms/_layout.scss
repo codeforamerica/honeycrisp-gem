@@ -5,7 +5,7 @@
     top: 2em;
     bottom: 2em;
   }
-	border-bottom: 1px solid $color-tan;
+	border-bottom: 1px solid $color-grey;
 
   &:last-child {
     border-bottom: 0;
@@ -55,13 +55,14 @@
 }
 
 .notice {
-  background-color: rgba($color-teal, .05);
+  background-color: $color-grey-light;
   padding: $site-margins/2;
   margin-bottom: 1em;
+  border: 2px solid $color-grey-darkest;
 }
 
 .tile {
-  border: 1px solid $color-light-grey;
+  border: 1px solid $color-grey-light;
   padding: 1.5em 1em;
 }
 
@@ -70,7 +71,7 @@
   margin-bottom: 1em;
 
   @include media($tablet-up) {
-    border: 2px solid $color-light-grey;
+    border: 2px solid $color-grey-light;
     padding: 2em;
     max-height: 30rem;
     overflow: auto;

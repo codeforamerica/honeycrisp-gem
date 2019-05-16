@@ -2,8 +2,9 @@
   @include outline;
   display: inline-block;
   text-decoration: none;
-  color: #000;
-  background-color: rgba($color-teal, .08);
+  color: $color-teal-dark;
+  border: 2px solid $color-teal-dark;
+  background-color: $color-teal-light;
   border-radius: 10px;
   padding: .2em .5em .3em .7em;
 
@@ -18,7 +19,7 @@
 .reveal__content {
   margin-top: 1em;
   background-color: $color-background;
-  border: 1px solid $color-light-grey;
+  border: 2px solid $color-grey-darkest;
   border-radius: 10px;
   padding: .5em 1em;
   *:last-child {

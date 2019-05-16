@@ -7,7 +7,7 @@
 
   .main-header {
     position: relative;
-    background: linear-gradient(0, rgba(#000000, 0) 0%, rgba(#000000, .5) 99%);
+    background: linear-gradient(0, rgba($color-grey-darkest, 0) 0%, rgba($color-grey-darkest, .5) 99%);
     border: 0;
     z-index: 2;
     padding-bottom: 4em;
@@ -28,7 +28,7 @@
 
   .slab--hero {
     position: relative;
-    background: rgba(shade($color-dark-grey, 80%), .6);
+    background: rgba(shade($color-grey-dark, 80%), .6);
     
     color: #FFFFFF;
 
@@ -38,7 +38,7 @@
     }
 
     @include media($tablet-up) {
-      background: linear-gradient(242deg, rgba(#FFFFFF, 0) 0%, rgba(#000000, .5) 99%);
+      background: linear-gradient(242deg, rgba(#FFFFFF, 0) 0%, rgba($color-grey-darkest, .5) 99%);
       padding: {
         top: 9em;
         bottom: 7em;
@@ -82,7 +82,7 @@
   }
 
   .trust-badge {
-    border-top: 2px solid $color-tan;
+    border-top: 2px solid $color-grey;
     padding-top: 2em;
     margin-top: 2em;
     position: relative;
@@ -97,7 +97,7 @@
         bottom: 0;
         left: -3em;
         width: 2px;
-        background-color: $color-tan;
+        background-color: $color-grey;
       }
     }
   }

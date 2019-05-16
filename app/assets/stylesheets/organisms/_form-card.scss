@@ -1,6 +1,6 @@
 .form-card {
   @extend .card;
-  border-top: 8px solid $color-tan;
+  border-top: 8px solid $color-grey;
   margin-left: -.5em;
   margin-right: -.5em;
   @include media($tablet-up) {
@@ -21,7 +21,7 @@
 
 .form-card__header {
     @include full-bleed();
-    border-bottom: 2px solid $color-light-grey;
+    border-bottom: 2px solid $color-grey-light;
     margin-bottom: 2em;
     padding-bottom: 1.5em;
 
@@ -73,7 +73,7 @@
 .form-card__footer {
     @include full-bleed();
 
-    border-top: 2px solid $color-light-grey;
+    border-top: 2px solid $color-grey-light;
     margin-top: 2em;
     padding-top: 1.5em;
 
@@ -115,7 +115,7 @@
     margin-top: -3em;
     padding-top: 3em;
     padding-bottom: 3em;
-    border-bottom: 1px solid $color-tan;
+    border-bottom: 1px solid $color-grey;
   }
 
   .form-card__footer {
@@ -148,7 +148,7 @@
 }
 
 .form-card--dsnap {
-  border-top: 8px solid $color-tan;
+  border-top: 8px solid $color-grey;
   padding-top: 2em;
 }
 

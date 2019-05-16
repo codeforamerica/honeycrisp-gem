@@ -54,7 +54,7 @@ a {
   @include outline;
   color: $color-teal;
   &:hover {
-    color: shade($color-teal, 20%);
+    color: $color-teal-dark;
   }
 }
 
@@ -96,22 +96,56 @@ ol, ul {
   padding-left: 0;
 }
 
-.text--help {
-  font-size: $font-size-small;
-  line-height: $line-height-normal;
-  color: $color-dark-grey;
+.text--green {
+  color: $color-green;
 }
 
-.text--warning {
+.text--grey {
+  color: $color-grey;
+}
+
+.text--grey-dark {
+  color: $color-grey-dark;
+}
+
+.text--grey-darkest {
+  color: $color-grey-darkest;
+}
+
+.text--magenta {
+  color: $color-magenta;
+}
+
+.text--magenta-dark {
+  color: $color-magenta-dark;
+}
+
+.text--red {
+  color: $color-red;
+}
+
+.text--teal {
+  color: $color-teal;
+}
+
+.text--teal-dark {
+  color: $color-teal-dark;
+}
+
+.text--yellow {
+  color: $color-yellow;
+}
+
+.text--help {
+  @extend .text--grey-dark;
   font-size: $font-size-small;
   line-height: $line-height-normal;
-  color: $color-orange;
 }
 
 .text--error {
+  @extend .text--red;
   font-size: $font-size-small;
   line-height: $line-height-normal;
-  color: $color-red;
 }
 
 .text--pullquote {
@@ -119,10 +153,6 @@ ol, ul {
   font-size: $font-size-h3;
   line-height: $line-height-normal;
   margin-bottom: .5em;
-}
-
-.text--teal {
-  color: $color-teal;
 }
 
 .list--padded {
@@ -179,7 +209,7 @@ hr {
   margin-top: 3em;
   margin-bottom: 3em;
   height: 1px;
-  background-color: $color-tan;
+  background-color: $color-grey;
   border: 0;
 }
 
