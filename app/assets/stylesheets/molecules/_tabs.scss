@@ -43,23 +43,3 @@
     height: 2px;
   }
 }
-
-$controllerclasses:
-"admin_calfresh_applications",
-"admin_campaign_subscriptions",
-"admin_cbos",
-"admin_daily_drives",
-"admin_later_document_submitters",
-"admin_enrollment_survey_reports",
-"admin_state_outcome_reports",
-"admin_county_details",
-"admin_campaign_messages",
-"cbos",
-"cbos_analytics",
-"cbos_assisters";
-
-@each $controllerclass in $controllerclasses {
-  .tab-bar.tab--#{$controllerclass}__active .tab--#{$controllerclass} {
-    @extend %tab-is-selected;
-  }
-}
