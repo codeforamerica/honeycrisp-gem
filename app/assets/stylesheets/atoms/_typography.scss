@@ -144,6 +144,7 @@ ol, ul {
 
 .text--error {
   @extend .text--red;
+  font-weight: 700;
   font-size: $font-size-small;
   line-height: $line-height-normal;
 }
