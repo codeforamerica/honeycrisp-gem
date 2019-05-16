@@ -8,7 +8,7 @@
 .searchbar__input {
   display: table-cell;
   width: 100%;
-  border: 2px solid $color-light-grey;
+  border: 2px solid $color-grey-darkest;
   padding: .5em .7em .5em .7em;
   margin: 0;
   &:focus {
@@ -28,22 +28,19 @@
   vertical-align: middle;
   appearance: none;
   width: 1%;
-  border: 2px solid $color-light-grey;
-  background-color: $color-light-grey;
-  color: $color-teal;
+  border: 2px solid $color-grey-darkest;
+  border-left: none;
+  background-color: #fff;
+  color: $color-grey-darkest;
   text-align: center;
   margin: 0;
   box-shadow: none;
 
   &:hover {
-    color: $color-teal;
-    background-color: tint($color-light-grey, 30%);
-    border-color: tint($color-light-grey, 30%);
+    background-color: $color-grey-light;
   }
 
   &:active {
-    color: $color-teal;
-    background-color: shade($color-light-grey, 10%);
-    border-color: shade($color-light-grey, 10%);
+    background-color: $color-grey-light;
   }
 }

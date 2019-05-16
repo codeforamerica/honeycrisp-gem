@@ -45,7 +45,7 @@ Or install it yourself as:
     `<your hostname>/cfa/styleguide/custom-docs`
     ```
 
-1. (Optional) To override the styleguide's variables (e.g. use `#000000` for `$color-background` rather than `#FAFAF9`, as defined in the gem), require your own file that redefines the variables in your application.scss like so:
+1. (Optional) To override the styleguide's variables (e.g. use `#000000` for `$color-background` rather than as defined in the gem), require your own file that redefines the variables in your application.scss like so:
 
     ```scss
     @import 'my_variable_file'

@@ -6,7 +6,7 @@
   @include clearfix();
   position: relative;
   margin-bottom: 1em;
-  border-bottom: 1px solid $color-tan;
+  border-bottom: 1px solid $color-grey;
 }
 
 .doc-preview__info {
@@ -21,7 +21,7 @@
   right: 0;
   width: 75px;
   height: 75px;
-  border: 1px solid $color-tan;
+  border: 1px solid $color-grey;
   border-radius: $border-radius;
 }
 
@@ -29,7 +29,7 @@
   .form {
     &__documentuploader {
       border-width: 1px;
-      border-color: $color-tan;
+      border-color: $color-grey;
       border-style: solid;
       margin-bottom: 0.5em;
       padding: 1em;
@@ -38,7 +38,7 @@
       line-height: normal;
 
       &:hover {
-        background-color: $color-light-grey;
+        background-color: $color-grey-light;
       }
     }
   }

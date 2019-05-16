@@ -16,6 +16,13 @@
   height: 41px;
 }
 
+.illustration--cfa-logo__dark {
+  @include retina-bg(cfa_logo_dark, 100px 41px);
+  margin-left: 0;
+  width: 100px;
+  height: 41px;
+}
+
 .illustration--cfa-logo-color {
   @include retina-bg(cfa_logo_color, 100% auto);
   width: 100%;

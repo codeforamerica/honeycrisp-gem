@@ -13,7 +13,7 @@
     right: 20px;
     top: 50%;
     margin-top: -1px;
-    background-color: $color-light-grey;
+    background-color: $color-grey-darkest;
   }
   &:after {
     content: '';
@@ -27,23 +27,24 @@
   display: inline-block;
   width: 35px;
   height: 35px;
-  background-color: $color-light-grey;
+  background-color: #fff;
+  border: 2px solid $color-grey-darkest;
   border-radius: 50%;
   z-index: 2;
 }
 
 .progress-step-bar__step--completed {
-  background-color: $color-teal;
-  box-shadow: 0 1px 2px 0 shade($color-teal, 50%);
-  @include retina-bg(icon_check_white, 15px auto);
+  background-color: $color-green;
+  box-shadow: 0 1px 2px 0 rgba($color-grey-darkest, 0.4);
+  @include retina-bg(icon_checkmark_white, 20px auto);
   background-position: center center;
   background-repeat: no-repeat;
 }
 
 .progress-step-bar__step--current {
   background-color: $color-yellow;
-  box-shadow: 0 1px 2px 0 shade($color-yellow, 50%);
-  @include retina-bg(icon_star_white, 15px auto);
+  box-shadow: 0 1px 2px 0 rgba($color-grey-darkest, 0.4);
+  @include retina-bg(icon_star_black, 20px auto);
   background-position: center center;
   background-repeat: no-repeat;
 }

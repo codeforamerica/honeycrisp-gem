@@ -20,22 +20,38 @@ $line-height-normal:  1.5em !default;
 $line-height-display: 1.3em !default;
 
 
-// Colors
-$color-background:    #FAFAF9 !default;
-$color-teal:          #017F6A !default;
-$color-magenta:       #A6005E !default;
+// Colors - Deprecated
+$color-darkest-grey:  #121111 !default;
+$color-dark-grey:     #5F5854 !default;
+$color-light-grey:    #F7F5F4 !default;
 $color-tan:           #DFD7CC !default;
-$color-darkest-grey:  #30302F !default;
-$color-dark-grey:     #666666 !default;
-$color-grey:          #AAAAAA !default;
-$color-light-grey:    #EAEAE9 !default;
-$color-green:         #009933 !default;
-$color-yellow:        #FFB800 !default;
 $color-orange:        #D48C00 !default;
-$color-red:           #D40000 !default;
-
-// Text on Colors for Contrast
 $color-text-on-orange: #3D2800 !default;
+
+// Colors - Current
+$color-green: #00891B !default;
+$color-green-light: #EBFFEF !default;
+
+$color-grey: #CFC5BF !default;
+$color-grey-light: $color-light-grey !default;
+$color-grey-dark: $color-dark-grey !default;
+$color-grey-darkest: $color-darkest-grey !default;
+
+$color-magenta: #A6005E !default;
+$color-magenta-light: #FFEAF6 !default;
+$color-magenta-dark:  #66013A !default;
+
+$color-red: #D13F00 !default;
+$color-red-light: #FCE3D9 !default;
+
+$color-teal: #008060 !default;
+$color-teal-light: #EBFFFA !default;
+$color-teal-dark: #034E46 !default;
+
+$color-yellow: #FFAE00 !default;
+$color-yellow-light: #FFF2D1 !default;
+
+$color-background:    $color-grey-light !default;
 
 // Breakpoints
 $mobile-up:           481px !default;

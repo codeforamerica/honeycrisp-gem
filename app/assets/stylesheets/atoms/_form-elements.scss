@@ -23,11 +23,11 @@ label {
 	margin-bottom: 1em;
 	padding: .5em;
 	border: 0;
-	border-bottom: 2px solid #000;
-  border-radius: 0;
-	background-color: $color-light-grey;
+	border: 2px solid $color-grey-darkest;
+    border-radius: 0;
+	background-color: $color-grey-light;
     &::placeholder {
-		color: $color-grey;
+		color: $color-grey-dark;
 	}
 }
 
@@ -44,7 +44,7 @@ label {
 	padding: .3em .7em;
   padding-left: 2em;
 	background-color: #FFFFFF;
-	border: 2px solid $color-light-grey;
+	border: 2px solid $color-grey-darkest;
 	border-radius: $border-radius;
 	input[type='radio'] {
     @include outline;
@@ -54,7 +54,7 @@ label {
     appearance: none;
     display: inline-block;
     background-color: #fff;
-    border: 2px solid $color-darkest-grey;
+    border: 2px solid $color-grey-darkest;
     height: 22px;
     width: 22px;
     border-radius: 50%;
@@ -75,13 +75,13 @@ label {
     }
 	}
 	&:hover {
-		background-color: $color-light-grey;
+		background-color: $color-grey-light;
 	}
 
 	&.is-selected {
-		background-color: rgba($color-teal, .1);
-		border-color: rgba($color-teal, .2);
-		color: #000;
+		background-color: $color-teal-light;
+		border-color: $color-grey-darkest;
+		color: $color-grey-darkest;
 	}
 }
 
@@ -98,7 +98,7 @@ label {
 	margin-bottom: .5em;
 	padding: .3em .7em;
   padding-left: 2em;
-	border: 2px solid $color-light-grey;
+	border: 2px solid $color-grey-darkest;
 	border-radius: $border-radius;
 	input[type='checkbox'] {
     @include outline;
@@ -108,7 +108,7 @@ label {
     appearance: none;
     display: inline-block;
     background-color: #fff;
-    border: 2px solid $color-darkest-grey;
+    border: 2px solid $color-grey-darkest;
     height: 22px;
     width: 22px;
     border-radius: $border-radius;
@@ -122,21 +122,21 @@ label {
         position: relative;
         color: $color-teal;
       }
-	  }
+    }
   }
 	&:hover {
-		background-color: $color-light-grey;
+		background-color: $color-grey-light;
 	}
 	&.is-selected {
-    background-color: rgba($color-teal, .1);
-    border-color: rgba($color-teal, .2);
-    color: #000;
+    background-color: $color-teal-light;
+    border-color: $color-grey-darkest;
+    color: $color-grey-darkest;
 	}
 }
 
 .textarea {
   @include outline;
-	border: 2px solid $color-dark-grey;
+	border: 2px solid $color-grey-dark;
 	border-radius: $border-radius;
 	width: 100%;
 	padding: 1em;
@@ -161,27 +161,14 @@ label {
     display: block;
     font-family: $font-icon;
     content: '\e5c5';
-    background-color: $color-light-grey;
-    color: #000;
-    border: 2px solid #000;
+    color: $color-grey-darkest;
+    border: 2px solid $color-grey-darkest;
     border-left: 0;
     border-top-right-radius: $border-radius;
     border-bottom-right-radius: $border-radius;
     width: 2em;
     text-align: center;
     z-index: 0;
-  }
-
-  &:hover {
-    &:after {
-      background-color: rgba($color-teal, .1);
-    } 
-  }
-
-  &:active {
-    &:after {
-      background-color: rgba($color-teal, .2);
-    }
   }
 }
 
@@ -190,7 +177,7 @@ label {
   appearance: none;
   position: relative;
   z-index: 1;
-  border: 2px solid #000;
+  border: 2px solid $color-grey-darkest;
   border-radius: $border-radius;
   padding: .5em 2.7em .5em .7em;
   font-family: $font-system;

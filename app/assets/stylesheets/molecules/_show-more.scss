@@ -12,7 +12,7 @@
     right: 0;
     background-image: linear-gradient(-180deg, rgba(255,255,255,0.00) 0%, #FFFFFF 75%);
     height: 7em;
-    border-bottom: 2px solid $color-light-grey;
+    border-bottom: 2px solid $color-grey-darkest;
   }
 
   &.is-open {
@@ -41,7 +41,7 @@
   display: inline-block;
   padding: .2em .4em;
   border-radius: 30px;
-  border: 2px solid $color-light-grey;
+  border: 2px solid $color-grey-darkest;
   text-decoration: none;
   position: absolute;
   bottom: -1.3em;
