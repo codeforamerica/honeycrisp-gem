@@ -1,6 +1,13 @@
 # Change Log
 
-## [v0.5.11](https://github.com/codeforamerica/cfa-styleguide-gem/tree/v0.5.11) (2019-04-03)
+## [v0.6.0](https://github.com/codeforamerica/cfa-styleguide-gem/tree/v0.6.0) (2019-05-20)
+[Full Changelog](https://github.com/codeforamerica/cfa-styleguide-gem/compare/v0.5.11...v0.6.0)
+
+**Merged pull requests:**
+
+- Accessibility improvements from GCF audit [\#101](https://github.com/codeforamerica/cfa-styleguide-gem/pull/101) ([hartsick](https://github.com/hartsick))
+
+## [v0.5.11](https://github.com/codeforamerica/cfa-styleguide-gem/tree/v0.5.11) (2019-04-04)
 [Full Changelog](https://github.com/codeforamerica/cfa-styleguide-gem/compare/v0.5.10...v0.5.11)
 
 **Fixed bugs:**
