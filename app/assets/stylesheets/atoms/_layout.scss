@@ -61,6 +61,14 @@
   border: 2px solid $color-grey-darkest;
 }
 
+.notice--warning {
+  padding: $site-margins/2;
+  margin-bottom: 1em;
+  background-color: $color-yellow-light;
+  border: 2px solid $color-yellow;
+  border-radius: 5px;
+}
+
 .tile {
   border: 1px solid $color-grey-light;
   padding: 1.5em 1em;
