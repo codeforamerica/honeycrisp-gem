@@ -1,6 +1,13 @@
 # Change Log
 
-## [v0.6.0](https://github.com/codeforamerica/cfa-styleguide-gem/tree/v0.6.0) (2019-05-20)
+## [v0.6.1](https://github.com/codeforamerica/cfa-styleguide-gem/tree/v0.6.1) (2019-06-06)
+[Full Changelog](https://github.com/codeforamerica/cfa-styleguide-gem/compare/v0.6.0...v0.6.1)
+
+**Merged pull requests:**
+
+- Add new type of notice [\#103](https://github.com/codeforamerica/cfa-styleguide-gem/pull/103) ([jenny-heath](https://github.com/jenny-heath))
+
+## [v0.6.0](https://github.com/codeforamerica/cfa-styleguide-gem/tree/v0.6.0) (2019-05-21)
 [Full Changelog](https://github.com/codeforamerica/cfa-styleguide-gem/compare/v0.5.11...v0.6.0)
 
 **Merged pull requests:**
