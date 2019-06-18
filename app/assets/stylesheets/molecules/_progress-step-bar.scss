@@ -1,9 +1,13 @@
 .progress-step-bar {
+  margin: 1.5em auto 3em auto;
+  max-width: 300px;
+}
+
+.progress-step-bar__bar {
   position: relative;
   text-align: justify;
   height: 35px;
-  max-width: 300px;
-  margin: 1.5em auto 3em auto;
+
   &:before {
     content: '';
     display: block;
@@ -47,4 +51,9 @@
   @include retina-bg(icon_star_black, 20px auto);
   background-position: center center;
   background-repeat: no-repeat;
+}
+
+.progress-step-bar__label {
+  margin-top: $padding-small;
+  text-align: center;
 }
