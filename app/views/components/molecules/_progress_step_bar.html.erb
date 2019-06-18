@@ -1,11 +1,22 @@
+<% step_name = local_assigns[:step_name] || 'Step' %>
+<% step_description = local_assigns[:step_description] %>
+
+<% label_id = "progress-step-bar--#{step_name}-#{current_step + 1}-#{step_count}-label".downcase %>
+
 <div class="progress-step-bar">
-  <% (1..step_count).each do |step_number| %>
-    <% if step_number < current_step %>
-      <div class="progress-step-bar__step progress-step-bar__step--completed"></div>
-    <% elsif step_number == current_step %>
-      <div class="progress-step-bar__step progress-step-bar__step--current"></div>
-    <% else %>
-      <div class="progress-step-bar__step"></div>
+  <div class="progress-step-bar__bar" aria-labelledby="<%= label_id %>">
+    <% (1..step_count).each do |step_number| %>
+      <% if step_number < current_step %>
+        <div class="progress-step-bar__step progress-step-bar__step--completed"></div>
+      <% elsif step_number == current_step %>
+        <div class="progress-step-bar__step progress-step-bar__step--current"></div>
+      <% else %>
+        <div class="progress-step-bar__step"></div>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
+
+  <div class="progress-step-bar__label <%= 'sr-only' if step_description.blank? %>" id="<%= label_id %>">
+    <%= "#{step_name} #{current_step + 1} of #{step_count}: #{step_description}" %>
+  </div>
 </div>
