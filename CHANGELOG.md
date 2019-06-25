@@ -1,5 +1,14 @@
 # Change Log
 
+## [v0.6.2](https://github.com/codeforamerica/cfa-styleguide-gem/tree/v0.6.2) (2019-06-24)
+[Full Changelog](https://github.com/codeforamerica/cfa-styleguide-gem/compare/v0.6.1...v0.6.2)
+
+**Merged pull requests:**
+
+- added student pair emoji [\#109](https://github.com/codeforamerica/cfa-styleguide-gem/pull/109) ([embarnard](https://github.com/embarnard))
+- Add emoji for "older man and woman" [\#108](https://github.com/codeforamerica/cfa-styleguide-gem/pull/108) ([tdooner](https://github.com/tdooner))
+- Add support for optional progress step bar labels [\#107](https://github.com/codeforamerica/cfa-styleguide-gem/pull/107) ([hartsick](https://github.com/hartsick))
+
 ## [v0.6.1](https://github.com/codeforamerica/cfa-styleguide-gem/tree/v0.6.1) (2019-06-06)
 [Full Changelog](https://github.com/codeforamerica/cfa-styleguide-gem/compare/v0.6.0...v0.6.1)
 
