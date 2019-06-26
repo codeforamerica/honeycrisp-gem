@@ -10,6 +10,6 @@
   A progress bar with a text label
 
   Required: `current_step`, `step_count` as integers; `step_description` (used to generate text label)
-  Optional: `step_name`
+  Optional: `step_name`, `step_preposition`
 -->
-<%= render partial: 'components/molecules/progress_step_bar', locals: { current_step: 3, step_count: 5, step_name: 'Section', step_description: 'Basic Info' } %>
+<%= render partial: 'components/molecules/progress_step_bar', locals: { current_step: 3, step_count: 5, step_name: 'Section', step_description: 'Basic Info', step_preposition: 'of' } %>
