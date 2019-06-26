@@ -1,7 +1,7 @@
 <% step_name = local_assigns[:step_name] || 'Step' %>
 <% step_description = local_assigns[:step_description] %>
 
-<% label_id = "progress-step-bar--#{step_name}-#{current_step + 1}-#{step_count}-label".downcase %>
+<% label_id = "progress-step-bar--#{step_name}-#{current_step}-#{step_count}-label".downcase %>
 
 <div class="progress-step-bar">
   <div class="progress-step-bar__bar" aria-labelledby="<%= label_id %>">
@@ -17,6 +17,6 @@
   </div>
 
   <div class="progress-step-bar__label <%= 'sr-only' if step_description.blank? %>" id="<%= label_id %>">
-    <%= "#{step_name} #{current_step + 1} of #{step_count}: #{step_description}" %>
+    <%= "#{step_name} #{current_step} of #{step_count}: #{step_description}" %>
   </div>
 </div>
