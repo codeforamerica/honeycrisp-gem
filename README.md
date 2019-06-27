@@ -86,7 +86,9 @@ To run, run `rake` or `rspec spec`.
 
 To release a new version, on `master`:
 * Update the version number in `version.rb` using [semantic versioning](https://semver.org/)
-* Generate a changelog using `bundle exec rake changelog`. (Note: you will need to provide a [Github token with public repo access](https://github.com/github-changelog-generator/github-changelog-generator#github-token)). Review, edit as necessary, and commit including the version update.
+* `bundle install` to update the Gemfile.lock
+* Generate a changelog using `bundle exec rake changelog`. (Note: you will need to provide a [Github token with public repo access](https://github.com/github-changelog-generator/github-changelog-generator#github-token)). 
+* Review, edit as necessary, and commit including the version update.
 * Run `bundle exec rake release`, which will create a git tag for the version, and push git commits and tags to Github. In the future, this will also push the `.gem` file to [rubygems.org](https://rubygems.org).
 
 ## License
