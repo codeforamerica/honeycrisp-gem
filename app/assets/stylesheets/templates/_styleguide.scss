@@ -91,6 +91,18 @@
     position: relative;
   }
 
+  .box-wrapper {
+    background-color: $color-yellow-light;
+    display: inline-block;
+    margin-bottom: 1em;
+  }
+
+  .box {
+    background-color: $color-grey-light;
+    border: 1px solid $color-darkest-grey;
+    padding: 15px;
+  }
+
   .color {
     display: inline-block;
     margin-right: 1em;
