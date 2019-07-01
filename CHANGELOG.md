@@ -1,10 +1,11 @@
 # Change Log
 
-## [v0.6.3](https://github.com/codeforamerica/cfa-styleguide-gem/tree/v0.6.3) (2019-06-26)
-[Full Changelog](https://github.com/codeforamerica/cfa-styleguide-gem/compare/v0.6.2...v0.6.3)
+## [v0.6.4](https://github.com/codeforamerica/cfa-styleguide-gem/tree/v0.6.4) (2019-07-01)
+[Full Changelog](https://github.com/codeforamerica/cfa-styleguide-gem/compare/v0.6.2...v0.6.4)
 
 **Merged pull requests:**
 
+- Simplified step-bar-description [\#113](https://github.com/codeforamerica/cfa-styleguide-gem/pull/113) ([embarnard](https://github.com/embarnard))
 - Fix bug on step progress bar: increment current\_step on a 0 index system [\#110](https://github.com/codeforamerica/cfa-styleguide-gem/pull/110) ([embarnard](https://github.com/embarnard))
 
 ## [v0.6.2](https://github.com/codeforamerica/cfa-styleguide-gem/tree/v0.6.2) (2019-06-25)
