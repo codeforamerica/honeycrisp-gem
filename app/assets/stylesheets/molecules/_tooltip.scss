@@ -1,4 +1,4 @@
-.tooltipped {  
+.tooltipped {
   font-weight: bold;
   white-space: nowrap;
   cursor: pointer;
@@ -52,7 +52,7 @@
     position: absolute;
     bottom: 0;
     left: 50%;
-    margin-left: -$tooltip-width/2; 
+    margin-left: -$tooltip-width/2;
     width: $tooltip-width;
     margin-bottom: 2em;
     &:before {

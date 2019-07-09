@@ -20,7 +20,7 @@
 
   .main-header__title a {
     color: #FFFFFF;
-    
+
     &:before {
       @include retina-bg(gcf_logomark_white, 100% auto);
     }
@@ -29,7 +29,7 @@
   .slab--hero {
     position: relative;
     background: rgba(shade($color-grey-dark, 80%), .6);
-    
+
     color: #FFFFFF;
 
     padding: {
@@ -108,7 +108,7 @@
       @include media($tablet-up) {
         margin-bottom: 0;
       }
-    } 
+    }
   }
 
   .main-footer {
