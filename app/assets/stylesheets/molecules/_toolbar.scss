@@ -1,36 +1,44 @@
+$toolbar-item-wrap-spacing: .2em !default;
+
 .toolbar {
-  @include clearfix();
+  align-items: baseline;
+  display: flex;
+  justify-content: space-between;
+  margin: -$toolbar-item-wrap-spacing auto 0;
   max-width: $site-max-width;
-  margin: {
-    left: auto;
-    right: auto;
-  }
 }
 
-.toolbar--centered {
-  display: inline-block;
-  .toolbar__item:last-of-type {
-    margin-right: 0;
+.toolbar--wrap-when-small {
+  flex-wrap: wrap;
+}
+
+.toolbar--hide-text-when-small {
+  .toolbar__logo-text {
+    display: inline-block;
+    text-indent: -10000px;
+
+    @include media($small-mobile-up) {
+      text-indent: initial;
+    }
   }
 }
 
 .toolbar__item {
-  float: left;
-  margin-right: 1em;
+  display: inline-block;
+  margin-left: 1em;
+
+  &:first-child {
+    margin-left: 0;
+  }
 }
 
 .toolbar__left {
-  float: left;
-  margin-right: .5em;
+  flex-shrink: 0;
+  margin-top: $toolbar-item-wrap-spacing;
+  margin-right: 1em;
 }
 
 .toolbar__right {
-  float: right;
-  margin-left: .5em;
-  .toolbar__item {
-    margin-right: 0;
-    margin-left: 1em;
-    display: inline-block;
-    float: left;
-  }
+  flex-shrink: 0;
+  margin-top: $toolbar-item-wrap-spacing;
 }

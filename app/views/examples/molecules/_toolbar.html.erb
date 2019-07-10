@@ -1,5 +1,26 @@
-<div class="toolbar">
-  <div class="toolbar__left"><b>Logo</b></div>
+<!-- Wrap the right links below the logo when screen is too small -->
+<div class="toolbar toolbar--wrap-when-small">
+  <div class="toolbar__left">
+    <b>
+      <i class="icon-done_all"></i>
+      Logo for Product
+    </b>
+  </div>
+  <div class="toolbar__right">
+    <a class="toolbar__item" href="#">Link One</a>
+    <a class="toolbar__item" href="#">Link Two</a>
+    <a class="toolbar__item" href="#">Link Three</a>
+  </div>
+</div>
+
+<!-- Hide logo text when the screen is too small -->
+<div class="toolbar toolbar--hide-text-when-small">
+  <div class="toolbar__left">
+    <b>
+      <i class="icon-done_all"></i>
+      <span class="toolbar__logo-text">Logo for Product</span>
+    </b>
+  </div>
   <div class="toolbar__right">
     <a class="toolbar__item" href="#">Link</a>
     <a class="toolbar__item" href="#">Link</a>
