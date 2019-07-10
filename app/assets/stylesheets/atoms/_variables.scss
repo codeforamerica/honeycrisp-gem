@@ -54,6 +54,7 @@ $color-yellow-light: #FFF2D1 !default;
 $color-background:    $color-grey-light !default;
 
 // Breakpoints
+$small-mobile-up:     320px !default;
 $mobile-up:           481px !default;
 $tablet-up:           601px !default;
 $site-max-up:         961px !default;
