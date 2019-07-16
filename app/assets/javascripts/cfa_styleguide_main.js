@@ -126,7 +126,9 @@ var followUpQuestion = (function() {
           $(self).find('.question-with-follow-up__follow-up').hide();
 
           // show the current follow up
-          $($(this).attr('data-follow-up')).show();
+          if($(this).is(':checked') && $(this).attr('data-follow-up') != null) {
+            $($(this).attr('data-follow-up')).show();
+          }
         })
       });
     }
