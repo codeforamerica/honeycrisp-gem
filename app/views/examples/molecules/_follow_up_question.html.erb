@@ -1,4 +1,5 @@
 <form action="POST">
+  <!-- Follow-up with a radio button -->
   <div class="question-with-follow-up">
     <div class="question-with-follow-up__question">
       <fieldset class="form-group">
@@ -39,6 +40,26 @@
           </label>
         </radiogroup>
       </fieldset>
+    </div>
+  </div>
+
+  <!-- Follow-up with a checkbox -->
+  <div class="question-with-follow-up">
+    <div class="question-with-follow-up__question">
+      <fieldset class="form-group">
+        <label class="checkbox">
+          <input data-follow-up="#different-preferred-name-follow-up" type="checkbox" value="1" name="example_name_checkbox" id="example_name_checkbox">
+          I prefer a different first name
+        </label>
+      </fieldset>
+    </div>
+    <div class="question-with-follow-up__follow-up" id="different-preferred-name-follow-up">
+      <div class="form-group">
+        <label for="member_preferred_first_name">
+          <p class="form-question">What is your preferred first name?</p>
+        </label>
+        <input type="text" class="text-input" name="example_name_preferred" id="example_name_preferred">
+      </div>
     </div>
   </div>
 </form>
