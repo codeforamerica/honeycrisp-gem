@@ -111,10 +111,10 @@ var followUpQuestion = (function() {
       $('.question-with-follow-up').each(function(index, question) {
         var self = this;
 
-        // if any initial questions are already selected on page load, show the follow up
+        // set initial state of follow-ups based on the page
         $(this).find('input').each(function(index, input) {
-          if($(this).is(':checked') && $(this).attr('data-follow-up') != null) {
-            $($(this).attr('data-follow-up')).show();
+          if($(this).attr('data-follow-up') != null) {
+            $($(this).attr('data-follow-up')).toggle($(this).is(':checked'));
           }
         });
 
