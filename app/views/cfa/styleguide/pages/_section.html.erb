@@ -12,11 +12,15 @@
       </p>
     </div>
     <div class="grid__item width-three-fourths">
-      <%= styleguide_example_with_code("examples/#{example}") %>
+      <div class="pattern">
+        <%= styleguide_example_render("examples/#{example}") %>
 
-      <% if explanation.present? %>
-        <p class="text--help"><%= explanation %></p>
-      <% end %>
+        <% if explanation.present? %>
+          <p class="pattern__explanation"><%= explanation.html_safe %></p>
+        <% end %>
+
+        <%= styleguide_example_code("examples/#{example}") %>
+      </div>
     </div>
   </div>
 </section>

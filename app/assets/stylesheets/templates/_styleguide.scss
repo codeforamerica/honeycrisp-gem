@@ -84,7 +84,14 @@
   }
 
   .pattern__code {
+    margin-top: 1em;
     font-size: $font-size-smallest;
+  }
+
+  .pattern__explanation {
+    font-size: $font-size-normal;
+    margin-top: 2em;
+    margin-bottom: 2em;
   }
 
   .example-container {

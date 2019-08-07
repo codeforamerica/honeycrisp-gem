@@ -13,7 +13,7 @@
       <h1>Atoms</h1>
       <p class="text--help">Atoms are the basic building blocks of matter. Applied to web interfaces, atoms are our HTML tags, such as a form label, an input or a button.</p>
       <p class="text--help">Atoms can also include more abstract elements like color palettes, fonts and even more invisible aspects of an interface like animations.</p>
-      <p class="text--help">Like atoms in nature they’re fairly abstract and often not terribly useful on their own. However, they’re good as a reference in the context of a pattern library as you can see all your global styles laid out at a glance.</p>
+      <p class="text--help">Like atoms in nature they're fairly abstract and often not terribly useful on their own. However, they're good as a reference in the context of a pattern library as you can see all your global styles laid out at a glance.</p>
     </div>
   </div>
 </section>
@@ -30,23 +30,23 @@
 </section>
 
 <%= render 'section', title: 'Grid Layout', example: 'atoms/grid' %>
-<%= render 'section', title: 'Card', example: 'atoms/card' %>
-<%= render 'section', title: 'Notice', example: 'atoms/notices' %>
+<%= render 'section', title: 'Card', example: 'atoms/card', explanation: "Cards are used to highlight and focus content. In core app pages (e.g. pages of a form), the primary content should be inside a card. Secondary pages (e.g. the homepage, an FAQ page) don't need cards. Multiple cards can be used on one page, but consider if the content can be broken into multiple pages." %>
+<%= render 'section', title: 'Notice', example: 'atoms/notices', explanation: "Notices are a way to highlight important information by separating it from the main copy. Warning notices are good for temporary scenarios (e.g. 'Counties are receiving more applications than usual. Interview scheduling may be delayed.') Warning notices can be used outside the card for extra emphasis. Both types of notices are only effective if they're used sparingly." %>
 <%= render 'section', title: 'Colors', example: 'atoms/colors' %>
-<%= render 'section', title: 'Icons', example: 'atoms/icons' %>
+<%= render 'section', title: 'Icons', example: 'atoms/icons', explanation: "Icons help users find and understand actions, like “upload” or “search”. In general, they should be used as a secondary visual indicator, in conjunction with text or color. Use common patterns, but don't assume they will be familiar. <br/><br/> These are Google Material icons. Note: this is an IcoMoon subset, rather than the full set of Material icons because we didn't want to load them all. You can add more icons to the set, but it's kind of complicated." %>
 <%= render 'section', title: 'Typography', example: 'atoms/typography' %>
 <%= render 'section', title: 'Spacing', example: 'atoms/spacing' %>
 <%= render 'section', title: 'Labels', example: 'atoms/labels' %>
 <%= render 'section', title: 'Buttons', example: 'atoms/buttons' %>
 <%= render 'section', title: 'Form Elements', example: 'atoms/form_elements', explanation: "General atomic form elements have no knowledge about their size and default to full width. Form molecules and organisms or modifier classes should be used to define form element sizes and layout." %>
-<%= render 'section', title: 'Example Pills', example: 'atoms/examples' %>
+<%= render 'section', title: 'Example Pills', example: 'atoms/examples', explanation: "Example pills are a way to show examples that support text (e.g. the types of care eligible for a childcare expense). They are a more visual alternative to a bullet point list. Use them when your layout won't accommodate bullet points, or you want to emphasize the examples." %>
 
 <section class="slab slab--styleguide" id="molecules">
   <div class="grid">
     <div class="grid__item width-one-half shift-one-fourth">
       <h1>Molecules</h1>
       <p class="text--help">Things start getting more interesting and tangible when we start combining atoms together. Molecules are groups of atoms bonded together and are the smallest fundamental units of a compound. These molecules take on their own properties and serve as the backbone of our design systems.</p>
-      <p class="text--help">For example, a form label, input or button aren’t too useful by themselves, but combine them together as a form and now they can actually do something together.</p>
+      <p class="text--help">For example, a form label, input or button aren't too useful by themselves, but combine them together as a form and now they can actually do something together.</p>
       <p class="text--help">Building up to molecules from atoms encourages a “do one thing and do it well” mentality. While molecules can be complex, as a rule of thumb they are relatively simple combinations of atoms built for reuse.</p>
     </div>
   </div>
