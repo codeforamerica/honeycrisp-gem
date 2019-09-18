@@ -74,6 +74,7 @@
         padding: 0 $s10 0 $s25;
         vertical-align: middle;
         background-color: $color-grey-light;
+        box-shadow: inset 0px 2px 0px rgba(#000, .15);
     }
     .text-input {
         display: table-cell;
@@ -85,7 +86,7 @@
         padding: 0;
         &:focus {
           outline: none;
-          box-shadow: none;
+          box-shadow: inset 0px 2px 0px rgba(#000, .15);
         }
     }
     .text-input-group__postfix {
@@ -95,6 +96,7 @@
         padding: 0 $s25 0 $s10;
         vertical-align: middle;
         background-color: $color-grey-light;
+        box-shadow: inset 0px 2px 0px rgba(#000, .15);
     }
 }
 

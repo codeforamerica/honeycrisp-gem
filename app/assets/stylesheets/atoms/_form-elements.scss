@@ -23,12 +23,16 @@ label {
   height: $s60;
 	margin-bottom: $s25;
 	padding: 0 $s25;
+  box-shadow: inset 0px 2px 0px rgba(#000, .15);
 	border: 2px solid $color-grey-darkest;
   border-radius: 0;
 	background-color: $color-grey-light;
     &::placeholder {
 		color: $color-grey-dark;
 	}
+  &:focus {
+    box-shadow: 0 0 0 5px $color-yellow, inset 0px 2px 0px rgba(#000, .15);
+  }
 }
 
 .radio-button {
@@ -134,11 +138,16 @@ label {
 .textarea {
   @include outline;
 	border: 2px solid $color-grey-darkest;
+  box-shadow: inset 0px 2px 0px rgba(#000, .15);
 	width: 100%;
 	padding: $s15;
 	line-height: $line-height-normal;
 	margin-bottom: $s15;
   font-weight: 700;
+  background-color: $color-grey-light;
+  &::placeholder {
+    color: $color-grey-dark;
+  }
 }
 
 .select {

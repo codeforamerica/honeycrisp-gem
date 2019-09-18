@@ -1,14 +1,10 @@
 .example {
   display: inline-block;
-  border-radius: 10px;
+  border-radius: $border-radius;
   border: 2px dotted $color-grey-dark;
-  padding: .3em .5em;
-  margin-bottom: .5em;
-  margin-right: .3em;
+  padding: $s10/2 $s15;
+  margin-bottom: $s10;
+  margin-right: $s10;
   font-size: $font-size-small;
-}
-
-.example--wider {
-  display: block;
-  margin-right: 0;
+  line-height: $s25;
 }

@@ -159,12 +159,12 @@ ol, ul {
   font-weight: 300;
   font-size: $font-size-h3;
   line-height: $line-height-normal;
-  margin-bottom: .5em;
+  margin-bottom: $s25;
 }
 
 .list--padded {
   li {
-    margin-bottom: 1em;
+    margin-bottom: $s15;
   }
 }
 
@@ -172,7 +172,7 @@ ol, ul {
   list-style: disc;
   padding-left: 2.5em;
   li {
-    margin-bottom: .5em;
+    margin-bottom: $s15;
   }
 }
 
@@ -180,7 +180,7 @@ ol, ul {
   list-style: decimal;
   padding-left: 2.5em;
   li {
-    margin-bottom: .5em;
+    margin-bottom: $s15;
   }
 }
 
@@ -212,16 +212,16 @@ ol, ul {
 }
 
 table {
-  margin-bottom: 1em;
+  margin-bottom: $s25;
 }
 
 td {
-  padding-right: 1em;
+  padding-right: $s25;
 }
 
 hr {
-  margin-top: 3em;
-  margin-bottom: 3em;
+  margin-top: $s60;
+  margin-bottom: $s60;
   height: 2px;
   background-color: $color-grey;
   border: 0;
@@ -229,17 +229,18 @@ hr {
 
 .textwell {
   text-align: left;
-  margin-bottom: 1em;
+  margin-bottom: $s25;
 
   @include media($tablet-up) {
-    border: 2px solid $color-grey-darkest;
-    padding: 2em;
+    border: 2px solid $color-grey;
+    border-radius: $border-radius-large;
+    padding: $s35 $s15;
     max-height: 30rem;
     overflow: auto;
   }
 }
 
 .rule--no-padding {
-  margin-top: 1em;
-  margin-bottom: 1em;
+  margin-top: $s25;
+  margin-bottom: $s25;
 }

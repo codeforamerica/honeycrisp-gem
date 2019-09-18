@@ -9,6 +9,9 @@
   display: table-cell;
   width: 100%;
   border: 2px solid $color-grey-darkest;
+  box-shadow: inset 0px 2px 0px rgba(#000, .15);
+  background-color: $color-grey-light;
+  font-weight: 700;
   padding: 0 $s25;
   height: $s60;
   margin: 0;
@@ -25,8 +28,7 @@
   }
 
   @extend .button;
-  height: $s60;
-  line-height: $s60;
+  line-height: 5.6rem; // hack around table cell sizing to make this 60px
   display: table-cell;
   border-radius: 0;
   vertical-align: middle;

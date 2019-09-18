@@ -80,11 +80,6 @@
     margin: 0 auto;
   }
 
-  .form-card__header--confirmation {
-    background: linear-gradient(to right, rgba($color-magenta, .015) 0%, rgba($color-teal, .04) 65%);
-    border-bottom: 2px solid $color-grey;
-  }
-
   .form-card__content {
     .list--bulleted, .media-box {
       max-width: 25em;
@@ -92,11 +87,6 @@
       margin: 0 auto;
     }
   }
-}
-
-.form-card--dsnap {
-  border-top: 8px solid $color-grey;
-  padding-top: 2em;
 }
 
 .feedback-survey {

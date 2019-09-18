@@ -15,6 +15,27 @@
   background-color: #FFFFFF;
 }
 
+.slab--teal {
+  background-color: $color-teal-light;
+}
+
+.slab--yellow {
+  background-color: $color-yellow-light;
+}
+
+.slab--green {
+  background-color: $color-green-light;
+}
+
+.slab--red {
+  background-color: $color-red-light;
+}
+
+.slab--magenta {
+  background-color: $color-magenta-light;
+}
+
+
 .slab--gradient {
   background-color: rgba($color-teal, .05);
   background: linear-gradient(to right, rgba($color-magenta, .015) 0%, rgba($color-teal, .04) 65%);
