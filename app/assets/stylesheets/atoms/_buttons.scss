@@ -1,17 +1,20 @@
 .button {
     @include outline;
-    transition: $animation-fast background-color;
+    box-sizing: border-box;
+    height: $s60;
+    line-height: $s60;
+    transition: $animation-fast all;
     display: inline-block;
     position: relative;
     cursor: pointer;
-    font-weight: 500;
+    font-weight: 700;
     border: 2px solid $color-grey-darkest;
     box-shadow: 0 2px 2px $color-grey;
     background-color: #FFFFFF;
-    padding: .5em 1em;
-    border-radius: $border-radius;
-    margin-bottom: .5em;
-    margin-right: .3em;
+    padding: 0 $s25;
+    border-radius: $border-radius-large;
+    margin-bottom: $s10;
+    margin-right: $s5;
     text-decoration: none;
     color: $color-grey-darkest;
 
@@ -27,7 +30,7 @@
 
   .emoji--checkmark, .emoji--crossmark {
     background-size: auto 100%;
-    width: 1.2em;
+    width: $s15;
   }
 }
 
@@ -78,12 +81,17 @@
 
 .button--small {
   font-size: $font-size-small;
-  padding: .2em .7em;
+  border-radius: $border-radius;
+  height: $s35;
+  line-height: $s35;
+  padding: 0 $s15;
 }
 
 .button--inline {
-  font-size: .8em;
-  padding: .2em;
+  font-size: $font-size-small;
+  height: $s35;
+  line-height: $s35;
+  padding: 0 $s15;
 }
 
 .button--link {
@@ -98,12 +106,15 @@
 
 .button--large  {
   font-size: $font-size-h3;
+  height: $s95;
+  line-height: $s95;
+  padding: 0 $s35;
 }
 
 .button__icon {
-  margin-left: .5em;
+  margin-left: $s5;
 }
 
 .button__icon--left {
-  margin-right: .5em;
+  margin-right: $s5;
 }

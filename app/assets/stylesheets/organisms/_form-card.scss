@@ -1,36 +1,16 @@
 .form-card {
   @extend .card;
-  border-top: 8px solid $color-grey;
-  margin-left: -.5em;
-  margin-right: -.5em;
+  margin-left: -$s5;
+  margin-right: -$s5;
   @include media($tablet-up) {
     margin-left: 0;
     margin-right: 0;
   }
 }
 
-.form-card--compact {
-  .form-card__header {
-    margin-top: .5em;
-    padding-bottom: 2em;
-  }
-  .form-group {
-    margin-bottom: 3em;
-  }
-}
-
 .form-card__header {
-    @include full-bleed();
-    border-bottom: 2px solid $color-grey-light;
-    margin-bottom: 2em;
-    padding-bottom: 1.5em;
-
-    @include media($tablet-up) {
-      margin-top: 1em;
-
-      padding-bottom: 2.5em;
-    }
-
+    padding-top: $s35;
+    padding-bottom: $s60;
 }
 
 .form-card__header--with-icon {
@@ -46,7 +26,7 @@
 
   @include media($tablet-up) {
     position: absolute;
-    right: $site-margins;
+    right: $s35;
     margin-left: 0;
     float: none;
   }
@@ -54,12 +34,11 @@
 }
 
 .form-card__title {
-    font-size: $font-size-h3;
-    line-height: $line-height-normal;
+    font-size: $font-size-h2;
     margin-top: 0;
     margin-bottom: 0;
     + .text--help, + .text--small {
-      margin-top: .5em;
+      margin-top: $s25;
       margin-bottom: 0;
     }
 }
@@ -72,10 +51,8 @@
 
 .form-card__footer {
     @include full-bleed();
-
-    border-top: 2px solid $color-grey-light;
-    margin-top: 2em;
-    padding-top: 1.5em;
+    padding-top: $s60;
+    padding-bottom: $s35;
 
     *:last-child {
       margin-bottom: 0;

@@ -11,18 +11,18 @@ label {
 .form-question {
 	display: block;
 	margin-bottom: 1em;
-  font-weight: 500;
+  font-weight: 700;
 }
 
 .text-input {
   @include outline;
 	display: block;
 	width: 100%;
-	font-size: $font-size-h3;
-	font-weight: 500;
-	margin-bottom: 1em;
-	padding: .5em;
-	border: 0;
+	font-size: $font-size-normal;
+	font-weight: 700;
+  height: $s60;
+	margin-bottom: $s10;
+	padding: 0 $s25;
 	border: 2px solid $color-grey-darkest;
     border-radius: 0;
 	background-color: $color-grey-light;
@@ -38,25 +38,25 @@ label {
   position: relative;
 	display: block;
 	cursor: pointer;
-	font-size: $font-size-h3;
-	font-weight: 500;
-	margin-bottom: .5em;
-	padding: .3em .7em;
-  padding-left: 2em;
+	font-size: $font-size-normal;
+	font-weight: 700;
+	margin-bottom: $s10;
+  height: $s60;
+  line-height: $s60;
+	padding: 0 $s25;
 	background-color: #FFFFFF;
 	border: 2px solid $color-grey-darkest;
-	border-radius: $border-radius;
 	input[type='radio'] {
     @include outline;
-		position: absolute;
-		top: .6em;
-		left: .7em;
+		position: relative;
+    top: 2px;
     appearance: none;
     display: inline-block;
     background-color: #fff;
     border: 2px solid $color-grey-darkest;
-    height: 22px;
-    width: 22px;
+    height: 20px;
+    width: 20px;
+    margin-right: $s15;
     border-radius: 50%;
     &:checked {
       &:before {
@@ -92,34 +92,33 @@ label {
   position: relative;
 	cursor: pointer;
 	display: block;
-	font-size: $font-size-h3;
-	font-weight: 500;
+	font-size: $font-size-normal;
+	font-weight: 700;
 	background-color: #FFFFFF;
-	margin-bottom: .5em;
-	padding: .3em .7em;
-  padding-left: 2em;
+  height: $s60;
+  line-height: $s60;
+	margin-bottom: $s10;
+	padding: 0 $s25;
 	border: 2px solid $color-grey-darkest;
-	border-radius: $border-radius;
 	input[type='checkbox'] {
     @include outline;
-    position: absolute;
-    top: .6em;
-    left: .7em;
+    position: relative;
+    top: 2px;
     appearance: none;
     display: inline-block;
     background-color: #fff;
     border: 2px solid $color-grey-darkest;
-    height: 22px;
-    width: 22px;
-    border-radius: $border-radius;
+    height: 20px;
+    width: 20px;
+    margin-right: $s15;
     &:checked {
       &:before {
         font-family: $font-icon;
-        font-size: .8em;
+        font-size: $font-size-small;
         content: '\e5ca';
-        top: -.55em;
         display: inline-block;
-        position: relative;
+        position: absolute;
+        top: -23px;
         color: $color-teal;
       }
     }
@@ -136,19 +135,21 @@ label {
 
 .textarea {
   @include outline;
-	border: 2px solid $color-grey-dark;
-	border-radius: $border-radius;
+	border: 2px solid $color-grey-darkest;
 	width: 100%;
-	padding: 1em;
+	padding: $s15;
 	line-height: $line-height-normal;
-	margin-bottom: .5em;
+	margin-bottom: $s15;
+  font-weight: 700;
 }
 
 .select {
   position: relative;
   display: inline-block;
-  margin-bottom: .5em;
-  font-size: $font-size-h3;
+  margin-bottom: $s15;
+  font-size: $font-size-normal;
+  height: $s60;
+  line-height: $s60;
   background-color: #FFFFFF;
 
   &:after {
@@ -157,16 +158,13 @@ label {
     right: 0em;
     top: 0em;
     bottom: 0;
-    padding-top: .5em;
     display: block;
     font-family: $font-icon;
+    font-size: $font-size-h1;
     content: '\e5c5';
     color: $color-grey-darkest;
-    border: 2px solid $color-grey-darkest;
     border-left: 0;
-    border-top-right-radius: $border-radius;
-    border-bottom-right-radius: $border-radius;
-    width: 2em;
+    width: $s60;
     text-align: center;
     z-index: 0;
   }
@@ -178,14 +176,14 @@ label {
   position: relative;
   z-index: 1;
   border: 2px solid $color-grey-darkest;
-  border-radius: $border-radius;
-  padding: .5em 2.7em .5em .7em;
+  padding: 0 $s95 0 $s25;
   font-family: $font-system;
-  font-size: $font-size-h3;
-  font-weight: 500;
+  font-size: $font-size-normal;
+  font-weight: 700;
   background-color: transparent;
   width: 100%;
   overflow-wrap: break-word;
+  border-radius: 0;
 }
 
 .file-upload {

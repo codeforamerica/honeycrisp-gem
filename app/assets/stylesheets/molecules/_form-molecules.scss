@@ -71,7 +71,7 @@
         display: table-cell;
         width: 1%;
         font-weight: 500;
-        padding: .5em 0em .5em .3em;
+        padding: 0 $s15 0 $s25;
         vertical-align: middle;
         background-color: $color-grey-light;
     }
@@ -91,7 +91,7 @@
         display: table-cell;
         width: 1%;
         font-weight: 500;
-        padding: .5em .3em .5em 0;
+        padding: 0 $s25 0 $s15;
         vertical-align: middle;
         background-color: $color-grey-light;
     }
@@ -115,20 +115,25 @@
 }
 
 .form-group--error {
-  @include full-bleed();
+  margin: {
+    left: -$s25;
+    right: -$s25;
+  }
+
+  padding: {
+    left: $s25;
+    right: $s25;
+  }
+  
   &:before {
     content: '';
     display: block;
     position: absolute;
-    top: -.5em;
-    bottom: -.5em;
-    left: 0px;
-    width: 4px;
+    top: -$s5;
+    bottom: -$s5;
+    left: 0;
+    width: $s5;
     background-color: $color-red;
-
-    @include media($tablet-up) {
-      width: 6px;
-    }
   }
 }
 
@@ -198,13 +203,13 @@
     padding: {
         top: 2em;
         bottom: 2em;
-        left: $site-margins;
+        left: $s35;
     }
 
     @include media($tablet-up) {
         border-left: 2px solid $color-grey-darkest;
         border-right: 2px solid $color-grey-darkest;
-        padding-left: $site-margins*2;
+        padding-left: $s35*2;
     }
 
     .form-group:last-of-type {
@@ -218,9 +223,9 @@
         display: block;
         position: absolute;
         top: -19px;
-        left: $site-margins/2+20;
+        left: $s15+20;
         @include media($tablet-up) {
-            left: $site-margins+20;
+            left: $s35+20;
         }
     }
 
@@ -230,9 +235,9 @@
         display: block;
         position: absolute;
         top: -15px;
-        left: $site-margins/2+22;
+        left: $s15+22;
         @include media($tablet-up) {
-            left: $site-margins+22;
+            left: $s35+22;
         }
     }
 }

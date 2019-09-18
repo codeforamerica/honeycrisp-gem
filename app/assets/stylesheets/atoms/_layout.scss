@@ -2,10 +2,9 @@
   @include full-bleed();
   position: relative;
   padding: {
-    top: 2em;
-    bottom: 2em;
+    top: $s60;
+    bottom: $s60;
   }
-	border-bottom: 1px solid $color-grey;
 
   &:last-child {
     border-bottom: 0;
@@ -23,8 +22,8 @@
 
 .slab--padded {
     padding: {
-        top: 3em;
-        bottom: 3em;
+        top: $s95;
+        bottom: $s95;
     }
 }
 
@@ -40,38 +39,59 @@
 }
 
 .card {
-    box-shadow: 0px 3px 8px rgba(0,0,0,.15);
-    border-radius: $border-radius;
-    padding: 1.5em $site-margins/2;
+    box-shadow: $box-shadow;
+    border-radius: $border-radius-large;
+    padding: $s25 $s25;
     background-color: #FFFFFF;
-    margin-bottom: 2em;
+    margin-bottom: $s15;
     > *:last-child {
         margin-bottom: 0;
-    }
-
-    @include media($tablet-up) {
-      padding: 1.5em 2em;
     }
 }
 
 .notice {
   background-color: $color-grey-light;
-  padding: $site-margins/2;
-  margin-bottom: 1em;
-  border: 2px solid $color-grey-darkest;
+  padding: $s15;
+  margin-bottom: $s25;
+  border: 2px solid $color-grey;
+  *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.notice--success {
+  padding: $s15;
+  margin-bottom: $s25;
+  background-color: $color-green-light;
+  border: 2px solid $color-green;
+  *:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .notice--warning {
-  padding: $site-margins/2;
-  margin-bottom: 1em;
+  padding: $s15;
+  margin-bottom: $s25;
   background-color: $color-yellow-light;
   border: 2px solid $color-yellow;
-  border-radius: 5px;
+  *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.notice--error {
+  padding: $s15;
+  margin-bottom: $s25;
+  background-color: $color-red-light;
+  border: 2px solid $color-red;
+  *:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .tile {
   border: 1px solid $color-grey-light;
-  padding: 1.5em 1em;
+  padding: $s15 $s10;
 }
 
 .textwell {

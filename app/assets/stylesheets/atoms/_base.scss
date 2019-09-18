@@ -6,7 +6,7 @@
 html {
   position: relative;
   background-color: $color-background;
-  font-size: $em-base;
+  font-size: 62.5%;
   -webkit-font-smoothing: antialiased;
   min-height: 100%;
 }
@@ -19,10 +19,10 @@ body {
 
 .page-wrapper {
   overflow: hidden;
-  padding-left: $site-margins/2;
-  padding-right: $site-margins/2;
+  padding-left: $s15;
+  padding-right: $s15;
   @include media($tablet-up) {
-    padding-left: $site-margins;
-    padding-right: $site-margins;
+    padding-left: $s35;
+    padding-right: $s35;
   }
 }

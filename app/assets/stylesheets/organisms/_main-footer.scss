@@ -14,11 +14,11 @@ body {
   height: $footer-height*1.5;
   color: $color-grey-darkest;
   background-color: $color-grey;
-  padding: 2em $site-margins/2;
+  padding: 2em $s15;
   font-weight: 600;
 
   @include media($tablet-up) {
-    padding: 2em $site-margins;
+    padding: 2em $s35;
     height: $footer-height;
   }
 }

@@ -7,24 +7,25 @@
   }
 }
 
+// Use this if an element should take up the full width of the screen.
 @mixin full-bleed() {
   margin: {
-    left: -$site-margins/2;
-    right: -$site-margins/2;
+    left: -$s15;
+    right: -$s15;
   }
   padding: {
-    left: $site-margins/2;
-    right: $site-margins/2;
+    left: $s15;
+    right: $s15;
   }
 
   @include media($tablet-up) {
     margin: {
-      left: -$site-margins;
-      right: -$site-margins;
+      left: -$s35;
+      right: -$s35;
     }
     padding: {
-      left: $site-margins;
-      right: $site-margins;
+      left: $s35;
+      right: $s35;
     }
   }
 }
