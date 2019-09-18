@@ -15,6 +15,11 @@
     background-color: #fff;
   }
 
+  .slab--hero {
+    padding-top: 6em;
+    padding-bottom: 6em;
+  }
+
   .slab--styleguide {
     background-color: $color-grey-light;
     padding-top: 6em;
@@ -47,7 +52,7 @@
     background-color: $color-background;
 
     &:before {
-      content: 'Show markup';
+      content: 'Show HTML code';
     }
 
     &:hover {
@@ -59,7 +64,7 @@
     @include clearfix();
     &.is-open {
       .pattern__button:before {
-        content: 'Hide markup';
+        content: 'Hide HTML code';
       }
       pre {
         display: block;
@@ -123,7 +128,7 @@
       content: '';
       width: 4.5em;
       height: 4.5em;
-      border: 1px solid $color-grey;
+      border: 2px solid $color-grey;
       background-color: $color-grey;
     }
 

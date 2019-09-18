@@ -1,11 +1,7 @@
 .main-header {
   @include full-bleed();
-  padding: {
-    top: 1em;
-    bottom: 1em;
-  }
-
-  border-bottom: 1px solid $color-grey;
+  height: $s60;
+  line-height: $s60;
 }
 
 .main-header__title {
@@ -34,7 +30,7 @@
     text-decoration: none;
     display: inline-block;
     color: $color-grey-darkest;
-    padding-left: 1.8em;
+    padding-left: $s35;
 
     &:before {
       @include retina-bg(gcf_logomark_black, 100% auto);
@@ -42,10 +38,10 @@
       content: '';
       display: inline-block;
       position: absolute;
-      top: -.1em;
+      top: -.15em;
       left: 0;
-      width: 24px;
-      height: 24px;
+      width: $s25;
+      height: $s25;
     }
   }
 }

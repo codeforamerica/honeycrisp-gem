@@ -18,26 +18,32 @@ $s155:					15.5rem;
 $s250:					25.0rem;
 
 
+// Padding Sizes - Deprecated
+// Use spacing units directly in the future
+$padding-small:   		$s10;
+$padding-med:     		$s35;
+$padding-large:   		$s60;
+$padding-huge:    		$s155;
+
+
 // Typopgrahy
-$em-base:             	10px;
-$font-size-normal:    	1.9rem;
-$font-size-small:     	1.6rem;
+$em-base:             	62.5%;	// Changes root font size to 10px for easier rem calculations
+$font-size-60:			5rem;
+$font-size-35:			2.7rem;
+$font-size-25:			1.9rem;
+$font-size-25-small:	1.6rem;
+
+
+// Deprecated font variables
+$font-size-normal:    	$font-size-25;
+$font-size-small:     	$font-size-25-small;
 $font-size-smallest:  	1.2rem;
-$font-size-h1:        	3.6rem;
-$font-size-h2:        	2.8rem;
-$font-size-h3:        	2.4rem;
-$font-size-h4:        	1.9rem;
+$font-size-h1:        	$font-size-60;
+$font-size-h2:        	$font-size-35;
+$font-size-h3:        	$font-size-25;
+$font-size-h4:        	$font-size-25-small;
 $line-height-normal:  	1.5em;
 $line-height-display: 	1.3em;
-
-
-// Colors - Deprecated
-$color-darkest-grey:  	#121111;
-$color-dark-grey:     	#5F5854;
-$color-light-grey:    	#F7F5F4;
-$color-tan:           	#DFD7CC;
-$color-orange:        	#D48C00;
-$color-text-on-orange: 	#3D2800;
 
 
 // Colors - Current
@@ -45,9 +51,9 @@ $color-green: 			#00891B;
 $color-green-light: 	#EBFFEF;
 
 $color-grey: 			#CFC5BF;
-$color-grey-light: 		$color-light-grey;
-$color-grey-dark: 		$color-dark-grey;
-$color-grey-darkest: 	$color-darkest-grey;
+$color-grey-light: 		#F7F5F4;
+$color-grey-dark: 		#5F5854;
+$color-grey-darkest: 	#121111;
 
 $color-magenta: 		#A6005E;
 $color-magenta-light: 	#FFEAF6;
@@ -66,6 +72,16 @@ $color-yellow-light: 	#FFF2D1;
 $color-background:    	$color-grey-light;
 
 
+// Colors - Deprecated
+$color-darkest-grey:  	$color-grey-darkest;
+$color-dark-grey:     	$color-grey-dark;
+$color-light-grey:    	$color-grey-light;
+$color-tan:           	#DFD7CC;
+$color-orange:        	#D48C00;
+$color-text-on-orange: 	#3D2800;
+
+
+
 // Breakpoints
 $small-mobile-up:     	320px;
 $mobile-up:           	481px;
@@ -77,17 +93,10 @@ $site-max-up:         	961px;
 $site-max-width:      	960px;
 $footer-height-home:  	340px;
 $footer-height:       	100px;
+$site-margins:			$s35;
 $border-radius:       	$s5;
 $border-radius-large: 	$s10;
 $tooltip-width:       	$s250;
-
-
-// Padding Sizes - Deprecated
-// Use spacing units directly in the future
-$padding-small:   		$s10;
-$padding-med:     		$s35;
-$padding-large:   		$s60;
-$padding-huge:    		$s155;
 
 
 // Image Sizes
@@ -103,14 +112,14 @@ $width-form-long:	    20em;
 $width-form-short:     	6em;
 
 $width-form-casenumber: 8em;
-$width-form-phone:      9em;
+$width-form-phone:      9.5em;
 $width-form-name:       12em;
-$width-form-zip:        6em;
-$width-form-ssn:        8em;
+$width-form-zip:        6.5em;
+$width-form-ssn:        9em;
 $width-form-searchbar:  30em;
 
 // Shadows
-$box-shadow: 0px 3px 5px rgba(0,0,0,.15);
+$box-shadow: 			0px 3px 5px rgba(0,0,0,.15);
 
 // Animations
 $animation-fast:      	.1s ease-out;

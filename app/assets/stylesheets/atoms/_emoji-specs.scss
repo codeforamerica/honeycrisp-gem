@@ -1,8 +1,8 @@
 .emoji {
   display: inline-block;
   text-indent: -9999px;
-  height: 1em;
-  width: 1em;
+  height: $s10;
+  width: $s10;
   content: '';
   background-size: 100% auto;
   position: relative;
@@ -14,28 +14,28 @@
 }
 
 .emoji--huge {
-  width: 6em;
-  height: 6em;
+  width: $s95;
+  height: $s95;
 }
 
 .emoji--bigger {
-  width: 4em;
-  height: 4em;
+  width: $s60;
+  height: $s60;
 }
 
 .emoji--big {
-  width: 3em;
-  height: 3em;
+  width: $s35;
+  height: $s35;
 }
 
 .emoji--med {
-  width: 2.4em;
-  height: 2.4em;
+  width: $s25;
+  height: $s25;
 }
 
 .emoji--small {
-  width: 1.8em;
-  height: 1.8em;
+  width: $s15;
+  height: $s15;
 }
 
 .emoji-container {

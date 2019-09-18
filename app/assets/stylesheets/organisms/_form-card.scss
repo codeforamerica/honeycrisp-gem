@@ -1,5 +1,17 @@
+.card {
+    box-shadow: $box-shadow;
+    border-radius: $border-radius-large;
+    padding: $s25 $s25;
+    background-color: #FFFFFF;
+    margin-bottom: $s15;
+    > *:last-child {
+        margin-bottom: 0;
+    }
+}
+
 .form-card {
   @extend .card;
+  padding: $s60 $s25;
   margin-left: -$s5;
   margin-right: -$s5;
   @include media($tablet-up) {
@@ -9,8 +21,7 @@
 }
 
 .form-card__header {
-    padding-top: $s35;
-    padding-bottom: $s60;
+  margin-bottom: $s60;
 }
 
 .form-card__header--with-icon {
@@ -44,15 +55,13 @@
 }
 
 .form-card__content {
-    > *:last-child {
+    .form-group:last-of-type {
         margin-bottom: 0;
     }
 }
 
 .form-card__footer {
     @include full-bleed();
-    padding-top: $s60;
-    padding-bottom: $s35;
 
     *:last-child {
       margin-bottom: 0;
@@ -61,8 +70,6 @@
 
 .form-card--transition {
   text-align: center;
-  padding-top: 2em;
-  padding-bottom: 2em;
 
   .text-input-group-container {
     display: inline-block;
@@ -72,37 +79,9 @@
     margin: 0 auto;
   }
 
-  @include media($tablet-up) {
-    padding-top: 3em;
-    padding-bottom: 3em;
-  }
-
-  .form-card__header {
-    margin-bottom: 1.5em;
-    margin-top: 0;
-    border-bottom: 0;
-    padding-bottom: 0;
-    @include media($tablet-up) {
-      margin-bottom: 2.5em;
-    }
-  }
-
   .form-card__header--confirmation {
     background: linear-gradient(to right, rgba($color-magenta, .015) 0%, rgba($color-teal, .04) 65%);
-    margin-top: -3em;
-    padding-top: 3em;
-    padding-bottom: 3em;
-    border-bottom: 1px solid $color-grey;
-  }
-
-  .form-card__footer {
-    border-top: 0;
-    padding-top: 0;
-    margin-top: 3em;
-  }
-
-  .form-card__title {
-    font-size: $font-size-h2;
+    border-bottom: 2px solid $color-grey;
   }
 
   .form-card__content {
@@ -110,16 +89,6 @@
       max-width: 25em;
       text-align: left;
       margin: 0 auto;
-    }
-  }
-
-  .form-card__header, .form-card__content, .form-card__footer {
-    .form-card__title, p {
-      max-width: 55rem;
-      margin: {
-        left: auto;
-        right: auto;
-      }
     }
   }
 }

@@ -9,7 +9,7 @@
     cursor: pointer;
     font-weight: 700;
     border: 2px solid $color-grey-darkest;
-    box-shadow: 0 2px 2px $color-grey;
+    box-shadow: 0 2px 0px $color-grey;
     background-color: #FFFFFF;
     padding: 0 $s25;
     border-radius: $border-radius-large;
@@ -30,7 +30,8 @@
 
   .emoji--checkmark, .emoji--crossmark {
     background-size: auto 100%;
-    width: $s15;
+    height: $s25;
+    width: $s35;
   }
 }
 
@@ -38,7 +39,7 @@
   color: #FFFFFF;
   background-color: $color-magenta;
   border-color: $color-magenta;
-  box-shadow: 0 2px 2px $color-magenta-dark;
+  box-shadow: 0 2px 0px $color-magenta-dark;
   &:hover {
       background-color: $color-magenta-dark;
       border-color: $color-magenta-dark;
@@ -54,7 +55,7 @@
     color: #FFFFFF;
     background-color: $color-teal;
     border-color: $color-teal;
-    box-shadow: 0 2px 2px $color-teal-dark;
+    box-shadow: 0 2px 0px $color-teal-dark;
     &:hover {
         background-color: $color-teal-dark;
         border-color: $color-teal-dark;

@@ -1,0 +1,39 @@
+.slab {
+  @include full-bleed();
+  position: relative;
+  padding: {
+    top: $s60;
+    bottom: $s60;
+  }
+
+  &:last-child {
+    border-bottom: 0;
+  }
+}
+
+.slab--white {
+  background-color: #FFFFFF;
+}
+
+.slab--gradient {
+  background-color: rgba($color-teal, .05);
+  background: linear-gradient(to right, rgba($color-magenta, .015) 0%, rgba($color-teal, .04) 65%);
+}
+
+.slab--padded {
+    padding: {
+        top: $s95;
+        bottom: $s95;
+    }
+}
+
+.slab--not-padded {
+  padding: {
+    top: 0;
+    bottom: 0;
+  }
+}
+
+.slab--bleed {
+  overflow: hidden;
+}

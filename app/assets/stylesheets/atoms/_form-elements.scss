@@ -160,7 +160,7 @@ label {
     bottom: 0;
     display: block;
     font-family: $font-icon;
-    font-size: $font-size-h1;
+    font-size: $font-size-h2;
     content: '\e5c5';
     color: $color-grey-darkest;
     border-left: 0;
@@ -176,7 +176,7 @@ label {
   position: relative;
   z-index: 1;
   border: 2px solid $color-grey-darkest;
-  padding: 0 $s95 0 $s25;
+  padding: 0 $s60 0 $s25;
   font-family: $font-system;
   font-size: $font-size-normal;
   font-weight: 700;

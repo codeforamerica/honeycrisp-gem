@@ -4,8 +4,8 @@ p {
 }
 
 h1, .h1 {
-  font-size: $font-size-h1;
-  line-height: $line-height-display;
+  font-size: $font-size-60;
+  line-height: $s60;
   font-weight: 700;
   margin-top: $s60;
   margin-bottom: $s25;
@@ -15,9 +15,9 @@ h1, .h1 {
 }
 
 h2, .h2 {
-  font-size: $font-size-h2;
+  font-size: $font-size-35;
   font-weight: 700;
-  line-height: $line-height-display;
+  line-height: $s35;
   margin-top: $s35;
   margin-bottom: $s25;
   &:first-child {
@@ -26,9 +26,9 @@ h2, .h2 {
 }
 
 h3, .h3 {
-  font-size: $font-size-h3;
-  font-weight: 300;
-  line-height: $line-height-normal;
+  font-size: $font-size-25;
+  font-weight: 700;
+  line-height: $s25;
   margin-top: $s25;
   margin-bottom: $s25;
   &:first-child {
@@ -40,9 +40,9 @@ h3, .h3 {
 }
 
 h4, .h4 {
-  font-size: $font-size-h4;
-  font-weight: 600;
-  line-height: $line-height-display;
+  font-size: $font-size-25-small;
+  font-weight: 700;
+  line-height: $s25;
   margin-top: $s25;
   margin-bottom: $s25;
   &:first-child {
@@ -63,8 +63,8 @@ a {
 }
 
 .text--small {
-    font-size: $font-size-small;
-    line-height: $line-height-normal;
+    font-size: $font-size-25-small;
+    line-height: $s25;
 }
 
 .text--caps {
@@ -216,9 +216,21 @@ td {
 hr {
   margin-top: 3em;
   margin-bottom: 3em;
-  height: 1px;
+  height: 2px;
   background-color: $color-grey;
   border: 0;
+}
+
+.textwell {
+  text-align: left;
+  margin-bottom: 1em;
+
+  @include media($tablet-up) {
+    border: 2px solid $color-grey-light;
+    padding: 2em;
+    max-height: 30rem;
+    overflow: auto;
+  }
 }
 
 .rule--no-padding {
