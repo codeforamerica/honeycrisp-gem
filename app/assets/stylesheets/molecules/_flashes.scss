@@ -34,9 +34,9 @@
   padding: .7em 1em;
   font-size: $font-size-small;
   background-color: #FFFFFF;
-  border: 2px solid $color-teal;
+  border: 2px solid $color-green;
   border-top: 0;
-  border-radius: $border-radius;
+  border-radius: $border-radius-large;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
   box-shadow: $box-shadow;
@@ -80,8 +80,8 @@
   color: $color-grey-darkest;
   text-align: center;
   text-decoration: none;
-  border-left: 0px solid $color-teal;
+  border-left: 0px solid $color-green;
   &:hover {
-    background-color: $color-teal-light;
+    background-color: $color-green-light;
   }
 }

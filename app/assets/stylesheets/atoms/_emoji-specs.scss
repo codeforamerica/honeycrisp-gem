@@ -14,28 +14,28 @@
 }
 
 .emoji--huge {
+  width: $s155;
+  height: $s155;
+}
+
+.emoji--bigger {
   width: $s95;
   height: $s95;
 }
 
-.emoji--bigger {
+.emoji--big {
   width: $s60;
   height: $s60;
 }
 
-.emoji--big {
+.emoji--med {
   width: $s35;
   height: $s35;
 }
 
-.emoji--med {
+.emoji--small {
   width: $s25;
   height: $s25;
-}
-
-.emoji--small {
-  width: $s15;
-  height: $s15;
 }
 
 .emoji-container {

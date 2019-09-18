@@ -71,7 +71,7 @@
         display: table-cell;
         width: 1%;
         font-weight: 500;
-        padding: 0 $s15 0 $s25;
+        padding: 0 $s10 0 $s25;
         vertical-align: middle;
         background-color: $color-grey-light;
     }
@@ -82,6 +82,7 @@
         margin-top: 0;
         background-color: $color-grey-light;
         border: none;
+        padding: 0;
         &:focus {
           outline: none;
           box-shadow: none;
@@ -91,26 +92,22 @@
         display: table-cell;
         width: 1%;
         font-weight: 500;
-        padding: 0 $s25 0 $s15;
+        padding: 0 $s25 0 $s10;
         vertical-align: middle;
         background-color: $color-grey-light;
     }
 }
 
 .form-group {
-    margin-bottom: 3em;
+    margin-bottom: $s60;
     position: relative;
     .form-question + .text--help, .form-question + .text--small {
-        margin-top: -1em;
-        margin-bottom: 1em;
+        margin-top: -$s25;
+        margin-bottom: $s25;
     }
 
     .form-group + .text-input, .form-group + .text-input-group {
-      margin-top: -.5em;
-    }
-
-    &:last-of-type {
-      margin-bottom: 0;
+      margin-bottom: $s25;
     }
 }
 
@@ -123,6 +120,18 @@
   padding: {
     left: $s25;
     right: $s25;
+  }
+
+  @include media($tablet-up) {
+      margin: {
+    left: -$s35;
+    right: -$s35;
+  }
+
+  padding: {
+    left: $s35;
+    right: $s35;
+  }
   }
   
   &:before {

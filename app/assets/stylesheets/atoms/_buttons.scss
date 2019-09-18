@@ -9,14 +9,17 @@
     cursor: pointer;
     font-weight: 700;
     border: 2px solid $color-grey-darkest;
-    box-shadow: 0 2px 0px $color-grey;
+    box-shadow: 0 2px 0px rgba(#000, .5);
     background-color: #FFFFFF;
     padding: 0 $s25;
     border-radius: $border-radius-large;
-    margin-bottom: $s10;
-    margin-right: $s5;
+    margin-right: $s25;
     text-decoration: none;
     color: $color-grey-darkest;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
 
     &:hover {
         background-color: $color-grey-light;

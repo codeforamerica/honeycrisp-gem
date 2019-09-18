@@ -10,7 +10,7 @@ label {
 
 .form-question {
 	display: block;
-	margin-bottom: 1em;
+	margin-bottom: $s25;
   font-weight: 700;
 }
 
@@ -21,10 +21,10 @@ label {
 	font-size: $font-size-normal;
 	font-weight: 700;
   height: $s60;
-	margin-bottom: $s10;
+	margin-bottom: $s25;
 	padding: 0 $s25;
 	border: 2px solid $color-grey-darkest;
-    border-radius: 0;
+  border-radius: 0;
 	background-color: $color-grey-light;
     &::placeholder {
 		color: $color-grey-dark;
@@ -41,9 +41,8 @@ label {
 	font-size: $font-size-normal;
 	font-weight: 700;
 	margin-bottom: $s10;
-  height: $s60;
-  line-height: $s60;
-	padding: 0 $s25;
+  min-height: $s60;
+	padding: $s35/2 $s25;
 	background-color: #FFFFFF;
 	border: 2px solid $color-grey-darkest;
 	input[type='radio'] {
@@ -95,10 +94,9 @@ label {
 	font-size: $font-size-normal;
 	font-weight: 700;
 	background-color: #FFFFFF;
-  height: $s60;
-  line-height: $s60;
+  min-height: $s60;
 	margin-bottom: $s10;
-	padding: 0 $s25;
+	padding: $s35/2 $s25;
 	border: 2px solid $color-grey-darkest;
 	input[type='checkbox'] {
     @include outline;
@@ -118,7 +116,7 @@ label {
         content: '\e5ca';
         display: inline-block;
         position: absolute;
-        top: -23px;
+        top: -6px;
         color: $color-teal;
       }
     }

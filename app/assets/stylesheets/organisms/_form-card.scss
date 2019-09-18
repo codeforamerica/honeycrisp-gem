@@ -17,6 +17,11 @@
   @include media($tablet-up) {
     margin-left: 0;
     margin-right: 0;
+    padding: $s60 $s35;
+  }
+
+  p {
+    max-width: 30em;
   }
 }
 
@@ -54,14 +59,10 @@
     }
 }
 
-.form-card__content {
-    .form-group:last-of-type {
-        margin-bottom: 0;
-    }
-}
 
 .form-card__footer {
     @include full-bleed();
+    margin-top: $s60;
 
     *:last-child {
       margin-bottom: 0;
