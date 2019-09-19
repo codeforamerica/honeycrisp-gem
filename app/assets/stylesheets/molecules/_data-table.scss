@@ -52,7 +52,7 @@
     }
     .is-selected {
       color: $color-teal;
-      font-weight: 700;
+      font-weight: $font-weight-bold;
     }
 
     @include media($tablet-up) {
@@ -66,7 +66,7 @@
   }
 
   th {
-    font-weight: 400;
+    font-weight: $font-weight-normal;
     @extend .text--help;
     border-bottom: 2px solid $color-grey-darkest;
   }
@@ -95,7 +95,7 @@
   td {
     border-bottom: 1px solid $color-grey;
     &:first-child {
-      font-weight: 700;
+      font-weight: $font-weight-bold;
     }
   }
 

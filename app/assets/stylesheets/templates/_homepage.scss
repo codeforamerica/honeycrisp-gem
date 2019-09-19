@@ -51,14 +51,14 @@
       max-width: 10em;
       font-size: $font-size-60;
       line-height: $s60;
-      font-weight: 700;
+      font-weight: $font-weight-bold;
       margin-top: 0em;
       margin-bottom: $s25;
     }
 
     h1 {
       margin-bottom: $s60;
-      font-weight: 400;
+      font-weight: $font-weight-normal;
       font-size: $font-size-25;
       line-height: $s25;
       margin-top: 0;

@@ -68,7 +68,7 @@
     .text-input-group__prefix {
         display: table-cell;
         width: 1%;
-        font-weight: 700;
+        font-weight: $font-weight-bold;
         padding: 0 $s10 0 $s25;
         vertical-align: middle;
         background-color: $color-grey-light;
@@ -90,7 +90,7 @@
     .text-input-group__postfix {
         display: table-cell;
         width: 1%;
-        font-weight: 700;
+        font-weight: $font-weight-bold;
         padding: 0 $s25 0 $s10;
         vertical-align: middle;
         background-color: $color-grey-light;
@@ -253,6 +253,10 @@
             left: $s35+2.2rem;
         }
     }
+}
+
+.question-with-follow-up__follow-up--show-by-default {
+  display: block;
 }
 
 .feedback-survey__form {

@@ -21,7 +21,7 @@ label {
 .form-question {
 	display: block;
 	margin-bottom: $s25;
-  font-weight: 700;
+  font-weight: $font-weight-bold;
 }
 
 .text-input {
@@ -29,7 +29,7 @@ label {
 	display: block;
 	width: 100%;
 	font-size: $font-size-normal;
-	font-weight: 700;
+	font-weight: $font-weight-bold;
   height: $s60;
 	padding: 0 $s25;
   margin-bottom: $s15;
@@ -53,7 +53,7 @@ label {
 	display: block;
 	cursor: pointer;
 	font-size: $font-size-normal;
-	font-weight: 700;
+	font-weight: $font-weight-bold;
 	margin-bottom: $s10;
   min-height: $s60;
 	padding: $s35/2 $s25;
@@ -106,7 +106,7 @@ label {
 	cursor: pointer;
 	display: block;
 	font-size: $font-size-normal;
-	font-weight: 700;
+	font-weight: $font-weight-bold;
 	background-color: #FFFFFF;
   min-height: $s60;
 	margin-bottom: $s10;
@@ -153,7 +153,7 @@ label {
 	padding: $s15;
 	line-height: $line-height-normal;
 	margin-bottom: $s15;
-  font-weight: 700;
+  font-weight: $font-weight-bold;
   background-color: $color-grey-light;
   &::placeholder {
     color: $color-grey-dark;
@@ -196,7 +196,7 @@ label {
   padding: 0 $s60 0 $s25;
   font-family: $font-system;
   font-size: $font-size-normal;
-  font-weight: 700;
+  font-weight: $font-weight-bold;
   background-color: transparent;
   width: 100%;
   overflow-wrap: break-word;

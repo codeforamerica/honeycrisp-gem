@@ -48,6 +48,13 @@
     }
 }
 
+.slab--half-padded {
+  padding: {
+    top: $s25;
+    bottom: $s25;
+  }
+}
+
 .slab--not-padded {
   padding: {
     top: 0;

@@ -6,7 +6,7 @@ p {
 h1, .h1 {
   font-size: $font-size-60;
   line-height: $s60;
-  font-weight: 700;
+  font-weight: $font-weight-bold;
   margin-top: $s60;
   margin-bottom: $s25;
   &:first-child {
@@ -16,7 +16,7 @@ h1, .h1 {
 
 h2, .h2 {
   font-size: $font-size-35;
-  font-weight: 700;
+  font-weight: $font-weight-bold;
   line-height: $s35;
   margin-top: $s35;
   margin-bottom: $s25;
@@ -27,7 +27,7 @@ h2, .h2 {
 
 h3, .h3 {
   font-size: $font-size-25;
-  font-weight: 700;
+  font-weight: $font-weight-bold;
   line-height: $s25;
   margin-top: $s25;
   margin-bottom: $s25;
@@ -35,13 +35,13 @@ h3, .h3 {
     margin-top: 0;
   }
   b, strong {
-    font-weight: 700;
+    font-weight: $font-weight-bold;
   }
 }
 
 h4, .h4 {
   font-size: $font-size-25-small;
-  font-weight: 700;
+  font-weight: $font-weight-bold;
   line-height: $s25;
   margin-top: $s25;
   margin-bottom: $s25;
@@ -77,8 +77,13 @@ a {
 
 .text--caption {
   font-size: $font-size-35;
-  font-weight: 300;
+  font-weight: $font-weight-light;
+  margin-top: $s35;
+  margin-bottom: $s25;35
   line-height: $s35;
+  b, strong {
+    font-weight: $font-weight-bold;
+  }
 }
 
 .text--left {
@@ -150,13 +155,13 @@ ol, ul {
 
 .text--error {
   @extend .text--red;
-  font-weight: 700;
+  font-weight: $font-weight-bold;
   font-size: $font-size-small;
   line-height: $line-height-normal;
 }
 
 .text--pullquote {
-  font-weight: 300;
+  font-weight: $font-weight-light;
   font-size: $font-size-h3;
   line-height: $line-height-normal;
   margin-bottom: $s25;

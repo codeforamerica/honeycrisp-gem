@@ -7,7 +7,7 @@
     display: inline-block;
     position: relative;
     cursor: pointer;
-    font-weight: 700;
+    font-weight: $font-weight-bold;
     border: 2px solid $color-grey-darkest;
     box-shadow: 0 2px 0px rgba(#000, .5);
     background-color: #FFFFFF;
