@@ -81,6 +81,7 @@
   text-align: center;
   text-decoration: none;
   border-left: 0px solid $color-green;
+  border-bottom-right-radius: $border-radius-large;
   &:hover {
     background-color: $color-green-light;
   }
