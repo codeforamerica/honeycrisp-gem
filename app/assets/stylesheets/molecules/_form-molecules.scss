@@ -60,9 +60,7 @@
 .text-input-group {
     @include outline-within;
     display: table;
-    margin-bottom: 1em;
-    font-size: $font-size-h3;
-    line-height: 1em;
+    margin-bottom: 0;
     border-collapse: separate;
     width: 100%;
     border: 2px solid $color-grey-darkest;
@@ -70,7 +68,7 @@
     .text-input-group__prefix {
         display: table-cell;
         width: 1%;
-        font-weight: 500;
+        font-weight: 700;
         padding: 0 $s10 0 $s25;
         vertical-align: middle;
         background-color: $color-grey-light;
