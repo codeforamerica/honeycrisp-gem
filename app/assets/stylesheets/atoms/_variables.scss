@@ -111,20 +111,20 @@ $width-image-large:   	$s155 !default;
 
 
 // Form Widths
-$width-form-med:	    13em;
-$width-form-long:	    25em;
-$width-form-short:     	8em;
+$width-form-med:	    13em !default;
+$width-form-long:	    25em !default;
+$width-form-short:     	8em !default;
 
-$width-form-casenumber: 8em;
-$width-form-phone:      9.5em;
-$width-form-name:       12em;
-$width-form-zip:        6.5em;
-$width-form-ssn:        9em;
-$width-form-searchbar:  30em;
+$width-form-casenumber: 8em !default;
+$width-form-phone:      9.5em !default;
+$width-form-name:       12em !default;
+$width-form-zip:        6.5em !default;
+$width-form-ssn:        9em !default;
+$width-form-searchbar:  30em !default;
 
 // Shadows
-$box-shadow: 			0px 3px 5px rgba(0,0,0,.15);
+$box-shadow: 			0px 3px 5px rgba(0,0,0,.15) !default;
 
 // Animations
-$animation-fast:      	.1s ease-out;
-$animation-med:      	.2s ease-out;
+$animation-fast:      	.1s ease-out !default;
+$animation-med:      	.2s ease-out !default;

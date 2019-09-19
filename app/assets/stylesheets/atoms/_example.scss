@@ -8,3 +8,8 @@
   font-size: $font-size-small;
   line-height: $s25;
 }
+
+.example-group {
+  @extend .text--centered;
+  margin-bottom: $s25;
+}

@@ -1,4 +1,8 @@
+
+
 p {
+  font-size: $font-size-25;
+  line-height: $s25;
   margin-top: 0;
   margin-bottom: $s25;
 }
@@ -79,7 +83,7 @@ a {
   font-size: $font-size-35;
   font-weight: $font-weight-light;
   margin-top: $s35;
-  margin-bottom: $s25;35
+  margin-bottom: $s25;
   line-height: $s35;
   b, strong {
     font-weight: $font-weight-bold;

@@ -33,7 +33,7 @@
   }
 
   .grid__item {
-    margin-bottom: 2em;
+    margin-bottom: $s25;
     @include media($tablet-up) {
       margin-bottom: 0;
     }
