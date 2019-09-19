@@ -138,16 +138,18 @@
     content: '';
     display: block;
     position: absolute;
-    top: -$s5;
-    bottom: -$s5;
+    top: -$s10;
+    bottom: -$s10;
     left: 0;
     width: $s5;
     background-color: $color-red;
   }
 
   .text--error {
+    display: block;
     margin-top: $s25;
   }
+
 }
 
 .select-with-button {

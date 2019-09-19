@@ -18,6 +18,9 @@
   &:focus {
     outline: none;
   }
+  &::placeholder {
+    color: $color-grey-dark;
+  }
 }
 
 .searchbar__button {

@@ -1,11 +1,21 @@
 fieldset {
-	border: 0;
-	padding: 0;
-	margin: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+legend {
+  float: left;
+  width: 100%;
+}
+
+radiogroup {
+  clear: both;
 }
 
 label {
 	line-height: $line-height-normal;
+  clear: both;
 }
 
 .form-question {
@@ -22,6 +32,7 @@ label {
 	font-weight: 700;
   height: $s60;
 	padding: 0 $s25;
+  margin-bottom: $s15;
   box-shadow: inset 0px 2px 0px rgba(#000, .15);
 	border: 2px solid $color-grey-darkest;
   border-radius: 0;
