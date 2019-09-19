@@ -1,7 +1,11 @@
 .template--question {
   .slab {
-    padding-top: $s25;
+    padding-top: 0;
     padding-bottom: $s25;
+    @include media($tablet-up) {
+      padding-top: $s25;
+      padding-bottom: $s35;
+    }
   }
 
   .form-card {

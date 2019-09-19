@@ -146,6 +146,10 @@
     width: $s5;
     background-color: $color-red;
   }
+
+  .text--error {
+    margin-top: $s25;
+  }
 }
 
 .select-with-button {
@@ -195,12 +199,12 @@
 }
 
 .question-with-follow-up {
-  margin-bottom: 4em;
+  margin-bottom: $s60;
 }
 
 .question-with-follow-up__question {
   .form-group {
-    margin-bottom: 1em;
+    margin-bottom: $s15;
   }
 }
 
@@ -212,19 +216,17 @@
     border-top: 2px solid $color-grey-darkest;
     border-bottom: 2px solid $color-grey-darkest;
     padding: {
-        top: 2em;
-        bottom: 2em;
-        left: $s35;
+        top: $s35;
+        bottom: $s35;
     }
-
-    @include media($tablet-up) {
-        border-left: 2px solid $color-grey-darkest;
-        border-right: 2px solid $color-grey-darkest;
-        padding-left: $s35*2;
-    }
+    margin-top: -$s25;
 
     .form-group:last-of-type {
       margin-bottom: 0;
+    }
+
+    .text-input {
+      background-color: white;
     }
 
 
@@ -234,9 +236,9 @@
         display: block;
         position: absolute;
         top: -19px;
-        left: $s15+20;
+        left: $s15+2rem;
         @include media($tablet-up) {
-            left: $s35+20;
+            left: $s35+2rem;
         }
     }
 
@@ -246,9 +248,9 @@
         display: block;
         position: absolute;
         top: -15px;
-        left: $s15+22;
+        left: $s15+2.2rem;
         @include media($tablet-up) {
-            left: $s35+22;
+            left: $s35+2.2rem;
         }
     }
 }
