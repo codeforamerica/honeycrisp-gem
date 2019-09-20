@@ -9,36 +9,59 @@
   background-repeat: no-repeat;
 }
 
+.emoji-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .emoji--inline {
   top: .2em;
 }
 
-.emoji--huge {
+.emoji-size-155 {
   width: $s155;
   height: $s155;
 }
 
-.emoji--bigger {
+.emoji-size-95 {
   width: $s95;
   height: $s95;
 }
 
-.emoji--big {
+.emoji-size-60 {
   width: $s60;
   height: $s60;
 }
 
-.emoji--med {
+.emoji-size-35 {
   width: $s35;
-  height: $s35;
+  height: $s35; 
+}
+
+.emoji-size-25 {
+  width: $s25;
+  height: $s25; 
+}
+
+
+// Deprecated emoji classes
+
+.emoji--huge {
+  @extend .emoji-size-155;
+}
+
+.emoji--bigger {
+  @extend .emoji-size-95;
+}
+
+.emoji--big {
+  @extend .emoji-size-60;
+}
+
+.emoji--med {
+  @extend .emoji-size-35;
 }
 
 .emoji--small {
-  width: $s25;
-  height: $s25;
-}
-
-.emoji-container {
-  display: flex;
-  flex-wrap: wrap;
+  @extend .emoji-size-25;
 }

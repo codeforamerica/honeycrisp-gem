@@ -3,6 +3,7 @@
     box-sizing: border-box;
     height: $s60;
     line-height: $s60;
+    margin-bottom: $s25;
     transition: $animation-fast all;
     display: inline-block;
     position: relative;
@@ -84,7 +85,7 @@
 }
 
 .button--small {
-  font-size: $font-size-small;
+  font-size: $font-size-25-small;
   border-radius: $border-radius;
   height: $s35;
   line-height: $s35;
@@ -92,7 +93,7 @@
 }
 
 .button--inline {
-  font-size: $font-size-small;
+  font-size: $font-size-25-small;
   height: $s35;
   line-height: $s35;
   padding: 0 $s15;
@@ -108,17 +109,14 @@
   color: inherit;
 }
 
-.button--large  {
-  font-size: $font-size-h3;
-  height: $s95;
-  line-height: $s95;
-  padding: 0 $s35;
-}
-
 .button__icon {
   margin-left: $s5;
 }
 
 .button__icon--left {
   margin-right: $s5;
+}
+
+p .button {
+  margin-bottom: 0;
 }

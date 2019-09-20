@@ -1,13 +1,4 @@
-
-
-p {
-  font-size: $font-size-25;
-  line-height: $s25;
-  margin-top: 0;
-  margin-bottom: $s25;
-}
-
-h1, .h1 {
+.heading-60 {
   font-size: $font-size-60;
   line-height: $s60;
   font-weight: $font-weight-bold;
@@ -18,7 +9,7 @@ h1, .h1 {
   }
 }
 
-h2, .h2 {
+.heading-35 {
   font-size: $font-size-35;
   font-weight: $font-weight-bold;
   line-height: $s35;
@@ -29,7 +20,7 @@ h2, .h2 {
   }
 }
 
-h3, .h3 {
+.heading-25 {
   font-size: $font-size-25;
   font-weight: $font-weight-bold;
   line-height: $s25;
@@ -38,12 +29,9 @@ h3, .h3 {
   &:first-child {
     margin-top: 0;
   }
-  b, strong {
-    font-weight: $font-weight-bold;
-  }
 }
 
-h4, .h4 {
+.heading-25-small {
   font-size: $font-size-25-small;
   font-weight: $font-weight-bold;
   line-height: $s25;
@@ -54,21 +42,39 @@ h4, .h4 {
   }
 }
 
-a {
-  @include outline;
-  color: $color-teal;
-  &:hover {
-    color: $color-teal-dark;
-  }
+.text-25 {
+  font-size: $font-size-25;
+  line-height: $s25;
+  margin-bottom: $s25;
 }
 
-.link--subtle {
-  color: inherit;
+.text-25-small {
+  font-size: $font-size-25-small;
+  line-height: $s25;
+  margin-bottom: $s25;
+  color: $color-grey-dark;
 }
 
-.text--small {
-    font-size: $font-size-25-small;
-    line-height: $s25;
+
+p {
+  margin-top: 0;
+  margin-bottom: $s25;
+}
+
+h1 {
+  @extend .heading-60;
+}
+
+h2 {
+  @extend .heading-35;
+}
+
+h3 {
+  @extend .heading-25;
+}
+
+h4 {
+  @extend .heading-25-small;
 }
 
 .text--caps {
@@ -76,18 +82,11 @@ a {
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: 500;
-  line-height: $line-height-normal;
 }
 
 .text--caption {
-  font-size: $font-size-35;
+  @extend .heading-35;
   font-weight: $font-weight-light;
-  margin-top: $s35;
-  margin-bottom: $s25;
-  line-height: $s35;
-  b, strong {
-    font-weight: $font-weight-bold;
-  }
 }
 
 .text--left {
@@ -102,8 +101,16 @@ a {
   text-align: right;
 }
 
-.text--no-top-margin {
-  margin-top: 0;
+a {
+  @include outline;
+  color: $color-teal;
+  &:hover {
+    color: $color-teal-dark;
+  }
+}
+
+.link--subtle {
+  color: inherit;
 }
 
 ol, ul {
@@ -151,23 +158,16 @@ ol, ul {
   color: $color-yellow;
 }
 
-.text--help {
-  @extend .text--grey-dark;
-  font-size: $font-size-small;
-  line-height: $line-height-normal;
-}
-
 .text--error {
   @extend .text--red;
+  @extend .text-25-small;
   font-weight: $font-weight-bold;
-  font-size: $font-size-small;
-  line-height: $line-height-normal;
 }
 
 .text--pullquote {
   font-weight: $font-weight-light;
-  font-size: $font-size-h3;
-  line-height: $line-height-normal;
+  font-size: $font-size-35;
+  line-height: $s35;
   margin-bottom: $s25;
 }
 
@@ -252,4 +252,30 @@ hr {
 .rule--no-padding {
   margin-top: $s25;
   margin-bottom: $s25;
+}
+
+// Depracated Text Classes
+
+.text--help {
+  @extend .text-25-small;
+}
+
+.text--small {
+    @extend .text-25-small;
+}
+
+.h1 {
+  @extend .heading-60;
+}
+
+.h2 {
+  @extend .heading-35;
+}
+
+.h3 {
+  @extend .heading-25;
+}
+
+.h4 {
+  @extend .heading-25-small;
 }

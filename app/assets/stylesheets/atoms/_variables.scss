@@ -1,11 +1,3 @@
-// Fonts
-$font-system:         	-apple-system, BlinkMacSystemFont,
-                        "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
-                        "Fira Sans", "Droid Sans", "Helvetica Neue",
-                        sans-serif;
-
-$font-icon:           	'icomoon';
-
 // Spacing Units
 $s5: 					0.5rem !default;
 $s10: 					1.0rem !default;
@@ -18,39 +10,29 @@ $s155:					15.5rem !default;
 $s250:					25.0rem !default;
 
 
-// Padding Sizes - Deprecated
-// Use spacing units directly in the future
-$padding-small:   		$s10 !default;
-$padding-med:     		$s35 !default;
-$padding-large:   		$s60 !default;
-$padding-huge:    		$s155 !default;
+// Fonts
+$font-system:         	-apple-system, BlinkMacSystemFont,
+                        "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+                        "Fira Sans", "Droid Sans", "Helvetica Neue",
+                        sans-serif;
+
+$font-icon:           	'icomoon';
 
 
-// Typopgrahy
+// Typopgraphy
 $em-base:             	62.5% !default;	// Changes root font size to 10px for easier rem calculations
 $font-size-60:			5rem !default;
 $font-size-35:			2.7rem !default;
 $font-size-25:			1.9rem !default;
 $font-size-25-small:	1.6rem !default;
+$font-size-15:			1.2rem !default;
 
 $font-weight-normal:	400 !default;
 $font-weight-bold:		700 !default;
 $font-weight-light:		300 !default;
 
 
-// Deprecated font variables
-$font-size-normal:    	$font-size-25 !default;
-$font-size-small:     	$font-size-25-small !default;
-$font-size-smallest:  	1.2rem !default;
-$font-size-h1:        	$font-size-60 !default;
-$font-size-h2:        	$font-size-35 !default;
-$font-size-h3:        	$font-size-25 !default;
-$font-size-h4:        	$font-size-25-small !default;
-$line-height-normal:  	1.5em !default;
-$line-height-display: 	1.3em !default;
-
-
-// Colors - Current
+// Colors
 $color-green: 			#00891B !default;
 $color-green-light: 	#EBFFEF !default;
 
@@ -66,6 +48,8 @@ $color-magenta-dark:  	#66013A !default;
 $color-red: 			#D13F00 !default;
 $color-red-light: 		#FCE3D9 !default;
 
+$color-orange:        	#D48C00 !default;
+
 $color-teal: 			#008060 !default;
 $color-teal-light: 		#EBFFFA !default;
 $color-teal-dark: 		#034E46 !default;
@@ -74,16 +58,6 @@ $color-yellow: 			#FFAE00 !default;
 $color-yellow-light: 	#FFF2D1 !default;
 
 $color-background:    	$color-grey-light !default;
-
-
-// Colors - Deprecated
-$color-darkest-grey:  	$color-grey-darkest !default;
-$color-dark-grey:     	$color-grey-dark !default;
-$color-light-grey:    	$color-grey-light !default;
-$color-tan:           	#DFD7CC !default;
-$color-orange:        	#D48C00 !default;
-$color-text-on-orange: 	#3D2800 !default;
-
 
 
 // Breakpoints

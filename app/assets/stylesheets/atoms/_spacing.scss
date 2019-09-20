@@ -87,43 +87,43 @@
 }
 
 .with-padding-small {
-  margin-bottom: $padding-small !important;
+  margin-bottom: $s10 !important;
 }
 
 .with-padding-med {
-  margin-bottom: $padding-med !important;
+  margin-bottom: $s35 !important;
 }
 
 .with-padding-large {
-  margin-bottom: $padding-large !important;
+  margin-bottom: $s60 !important;
 }
 
 .with-padding-huge {
-  margin-bottom: $padding-huge !important;
+  margin-bottom: $s155 !important;
 }
 
 .with-neg-padding-large {
   @include media($tablet-up) {
-    margin-bottom: -$padding-huge !important;
+    margin-bottom: -$s155 !important;
   }
 }
 
 .nudge--tiny {
-  margin-top: .2em !important;
+  margin-top: .2rem !important;
 }
 
 .nudge--small {
-  margin-top: .5em !important;
+  margin-top: $s5 !important;
 }
 
 .nudge--med {
-  margin-top: .7em !important;
+  margin-top: $s10 !important;
 }
 
 .nudge--large {
-  margin-top: $padding-large !important;
+  margin-top: $s60 !important;
 }
 
 .nudge--huge {
-  margin-top: $padding-huge !important;
+  margin-top: $s155 !important;
 }

@@ -6,15 +6,21 @@ fieldset {
 
 legend {
   float: left;
+  display: block;
   width: 100%;
 }
+
+legend + p {
+  clear: both;
+}
+
 
 radiogroup {
   clear: both;
 }
 
 label {
-	line-height: $line-height-normal;
+	line-height: $s25;
   clear: both;
 }
 
@@ -28,7 +34,7 @@ label {
   @include outline;
 	display: block;
 	width: 100%;
-	font-size: $font-size-normal;
+	font-size: $font-size-25;
 	font-weight: $font-weight-bold;
   height: $s60;
 	padding: 0 $s25;
@@ -52,7 +58,7 @@ label {
   position: relative;
 	display: block;
 	cursor: pointer;
-	font-size: $font-size-normal;
+	font-size: $font-size-25;
 	font-weight: $font-weight-bold;
 	margin-bottom: $s10;
   min-height: $s60;
@@ -105,7 +111,7 @@ label {
   position: relative;
 	cursor: pointer;
 	display: block;
-	font-size: $font-size-normal;
+	font-size: $font-size-25;
 	font-weight: $font-weight-bold;
 	background-color: #FFFFFF;
   min-height: $s60;
@@ -126,7 +132,7 @@ label {
     &:checked {
       &:before {
         font-family: $font-icon;
-        font-size: $font-size-small;
+        font-size: $font-size-25-small;
         content: '\e5ca';
         display: inline-block;
         position: absolute;
@@ -151,7 +157,7 @@ label {
   box-shadow: inset 0px 2px 0px rgba(#000, .15);
 	width: 100%;
 	padding: $s15;
-	line-height: $line-height-normal;
+	line-height: $s25;
 	margin-bottom: $s15;
   font-weight: $font-weight-bold;
   background-color: $color-grey-light;
@@ -164,7 +170,7 @@ label {
   position: relative;
   display: inline-block;
   margin-bottom: $s15;
-  font-size: $font-size-normal;
+  font-size: $font-size-25;
   height: $s60;
   line-height: $s60;
   background-color: #FFFFFF;
@@ -177,7 +183,7 @@ label {
     bottom: 0;
     display: block;
     font-family: $font-icon;
-    font-size: $font-size-h2;
+    font-size: $font-size-35;
     content: '\e5c5';
     color: $color-grey-darkest;
     border-left: 0;
@@ -195,7 +201,7 @@ label {
   border: 2px solid $color-grey-darkest;
   padding: 0 $s60 0 $s25;
   font-family: $font-system;
-  font-size: $font-size-normal;
+  font-size: $font-size-25;
   font-weight: $font-weight-bold;
   background-color: transparent;
   width: 100%;

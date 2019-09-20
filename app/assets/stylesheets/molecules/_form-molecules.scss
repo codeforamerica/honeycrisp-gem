@@ -123,15 +123,15 @@
   }
 
   @include media($tablet-up) {
-      margin: {
-    left: -$s35;
-    right: -$s35;
-  }
+    margin: {
+      left: -$s35;
+      right: -$s35;
+    }
 
-  padding: {
-    left: $s35;
-    right: $s35;
-  }
+    padding: {
+      left: $s35;
+      right: $s35;
+    }
   }
   
   &:before {
@@ -175,7 +175,7 @@
 
   .select__element {
     width: 100%;
-    font-size: $font-size-normal;
+    font-size: $font-size-25;
     border: 2px solid $color-grey;
 
     &:focus {
@@ -210,7 +210,27 @@
 
 .question-with-follow-up__follow-up {
     display: none;
-    @include full-bleed();
+    margin: {
+      left: -$s25;
+      right: -$s25;
+    }
+
+    padding: {
+      left: $s25;
+      right: $s25;
+    }
+
+    @include media($tablet-up) {
+      margin: {
+        left: -$s35;
+        right: -$s35;
+      }
+
+      padding: {
+        left: $s35;
+        right: $s35;
+      }
+    }
     position: relative;
     background-color: $color-background;
     border-top: 2px solid $color-grey-darkest;
@@ -219,7 +239,6 @@
         top: $s35;
         bottom: $s35;
     }
-    margin-top: -$s25;
 
     .form-group:last-of-type {
       margin-bottom: 0;

@@ -18,14 +18,14 @@
 .data-table {
   width: 100%;
   text-align: left;
-  font-size: $font-size-small;
+  font-size: $font-size-25-small;
   border-collapse: collapse;
   border-bottom: 2px solid $color-grey-darkest;
   margin-bottom: 1em;
 
   &.data-table--small {
     td, th {
-      font-size: $font-size-smallest;
+      font-size: $font-size-15;
     }
   }
 
