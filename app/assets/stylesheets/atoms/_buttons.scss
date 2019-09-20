@@ -2,7 +2,7 @@
     @include outline;
     box-sizing: border-box;
     height: $s60;
-    line-height: $s60;
+    line-height: $s60 - .2rem; // Hack around centering text because of borders
     margin-bottom: $s25;
     transition: $animation-fast all;
     display: inline-block;
@@ -88,7 +88,7 @@
   font-size: $font-size-25-small;
   border-radius: $border-radius;
   height: $s35;
-  line-height: $s35;
+  line-height: $s35 - .2rem; // Hack around centering text because of borders
   padding: 0 $s15;
 }
 
