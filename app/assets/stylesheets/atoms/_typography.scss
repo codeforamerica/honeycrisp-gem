@@ -262,6 +262,7 @@ hr {
 
 .text--small {
     @extend .text-25-small;
+    color: $color-grey-darkest
 }
 
 .h1 {

@@ -63,12 +63,14 @@ label {
 	margin-bottom: $s10;
   min-height: $s60;
 	padding: $s35/2 $s25;
+  padding-left: $s60;
 	background-color: #FFFFFF;
 	border: 2px solid $color-grey-darkest;
 	input[type='radio'] {
     @include outline;
-		position: relative;
-    top: 2px;
+		position: absolute;
+    top: $s35/2 + .3rem;
+    left: $s25;
     appearance: none;
     display: inline-block;
     background-color: #fff;
@@ -117,18 +119,19 @@ label {
   min-height: $s60;
 	margin-bottom: $s10;
 	padding: $s35/2 $s25;
+  padding-left: $s60;
 	border: 2px solid $color-grey-darkest;
 	input[type='checkbox'] {
     @include outline;
-    position: relative;
-    top: 2px;
+    position: absolute;
+    top: $s35/2 + .3rem;
+    left: $s25;
     appearance: none;
     display: inline-block;
     background-color: #fff;
     border: 2px solid $color-grey-darkest;
     height: 20px;
     width: 20px;
-    margin-right: $s15;
     &:checked {
       &:before {
         font-family: $font-icon;
@@ -136,7 +139,7 @@ label {
         content: '\e5ca';
         display: inline-block;
         position: absolute;
-        top: -6px;
+        top: -5px;
         color: $color-teal;
       }
     }
