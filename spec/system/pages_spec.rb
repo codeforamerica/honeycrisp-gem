@@ -11,7 +11,7 @@ describe "Pages" do
     visit "/cfa/styleguide"
 
     expect(page.status_code).to eq 200
-    expect(page).to have_content("CfA Styleguide v#{Cfa::Styleguide::VERSION}")
+    expect(page).to have_content("Honeycrisp Design System v#{Cfa::Styleguide::VERSION}")
   end
 
   it "can load emoji index" do
