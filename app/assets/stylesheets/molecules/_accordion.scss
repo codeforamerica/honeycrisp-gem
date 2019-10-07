@@ -13,6 +13,7 @@
 	text-align: left;
 	font-weight: bold;
 	text-decoration: none;
+	padding-right: 35px; // Replace with $s35 when styleguide is updated
 	&:after {
 		content: '';
 		display: block;
@@ -35,7 +36,7 @@
 }
 
 .accordion__content {
-	margin-top: 35px; // Replace with $s15 when styleguide is updated
+	margin-top: 35px; // Replace with $s35 when styleguide is updated
 	display: block;
 
 	.accordion--is-closed & {
