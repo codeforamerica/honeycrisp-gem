@@ -236,6 +236,30 @@ var showMore = (function () {
   }
 })();
 
+var accordion = (function() {
+  var ac = {
+    init: function() {
+      $('.accordion').each(function(index, accordion) {
+        var self = accordion;
+        $(self).addClass('accordion--is-closed');
+        $(self).find('.accordion__button').attr('aria-expanded', "false");
+        $(self).find('.accordion__button').click(function(e) {
+          e.preventDefault();
+          $(self).toggleClass('accordion--is-closed');
+          if($(self).find('.accordion__button').attr('aria-expanded') == "false") {
+            $(self).find('.accordion__button').attr('aria-expanded', "true");
+          }
+          else {
+            $(self).find('.accordion__button').attr('aria-expanded', "false");
+          }
+        });
+      });
+    }
+  }
+  return {
+    init: ac.init
+  }
+})();
 
 $(document).ready(function() {
   radioSelector.init();
@@ -246,4 +270,5 @@ $(document).ready(function() {
   inputGroupSelector.init();
   noneOfTheAbove.init();
   showMore.init();
+  accordion.init();
 });
