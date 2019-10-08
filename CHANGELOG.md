@@ -1,7 +1,25 @@
 # Change Log
 
+## [v0.7.0](https://github.com/codeforamerica/cfa-styleguide-gem/tree/v0.7.0) (2019-10-08)
+[Full Changelog](https://github.com/codeforamerica/cfa-styleguide-gem/compare/v0.6.5...v0.7.0)
+
+**Implemented enhancements:**
+
+- Add more documentation of spacing classes [\#114](https://github.com/codeforamerica/cfa-styleguide-gem/issues/114)
+- Add optional text label for step progress bar [\#105](https://github.com/codeforamerica/cfa-styleguide-gem/issues/105)
+
+**Merged pull requests:**
+
+- Adding an accordion pattern [\#125](https://github.com/codeforamerica/cfa-styleguide-gem/pull/125) ([norrishung](https://github.com/norrishung))
+- Hide unchecked follow up questions on page load [\#119](https://github.com/codeforamerica/cfa-styleguide-gem/pull/119) ([tdooner](https://github.com/tdooner))
+- Fix follow-up to work for single checkbox [\#118](https://github.com/codeforamerica/cfa-styleguide-gem/pull/118) ([tdooner](https://github.com/tdooner))
+
 ## [v0.6.5](https://github.com/codeforamerica/cfa-styleguide-gem/tree/v0.6.5) (2019-07-15)
 [Full Changelog](https://github.com/codeforamerica/cfa-styleguide-gem/compare/v0.6.4...v0.6.5)
+
+**Implemented enhancements:**
+
+- Explore screenshot testing [\#51](https://github.com/codeforamerica/cfa-styleguide-gem/issues/51)
 
 **Merged pull requests:**
 
