@@ -178,23 +178,30 @@ ol, ul {
   }
 }
 
-.list--checkmark {
+.list--checkmark, .list--crossmark {
   li {
     position: relative;
-    padding-left: 4em;
-    margin-bottom: 4em;
+    margin-left: 25px;
+    padding-left: 25px;
+    margin-bottom: 15px;
     &:before {
       content: '';
       display: block;
       position: absolute;
       left: 0;
       top: .25em;
-      width: 2em;
-      height: 2em;
+      width: 25px;
+      height: 15px;
+      background-image: image-url('emojis/checkmark.png');
       background-repeat: no-repeat;
-      @include retina-bg(illustration_success, 2em auto);
-      background-size: 2em auto;
+      background-size: auto 15px;
     }
+  }
+}
+
+.list--crossmark {
+  li:before {
+    background-image: image-url('emojis/crossmark.png');
   }
 }
 
