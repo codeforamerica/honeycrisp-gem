@@ -1,5 +1,12 @@
 # Change Log
 
+## [v0.7.1](https://github.com/codeforamerica/cfa-styleguide-gem/tree/v0.7.1) (2019-10-09)
+[Full Changelog](https://github.com/codeforamerica/cfa-styleguide-gem/compare/v0.7.0...v0.7.1)
+
+**Merged pull requests:**
+
+- Bump rubyzip from 1.2.2 to 1.3.0 [\#126](https://github.com/codeforamerica/cfa-styleguide-gem/pull/126) ([dependabot[bot]](https://github.com/apps/dependabot))
+
 ## [v0.7.0](https://github.com/codeforamerica/cfa-styleguide-gem/tree/v0.7.0) (2019-10-08)
 [Full Changelog](https://github.com/codeforamerica/cfa-styleguide-gem/compare/v0.6.5...v0.7.0)
 
