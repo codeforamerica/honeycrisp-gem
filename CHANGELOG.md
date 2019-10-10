@@ -1,5 +1,12 @@
 # Change Log
 
+## [v0.8.0](https://github.com/codeforamerica/cfa-styleguide-gem/tree/v0.8.0) (2019-10-10)
+[Full Changelog](https://github.com/codeforamerica/cfa-styleguide-gem/compare/v0.7.1...v0.8.0)
+
+**Merged pull requests:**
+
+- Add crossmark and checkmark list patterns to design system [\#127](https://github.com/codeforamerica/cfa-styleguide-gem/pull/127) ([norrishung](https://github.com/norrishung))
+
 ## [v0.7.1](https://github.com/codeforamerica/cfa-styleguide-gem/tree/v0.7.1) (2019-10-09)
 [Full Changelog](https://github.com/codeforamerica/cfa-styleguide-gem/compare/v0.7.0...v0.7.1)
 
