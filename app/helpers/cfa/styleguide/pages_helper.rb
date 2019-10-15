@@ -17,8 +17,8 @@ module Cfa
 
         content = styleguide_example { partial.render(self, {}) }
         content << content_tag(:div, class: "pattern__code") do
-          content_tag(:pre, class: "language-ruby language-markup") do
-            content_tag(:code, class: "language-ruby") do
+          content_tag(:pre) do
+            content_tag(:code, class: "language-erb") do
               partial_contents
             end
           end

@@ -7,10 +7,11 @@
   <%= csp_meta_tag %>
 
   <%= stylesheet_link_tag    'application', media: 'all' %>
-  <%= stylesheet_link_tag    'prism', media: 'all' %>
+  <%= stylesheet_link_tag    'https://cdnjs.cloudflare.com/ajax/libs/prism/1.17.1/themes/prism.min.css', media: 'all' %>
 
   <%= javascript_include_tag 'application' %>
-  <%= javascript_include_tag 'prism' %>
+  <%= javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/prism/1.17.1/components/prism-core.min.js' %>
+  <%= javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/prism/1.17.1/plugins/autoloader/prism-autoloader.min.js' %>
 </head>
 
 <body class="template--<%= content_for(:template_name) if content_for?(:template_name) %>">
