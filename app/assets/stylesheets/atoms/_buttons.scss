@@ -1,8 +1,7 @@
 .button {
     @include outline;
     box-sizing: border-box;
-    height: $s60;
-    line-height: $s60 - .2rem; // Hack around centering text because of borders
+    line-height: $s25;
     margin-bottom: $s25;
     transition: $animation-fast all;
     display: inline-block;
@@ -12,7 +11,7 @@
     border: 2px solid $color-grey-darkest;
     box-shadow: 0 2px 0px rgba(#000, .5);
     background-color: #FFFFFF;
-    padding: 0 $s25;
+    padding: $s35/2 $s25;
     border-radius: $border-radius-large;
     margin-right: $s25;
     text-decoration: none;
@@ -87,16 +86,12 @@
 .button--small {
   font-size: $font-size-25-small;
   border-radius: $border-radius;
-  height: $s35;
-  line-height: $s35 - .2rem; // Hack around centering text because of borders
-  padding: 0 $s15;
+  line-height: $s25;
+  padding: $s5 $s15;
 }
 
-.button--inline {
-  font-size: $font-size-25-small;
-  height: $s35;
-  line-height: $s35;
-  padding: 0 $s15;
+.button--inline { // used in the admin pages
+  @extend .button--small;
 }
 
 .button--link {
@@ -104,7 +99,6 @@
   border: none;
   box-shadow: none;
   text-decoration: underline;
-  padding: 0;
   cursor: pointer;
   color: inherit;
 }

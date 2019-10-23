@@ -31,7 +31,10 @@
   }
 
   @extend .button;
-  line-height: 5.6rem; // hack around table cell sizing to make this 60px
+  padding: {
+    top: ($s35/2) - 0.2rem;
+    bottom: ($s35/2) - 0.2rem;
+  }
   display: table-cell;
   border-radius: 0;
   vertical-align: middle;
