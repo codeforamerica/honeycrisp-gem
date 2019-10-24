@@ -13,12 +13,15 @@
     background-color: #FFFFFF;
     padding: $s35/2 $s25;
     border-radius: $border-radius-large;
-    margin-right: $s25;
+    margin: {
+      right: $s25/2;
+      left: $s25/2;
+    }
     text-decoration: none;
     color: $color-grey-darkest;
 
-    &:last-of-type {
-      margin-right: 0;
+    &:first-of-type {
+      margin-left: 0;
     }
 
     &:hover {

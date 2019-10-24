@@ -71,6 +71,17 @@
 
 .form-card--transition {
   text-align: center;
+  p {
+    margin: {
+      left: auto;
+      right: auto;
+    }
+  }
+
+  // center buttons in centered cards
+  .button:first-of-type {
+    margin-left: $s25/2;
+  }
 
   .text-input-group-container {
     display: inline-block;
