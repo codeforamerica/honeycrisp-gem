@@ -10,7 +10,6 @@ We are not currently seeking contributions from the public.
 
 If you have any thoughts or questions about the project, get in touch at <a href="mailto:styleguide@codeforamerica.org">styleguide@codeforamerica.org</a> or the `#cfa-design-toolkit` channel in the Code for America Slack.
 
-
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -66,15 +65,43 @@ Or install it yourself as:
     @import 'things_to_import'
     ```
 
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. You must install Chromedriver to run tests; on MacOS with Homebrew, run `brew bundle install`
 
 Run `bin/rails s` to start a webserver with a test app that has the engine mounted, then visit `http://localhost:3000`.
 
-If the gem is being used in another project's Gemfile, the source can be locally overridden within the other project's Gemfile by running `bundle config local.cfa-styleguide /path/to/cfa-styleguide-gem`, and undone with `bundle config --delete local.cfa-styleguide`
+### Overriding this gem locally in another project
 
-To install this gem onto your local machine, run `bundle exec rake install`. 
+If the gem is being used in another project's Gemfile, the source can be locally overridden within the other project's Gemfile in two ways:
+
+1. Change the bundler configuration to use the local gem repository
+
+    In the terminal, run `bundle config local.cfa-styleguide /path/to/cfa-styleguide-gem`
+
+    To install this gem onto your local machine, run `bundle exec rake install`.
+  
+    When finished with development, remove this configuration by running `bundle config --delete local.cfa-styleguide` and `bundle install`
+  
+1. Change your Gemfile to point to the local gem repository 
+
+    Alternatively, you can change host project's `Gemfile` to point to a local copy of this repository. For example, changing:
+
+    ```
+    gem 'cfa-styleguide', '~> 0.7', github: 'codeforamerica/cfa-styleguide-gem'
+    ```
+    to
+    ```
+    gem 'cfa-styleguide', '~> 0.7', path: '../cfa-styleguide-gem'
+    ```
+    
+    where `../cfa-styleguide-gem` is the path (relative or absolute) to this repo on the local filesystem.
+    
+    After updating the `Gemfile` with these changes, you will need to run `bundle install`.
+    
+    When finish, just revert the Gemfile to the original version and `bundle install` again.
+
 
 ### Running tests
 
