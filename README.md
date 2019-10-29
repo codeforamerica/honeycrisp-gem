@@ -26,6 +26,20 @@ Or install it yourself as:
 
     $ gem install cfa-styleguide
 
+## Upgrading
+
+The styleguide gem is pre-1.0.0 release, and should be considered as being in beta.
+
+We do our best to keep things stable between minor version releases; 
+however, decisions about deprecation and breaking changes are made given our knowledge about
+the usage of the gem by active projects maintained and developed by Code for America staff.
+
+**When upgrading the gem between patch versions** (e.g. 0.7.1 to 0.7.2), expect no breakage.
+
+**When upgrading the gem between minor versions** (e.g. 0.7.1 to 0.8.0), be sure to review the [changelog](./CHANGELOG.md) and [migration guide](./MIGRATING.md).
+
+If you encounter any breaking changes that we have not documented, please let us know by opening an issue!
+
 ## Usage
 
 1. Add `@import 'cfa_styleguide_main';` to application.scss.
@@ -114,7 +128,8 @@ To run, run `rake` or `rspec spec`.
 To release a new version, on `master` branch:
 * Update the version number in `version.rb` using [semantic versioning](https://semver.org/)
 * `bundle install` to update the Gemfile.lock
-* Generate a changelog using `bundle exec rake changelog`. (Note: you will need to provide a [Github token with public repo access](https://github.com/github-changelog-generator/github-changelog-generator#github-token)). 
+* Generate an addition to the [changelog](./CHANGELOG.md) using `bundle exec rake changelog`. (Note: you will need to provide a [Github token with public repo access](https://github.com/github-changelog-generator/github-changelog-generator#github-token)).
+* If updating the minor version, update the [migration guide](./MIGRATING.md) with any breaking changes and suggestions for what to do about them. If no breaking changes, just add 'no breaking changes'. 
 * Review, edit as necessary, and commit including the version update.
 * Run `bundle exec rake release`, which will create a git tag for the version, and push git commits and tags to Github. In the future, this will also push the `.gem` file to [rubygems.org](https://rubygems.org).
 
