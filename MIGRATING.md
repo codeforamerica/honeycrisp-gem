@@ -1,11 +1,11 @@
 # Migration Guide
 
-## Migrating from 0.7.x to 0.8.0
+## Migrating from <= 0.8.x to 0.9.0
 
 For a full diff of changes, view the [pull request](https://github.com/codeforamerica/cfa-styleguide-gem/pull/123/files). A summary of significant changes is below.
 
 ### Breaking changes: SASS variables
-In `0.8.0`, various SASS variables have been removed and will cause breakage if they're continued to be used in the host application.
+In `0.9.0`, various SASS variables have been removed and will cause breakage if they're continued to be used in the host application.
 
 Below are the variables that have been removed, along with their suggested replacements:
 
