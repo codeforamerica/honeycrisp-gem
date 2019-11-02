@@ -1,12 +1,12 @@
 .data-table-container {
   margin: {
-    left: -$site-margins/2;
-    right: -$site-margins/2;
+    left: -$s15;
+    right: -$s15;
   }
   @include media($tablet-up) {
     margin: {
-      left: -$site-margins;
-      right: -$site-margins;
+      left: -$s35;
+      right: -$s35;
     }
   }
 
@@ -18,27 +18,27 @@
 .data-table {
   width: 100%;
   text-align: left;
-  font-size: $font-size-small;
+  font-size: $font-size-25-small;
   border-collapse: collapse;
-  border-bottom: 2px solid $color-grey-darkest;
+  border-bottom: 2px solid $color-grey;
   margin-bottom: 1em;
 
   &.data-table--small {
     td, th {
-      font-size: $font-size-smallest;
+      font-size: $font-size-15;
     }
   }
 
   th, td {
     padding: {
-      top: .5em;
-      bottom: .5em;
+      top: $s25/2;
+      bottom: $s25/2;
     }
     &:first-child {
-      padding-left: $site-margins/2;
+      padding-left: $s15;
     }
     &:last-child {
-      padding-right: $site-margins/2;
+      padding-right: $s15;
     }
     &.no-break {
       white-space: nowrap;
@@ -52,23 +52,23 @@
     }
     .is-selected {
       color: $color-teal;
-      font-weight: 700;
+      font-weight: $font-weight-bold;
     }
 
     @include media($tablet-up) {
       &:first-child {
-        padding-left: $site-margins;
+        padding-left: $s35;
       }
       &:last-child {
-        padding-right: $site-margins;
+        padding-right: $s35;
       }
     }
   }
 
   th {
-    font-weight: 400;
+    font-weight: $font-weight-normal;
     @extend .text--help;
-    border-bottom: 2px solid $color-grey-darkest;
+    border-bottom: 2px solid $color-grey;
   }
 
   tr {
@@ -93,9 +93,8 @@
   }
 
   td {
-    border-bottom: 1px solid $color-grey;
     &:first-child {
-      font-weight: 700;
+      font-weight: $font-weight-bold;
     }
   }
 
@@ -137,7 +136,7 @@
 
 .data-table--border-left {
   border-left: solid 1px $color-grey;
-  padding-left: $site-margins / 2;
+  padding-left: $s35 / 2;
 }
 
 .ellipsized-cell {

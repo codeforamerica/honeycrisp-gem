@@ -15,6 +15,11 @@
     background-color: #fff;
   }
 
+  .slab--hero {
+    padding-top: 6em;
+    padding-bottom: 6em;
+  }
+
   .slab--styleguide {
     background-color: $color-grey-light;
     padding-top: 6em;
@@ -35,8 +40,8 @@
   }
 
   .pattern__button {
-    font-size: $font-size-smallest;
-    line-height: $line-height-normal;
+    font-size: $font-size-15;
+    line-height: $s25;
     color: $color-grey-darkest;
     font-weight: 600;
     text-decoration: none;
@@ -47,7 +52,7 @@
     background-color: $color-background;
 
     &:before {
-      content: 'Show markup';
+      content: 'Show HTML code';
     }
 
     &:hover {
@@ -59,11 +64,11 @@
     @include clearfix();
     &.is-open {
       .pattern__button:before {
-        content: 'Hide markup';
+        content: 'Hide HTML code';
       }
       pre {
         display: block;
-        font-size: $font-size-smallest;
+        font-size: $font-size-15;
         border: 1px solid $color-grey-light;
         background: #fff;
       }
@@ -85,11 +90,11 @@
 
   .pattern__code {
     margin-top: 1em;
-    font-size: $font-size-smallest;
+    font-size: $font-size-15;
   }
 
   .pattern__explanation {
-    font-size: $font-size-normal;
+    font-size: $font-size-25;
     margin-top: 2em;
     margin-bottom: 2em;
   }
@@ -104,17 +109,11 @@
     margin-bottom: 1em;
   }
 
-  .box {
-    background-color: $color-grey-light;
-    border: 1px solid $color-darkest-grey;
-    padding: 15px;
-  }
-
   .color {
     display: inline-block;
     margin-right: 1em;
     margin-bottom: 1em;
-    font-size: $font-size-small;
+    font-size: $font-size-25-small;
     color: $color-grey-dark;
     text-align: center;
 
@@ -123,7 +122,7 @@
       content: '';
       width: 4.5em;
       height: 4.5em;
-      border: 1px solid $color-grey;
+      border: 2px solid $color-grey;
       background-color: $color-grey;
     }
 
@@ -231,7 +230,7 @@
 
     &--tan {
       &:before {
-        background-color: $color-tan;
+        background-color: $color-grey;
       }
     }
 

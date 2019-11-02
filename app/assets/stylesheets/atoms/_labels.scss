@@ -1,16 +1,16 @@
 .label {
   display: inline-block;
-  font-size: $font-size-smallest;
+  font-size: $font-size-15;
   background-color: $color-grey-dark;
   color: #fff;
   font-weight: 500;
   border-radius: $border-radius;
   text-transform: uppercase;
-  padding: 0 .5em;
-  line-height: 1.4em;
+  padding: $s15/2 $s10;
+  line-height: $s15;
   position: relative;
   top: -.1em;
-  margin-left: .2em;
+  margin-left: $s5;
 }
 
 .label--magenta {
@@ -27,4 +27,9 @@
 
 .label--red {
   background-color: $color-red;
+}
+
+.label--yellow {
+  background-color: $color-yellow;
+  color: $color-grey-darkest;
 }

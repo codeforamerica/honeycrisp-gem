@@ -27,8 +27,9 @@
 .incrementer__subtract, .incrementer__add {
   @extend .button;
   display: table-cell;
+  line-height: 5.6rem; // hack around table cell sizing to make this 60px
   text-align: center;
-  padding: .5em 0;
+  padding: 0;
   font-weight: bold;
   width: 3em;
 }

@@ -7,6 +7,7 @@
   background-color: $color-teal-light;
   border-radius: 10px;
   padding: .2em .5em .3em .7em;
+  font-size: $font-size-25-small;
 
   &:after {
     position: relative;
@@ -17,11 +18,12 @@
 }
 
 .reveal__content {
-  margin-top: 1em;
+  margin-top: $s15;
   background-color: $color-background;
-  border: 2px solid $color-grey-darkest;
-  border-radius: 10px;
-  padding: .5em 1em;
+  border: 2px solid $color-grey;
+  border-radius: $border-radius-large;
+  padding: $s15;
+  font-size: $font-size-25-small;
   *:last-child {
     margin-bottom: 0;
   }

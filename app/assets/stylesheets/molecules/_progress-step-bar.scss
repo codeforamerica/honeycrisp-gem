@@ -1,20 +1,22 @@
 .progress-step-bar {
-  margin: 1.5em auto 3em auto;
-  max-width: 300px;
+  margin: 0 auto;
+  margin-top: 0;
+  margin-bottom: $s60;
+  max-width: 400px;
 }
 
 .progress-step-bar__bar {
   position: relative;
   text-align: justify;
-  height: 35px;
+  height: $s35;
 
   &:before {
     content: '';
     display: block;
     height: 3px;
     position: absolute;
-    left: 20px;
-    right: 20px;
+    left: $s15;
+    right: $s15;
     top: 50%;
     margin-top: -1px;
     background-color: $color-grey-darkest;
@@ -29,8 +31,8 @@
 .progress-step-bar__step {
   position: relative;
   display: inline-block;
-  width: 35px;
-  height: 35px;
+  width: $s35;
+  height: $s35;
   background-color: #fff;
   border: 2px solid $color-grey-darkest;
   border-radius: 50%;
@@ -54,6 +56,7 @@
 }
 
 .progress-step-bar__label {
-  margin-top: $padding-small;
+  margin-top: $s10;
   text-align: center;
+  margin-top: $s25;
 }

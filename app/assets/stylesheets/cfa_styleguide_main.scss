@@ -9,6 +9,7 @@
 /* Atoms */
 @import 'atoms/grid';
 @import 'atoms/base';
+@import 'atoms/spacing';
 @import 'atoms/utilities';
 @import 'atoms/typography';
 @import 'atoms/labels';
@@ -18,7 +19,8 @@
 @import 'atoms/emoji';
 @import 'atoms/images';
 @import 'atoms/illustrations';
-@import 'atoms/layout';
+@import 'atoms/slabs';
+@import 'atoms/notices';
 @import 'atoms/buttons';
 @import 'atoms/form-elements';
 @import 'atoms/form-widths';

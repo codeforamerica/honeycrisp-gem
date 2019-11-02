@@ -1,16 +1,19 @@
 <% content_for(:template_name) { "styleguide" } %>
-
-<section class="slab">
+<div class="slab slab--hero">
   <div class="grid">
-    <p>Have a suggestion? <a href="https://github.com/codeforamerica/cfa-styleguide-gem/issues">Submit it as an issue</a> on <a href="https://github.com/codeforamerica/cfa-styleguide-gem">the Github repo!</a></p>
-    <p>Questions? Contact us at <a href="mailto:styleguide@codeforamerica.org">styleguide@codeforamerica.org</a>.</p>
+    <div class="grid__item width-two-thirds">
+      <h1>Honeycrisp Design System</h1>
+      <p>This is the official design system for products at Code for America.</p>
+      <p>Have a suggestion? <a href="https://github.com/codeforamerica/cfa-styleguide-gem/issues">Submit it as an issue</a> on <a href="https://github.com/codeforamerica/cfa-styleguide-gem">the Github repo!</a> Questions? Contact us at <a href="mailto:styleguide@codeforamerica.org">styleguide@codeforamerica.org</a>.</p>
+    </div>
   </div>
-</section>
-
+</div>
 <section class="slab slab--styleguide" id="atoms">
   <div class="grid">
-    <div class="grid__item width-one-half shift-one-fourth">
-      <h1>Atoms</h1>
+    <div class="grid__item width-one-fourth">
+      <h2>Atoms</h2>
+    </div>
+    <div class="grid__item width-three-fourths">
       <p class="text--help">Atoms are the basic building blocks of matter. Applied to web interfaces, atoms are our HTML tags, such as a form label, an input or a button.</p>
       <p class="text--help">Atoms can also include more abstract elements like color palettes, fonts and even more invisible aspects of an interface like animations.</p>
       <p class="text--help">Like atoms in nature they're fairly abstract and often not terribly useful on their own. However, they're good as a reference in the context of a pattern library as you can see all your global styles laid out at a glance.</p>
@@ -21,7 +24,7 @@
 <section class="slab">
   <div class="grid">
     <div class="grid__item width-one-fourth">
-      <p class="text--help">Slab Layout</p>
+      <h3>Slab Layout</h3>
     </div>
     <div class="grid__item width-three-fourths">
     <p>This is an example slab, it's used to section out content, especially on marketing pages. Inside of slabs, use the grid component to lay things out. Almost everything on this page is laid out using slabs and grids.</p>
@@ -34,7 +37,7 @@
 <%= render 'section', title: 'Notice', example: 'atoms/notices', explanation: "Notices are a way to highlight important information by separating it from the main copy. Warning notices are good for temporary scenarios (e.g. 'Counties are receiving more applications than usual. Interview scheduling may be delayed.') Warning notices can be used outside the card for extra emphasis. Both types of notices are only effective if they're used sparingly." %>
 <%= render 'section', title: 'Colors', example: 'atoms/colors' %>
 <%= render 'section', title: 'Icons', example: 'atoms/icons', explanation: "Icons help users find and understand actions, like “upload” or “search”. In general, they should be used as a secondary visual indicator, in conjunction with text or color. Use common patterns, but don't assume they will be familiar. <br/><br/> These are Google Material icons. Note: this is an IcoMoon subset, rather than the full set of Material icons because we didn't want to load them all. You can add more icons to the set, but it's kind of complicated." %>
-<%= render 'section', title: 'Typography', example: 'atoms/typography' %>
+<%= render 'section', title: 'Typography', example: 'atoms/typography', explanation: "Basic HTML headings include type styles. However, each type style also has dedicated class name. You can always use the dedicated class name to override any default styling (e.g., you can style an <h1> as a heading level 2 with '.heading-35'." %>
 <%= render 'section', title: 'Spacing', example: 'atoms/spacing' %>
 <%= render 'section', title: 'Labels', example: 'atoms/labels' %>
 <%= render 'section', title: 'Buttons', example: 'atoms/buttons' %>
@@ -43,14 +46,17 @@
 
 <section class="slab slab--styleguide" id="molecules">
   <div class="grid">
-    <div class="grid__item width-one-half shift-one-fourth">
-      <h1>Molecules</h1>
+    <div class="grid__item width-one-fourth">
+      <h2>Molecules</h2>
+    </div>
+    <div class="grid__item width-three-fourths">
       <p class="text--help">Things start getting more interesting and tangible when we start combining atoms together. Molecules are groups of atoms bonded together and are the smallest fundamental units of a compound. These molecules take on their own properties and serve as the backbone of our design systems.</p>
       <p class="text--help">For example, a form label, input or button aren't too useful by themselves, but combine them together as a form and now they can actually do something together.</p>
       <p class="text--help">Building up to molecules from atoms encourages a “do one thing and do it well” mentality. While molecules can be complex, as a rule of thumb they are relatively simple combinations of atoms built for reuse.</p>
     </div>
   </div>
 </section>
+
 <%= render 'section', title: 'Media Box', example: 'molecules/media_box' %>
 <%= render 'section', title: 'Toolbar', example: 'molecules/toolbar' %>
 <%= render 'section', title: 'Tab bar', example: 'molecules/tab_bar' %>
@@ -75,8 +81,10 @@
 
 <section class="slab slab--styleguide" id="organisms">
   <div class="grid">
-    <div class="grid__item width-one-half shift-one-fourth">
-      <h1>Organisms</h1>
+    <div class="grid__item width-one-fourth">
+      <h2>Organisms</h2>
+    </div>
+    <div class="grid__item width-three-fourths">
       <p class="text--help">Molecules give us some building blocks to work with, and we can now combine them together to form organisms. Organisms are groups of molecules joined together to form a relatively complex, distinct section of an interface.</p>
       <p class="text--help">Organisms can consist of similar and/or different molecule types. For example, a masthead organism might consist of diverse components like a logo, primary navigation, search form, and list of social media channels. But a “product grid” organism might consist of the same molecule (possibly containing a product image, product title and price) repeated over and over again.</p>
       <p class="text--help">Building up from molecules to organisms encourages creating standalone, portable, reusable components.</p>

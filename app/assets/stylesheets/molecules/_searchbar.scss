@@ -9,10 +9,17 @@
   display: table-cell;
   width: 100%;
   border: 2px solid $color-grey-darkest;
-  padding: .5em .7em .5em .7em;
+  box-shadow: inset 0px 2px 0px rgba(#000, .15);
+  background-color: $color-grey-light;
+  font-weight: $font-weight-bold;
+  padding: 0 $s25;
+  height: $s60;
   margin: 0;
   &:focus {
     outline: none;
+  }
+  &::placeholder {
+    color: $color-grey-dark;
   }
 }
 
@@ -24,7 +31,12 @@
   }
 
   @extend .button;
+  padding: {
+    top: ($s35/2) - 0.2rem;
+    bottom: ($s35/2) - 0.2rem;
+  }
   display: table-cell;
+  border-radius: 0;
   vertical-align: middle;
   appearance: none;
   width: 1%;

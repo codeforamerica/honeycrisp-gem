@@ -1,78 +1,92 @@
+.heading-60 {
+  font-size: $font-size-60;
+  line-height: $s60;
+  font-weight: $font-weight-bold;
+  margin-top: $s60;
+  margin-bottom: $s25;
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+.heading-35 {
+  font-size: $font-size-35;
+  font-weight: $font-weight-bold;
+  line-height: $s35;
+  margin-top: $s35;
+  margin-bottom: $s25;
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+.heading-25 {
+  font-size: $font-size-25;
+  font-weight: $font-weight-bold;
+  line-height: $s25;
+  margin-top: $s25;
+  margin-bottom: $s25;
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+.heading-25-small {
+  font-size: $font-size-25-small;
+  font-weight: $font-weight-bold;
+  line-height: $s25;
+  margin-top: $s25;
+  margin-bottom: $s25;
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+.text-25 {
+  font-size: $font-size-25;
+  line-height: $s25;
+  margin-bottom: $s25;
+}
+
+.text-25-small {
+  font-size: $font-size-25-small;
+  line-height: $s25;
+  margin-bottom: $s25;
+  color: $color-grey-dark;
+}
+
+
 p {
   margin-top: 0;
-  margin-bottom: 1em;
+  margin-bottom: $s25;
 }
 
-h1, .h1 {
-  font-size: $font-size-h1;
-  line-height: $line-height-display;
-  font-weight: 600;
-  margin-top: 1.5em;
-  margin-bottom: .5em;
-  &:first-child {
-    margin-top: 0em;
-  }
+h1 {
+  @extend .heading-60;
 }
 
-h2, .h2 {
-  font-size: $font-size-h2;
-  font-weight: 600;
-  line-height: $line-height-display;
-  margin-top: 1.5em;
-  margin-bottom: .5em;
-  &:first-child {
-    margin-top: 0em;
-  }
+h2 {
+  @extend .heading-35;
 }
 
-h3, .h3 {
-  font-size: $font-size-h3;
-  font-weight: 300;
-  line-height: $line-height-normal;
-  margin-top: 1.5em;
-  margin-bottom: .5em;
-  &:first-child {
-    margin-top: 0em;
-  }
-  b, strong {
-    font-weight: 700;
-  }
+h3 {
+  @extend .heading-25;
 }
 
-h4, .h4 {
-  font-size: $font-size-h4;
-  font-weight: 600;
-  line-height: $line-height-display;
-  margin-top: 1.5em;
-  margin-bottom: .5em;
-  &:first-child {
-    margin-top: 0em;
-  }
-}
-
-a {
-  @include outline;
-  color: $color-teal;
-  &:hover {
-    color: $color-teal-dark;
-  }
-}
-
-.link--subtle {
-  color: inherit;
-}
-
-.text--small {
-    font-size: $font-size-small;
-    line-height: $line-height-normal;
+h4 {
+  @extend .heading-25-small;
 }
 
 .text--caps {
   font-size: .8em;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: .1em;
   font-weight: 500;
-  line-height: $line-height-normal;
+}
+
+.text--caption {
+  @extend .heading-35;
+  font-weight: $font-weight-light;
 }
 
 .text--left {
@@ -87,8 +101,16 @@ a {
   text-align: right;
 }
 
-.text--no-top-margin {
-  margin-top: 0;
+a {
+  @include outline;
+  color: $color-teal;
+  &:hover {
+    color: $color-teal-dark;
+  }
+}
+
+.link--subtle {
+  color: inherit;
 }
 
 ol, ul {
@@ -136,29 +158,22 @@ ol, ul {
   color: $color-yellow;
 }
 
-.text--help {
-  @extend .text--grey-dark;
-  font-size: $font-size-small;
-  line-height: $line-height-normal;
-}
-
 .text--error {
   @extend .text--red;
-  font-weight: 700;
-  font-size: $font-size-small;
-  line-height: $line-height-normal;
+  @extend .text-25-small;
+  font-weight: $font-weight-bold;
 }
 
 .text--pullquote {
-  font-weight: 300;
-  font-size: $font-size-h3;
-  line-height: $line-height-normal;
-  margin-bottom: .5em;
+  font-weight: $font-weight-light;
+  font-size: $font-size-35;
+  line-height: $s35;
+  margin-bottom: $s25;
 }
 
 .list--padded {
   li {
-    margin-bottom: 1em;
+    margin-bottom: $s15;
   }
 }
 
@@ -166,7 +181,7 @@ ol, ul {
   list-style: disc;
   padding-left: 2.5em;
   li {
-    margin-bottom: .5em;
+    margin-bottom: $s15;
   }
 }
 
@@ -174,7 +189,7 @@ ol, ul {
   list-style: decimal;
   padding-left: 2.5em;
   li {
-    margin-bottom: .5em;
+    margin-bottom: $s15;
   }
 }
 
@@ -206,22 +221,62 @@ ol, ul {
 }
 
 table {
-  margin-bottom: 1em;
+  margin-bottom: $s25;
 }
 
 td {
-  padding-right: 1em;
+  padding-right: $s25;
 }
 
 hr {
-  margin-top: 3em;
-  margin-bottom: 3em;
-  height: 1px;
+  margin-top: $s60;
+  margin-bottom: $s60;
+  height: 2px;
   background-color: $color-grey;
   border: 0;
 }
 
+.textwell {
+  text-align: left;
+  margin-bottom: $s25;
+
+  @include media($tablet-up) {
+    border: 2px solid $color-grey;
+    border-radius: $border-radius-large;
+    padding: $s35 $s15;
+    max-height: 30rem;
+    overflow: auto;
+  }
+}
+
 .rule--no-padding {
-  margin-top: 1em;
-  margin-bottom: 1em;
+  margin-top: $s25;
+  margin-bottom: $s25;
+}
+
+// Depracated Text Classes
+
+.text--help {
+  @extend .text-25-small;
+}
+
+.text--small {
+    @extend .text-25-small;
+    color: $color-grey-darkest
+}
+
+.h1 {
+  @extend .heading-60;
+}
+
+.h2 {
+  @extend .heading-35;
+}
+
+.h3 {
+  @extend .heading-25;
+}
+
+.h4 {
+  @extend .heading-25-small;
 }

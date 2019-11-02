@@ -6,12 +6,17 @@
   }
 
   .main-header {
-    position: relative;
+    position: absolute;
+    left: $s15;
+    right: $s15;
+
+    @include media($tablet-up) {
+      left: $s35;
+      right: $s35;
+    }
     background: linear-gradient(0, rgba($color-grey-darkest, 0) 0%, rgba($color-grey-darkest, .5) 99%);
     border: 0;
     z-index: 2;
-    padding-bottom: 4em;
-    margin-bottom: -7.5em;
     overflow: visible;
     .toolbar__item {
       color: #fff;
@@ -32,34 +37,30 @@
 
     color: #FFFFFF;
 
-    padding: {
-      top: 7em;
-      bottom: 4em;
-    }
+      padding: {
+        top: $s95+$s35;
+        bottom: $s95;
+      }
 
     @include media($tablet-up) {
       background: linear-gradient(242deg, rgba(#FFFFFF, 0) 0%, rgba($color-grey-darkest, .5) 99%);
-      padding: {
-        top: 9em;
-        bottom: 7em;
-      }
     }
 
     // Note: The h2 is actually first and more prominent, for seo-y reasons.
     h2 {
       max-width: 10em;
-      font-size: 3.6rem;
-      line-height: 1.3em;
-      font-weight: 600;
+      font-size: $font-size-60;
+      line-height: $s60;
+      font-weight: $font-weight-bold;
       margin-top: 0em;
-      margin-bottom: .5em;
+      margin-bottom: $s25;
     }
 
     h1 {
-      margin-bottom: 2em;
-      font-weight: 500;
-      font-size: inherit;
-      line-height: inherit;
+      margin-bottom: $s60;
+      font-weight: $font-weight-normal;
+      font-size: $font-size-25;
+      line-height: $s25;
       margin-top: 0;
     }
 

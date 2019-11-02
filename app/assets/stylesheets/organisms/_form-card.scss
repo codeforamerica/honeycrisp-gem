@@ -1,36 +1,32 @@
+.card {
+    box-shadow: $box-shadow;
+    border-radius: $border-radius-large;
+    padding: $s25 $s25;
+    background-color: #FFFFFF;
+    margin-bottom: $s15;
+    > *:last-child {
+        margin-bottom: 0;
+    }
+}
+
 .form-card {
   @extend .card;
-  border-top: 8px solid $color-grey;
-  margin-left: -.5em;
-  margin-right: -.5em;
+  padding: $s60 $s25;
+  margin-left: -$s5;
+  margin-right: -$s5;
   @include media($tablet-up) {
     margin-left: 0;
     margin-right: 0;
+    padding: $s60 $s35;
   }
-}
 
-.form-card--compact {
-  .form-card__header {
-    margin-top: .5em;
-    padding-bottom: 2em;
-  }
-  .form-group {
-    margin-bottom: 3em;
+  p {
+    max-width: 30em;
   }
 }
 
 .form-card__header {
-    @include full-bleed();
-    border-bottom: 2px solid $color-grey-light;
-    margin-bottom: 2em;
-    padding-bottom: 1.5em;
-
-    @include media($tablet-up) {
-      margin-top: 1em;
-
-      padding-bottom: 2.5em;
-    }
-
+  margin-bottom: $s60;
 }
 
 .form-card__header--with-icon {
@@ -46,7 +42,7 @@
 
   @include media($tablet-up) {
     position: absolute;
-    right: $site-margins;
+    right: $s35;
     margin-left: 0;
     float: none;
   }
@@ -54,28 +50,19 @@
 }
 
 .form-card__title {
-    font-size: $font-size-h3;
-    line-height: $line-height-normal;
+    font-size: $font-size-35;
     margin-top: 0;
     margin-bottom: 0;
     + .text--help, + .text--small {
-      margin-top: .5em;
+      margin-top: $s25;
       margin-bottom: 0;
     }
 }
 
-.form-card__content {
-    > *:last-child {
-        margin-bottom: 0;
-    }
-}
 
 .form-card__footer {
     @include full-bleed();
-
-    border-top: 2px solid $color-grey-light;
-    margin-top: 2em;
-    padding-top: 1.5em;
+    margin-top: $s60;
 
     *:last-child {
       margin-bottom: 0;
@@ -84,8 +71,17 @@
 
 .form-card--transition {
   text-align: center;
-  padding-top: 2em;
-  padding-bottom: 2em;
+  p {
+    margin: {
+      left: auto;
+      right: auto;
+    }
+  }
+
+  // center buttons in centered cards
+  .button:first-of-type {
+    margin-left: $s25/2;
+  }
 
   .text-input-group-container {
     display: inline-block;
@@ -95,39 +91,6 @@
     margin: 0 auto;
   }
 
-  @include media($tablet-up) {
-    padding-top: 3em;
-    padding-bottom: 3em;
-  }
-
-  .form-card__header {
-    margin-bottom: 1.5em;
-    margin-top: 0;
-    border-bottom: 0;
-    padding-bottom: 0;
-    @include media($tablet-up) {
-      margin-bottom: 2.5em;
-    }
-  }
-
-  .form-card__header--confirmation {
-    background: linear-gradient(to right, rgba($color-magenta, .015) 0%, rgba($color-teal, .04) 65%);
-    margin-top: -3em;
-    padding-top: 3em;
-    padding-bottom: 3em;
-    border-bottom: 1px solid $color-grey;
-  }
-
-  .form-card__footer {
-    border-top: 0;
-    padding-top: 0;
-    margin-top: 3em;
-  }
-
-  .form-card__title {
-    font-size: $font-size-h2;
-  }
-
   .form-card__content {
     .list--bulleted, .media-box {
       max-width: 25em;
@@ -135,21 +98,6 @@
       margin: 0 auto;
     }
   }
-
-  .form-card__header, .form-card__content, .form-card__footer {
-    .form-card__title, p {
-      max-width: 55rem;
-      margin: {
-        left: auto;
-        right: auto;
-      }
-    }
-  }
-}
-
-.form-card--dsnap {
-  border-top: 8px solid $color-grey;
-  padding-top: 2em;
 }
 
 .feedback-survey {

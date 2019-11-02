@@ -15,7 +15,7 @@
 
 .vertical-steps__step {
   position: relative;
-  padding: $padding-small;
+  padding: $s10;
   background-color: #fff;
 
   h3 {
@@ -24,5 +24,19 @@
 }
 
 .vertical-steps__step:not(:last-child) {
-  margin-bottom: $padding-large;
+  margin-bottom: $s60;
+}
+
+.vertical-steps__title {
+  font-size: $font-size-25;
+  font-weight: $font-weight-bold;
+  line-height: $s25;
+  margin-bottom: $s10;
+}
+
+.vertical-steps__emoji {
+  @extend .emoji;
+  @extend .emoji-size-60;
+  @extend .spacing-above-25;
+  @extend .spacing-below-25;
 }

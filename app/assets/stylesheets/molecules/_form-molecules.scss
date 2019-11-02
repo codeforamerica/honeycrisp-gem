@@ -60,9 +60,7 @@
 .text-input-group {
     @include outline-within;
     display: table;
-    margin-bottom: 1em;
-    font-size: $font-size-h3;
-    line-height: 1em;
+    margin-bottom: 0;
     border-collapse: separate;
     width: 100%;
     border: 2px solid $color-grey-darkest;
@@ -70,10 +68,11 @@
     .text-input-group__prefix {
         display: table-cell;
         width: 1%;
-        font-weight: 500;
-        padding: .5em 0em .5em .3em;
+        font-weight: $font-weight-bold;
+        padding: 0 $s10 0 $s25;
         vertical-align: middle;
         background-color: $color-grey-light;
+        box-shadow: inset 0px 2px 0px rgba(#000, .15);
     }
     .text-input {
         display: table-cell;
@@ -82,54 +81,75 @@
         margin-top: 0;
         background-color: $color-grey-light;
         border: none;
+        padding: 0;
         &:focus {
           outline: none;
-          box-shadow: none;
+          box-shadow: inset 0px 2px 0px rgba(#000, .15);
         }
     }
     .text-input-group__postfix {
         display: table-cell;
         width: 1%;
-        font-weight: 500;
-        padding: .5em .3em .5em 0;
+        font-weight: $font-weight-bold;
+        padding: 0 $s25 0 $s10;
         vertical-align: middle;
         background-color: $color-grey-light;
+        box-shadow: inset 0px 2px 0px rgba(#000, .15);
     }
 }
 
 .form-group {
-    margin-bottom: 3em;
+    margin-bottom: $s60;
     position: relative;
     .form-question + .text--help, .form-question + .text--small {
-        margin-top: -1em;
-        margin-bottom: 1em;
+        margin-top: -$s25;
+        margin-bottom: $s25;
     }
 
     .form-group + .text-input, .form-group + .text-input-group {
-      margin-top: -.5em;
-    }
-
-    &:last-of-type {
-      margin-bottom: 0;
+      margin-bottom: $s25;
     }
 }
 
 .form-group--error {
-  @include full-bleed();
+  margin: {
+    left: -$s25;
+    right: -$s25;
+  }
+
+  padding: {
+    left: $s25;
+    right: $s25;
+  }
+
+  @include media($tablet-up) {
+    margin: {
+      left: -$s35;
+      right: -$s35;
+    }
+
+    padding: {
+      left: $s35;
+      right: $s35;
+    }
+  }
+  
   &:before {
     content: '';
     display: block;
     position: absolute;
-    top: -.5em;
-    bottom: -.5em;
-    left: 0px;
-    width: 4px;
+    top: -$s10;
+    bottom: -$s10;
+    left: 0;
+    width: $s5;
     background-color: $color-red;
-
-    @include media($tablet-up) {
-      width: 6px;
-    }
   }
+
+  .text--error {
+    display: block;
+    margin-top: $s25;
+  }
+
 }
 
 .select-with-button {
@@ -155,7 +175,7 @@
 
   .select__element {
     width: 100%;
-    font-size: $font-size-normal;
+    font-size: $font-size-25;
     border: 2px solid $color-grey;
 
     &:focus {
@@ -179,36 +199,53 @@
 }
 
 .question-with-follow-up {
-  margin-bottom: 4em;
+  margin-bottom: $s60;
 }
 
 .question-with-follow-up__question {
   .form-group {
-    margin-bottom: 1em;
+    margin-bottom: $s15;
   }
 }
 
 .question-with-follow-up__follow-up {
     display: none;
-    @include full-bleed();
+    margin: {
+      left: -$s25;
+      right: -$s25;
+    }
+
+    padding: {
+      left: $s25;
+      right: $s25;
+    }
+
+    @include media($tablet-up) {
+      margin: {
+        left: -$s35;
+        right: -$s35;
+      }
+
+      padding: {
+        left: $s35;
+        right: $s35;
+      }
+    }
     position: relative;
     background-color: $color-background;
     border-top: 2px solid $color-grey-darkest;
     border-bottom: 2px solid $color-grey-darkest;
     padding: {
-        top: 2em;
-        bottom: 2em;
-        left: $site-margins;
-    }
-
-    @include media($tablet-up) {
-        border-left: 2px solid $color-grey-darkest;
-        border-right: 2px solid $color-grey-darkest;
-        padding-left: $site-margins*2;
+        top: $s35;
+        bottom: $s35;
     }
 
     .form-group:last-of-type {
       margin-bottom: 0;
+    }
+
+    .text-input {
+      background-color: white;
     }
 
 
@@ -218,9 +255,9 @@
         display: block;
         position: absolute;
         top: -19px;
-        left: $site-margins/2+20;
+        left: $s15+2rem;
         @include media($tablet-up) {
-            left: $site-margins+20;
+            left: $s35+2rem;
         }
     }
 
@@ -230,11 +267,15 @@
         display: block;
         position: absolute;
         top: -15px;
-        left: $site-margins/2+22;
+        left: $s15+2.2rem;
         @include media($tablet-up) {
-            left: $site-margins+22;
+            left: $s35+2.2rem;
         }
     }
+}
+
+.question-with-follow-up__follow-up--show-by-default {
+  display: block;
 }
 
 .feedback-survey__form {

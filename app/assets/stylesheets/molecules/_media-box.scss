@@ -83,8 +83,8 @@
       width: 50%;
       float: right;
       margin-bottom: 0;
-      margin-left: $site-margins*3;
-      margin-right: -$site-margins*3;
+      margin-left: $s35*3;
+      margin-right: -$s35*3;
     }
   }
 }
@@ -98,8 +98,8 @@
       @include media($tablet-up) {
         width: 50%;
         float: left;
-        margin-right: $site-margins*3;
-        margin-left: -$site-margins*3;
+        margin-right: $s35*3;
+        margin-left: -$s35*3;
       }
     }
   }

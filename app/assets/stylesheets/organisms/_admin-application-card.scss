@@ -1,13 +1,13 @@
 .admin-application-card {
   @extend .card;
 
-  padding: $padding-small;
-  padding-left: $padding-small * 2;
+  padding: $s10;
+  padding-left: $s10 * 2;
   position: relative;
 
   hr {
-    margin-top: $padding-small;
-    margin-bottom: $padding-small;
+    margin-top: $s10;
+    margin-bottom: $s10;
   }
 
   .status {
@@ -72,15 +72,15 @@
 }
 
 .admin-application-card__additional-information {
-  padding-top: $padding-small;
+  padding-top: $s10;
 }
 
 .admin-application-card__header {
-  padding-bottom: $padding-small;
+  padding-bottom: $s10;
 }
 
 .admin-application-card__title {
-  font-size: $font-size-h4;
+  font-size: $font-size-25-small;
   font-weight: 600;
 }
 
