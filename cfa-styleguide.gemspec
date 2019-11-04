@@ -36,7 +36,6 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency "bourbon"
   spec.add_runtime_dependency "jquery-rails"
   spec.add_runtime_dependency "neat", "~> 1.8.0"
-  spec.add_runtime_dependency "prism-rails"
   spec.add_development_dependency "axe-matchers", "~> 2.2"
   spec.add_development_dependency "bundler", "~> 1.16"
   spec.add_development_dependency "capybara"
