@@ -6,7 +6,6 @@ PATH
       bourbon
       jquery-rails
       neat (~> 1.8.0)
-      prism-rails
 
 GEM
   remote: https://rubygems.org/
@@ -144,8 +143,6 @@ GEM
       ast (~> 2.4.0)
     percy-capybara (4.0.0.pre.beta2)
     powerpack (0.1.2)
-    prism-rails (1.6.0.3)
-      railties (>= 4.2, < 6)
     pry (0.11.3)
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
