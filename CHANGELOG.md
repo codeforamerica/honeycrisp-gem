@@ -1,5 +1,13 @@
 # Change Log
 
+## [v0.9.0](https://github.com/codeforamerica/cfa-styleguide-gem/tree/v0.9.0) (2019-11-05)
+[Full Changelog](https://github.com/codeforamerica/cfa-styleguide-gem/compare/v0.8.0...v0.9.0)
+
+**Merged pull requests:**
+
+- Add migration guide [\#130](https://github.com/codeforamerica/cfa-styleguide-gem/pull/130) ([hartsick](https://github.com/hartsick))
+- Accessibility design details [\#123](https://github.com/codeforamerica/cfa-styleguide-gem/pull/123) ([norrishung](https://github.com/norrishung))
+
 ## [v0.8.0](https://github.com/codeforamerica/cfa-styleguide-gem/tree/v0.8.0) (2019-10-10)
 [Full Changelog](https://github.com/codeforamerica/cfa-styleguide-gem/compare/v0.7.1...v0.8.0)
 
@@ -24,6 +32,7 @@
 
 **Merged pull requests:**
 
+- Documentation page: display explanation between example and code [\#128](https://github.com/codeforamerica/cfa-styleguide-gem/pull/128) ([jenny-heath](https://github.com/jenny-heath))
 - Adding an accordion pattern [\#125](https://github.com/codeforamerica/cfa-styleguide-gem/pull/125) ([norrishung](https://github.com/norrishung))
 - Hide unchecked follow up questions on page load [\#119](https://github.com/codeforamerica/cfa-styleguide-gem/pull/119) ([tdooner](https://github.com/tdooner))
 - Fix follow-up to work for single checkbox [\#118](https://github.com/codeforamerica/cfa-styleguide-gem/pull/118) ([tdooner](https://github.com/tdooner))
