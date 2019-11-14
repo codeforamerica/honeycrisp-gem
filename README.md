@@ -1,8 +1,8 @@
-# Code for America Styleguide
+# Honeycrisp Design System
 
 A gem including base styles and javascript for Code for America products, for use in Rails applications.
 
-View the current version of the styleguide at [https://cfa-styleguide.herokuapp.com](https://cfa-styleguide.herokuapp.com).
+View the current version of the styleguide at [https://honeycrisp.herokuapp.com](https://cfa-styleguide.herokuapp.com).
 
 ## Contributing
 
@@ -15,7 +15,7 @@ If you have any thoughts or questions about the project, get in touch at <a href
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'cfa-styleguide', git: 'https://github.com/codeforamerica/cfa-styleguide-gem'
+gem 'cfa-styleguide', git: 'https://github.com/codeforamerica/honeycrisp-gem'
 ```
 
 And then execute:
@@ -92,7 +92,7 @@ If the gem is being used in another project's Gemfile, the source can be locally
 
 1. Change the bundler configuration to use the local gem repository
 
-    In the terminal, run `bundle config local.cfa-styleguide /path/to/cfa-styleguide-gem`
+    In the terminal, run `bundle config local.cfa-styleguide /path/to/honeycrisp-gem`
 
     To install this gem onto your local machine, run `bundle exec rake install`.
   
@@ -103,14 +103,14 @@ If the gem is being used in another project's Gemfile, the source can be locally
     Alternatively, you can change host project's `Gemfile` to point to a local copy of this repository. For example, changing:
 
     ```
-    gem 'cfa-styleguide', '~> 0.7', github: 'codeforamerica/cfa-styleguide-gem'
+    gem 'cfa-styleguide', '~> 0.7', github: 'codeforamerica/honeycrisp-gem'
     ```
     to
     ```
-    gem 'cfa-styleguide', '~> 0.7', path: '../cfa-styleguide-gem'
+    gem 'cfa-styleguide', '~> 0.7', path: '../honeycrisp-gem'
     ```
     
-    where `../cfa-styleguide-gem` is the path (relative or absolute) to this repo on the local filesystem.
+    where `../honeycrisp-gem` is the path (relative or absolute) to this repo on the local filesystem.
     
     After updating the `Gemfile` with these changes, you will need to run `bundle install`.
     

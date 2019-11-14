@@ -19,7 +19,9 @@
     <header class="main-header">
       <div class="toolbar">
         <div class="toolbar__left">
-          <h1 class="main-header__title"><a class="main-header__logo" href="#">Honeycrisp Design System v<%= Cfa::Styleguide::VERSION %></a></h1>
+          <h1 class="main-header__title">
+            <%= link_to "Honeycrisp Design System v#{Cfa::Styleguide::VERSION}", styleguide_main_path, class: %w{main-header__logo} %>
+          </h1>
         </div>
         <div class="toolbar__right">
           <%= link_to "Atoms", styleguide_main_path(anchor: "atoms"), class: %w{toolbar__item text--small link--subtle} %>
@@ -37,7 +39,7 @@
     <div class="grid">
       <div class="grid__item">
         <div class="main-footer__legal">
-          <p>The CfA Styleguide is a pattern library developed by <a class="link--subtle" href="#">Code for America</a>.</p>
+          <p>Honeycrisp is a design system developed by <a class="link--subtle" href="https://codeforamerica.org">Code for America</a>.</p>
         </div>
       </div>
     </div>

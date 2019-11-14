@@ -5,13 +5,13 @@ require "cfa/styleguide/version"
 Gem::Specification.new do |spec|
   spec.name          = "cfa-styleguide"
   spec.version       = Cfa::Styleguide::VERSION
-  spec.authors       = ["https://github.com/codeforamerica/cfa-styleguide-gem/graphs/contributors"]
+  spec.authors       = ["https://github.com/codeforamerica/honeycrisp-gem/graphs/contributors"]
   spec.email         = ["christa@codeforamerica.org"]
 
-  spec.summary       = "A pattern library for CfA products, based on the GetCalFresh styleguide"
-  spec.description   = "Code for America Styleguide"
-  spec.homepage      = "https://github.com/codeforamerica/cfa-styleguide-gem"
-  spec.metadata      = { "documentation_uri" => "https://cfa-styleguide.herokuapp.com" }
+  spec.summary       = "A design system created for Code for America services."
+  spec.description   = "Honeycrisp Design System"
+  spec.homepage      = "https://github.com/codeforamerica/honeycrisp-gem"
+  spec.metadata      = { "documentation_uri" => "https://honeycrisp.herokuapp.com" }
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'

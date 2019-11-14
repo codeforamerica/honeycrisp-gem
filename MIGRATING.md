@@ -2,7 +2,7 @@
 
 ## Migrating from <= 0.8.x to 0.9.0
 
-For a full diff of changes, view the [pull request](https://github.com/codeforamerica/cfa-styleguide-gem/pull/123/files). A summary of significant changes is below.
+For a full diff of changes, view the [pull request](https://github.com/codeforamerica/honeycrisp-gem/pull/123/files). A summary of significant changes is below.
 
 ### Breaking changes: SASS variables
 In `0.9.0`, various SASS variables have been removed and will cause breakage if they're continued to be used in the host application.
@@ -39,4 +39,4 @@ Spacing classes have been moved from `utilities.scss` to `spacing.scss`.
 
 ### Removals: CSS classes
 A handful of CSS classes have been removed. If your project needs them or you're concerned 
-about breaking, review the [diff](https://github.com/codeforamerica/cfa-styleguide-gem/pull/123/files).
+about breaking, review the [diff](https://github.com/codeforamerica/honeycrisp-gem/pull/123/files).
