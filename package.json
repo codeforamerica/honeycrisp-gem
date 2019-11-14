@@ -18,7 +18,7 @@
   "license": "MIT",
   "dependencies": {
     "bourbon": "6.0.0",
-    "bourbon-neat": "4.0.0",
+    "bourbon-neat": "1.9.1",
     "jquery": "3.4.1"
   },
   "devDependencies": {
