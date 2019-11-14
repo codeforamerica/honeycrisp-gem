@@ -12,7 +12,9 @@ If you have any thoughts or questions about the project, get in touch at <a href
 
 ## Installation
 
-Add this line to your application's Gemfile:
+### Ruby Gem installation
+
+Add this line to your application's `Gemfile`:
 
 ```ruby
 gem 'cfa-styleguide', git: 'https://github.com/codeforamerica/cfa-styleguide-gem'
@@ -25,6 +27,30 @@ And then execute:
 Or install it yourself as:
 
     $ gem install cfa-styleguide
+
+### NPM / `package.json` installation
+
+Add this line to your application's `package.json`:
+
+```javascript
+"dependencies": {
+  ...
+  "cfa-styleguide": "codeforamerica/cfa-styleguide-gem",
+  ...
+}
+```
+
+And then execute: 
+    
+    $ yarn install
+    
+...or...
+
+    $ npm install
+    
+To use, you will likely need to import the complete path to the main SASS file depending on how you are managing assets, e.g. within a Webpacker managed `.js` file you would use:
+
+    import 'cfa-styleguide/app/assets/stylesheets/cfa_styleguide_main';
 
 ## Upgrading
 

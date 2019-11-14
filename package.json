@@ -1,4 +1,26 @@
 {
+  "name": "cfa-styleguide",
+  "version": "0.9.0",
+  "description": "A pattern library for CfA products, based on the GetCalFresh styleguide",
+  "main": "app/assets/javascripts/cfa_styleguide_main.js",
+  "style": "app/assets/stylesheets/cfa_styleguide_main.scss",
+  "sass": "app/assets/stylesheets/cfa_styleguide_main.scss",
+  "files": [
+    "app/assets",
+    "CHANGELOG.md",
+    "LICENSE.txt",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/codeforamerica/cfa-styleguide-gem"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "bourbon": "6.0.0",
+    "bourbon-neat": "4.0.0",
+    "jquery": "3.4.1"
+  },
   "devDependencies": {
     "@percy/agent": "^0.1.17"
   }
