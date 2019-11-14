@@ -1,5 +1,5 @@
 {
-  "name": "cfa-styleguide-gem",
+  "name": "honeycrisp-gem",
   "scripts": {},
   "env": {
     "BUNDLE_WITHOUT": {

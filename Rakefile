@@ -6,7 +6,7 @@ RSpec::Core::RakeTask.new(:spec)
 
 GitHubChangelogGenerator::RakeTask.new :changelog do |config|
   config.user = "codeforamerica"
-  config.project = "cfa-styleguide-gem"
+  config.project = "honeycrisp-gem"
   config.future_release = "v#{Cfa::Styleguide::VERSION}"
 end
 
