@@ -11,15 +11,35 @@
         <a href="<%= styleguide_example_path(example) %>" style="text-decoration: none;" aria-label="Isolated example link">◉</a>
       </h3>
     </div>
+
     <div class="grid__item width-three-fourths">
       <div class="pattern">
-        <%= styleguide_example_render("examples/#{example}") %>
+        <% html_example = code_example_html("examples/#{example}").to_str.strip %>
+        <% erb_example = code_example_erb("examples/#{example}").strip %>
+
+        <%= render_example("examples/#{example}") %>
 
         <% if explanation.present? %>
           <p class="pattern__explanation"><%= explanation.html_safe %></p>
         <% end %>
 
-        <%= styleguide_example_code("examples/#{example}") %>
+        <div class="pattern__code-example">
+          <div class="tab-bar">
+            <a href="#" class="tab-bar__tab" id="html">HTML</a>
+            <% if erb_example != html_example %>
+              <a href="#" class="tab-bar__tab" id="erb">ERB</a>
+            <% end %>
+          </div>
+
+          <div class="code-example code-example--html">
+            <pre><code class="language-markup"><%= html_example %></code></pre>
+          </div>
+          <% if erb_example != html_example %>
+            <div class="code-example code-example--erb">
+              <pre class="language-ruby language-markup"><code class="language-erb"><%= erb_example %></code></pre>
+            </div>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>

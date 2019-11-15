@@ -1,7 +1,7 @@
 module Cfa
   module Styleguide
     module PagesHelper
-      def styleguide_example_render(partial_path)
+      def render_example(partial_path)
         partial = lookup_context.find_template(partial_path, [], true)
 
         content_tag :div, class: "pattern__example" do
@@ -9,19 +9,19 @@ module Cfa
         end
       end
 
-      def styleguide_example_code(partial_path)
+      def code_example_html(partial_path)
+        partial = lookup_context.find_template(partial_path, [], true)
+
+        partial.render(self, {})
+      end
+
+      def code_example_erb(partial_path)
         partial = lookup_context.find_template(partial_path, [], true)
 
         filepath = partial.inspect
         partial_contents = File.open(filepath, "r", &:read)
 
-        content_tag(:div, class: "pattern__code") do
-          content_tag(:pre) do
-            content_tag(:code, class: "language-erb") do
-              partial_contents
-            end
-          end
-        end
+        partial_contents
       end
 
       def status_icon(icon, successful: false, failure: false, not_applicable: false)
