@@ -2,7 +2,7 @@
 
 A gem including base styles and javascript for Code for America products, for use in Rails applications.
 
-View the current version of the styleguide at [https://honeycrisp.herokuapp.com](https://cfa-styleguide.herokuapp.com).
+View the current version of the styleguide at [https://honeycrisp.herokuapp.com](https://honeycrisp.herokuapp.com).
 
 ## Contributing
 
