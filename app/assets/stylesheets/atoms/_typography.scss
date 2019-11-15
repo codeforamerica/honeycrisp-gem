@@ -196,20 +196,20 @@ ol, ul {
 .list--checkmark, .list--crossmark {
   li {
     position: relative;
-    margin-left: 25px;
-    padding-left: 25px;
-    margin-bottom: 15px;
+    margin-left: $s25;
+    padding-left: $s25;
+    margin-bottom: $s15;
     &:before {
       content: '';
       display: block;
       position: absolute;
       left: 0;
       top: .25em;
-      width: 25px;
-      height: 15px;
+      width: $s25;
+      height: $s15;
       background-image: image-url('emojis/checkmark.png');
       background-repeat: no-repeat;
-      background-size: auto 15px;
+      background-size: auto $s15;
     }
   }
 }

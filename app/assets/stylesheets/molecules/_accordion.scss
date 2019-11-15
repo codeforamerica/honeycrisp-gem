@@ -1,9 +1,9 @@
 .accordion {
 	background-color: $color-grey-light;
 	border: 2px solid $color-grey;
-	border-radius: 10px; // Replace with $border-radius-large when styleguide is updated
-	padding: 15px; // Replace with $s15 when styleguide is updated
-	margin-bottom: 15px; // Replace with $s15 when styleguide is updated
+	border-radius: $border-radius-large;
+	padding: $s15;
+	margin-bottom: $s15;
 }
 
 .accordion__button {
@@ -14,16 +14,16 @@
 	text-align: left;
 	font-weight: bold;
 	text-decoration: none;
-	padding-right: 35px; // Replace with $s35 when styleguide is updated
+	padding-right: $s35;
 	&:after {
 		content: '';
 		display: block;
 		position: absolute;
 		right: 0;
 		top: 50%;
-		margin-top: -7px; // Replace with $s15/2 when styleguide is updated
-		width: 15px; // Replace with $s15 when styleguide is updated
-		height: 15px; // Replace with $s15 when styleguide is updated
+		margin-top: -$s15/2;
+		width: $s15;
+		height: $s15;
 		background-image: image-url('icon_accordion_close.svg');
 		background-repeat: no-repeat;
 		background-position: center center;
@@ -37,7 +37,7 @@
 }
 
 .accordion__content {
-	margin-top: 35px; // Replace with $s35 when styleguide is updated
+	margin-top: $s35;
 	display: block;
 
 	.accordion--is-closed & {
