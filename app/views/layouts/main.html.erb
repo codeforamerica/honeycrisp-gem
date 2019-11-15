@@ -47,33 +47,32 @@
 
   <script>
       var pattern = (function() {
-
-          /**
-           <div class="pattern__example"></div>
-           <div class="pattern">
-             <div class="pattern__html"></div> CODE BELOW ATTACHES THIS
-             <div class="pattern__code"></div>
-           </div>
-           **/
-
           var p = {
-              render: function(exampleRubyCode, exampleHtml) {
-                  var sampleCodeBox = $('<div class="pattern__html"><a href="#" class="pattern__button"><i class="icon-arrow_drop_down"></i></a><pre><code class="language-markup"></code></pre></div>');
-                  $(sampleCodeBox).find('code').text($(exampleHtml).html());
-                  $(exampleRubyCode).before(sampleCodeBox);
-              },
-
               init: function() {
-                  $('.pattern').each(function(index, pattern) {
-                      var exampleRubyCode = $(this).find('.pattern__code');
-                      var exampleHtml = $(this).find('.pattern__example');
-                      p.render(exampleRubyCode, exampleHtml);
+                  $('.pattern__code-example').each(function() {
+                      const htmlTab = $(this).find('#html');
+                      const erbTab = $(this).find('#erb');
+                      const allTabs = [htmlTab, erbTab];
 
-                      $(this).find('.pattern__button').click(function(e) {
-                          e.preventDefault();
-                          $(this).parent().toggleClass('is-open');
-                      })
+                      // select html tab and display html code example by default
+                      htmlTab.toggleClass('is-selected');
+                      $(this).find('.code-example--erb').hide();
 
+                      // attach click handler on tabs
+                      allTabs.forEach(function(elem) {
+                          elem.click(function(e) {
+                              e.preventDefault();
+                              const patternCodeExample = $(this).parents('.pattern__code-example');
+
+                              // deselect all tabs, select clicked tab
+                              allTabs.forEach(function(tab) { tab.removeClass('is-selected') });
+                              $(this).toggleClass('is-selected');
+
+                              // hide all code, show selected tab's code
+                              patternCodeExample.find('.code-example').hide();
+                              patternCodeExample.find(`.code-example--${elem.attr('id')}`).show();
+                          });
+                      });
                   });
               }
           };
