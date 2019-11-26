@@ -213,8 +213,11 @@ label {
 }
 
 .file-upload {
-	@include outline-within();
+  @include outline-within();
   display: inline-block;
+  .button {
+    margin: 0;
+  }
 }
 
 .file-upload__input {
