@@ -1,7 +1,36 @@
 # Change Log
 
+## [v0.9.1](https://github.com/codeforamerica/honeycrisp-gem/tree/v0.9.1) (2019-12-09)
+[Full Changelog](https://github.com/codeforamerica/honeycrisp-gem/compare/v0.9.0...v0.9.1)
+
+**Implemented enhancements:**
+
+- Put spacing examples into two columns [\#132](https://github.com/codeforamerica/honeycrisp-gem/issues/132)
+- Add Honeycrisp branding  [\#122](https://github.com/codeforamerica/honeycrisp-gem/issues/122)
+
+**Fixed bugs:**
+
+- Syntax highlighting incorrect for embedded ruby in styleguide reference [\#106](https://github.com/codeforamerica/honeycrisp-gem/issues/106)
+
+**Closed issues:**
+
+- Active state on Upload button is larger than button boundaries on Chrome [\#142](https://github.com/codeforamerica/honeycrisp-gem/issues/142)
+
+**Merged pull requests:**
+
+- Remove margins around `.button` in `.file-upload` so outline is snug  [\#143](https://github.com/codeforamerica/honeycrisp-gem/pull/143) ([anule](https://github.com/anule))
+- Spacing two columns [\#138](https://github.com/codeforamerica/honeycrisp-gem/pull/138) ([hartsick](https://github.com/hartsick))
+- Use variables instead of hard-coded pixel values [\#137](https://github.com/codeforamerica/honeycrisp-gem/pull/137) ([lkogler](https://github.com/lkogler))
+- Update branding to Honeycrisp [\#136](https://github.com/codeforamerica/honeycrisp-gem/pull/136) ([hartsick](https://github.com/hartsick))
+- Bump loofah from 2.2.3 to 2.3.1 [\#133](https://github.com/codeforamerica/honeycrisp-gem/pull/133) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Vendorize prism [\#131](https://github.com/codeforamerica/honeycrisp-gem/pull/131) ([hartsick](https://github.com/hartsick))
+
 ## [v0.9.0](https://github.com/codeforamerica/honeycrisp-gem/tree/v0.9.0) (2019-11-05)
 [Full Changelog](https://github.com/codeforamerica/honeycrisp-gem/compare/v0.8.0...v0.9.0)
+
+**Fixed bugs:**
+
+- Make padding classes more flexible. [\#20](https://github.com/codeforamerica/honeycrisp-gem/issues/20)
 
 **Merged pull requests:**
 
