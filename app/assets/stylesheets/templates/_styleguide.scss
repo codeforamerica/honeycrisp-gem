@@ -62,10 +62,12 @@
 
   .pattern__html {
     @include clearfix();
+
     &.is-open {
       .pattern__button:before {
         content: 'Hide HTML code';
       }
+
       pre {
         display: block;
         font-size: $font-size-15;
@@ -73,10 +75,12 @@
         background: #fff;
       }
     }
+
     pre {
       display: none;
       background-color: transparent;
       overflow-y: hidden;
+
       code {
         background-color: transparent;
       }
@@ -116,133 +120,88 @@
 
   .color {
     display: inline-block;
-    margin-right: 1em;
-    margin-bottom: 1em;
+    margin-right: .25em;
+    margin-bottom: .5em;
+    padding-left: $s10;
+    padding-top: $s10;
     font-size: $font-size-25-small;
-    color: $color-grey-dark;
-    text-align: center;
+    width: $s155;
+    height: $s95;
 
-    &:before {
-      display: block;
-      content: '';
-      width: 4.5em;
-      height: 4.5em;
-      border: 2px solid $color-grey;
-      background-color: $color-grey;
+    p {
+      margin-bottom: 0;
     }
 
     &--green {
-      &:before {
-        background-color: $color-green;
-      }
+      background-color: $color-green;
+      color: white;
     }
 
     &--green-light {
-      &:before {
-        background-color: $color-green-light;
-      }
+      background-color: $color-green-light;
     }
 
     &--grey {
-      &:before {
-        background-color: $color-grey;
-      }
+      background-color: $color-grey;
     }
 
     &--grey-light {
-      &:before {
-        background-color: $color-grey-light;
-      }
+      background-color: $color-grey-light;
     }
 
     &--grey-dark {
-      &:before {
-        background-color: $color-grey-dark;
-      }
+      background-color: $color-grey-dark;
+      color: white;
     }
 
     &--grey-darkest {
-      &:before {
-        background-color: $color-grey-darkest;
-      }
+      background-color: $color-grey-darkest;
+      color: white;
     }
 
     &--magenta {
-      &:before {
-        background-color: $color-magenta;
-      }
+      background-color: $color-magenta;
+      color: white;
     }
 
     &--magenta-light {
-      &:before {
-        background-color: $color-magenta-light;
-      }
+      background-color: $color-magenta-light;
     }
 
     &--magenta-dark {
-      &:before {
-        background-color: $color-magenta-dark;
-      }
+      background-color: $color-magenta-dark;
+      color: white;
     }
 
     &--red {
-      &:before {
-        background-color: $color-red;
-      }
+      background-color: $color-red;
+      color: white;
     }
 
     &--red-light {
-      &:before {
-        background-color: $color-red-light;
-      }
+      background-color: $color-red-light;
     }
 
     &--teal {
-      &:before {
-        background-color: $color-teal;
-      }
+      background-color: $color-teal;
+      color: white;
     }
 
     &--teal-light {
-      &:before {
-        background-color: $color-teal-light;
-      }
+      background-color: $color-teal-light;
     }
 
     &--teal-dark {
-      &:before {
-        background-color: $color-teal-dark;
-      }
+      background-color: $color-teal-dark;
+      color: white;
     }
 
     &--yellow {
-      &:before {
-        background-color: $color-yellow;
-      }
+      background-color: $color-yellow;
     }
 
     &--yellow-light {
-      &:before {
-        background-color: $color-yellow-light;
-      }
-    }
-
-    &--background {
-      &:before {
-        background-color: $color-background;
-      }
-    }
-
-    &--tan {
-      &:before {
-        background-color: $color-grey;
-      }
-    }
-
-    &--orange {
-      &:before {
-        background-color: $color-orange;
-      }
+      background-color: $color-yellow-light;
     }
   }
 }
