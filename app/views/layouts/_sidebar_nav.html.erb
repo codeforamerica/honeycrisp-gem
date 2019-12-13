@@ -1,0 +1,33 @@
+<header class="main-header">
+  <div class="toolbar">
+    <div class="toolbar__left">
+      <h1 class="main-header__title">
+        <%= link_to "Honeycrisp Design System v#{Cfa::Styleguide::VERSION}", styleguide_main_path, class: %w{main-header__logo} %>
+      </h1>
+    </div>
+    <div class="toolbar__right">
+
+    </div>
+  </div>
+</header>
+<nav class="sidebar-nav">
+
+  <ul>
+    <li>
+      <%= link_to "Atoms", styleguide_main_path(anchor: "atoms"), class: '' %>
+    </li>
+    <li>
+      <%= link_to "Molecules", styleguide_main_path(anchor: "molecules"), class: '' %>
+    </li>
+    <li>
+      <%= link_to "Organisms", styleguide_main_path(anchor: "organisms"), class: '' %>
+    </li>
+    <li>
+      <%= link_to "Form Builder", styleguide_form_builder_path, class: '' %>
+    </li>
+
+    <li>
+      <%= link_to "Emojis", styleguide_emojis_path, class: '' %>
+    </li>
+  </ul>
+</nav>

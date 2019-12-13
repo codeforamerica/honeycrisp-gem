@@ -14,3 +14,4 @@ yarn-debug.log*
 .yarn-integrity
 .git-authors
 .DS_Store
+.vscode

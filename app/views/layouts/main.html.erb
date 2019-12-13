@@ -16,22 +16,7 @@
 
 <body class="template--<%= content_for(:template_name) if content_for?(:template_name) %>">
   <div class="page-wrapper">
-    <header class="main-header">
-      <div class="toolbar">
-        <div class="toolbar__left">
-          <h1 class="main-header__title">
-            <%= link_to "Honeycrisp Design System v#{Cfa::Styleguide::VERSION}", styleguide_main_path, class: %w{main-header__logo} %>
-          </h1>
-        </div>
-        <div class="toolbar__right">
-          <%= link_to "Atoms", styleguide_main_path(anchor: "atoms"), class: %w{toolbar__item text--small link--subtle} %>
-          <%= link_to "Molecules", styleguide_main_path(anchor: "molecules"), class: %w{toolbar__item text--small link--subtle} %>
-          <%= link_to "Organisms", styleguide_main_path(anchor: "organisms"), class: %w{toolbar__item text--small link--subtle} %>
-          <%= link_to "Form Builder", styleguide_form_builder_path, class: %w{toolbar__item text--small link--subtle} %>
-          <%= link_to "Emojis", styleguide_emojis_path, class: %w{toolbar__item text--small link--subtle} %>
-        </div>
-      </div>
-    </header>
+    <%= render 'layouts/sidebar_nav' %>
     <%= yield %>
   </div>
 
