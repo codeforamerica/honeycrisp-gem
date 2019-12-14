@@ -7,7 +7,12 @@
 }
 
 .accordion__button {
-	@extend .button--link;
+	background: transparent;
+	border: none;
+	box-shadow: none;
+	cursor: pointer;
+	color: inherit;
+
 	position: relative;
 	display: block;
 	width: 100%;
