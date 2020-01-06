@@ -6,11 +6,12 @@ Sidebar
   //width: 33.3333%;
   width: 17em;
   height: 100%;
-  top: 0;
   overflow:hidden;
   visibility: visible;
   -webkit-backface-visibility: hidden;
-
+  float:left;
+  display:inline-block;
+  vertical-align:top;
   header{
     width: 100%;
     display:block;
@@ -31,7 +32,7 @@ Sidebar Nav
 ----------------*/
 .sidebar-nav {
   position: fixed;
-  //width: 13em;
+  width: 9em;
   height: 100%;
   font-weight: 400;
   font-size: 1.2em;
@@ -40,7 +41,8 @@ Sidebar Nav
   z-index: 9;
   overflow: hidden;
   -webkit-overflow-scrolling: touch;
-
+  background-color: #ffffff;
+  left: 0;
 
   ul{
     list-style:none;
@@ -56,7 +58,7 @@ Sidebar Nav
       width: 100%;
 
       a{
-        padding: 1.05em	1em;
+        padding: .05em	1em;
         position: relative;
         display:block;
 
@@ -75,4 +77,13 @@ Sidebar Nav
       }
     }
   }
+}
+
+/* -------------
+Sidebar Nav
+----------------*/
+.left-sidebar-slab-container{
+  margin-left: 9em;
+  padding-left: 1em;
+  padding-right: 1em;
 }
