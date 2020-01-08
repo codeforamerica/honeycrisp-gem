@@ -81,17 +81,20 @@
   }
 }
 
+@mixin outline-unconditional() {
+  outline: none;
+  box-shadow: 0 0 0 5px $color-yellow;
+}
+
 @mixin outline() {
   &:focus {
-    outline: none;
-    box-shadow: 0 0 0 5px $color-yellow;
+    @include outline-unconditional;
   }
 }
 
 @mixin outline-within() {
   &:focus-within {
-    outline: none;
-    box-shadow: 0 0 0 5px $color-yellow;
+    @include outline-unconditional;
   }
 }
 
