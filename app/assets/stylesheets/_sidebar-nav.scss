@@ -1,4 +1,8 @@
 /* -------------
+Color Class Updates
+----------------*/
+
+/* -------------
 Sidebar
 ----------------*/
 .sidebar {
@@ -6,7 +10,6 @@ Sidebar
   //width: 33.3333%;
   width: 17em;
   height: 100%;
-  overflow:hidden;
   visibility: visible;
   -webkit-backface-visibility: hidden;
   float:left;
@@ -32,14 +35,13 @@ Sidebar Nav
 ----------------*/
 .sidebar-nav {
   position: fixed;
-  width: 9em;
+  border-right: 2px black solid;
+  width: 12em;
   height: 100%;
-  font-weight: 400;
-  font-size: 1.2em;
-  overflow: auto;
   padding-bottom: 6em;
   z-index: 9;
   overflow: hidden;
+  overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
   background-color: #ffffff;
   left: 0;
@@ -49,32 +51,54 @@ Sidebar Nav
     display: block;
     padding: 0;
     margin: 0;
+    line-height: 16px;
 
     li{
       margin-left: 0;
-      padding-left: 0;
       //min-width: 13em;
       display:inline-block;
       width: 100%;
+      line-height: 16px;
 
-      a{
-        padding: .05em	1em;
-        position: relative;
+      .section-header{
         display:block;
+        background-color: $color-green-light;
+        padding: .75em 1em;
+        color: $color-grey-dark;
+        width: 100% !important;
+        line-height: 16px;
+      }
 
-        /*&:hover{
-          @include transition(all 0.6s ease);
-        }*/
+      $sidebar-a-tags: 'a, a:active, a:hover, a:visited';
+      $sidebar-a-tags-hover: 'a:active, a:hover';
+
+      #{$sidebar-a-tags} {
+        line-height: 16px;
+        text-decoration: none;
       }
-      /* -------------
-      Sidebar: icons
-      ----------------*/
-      i{
-        padding-right: 0.5em;
-        width: 9em;
-        display: inline;
-        vertical-align:middle;
+
+      #{$sidebar-a-tags-hover} {
+        border-right: $color-teal 2px;
+        font-weight: 900;
+        text-decoration: underline;
       }
+
+      .sidebar__sub-items{
+        padding: .05em 1em;
+        li{
+          #{$sidebar-a-tags} {
+            color: $color-grey-darkest;
+            line-height: 16px;
+          }
+
+          #{$sidebar-a-tags-hover} {
+            /*border-left: 2px solid $color-teal;*/
+            font-weight: 700;
+            text-decoration: underline;
+          }
+        }
+      }
+
     }
   }
 }
@@ -83,7 +107,7 @@ Sidebar Nav
 Sidebar Nav
 ----------------*/
 .left-sidebar-slab-container{
-  margin-left: 9em;
+  margin-left: 11em;
   padding-left: 1em;
   padding-right: 1em;
 }

@@ -6,28 +6,53 @@
       </h1>
     </div>
     <div class="toolbar__right">
-
+      <br />
     </div>
   </div>
 </header>
 <aside class="sidebar">
   <nav class="sidebar-nav">
     <ul>
-      <li>
-        <%= link_to "Atoms", styleguide_main_path(anchor: "atoms"), class: 'toolbar__item text--small link--subtle' %>
-      </li>
-      <li>
-        <%= link_to "Molecules", styleguide_main_path(anchor: "molecules"), class: 'toolbar__item text--small link--subtle' %>
-      </li>
-      <li>
-        <%= link_to "Organisms", styleguide_main_path(anchor: "organisms"), class: 'toolbar__item text--small link--subtle' %>
-      </li>
-      <li>
-        <%= link_to "Form Builder", styleguide_form_builder_path, class: 'toolbar__item text--small link--subtle' %>
+      <li class="spacing-below-0">
+        <span class="section-header heading-25-small spacing-below-10">Foundations</span>
+        <ul class="sidebar__sub-items spacing-below-10">
+          <li class="spacing-below-25"><%= link_to "Overview", styleguide_main_path(anchor: "organisms"), class: 'text--grey-darkest' %></li>
+          <li class="spacing-below-25"><%= link_to "Contributing", styleguide_main_path(anchor: "organisms"), class: '' %></li>
+          <li class="spacing-below-25"><%= link_to "Change Log", styleguide_main_path(anchor: "organisms"), class: '' %></li>
+          <li class="spacing-below-25"><%= link_to "Product Principles", styleguide_main_path(anchor: "organisms"), class: '' %></li>
+          <li class="spacing-below-25"><%= link_to "Atomic Design", styleguide_main_path(anchor: "organisms"), class: '' %></li>
+          <li class="spacing-below-25"><%= link_to "Accessibility", styleguide_main_path(anchor: "organisms"), class: '' %></li>
+          <li class="spacing-below-25"><%= link_to "Compatibility", styleguide_main_path(anchor: "organisms"), class: '' %></li>
+        </ul>
       </li>
 
-      <li>
-        <%= link_to "Emojis", styleguide_emojis_path, class: 'toolbar__item text--small link--subtle' %>
+      <li class="spacing-below-0">
+        <span class="section-header heading-25-small spacing-below-10">For Designers</span>
+        <ul class="sidebar__sub-items spacing-below-10 spacing-below-10">
+          <li class="spacing-below-25"><%= link_to "Spacing", styleguide_main_path(anchor: "spacing"), class: '' %></li>
+          <li class="spacing-below-25"><%= link_to "Typography", styleguide_main_path(anchor: "spacing"), class: '' %></li>
+          <li class="spacing-below-25"><%= link_to "Grid Layout", styleguide_main_path(anchor: "spacing"), class: '' %></li>
+          <li class="spacing-below-25"><%= link_to "Color", styleguide_main_path(anchor: "spacing"), class: '' %></li>
+          <li class="spacing-below-25"><%= link_to "Copywriting", styleguide_main_path(anchor: "spacing"), class: '' %></li>
+          <li class="spacing-below-25"><%= link_to "Visual Assets", styleguide_main_path(anchor: "spacing"), class: '' %></li>
+          <li class="spacing-below-25"><%= link_to "Sketch Symbol Library", styleguide_main_path(anchor: "spacing"), class: '' %></li>
+        </ul>
+      </li>
+
+      <li class="spacing-below-0">
+        <span class="section-header heading-25-small spacing-below-10">For Engineers</span>
+        <ul class="sidebar__sub-items spacing-below-10">
+          <li class="spacing-below-25"><%= link_to "Form Builder", styleguide_form_builder_path, class: '' %></li>
+          <li class="spacing-below-25"><%= link_to "Emojis", styleguide_emojis_path, class: '' %></li>
+          <li class="spacing-below-25"><%= link_to "Css Conventions", styleguide_main_path(anchor: "atoms"), class: '' %></li>
+        </ul>
+      </li>
+      <li class="spacing-below-0">
+        <span class="section-header heading-25-small spacing-below-10">Atoms</span>
+        <ul class="sidebar__sub-items spacing-below-10">
+            <li class="spacing-below-25"><%= link_to "Slab Layout", styleguide_main_path(anchor: "atoms"), class: '' %></li>
+            <li class="spacing-below-25"><%= link_to "Grid Layout", styleguide_main_path(anchor: "atoms"), class: '' %></li>
+        </ul>
       </li>
     </ul>
   </nav>
