@@ -214,6 +214,10 @@ label {
 
 .file-upload {
   display: inline-block;
+
+  //  The ~ denotes a "subsequent sibling" per https://www.w3.org/TR/selectors-4/#general-sibling-combinators
+  //  This rule expects that an element with class .button will occur after a focused input element as children
+  //  of the .file-upload element, as is the case in the example HTML in the styleguide.
   input:focus ~ .button {
     @include outline-unconditional;
   }
