@@ -150,7 +150,7 @@ GEM
       byebug (~> 10.0)
       pry (~> 0.10)
     public_suffix (3.0.3)
-    rack (2.0.6)
+    rack (2.1.1)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
     rails (5.2.2.1)
@@ -263,6 +263,7 @@ DEPENDENCIES
   github_changelog_generator
   percy-capybara (~> 4.0.0.pre.beta2)
   pry-byebug
+  rack (>= 2.0.8)
   rails (>= 3.1)
   rake (~> 10.0)
   rspec
