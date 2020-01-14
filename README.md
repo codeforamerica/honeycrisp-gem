@@ -131,7 +131,7 @@ To release a new version, on `master` branch:
 * Generate an addition to the [changelog](./CHANGELOG.md) using `bundle exec rake changelog`. (Note: you will need to provide a [Github token with public repo access](https://github.com/github-changelog-generator/github-changelog-generator#github-token)).
 * If updating the minor version, update the [migration guide](./MIGRATING.md) with any breaking changes and suggestions for what to do about them. If no breaking changes, just add 'no breaking changes'. 
 * Review, edit as necessary, and commit including the version update.
-* Run `bundle exec rake release`, which will create a git tag for the version, and push git commits and tags to Github. In the future, this will also push the `.gem` file to [rubygems.org](https://rubygems.org).
+* Run `gem_push=false bundle exec rake release`, which will create a git tag for the version, and push git commits and tags to Github. In the future, this will also push the `.gem` file to [rubygems.org](https://rubygems.org).
 
 ## License
 
