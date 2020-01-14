@@ -8,6 +8,7 @@ GitHubChangelogGenerator::RakeTask.new :changelog do |config|
   config.user = "codeforamerica"
   config.project = "honeycrisp-gem"
   config.future_release = "v#{Cfa::Styleguide::VERSION}"
+  config.exclude_labels = ["discussion", "wontfix"]
 end
 
 namespace :lint do
