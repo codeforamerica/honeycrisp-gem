@@ -1,16 +1,45 @@
-# Change Log
+# Changelog
 
-## [v0.9.1](https://github.com/codeforamerica/honeycrisp-gem/tree/v0.9.1) (2019-12-09)
+## [v0.9.2](https://github.com/codeforamerica/honeycrisp-gem/tree/v0.9.2) (2020-01-13)
+
+[Full Changelog](https://github.com/codeforamerica/honeycrisp-gem/compare/v0.9.1...v0.9.2)
+
+**Implemented enhancements:**
+
+- Update documentation display template [\#121](https://github.com/codeforamerica/honeycrisp-gem/issues/121)
+- Move labels and extraneous button types to admin-specific file [\#115](https://github.com/codeforamerica/honeycrisp-gem/issues/115)
+- Display names and hex codes on color samples [\#104](https://github.com/codeforamerica/honeycrisp-gem/issues/104)
+
+**Closed issues:**
+
+- Documentation for pagination HTML should show links, not buttons [\#149](https://github.com/codeforamerica/honeycrisp-gem/issues/149)
+- Add documentation to progress indicators [\#148](https://github.com/codeforamerica/honeycrisp-gem/issues/148)
+
+**Merged pull requests:**
+
+- Update github\_changelog\_generator gem [\#163](https://github.com/codeforamerica/honeycrisp-gem/pull/163) ([mrotondo](https://github.com/mrotondo))
+- Update Rack dependency to 2.0.8 for security issue [\#162](https://github.com/codeforamerica/honeycrisp-gem/pull/162) ([mrotondo](https://github.com/mrotondo))
+- Adjusts how upload buttons are highlighted on focus. [\#161](https://github.com/codeforamerica/honeycrisp-gem/pull/161) ([mrotondo](https://github.com/mrotondo))
+- Change from \<button\> to \<a\> elements for pagination [\#153](https://github.com/codeforamerica/honeycrisp-gem/pull/153) ([lkogler](https://github.com/lkogler))
+- Add documentation to progress indicators [\#150](https://github.com/codeforamerica/honeycrisp-gem/pull/150) ([lkogler](https://github.com/lkogler))
+- Button cleanup [\#147](https://github.com/codeforamerica/honeycrisp-gem/pull/147) ([mrotondo](https://github.com/mrotondo))
+- Update Colors section of styleguide  [\#146](https://github.com/codeforamerica/honeycrisp-gem/pull/146) ([mrotondo](https://github.com/mrotondo))
+- Add tabs to code examples for different languages \(html, erb\) [\#139](https://github.com/codeforamerica/honeycrisp-gem/pull/139) ([jenny-heath](https://github.com/jenny-heath))
+
+## [v0.9.1](https://github.com/codeforamerica/honeycrisp-gem/tree/v0.9.1) (2019-12-10)
+
 [Full Changelog](https://github.com/codeforamerica/honeycrisp-gem/compare/v0.9.0...v0.9.1)
 
 **Implemented enhancements:**
 
 - Put spacing examples into two columns [\#132](https://github.com/codeforamerica/honeycrisp-gem/issues/132)
 - Add Honeycrisp branding  [\#122](https://github.com/codeforamerica/honeycrisp-gem/issues/122)
+- Add development instructions to README [\#34](https://github.com/codeforamerica/honeycrisp-gem/issues/34)
+- Make padding classes more flexible. [\#20](https://github.com/codeforamerica/honeycrisp-gem/issues/20)
 
 **Fixed bugs:**
 
-- Syntax highlighting incorrect for embedded ruby in styleguide reference [\#106](https://github.com/codeforamerica/honeycrisp-gem/issues/106)
+- Spacing issues with date fields and the last question on a page [\#13](https://github.com/codeforamerica/honeycrisp-gem/issues/13)
 
 **Closed issues:**
 
@@ -26,18 +55,21 @@
 - Vendorize prism [\#131](https://github.com/codeforamerica/honeycrisp-gem/pull/131) ([hartsick](https://github.com/hartsick))
 
 ## [v0.9.0](https://github.com/codeforamerica/honeycrisp-gem/tree/v0.9.0) (2019-11-05)
+
 [Full Changelog](https://github.com/codeforamerica/honeycrisp-gem/compare/v0.8.0...v0.9.0)
 
 **Fixed bugs:**
 
-- Make padding classes more flexible. [\#20](https://github.com/codeforamerica/honeycrisp-gem/issues/20)
+- Syntax highlighting incorrect for embedded ruby in styleguide reference [\#106](https://github.com/codeforamerica/honeycrisp-gem/issues/106)
 
 **Merged pull requests:**
 
 - Add migration guide [\#130](https://github.com/codeforamerica/honeycrisp-gem/pull/130) ([hartsick](https://github.com/hartsick))
+- Documentation page: display explanation between example and code [\#128](https://github.com/codeforamerica/honeycrisp-gem/pull/128) ([jenny-heath](https://github.com/jenny-heath))
 - Accessibility design details [\#123](https://github.com/codeforamerica/honeycrisp-gem/pull/123) ([norrishung](https://github.com/norrishung))
 
 ## [v0.8.0](https://github.com/codeforamerica/honeycrisp-gem/tree/v0.8.0) (2019-10-10)
+
 [Full Changelog](https://github.com/codeforamerica/honeycrisp-gem/compare/v0.7.1...v0.8.0)
 
 **Merged pull requests:**
@@ -45,6 +77,7 @@
 - Add crossmark and checkmark list patterns to design system [\#127](https://github.com/codeforamerica/honeycrisp-gem/pull/127) ([norrishung](https://github.com/norrishung))
 
 ## [v0.7.1](https://github.com/codeforamerica/honeycrisp-gem/tree/v0.7.1) (2019-10-09)
+
 [Full Changelog](https://github.com/codeforamerica/honeycrisp-gem/compare/v0.7.0...v0.7.1)
 
 **Merged pull requests:**
@@ -52,6 +85,7 @@
 - Bump rubyzip from 1.2.2 to 1.3.0 [\#126](https://github.com/codeforamerica/honeycrisp-gem/pull/126) ([dependabot[bot]](https://github.com/apps/dependabot))
 
 ## [v0.7.0](https://github.com/codeforamerica/honeycrisp-gem/tree/v0.7.0) (2019-10-08)
+
 [Full Changelog](https://github.com/codeforamerica/honeycrisp-gem/compare/v0.6.5...v0.7.0)
 
 **Implemented enhancements:**
@@ -61,12 +95,12 @@
 
 **Merged pull requests:**
 
-- Documentation page: display explanation between example and code [\#128](https://github.com/codeforamerica/honeycrisp-gem/pull/128) ([jenny-heath](https://github.com/jenny-heath))
 - Adding an accordion pattern [\#125](https://github.com/codeforamerica/honeycrisp-gem/pull/125) ([norrishung](https://github.com/norrishung))
 - Hide unchecked follow up questions on page load [\#119](https://github.com/codeforamerica/honeycrisp-gem/pull/119) ([tdooner](https://github.com/tdooner))
 - Fix follow-up to work for single checkbox [\#118](https://github.com/codeforamerica/honeycrisp-gem/pull/118) ([tdooner](https://github.com/tdooner))
 
 ## [v0.6.5](https://github.com/codeforamerica/honeycrisp-gem/tree/v0.6.5) (2019-07-15)
+
 [Full Changelog](https://github.com/codeforamerica/honeycrisp-gem/compare/v0.6.4...v0.6.5)
 
 **Implemented enhancements:**
@@ -77,26 +111,29 @@
 
 - Upgrade lodash to address CVE [\#117](https://github.com/codeforamerica/honeycrisp-gem/pull/117) ([hartsick](https://github.com/hartsick))
 - Update toolbar for new GCF behaviors [\#116](https://github.com/codeforamerica/honeycrisp-gem/pull/116) ([tdooner](https://github.com/tdooner))
+- Add a section about spacing to reference page [\#111](https://github.com/codeforamerica/honeycrisp-gem/pull/111) ([jenny-heath](https://github.com/jenny-heath))
 
 ## [v0.6.4](https://github.com/codeforamerica/honeycrisp-gem/tree/v0.6.4) (2019-07-01)
+
 [Full Changelog](https://github.com/codeforamerica/honeycrisp-gem/compare/v0.6.2...v0.6.4)
 
 **Merged pull requests:**
 
 - Simplified step-bar-description [\#113](https://github.com/codeforamerica/honeycrisp-gem/pull/113) ([embarnard](https://github.com/embarnard))
-- Add a section about spacing to reference page [\#111](https://github.com/codeforamerica/honeycrisp-gem/pull/111) ([jenny-heath](https://github.com/jenny-heath))
 - Fix bug on step progress bar: increment current\_step on a 0 index system [\#110](https://github.com/codeforamerica/honeycrisp-gem/pull/110) ([embarnard](https://github.com/embarnard))
+- added student pair emoji [\#109](https://github.com/codeforamerica/honeycrisp-gem/pull/109) ([embarnard](https://github.com/embarnard))
 
 ## [v0.6.2](https://github.com/codeforamerica/honeycrisp-gem/tree/v0.6.2) (2019-06-25)
+
 [Full Changelog](https://github.com/codeforamerica/honeycrisp-gem/compare/v0.6.1...v0.6.2)
 
 **Merged pull requests:**
 
-- added student pair emoji [\#109](https://github.com/codeforamerica/honeycrisp-gem/pull/109) ([embarnard](https://github.com/embarnard))
 - Add emoji for "older man and woman" [\#108](https://github.com/codeforamerica/honeycrisp-gem/pull/108) ([tdooner](https://github.com/tdooner))
 - Add support for optional progress step bar labels [\#107](https://github.com/codeforamerica/honeycrisp-gem/pull/107) ([hartsick](https://github.com/hartsick))
 
 ## [v0.6.1](https://github.com/codeforamerica/honeycrisp-gem/tree/v0.6.1) (2019-06-06)
+
 [Full Changelog](https://github.com/codeforamerica/honeycrisp-gem/compare/v0.6.0...v0.6.1)
 
 **Merged pull requests:**
@@ -104,6 +141,7 @@
 - Add new type of notice [\#103](https://github.com/codeforamerica/honeycrisp-gem/pull/103) ([jenny-heath](https://github.com/jenny-heath))
 
 ## [v0.6.0](https://github.com/codeforamerica/honeycrisp-gem/tree/v0.6.0) (2019-05-21)
+
 [Full Changelog](https://github.com/codeforamerica/honeycrisp-gem/compare/v0.5.11...v0.6.0)
 
 **Merged pull requests:**
@@ -111,6 +149,7 @@
 - Accessibility improvements from GCF audit [\#101](https://github.com/codeforamerica/honeycrisp-gem/pull/101) ([hartsick](https://github.com/hartsick))
 
 ## [v0.5.11](https://github.com/codeforamerica/honeycrisp-gem/tree/v0.5.11) (2019-04-04)
+
 [Full Changelog](https://github.com/codeforamerica/honeycrisp-gem/compare/v0.5.10...v0.5.11)
 
 **Fixed bugs:**
@@ -124,8 +163,10 @@
 - Add Percy snapshot to CircleCI [\#93](https://github.com/codeforamerica/honeycrisp-gem/pull/93) ([bensheldon](https://github.com/bensheldon))
 - Refactor all styleguide examples to use partial; add link to isolated example [\#89](https://github.com/codeforamerica/honeycrisp-gem/pull/89) ([bensheldon](https://github.com/bensheldon))
 - Add link to Github repo and issue submission [\#88](https://github.com/codeforamerica/honeycrisp-gem/pull/88) ([hartsick](https://github.com/hartsick))
+- Make accessibility improvements [\#83](https://github.com/codeforamerica/honeycrisp-gem/pull/83) ([bensheldon](https://github.com/bensheldon))
 
 ## [v0.5.10](https://github.com/codeforamerica/honeycrisp-gem/tree/v0.5.10) (2019-02-16)
+
 [Full Changelog](https://github.com/codeforamerica/honeycrisp-gem/compare/v0.5.9...v0.5.10)
 
 **Implemented enhancements:**
@@ -138,13 +179,15 @@
 **Merged pull requests:**
 
 - Add rubocop [\#87](https://github.com/codeforamerica/honeycrisp-gem/pull/87) ([hartsick](https://github.com/hartsick))
-- Make accessibility improvements [\#83](https://github.com/codeforamerica/honeycrisp-gem/pull/83) ([bensheldon](https://github.com/bensheldon))
 - Add show more pattern to molecules [\#82](https://github.com/codeforamerica/honeycrisp-gem/pull/82) ([anule](https://github.com/anule))
 - Add anchorlink to individual examples [\#81](https://github.com/codeforamerica/honeycrisp-gem/pull/81) ([bensheldon](https://github.com/bensheldon))
 - Add Brewfile and instructions for Chromedriver [\#80](https://github.com/codeforamerica/honeycrisp-gem/pull/80) ([bensheldon](https://github.com/bensheldon))
 - Add changelog generation and instructions [\#73](https://github.com/codeforamerica/honeycrisp-gem/pull/73) ([hartsick](https://github.com/hartsick))
 
 ## [v0.5.9](https://github.com/codeforamerica/honeycrisp-gem/tree/v0.5.9) (2019-02-08)
+
+[Full Changelog](https://github.com/codeforamerica/honeycrisp-gem/compare/03e893bd371986a17bada20d5fb49c3550dd3d77...v0.5.9)
+
 **Implemented enhancements:**
 
 - Update error message examples [\#62](https://github.com/codeforamerica/honeycrisp-gem/issues/62)
@@ -198,7 +241,6 @@
 - Add CfaFormBuilder [\#26](https://github.com/codeforamerica/honeycrisp-gem/pull/26) ([wschaefer-cfa](https://github.com/wschaefer-cfa))
 - bump rack due to security vulnerability [\#25](https://github.com/codeforamerica/honeycrisp-gem/pull/25) ([wschaefer-cfa](https://github.com/wschaefer-cfa))
 - Bump gem version [\#23](https://github.com/codeforamerica/honeycrisp-gem/pull/23) ([hartsick](https://github.com/hartsick))
-- Darken base teal color to improve contrast [\#19](https://github.com/codeforamerica/honeycrisp-gem/pull/19) ([hartsick](https://github.com/hartsick))
 - Pull in latest GCF styleguide [\#12](https://github.com/codeforamerica/honeycrisp-gem/pull/12) ([hartsick](https://github.com/hartsick))
 - Fix styling on non-main styleguide pages [\#11](https://github.com/codeforamerica/honeycrisp-gem/pull/11) ([hartsick](https://github.com/hartsick))
 - Declare layout for Styleguide [\#10](https://github.com/codeforamerica/honeycrisp-gem/pull/10) ([hartsick](https://github.com/hartsick))
@@ -209,4 +251,4 @@
 
 
 
-\* *This Change Log was automatically generated by [github_changelog_generator](https://github.com/skywinder/Github-Changelog-Generator)*
+\* *This Changelog was automatically generated by [github_changelog_generator](https://github.com/github-changelog-generator/github-changelog-generator)*
