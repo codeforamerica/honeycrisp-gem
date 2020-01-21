@@ -1,7 +1,8 @@
 //= require jquery
 $(document).ready(function() {
-    //collapse menu if its mobile and you click a link
-    $('.sidebar-nav').on('click', 'a', function () {
+    //collapse menu if its mobile and you click a link in menu sub items
+    $('.sidebar-nav').on('click', 'a', function ()
+    {
         if( $('.sidebar-collapse-toggle').is(':visible') ) {
             $(".sidebar").css({
                 "width": "17em",
@@ -16,6 +17,8 @@ $(document).ready(function() {
 });
 
 $(window).resize(function() {
+    //needed jquery resize for when someone changes screen size
+    //works if same size but gets caught in either mobile or desktop without this
     if( $('.sidebar-collapse-toggle').first().is(':hidden') )
     {
         $(".sidebar").css({
