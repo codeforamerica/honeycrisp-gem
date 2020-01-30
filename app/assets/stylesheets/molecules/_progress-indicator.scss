@@ -3,6 +3,7 @@
   margin: 1em auto;
   text-align: center;
   position: relative;
+  z-index:0;
   &:before {
     content: '';
     display: block;
