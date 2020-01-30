@@ -65,6 +65,14 @@
     width: 100%;
     border: 2px solid $color-grey-darkest;
 
+    .text-input:first-child {
+      padding-left: $s25;
+    }
+
+    .text-input:last-child {
+      padding-right: $s25;
+    }
+
     .text-input-group__prefix {
         display: table-cell;
         width: 1%;
