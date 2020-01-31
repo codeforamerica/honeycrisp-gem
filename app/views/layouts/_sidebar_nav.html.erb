@@ -1,18 +1,13 @@
 <header class="main-header">
-  <div class="toolbar spacing-above-10">
-    <div class="toolbar__left">
+  <div class="toolbar_alt">
       <h1 class="main-header__title">
         <%= link_to "Honeycrisp Design System v#{Cfa::Styleguide::VERSION}", styleguide_main_path, class: %w{main-header__logo} %>
       </h1>
-    </div>
-    <div class="toolbar__right">
-      <button class="button button--small sidebar-collapse-toggle"onclick="toggleNav()">Menu</button>
-    </div>
+      <button class="button button--small sidebar-collapse-toggle" onclick="toggleNav()">Menu</button>
   </div>
 </header>
 <aside class="sidebar">
   <nav class="sidebar-nav">
-    <button class="button button--link sidebar-collapse-toggle" style="float: right;" onclick="toggleNav()">X</button>
     <ul>
       <!--<li class="spacing-below-0">
         <span class="section-header heading-25-small spacing-below-10">Foundations</span>

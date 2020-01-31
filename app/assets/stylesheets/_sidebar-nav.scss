@@ -1,6 +1,35 @@
 /* -------------
 Color Class Updates
 ----------------*/
+.toolbar_alt{
+  max-width: 960px;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  content: "";
+  clear: both;
+}
+
+.toolbar_alt.clearfix:after {
+  content: "";
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both;
+}
+
+.toolbar_alt > .main-header__title{
+  float: left;
+  margin-top: $s15;
+  margin-left: $s15;
+  line-height: $s25;
+}
+
+.sidebar-collapse-toggle{
+  float: right;
+  margin-top: $s15;
+  margin-right: $s15;
+}
 
 /* -------------
 Sidebar
@@ -35,7 +64,6 @@ Sidebar Nav
 ----------------*/
 .sidebar-nav {
   position: fixed;
-  border-right: 2px black solid;
   width: 12em;
   height: 100%;
   padding-bottom: 6em;
@@ -104,6 +132,9 @@ Sidebar Nav
             /*border-left: 2px solid $color-teal;*/
             text-decoration: underline;
           }
+          .active{
+            font-weight: 700;
+          }
         }
       }
 
@@ -123,7 +154,7 @@ Sidebar Nav
   padding-left: 1em;
 }
 
-@media screen and (max-width: 1400px) {
+@media screen and (max-width: $tablet-up - 1) {
   .sidebar{
     display: none;
   }
@@ -137,9 +168,13 @@ Sidebar Nav
     padding-left: 0;
     padding-right: 0;
   }
+
+  .main-header__title .main-header__logo{
+    color: #fff !important;
+  }
 }
 
-@media screen and (min-width: 1401px) {
+@media screen and (min-width: $tablet-up) {
   .sidebar{
     display: inline-block;
   }
