@@ -52,23 +52,20 @@
   top: .1em;
 }
 
-
-// Paste style.css file from icomoon here
-
 @font-face {
-  font-family: 'icomoon';
-  src:  font-url('icomoon.eot?ia7soh');
-  src:  font-url('icomoon.eot?ia7soh#iefix') format('embedded-opentype'),
-    font-url('icomoon.ttf?ia7soh') format('truetype'),
-    font-url('icomoon.woff?ia7soh') format('woff'),
-    font-url('icomoon.svg?ia7soh#icomoon') format('svg');
-  font-weight: normal;
+  font-family: 'Material Icons';
   font-style: normal;
+  font-weight: normal;
+  src: font-url('MaterialIcons-Regular.eot'); /* For IE6-8 */
+  src: font-url('MaterialIcons-Regular.eot?#iefix') format('embedded-opentype'),
+    font-url('MaterialIcons-Regular.ttf') format('truetype'),
+    font-url('MaterialIcons-Regular.woff') format('woff'),
+    font-url('MaterialIcons-Regular.svg') format('svg');
 }
 
 [class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'icomoon' !important;
+  font-family: 'Material Icons' !important;
   speak: none;
   font-style: normal;
   font-weight: normal;
@@ -327,5 +324,6 @@
 .icon-zoom_out:before {
   content: "\e900";
 }
+
 
 
