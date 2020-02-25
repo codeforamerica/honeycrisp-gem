@@ -59,6 +59,7 @@
 
 .text-input-group {
     @include outline-within;
+    webkit-appearance: none;
     display: table;
     margin-bottom: 0;
     border-collapse: separate;
@@ -141,7 +142,7 @@
       right: $s35;
     }
   }
-  
+
   &:before {
     content: '';
     display: block;
