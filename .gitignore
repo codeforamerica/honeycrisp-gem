@@ -16,3 +16,6 @@ yarn-debug.log*
 .DS_Store
 .vscode
 Brewfile.lock.json
+/dist
+.sass-cache
+/tmp
