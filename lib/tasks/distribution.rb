@@ -13,6 +13,7 @@ class Distribution
   private
 
   def create_directories
+    FileUtils.rm_rf(%W(#{Dir.pwd}/dist #{Dir.pwd}.sass-cache #{Dir.pwd}/tmp))
     FileUtils.mkdir_p(Dir.pwd + "/dist")
     FileUtils.mkdir_p("/tmp/neat")
   end

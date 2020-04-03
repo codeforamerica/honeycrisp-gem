@@ -2,10 +2,6 @@ require "spec_helper"
 require "tasks/distribution"
 
 describe "Distribution" do
-  before :each do
-    FileUtils.rm_rf(%W(#{Dir.pwd}/dist #{Dir.pwd}.sass-cache #{Dir.pwd}/tmp))
-  end
-
   context "#new" do
     it "creates a dist folder" do
       Distribution.new
