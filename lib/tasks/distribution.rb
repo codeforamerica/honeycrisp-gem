@@ -14,28 +14,33 @@ class Distribution
 
   def create_directories
     FileUtils.rm_rf(%W(#{Dir.pwd}/dist #{Dir.pwd}.sass-cache #{Dir.pwd}/tmp))
-    FileUtils.mkdir_p(Dir.pwd + "/dist")
-    FileUtils.mkdir_p("/tmp/neat")
+    FileUtils.mkdir_p("#{Dir.pwd}/dist/vendor")
+    FileUtils.mkdir_p("#{Dir.pwd}/dist/css")
+    FileUtils.mkdir_p("#{Dir.pwd}/dist/scss")
   end
 
   def move_assets
     FileUtils.cp_r("#{Dir.pwd}/app/assets/fonts", "#{Dir.pwd}/dist")
     FileUtils.cp_r("#{Dir.pwd}/app/assets/images", "#{Dir.pwd}/dist")
+    FileUtils.cp_r("#{Dir.pwd}/app/assets/stylesheets/.", "#{Dir.pwd}/dist/scss")
   end
 
   def compile_css
-    css_root = Dir.pwd + "/dist/css"
-    FileUtils.mkdir_p(css_root)
+    css_root = "#{Dir.pwd}/dist/css"
 
     sprockets = create_sprockets_env
-    assets = sprockets.find_asset("#{Dir.pwd}/app/assets/stylesheets/cfa_styleguide_main.scss")
-    assets.write_to(css_root + "/honeycrisp.css")
+    assets = sprockets.find_asset("#{Dir.pwd}/dist/scss/cfa_styleguide_main.scss")
+    assets.write_to("#{css_root}/honeycrisp.css")
 
     sprockets = create_sprockets_env(compress: true)
-    assets = sprockets.find_asset("#{Dir.pwd}/app/assets/stylesheets/cfa_styleguide_main.scss")
-    assets.write_to(css_root + "/honeycrisp.min.css")
+    assets = sprockets.find_asset("#{Dir.pwd}/dist/scss/cfa_styleguide_main.scss")
+    assets.write_to("#{css_root}/honeycrisp.min.css")
 
-    `sass --scss --sourcemap=auto #{css_root}/honeycrisp.min.css dist/css/honeycrisp.min.css`
+    `sass --scss --sourcemap=auto \
+      -I #{Dir.pwd}/dist/vendor/bourbon \
+      -I #{Dir.pwd}/dist/vendor/neat \
+      -I #{Dir.pwd}/vendor/assets/stylesheets \
+      #{Dir.pwd}/dist/scss/cfa_styleguide_main.scss dist/css/honeycrisp.min.css`
   end
 
   def compile_js
@@ -59,13 +64,14 @@ class Distribution
     Sprockets::Environment.new do |env|
       env.js_compressor = :uglify_with_source_maps if compress
       env.css_compressor = :sass if compress
+      env.append_path("#{Dir.pwd}/dist/scss")
       env.append_path("#{Dir.pwd}/app/assets/javascripts/")
       env.append_path("#{Dir.pwd}/app/assets/stylesheets/")
       env.append_path("#{Dir.pwd}/vendor/assets/javascripts/")
       env.append_path("#{Dir.pwd}/vendor/assets/stylesheets/")
       env.append_path("#{jquery_path}/assets/javascripts/")
-      env.append_path("#{Dir.pwd}/tmp/bourbon")
-      env.append_path("#{Dir.pwd}/tmp/neat")
+      env.append_path("#{Dir.pwd}/dist/vendor/bourbon")
+      env.append_path("#{Dir.pwd}/dist/vendor/neat")
       env.context_class.class_eval do
         def asset_path(path, options = {})
           case options[:type]
@@ -81,8 +87,8 @@ class Distribution
 end
 
 def install_dependencies
-  `bourbon install --path tmp && neat install`
-  FileUtils.move(Dir.pwd + "/neat", Dir.pwd + "/tmp/neat/")
+  `bourbon install --path dist/vendor && neat install`
+  FileUtils.move("#{Dir.pwd}/neat", "#{Dir.pwd}/dist/vendor")
 
   Sprockets.register_compressor(
     "application/javascript",
