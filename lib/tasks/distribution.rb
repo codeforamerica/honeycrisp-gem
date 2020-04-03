@@ -22,6 +22,10 @@ class Distribution
     sprockets = create_sprockets_env
     assets = sprockets.find_asset("#{Dir.pwd}/app/assets/stylesheets/cfa_styleguide_main.scss")
     assets.write_to(css_root + "/honeycrisp.css")
+
+    sprockets = create_sprockets_env(compress: true)
+    assets = sprockets.find_asset("#{Dir.pwd}/app/assets/stylesheets/cfa_styleguide_main.scss")
+    assets.write_to(css_root + "/honeycrisp.min.css")
   end
 
   def compile_js
