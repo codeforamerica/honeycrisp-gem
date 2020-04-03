@@ -26,6 +26,7 @@ class Distribution
   def compile_css
     css_root = Dir.pwd + "/dist/css"
     FileUtils.mkdir_p(css_root)
+
     sprockets = create_sprockets_env
     assets = sprockets.find_asset("#{Dir.pwd}/app/assets/stylesheets/cfa_styleguide_main.scss")
     assets.write_to(css_root + "/honeycrisp.css")
@@ -33,6 +34,8 @@ class Distribution
     sprockets = create_sprockets_env(compress: true)
     assets = sprockets.find_asset("#{Dir.pwd}/app/assets/stylesheets/cfa_styleguide_main.scss")
     assets.write_to(css_root + "/honeycrisp.min.css")
+
+    `sass --scss --sourcemap=auto #{css_root}/honeycrisp.min.css dist/css/honeycrisp.min.css`
   end
 
   def compile_js

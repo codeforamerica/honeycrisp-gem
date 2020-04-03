@@ -6,8 +6,8 @@ class UglifierSourceMapsCompressor < Sprockets::UglifierCompressor
     data = input.fetch(:data)
     name = input.fetch(:name)
 
-    @uglifier ||= Sprockets::Autoload::Uglifier.new(@options)
-    compressed_data, sourcemap_json = @uglifier.compile_with_map(input[:data])
+    uglifier ||= Sprockets::Autoload::Uglifier.new
+    compressed_data, sourcemap_json = uglifier.compile_with_map(input[:data])
 
     sourcemap = JSON.parse(sourcemap_json)
     sourcemap["sources"] = [name + ".js"]
