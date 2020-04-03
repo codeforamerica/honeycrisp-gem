@@ -20,6 +20,7 @@ namespace :lint do
 end
 
 namespace :assets do
+  desc "Package JS and CSS assets to /dist for use externally."
   task :package do
     require "tasks/distribution"
     require "sprockets"
