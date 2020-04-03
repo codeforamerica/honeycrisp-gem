@@ -22,8 +22,17 @@ end
 namespace :assets do
   task :package do
     require "tasks/distribution"
+    require "sprockets"
+    add_jquery_to_path
     Distribution.new
   end
+end
+
+def add_jquery_to_path
+  jquery_path = Dir.entries("#{Gem.paths.home}/gems/").detect do |dir|
+    dir.match(/jquery-rails(.*)/)
+  end
+  $LOAD_PATH.unshift("#{Gem.paths.home}/gems/#{jquery_path}/vendor/")
 end
 
 task default: %w(lint:autocorrect spec)
