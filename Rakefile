@@ -19,4 +19,11 @@ namespace :lint do
   end
 end
 
+namespace :assets do
+  task :package do
+    require "tasks/distribution"
+    Distribution.new
+  end
+end
+
 task default: %w(lint:autocorrect spec)
