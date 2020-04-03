@@ -4,6 +4,7 @@ require "sprockets_extension/uglifier_source_maps_compressor"
 class Distribution
   def initialize
     create_directories
+    move_assets
     install_dependencies
     compile_css
     compile_js
@@ -14,6 +15,11 @@ class Distribution
   def create_directories
     FileUtils.mkdir_p(Dir.pwd + "/dist")
     FileUtils.mkdir_p("/tmp/neat")
+  end
+
+  def move_assets
+    FileUtils.cp_r("#{Dir.pwd}/app/assets/fonts", "#{Dir.pwd}/dist")
+    FileUtils.cp_r("#{Dir.pwd}/app/assets/images", "#{Dir.pwd}/dist")
   end
 
   def compile_css
@@ -56,8 +62,16 @@ class Distribution
       env.append_path("#{jquery_path}/assets/javascripts/")
       env.append_path("#{Dir.pwd}/tmp/bourbon")
       env.append_path("#{Dir.pwd}/tmp/neat")
-      # Defining asset_path fixed the error in the main scss. ¯\_(ツ)_/¯
-      env.context_class.class_eval { def asset_path(path, options = {}); end }
+      env.context_class.class_eval do
+        def asset_path(path, options = {})
+          case options[:type]
+          when :image
+            "/dist/images/#{path}"
+          when :font
+            "/dist/fonts/#{path}"
+          end
+        end
+      end
     end
   end
 end
