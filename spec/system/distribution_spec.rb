@@ -21,5 +21,10 @@ describe "Distribution" do
       Distribution.new
       expect(File.exist?(Dir.pwd + "/dist/js/honeycrisp.js")).to be(true)
     end
+
+    it "creates minified js from assets" do
+      Distribution.new
+      expect(File.exist?(Dir.pwd + "/dist/js/honeycrisp.min.js")).to be(true)
+    end
   end
 end

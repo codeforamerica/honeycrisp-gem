@@ -1,5 +1,6 @@
 require "fileutils"
 require "sass"
+require "yui/compressor"
 
 class Distribution
   def initialize
@@ -27,8 +28,13 @@ class Distribution
 
   def compile_js
     sprockets = create_sprockets_env
-    assets = sprockets.find_asset(Dir.pwd + "/app/assets/javascripts/cfa_styleguide_main.js")
-    assets.write_to(Dir.pwd + "/dist/js/honeycrisp.js")
+    js_assets = "#{Dir.pwd}/app/assets/javascripts/cfa_styleguide_main.js"
+    assets = sprockets.find_asset(js_assets)
+    assets.write_to("#{Dir.pwd}/dist/js/honeycrisp.js")
+
+    sprockets = create_sprockets_env(compress: true)
+    assets = sprockets.find_asset(js_assets)
+    assets.write_to("#{Dir.pwd}/dist/js/honeycrisp.min.js")
   end
 
   def jquery_path
@@ -37,12 +43,13 @@ class Distribution
     end
   end
 
-  def create_sprockets_env
-    sprockets = Sprockets::Environment.new
-    sprockets.append_path("#{Dir.pwd}/app/assets/javascripts/")
-    sprockets.append_path("#{Dir.pwd}/vendor/assets/javascripts/")
-    sprockets.append_path("#{jquery_path}/assets/javascripts/")
-    sprockets
+  def create_sprockets_env(compress: false)
+    Sprockets::Environment.new do |env|
+      env.js_compressor = :yui if compress
+      env.append_path("#{Dir.pwd}/app/assets/javascripts/")
+      env.append_path("#{Dir.pwd}/vendor/assets/javascripts/")
+      env.append_path("#{jquery_path}/assets/javascripts/")
+    end
   end
 
   def install_dependencies
