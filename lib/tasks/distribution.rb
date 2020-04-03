@@ -1,6 +1,6 @@
 require "fileutils"
 require "sass"
-require "yui/compressor"
+require "sprockets_extension/uglifier_source_maps_compressor"
 
 class Distribution
   def initialize
@@ -19,8 +19,8 @@ class Distribution
 
   def compile_css
     Sass.load_paths << Dir.pwd + "/vendor/assets/stylesheets/" <<
-      Dir.pwd + "/tmp/bourbon" <<
-      Dir.pwd + "/tmp/neat"
+        Dir.pwd + "/tmp/bourbon" <<
+        Dir.pwd + "/tmp/neat"
     css_root = Dir.pwd + "/dist/css"
     FileUtils.mkdir_p(css_root)
     Sass.compile_file("#{Dir.pwd}/app/assets/stylesheets/cfa_styleguide_main.scss", css_root + "/honeycrisp.css")
@@ -45,7 +45,7 @@ class Distribution
 
   def create_sprockets_env(compress: false)
     Sprockets::Environment.new do |env|
-      env.js_compressor = :yui if compress
+      env.js_compressor = :uglify_with_source_maps if compress
       env.append_path("#{Dir.pwd}/app/assets/javascripts/")
       env.append_path("#{Dir.pwd}/vendor/assets/javascripts/")
       env.append_path("#{jquery_path}/assets/javascripts/")
@@ -55,5 +55,11 @@ class Distribution
   def install_dependencies
     `bourbon install --path tmp && neat install`
     FileUtils.move(Dir.pwd + "/neat", Dir.pwd + "/tmp/neat/")
+
+    Sprockets.register_compressor(
+        "application/javascript",
+        :uglify_with_source_maps,
+        UglifierSourceMapsCompressor,
+    )
   end
 end
