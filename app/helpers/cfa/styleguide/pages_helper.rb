@@ -18,7 +18,7 @@ module Cfa
       def code_example_erb(partial_path)
         partial = lookup_context.find_template(partial_path, [], true)
 
-        filepath = partial.inspect
+        filepath = partial.identifier
         partial_contents = File.open(filepath, "r", &:read)
 
         partial_contents
