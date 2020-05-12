@@ -26,6 +26,7 @@ namespace :assets do
     require "sprockets"
     add_jquery_to_path
     Distribution.new
+    puts 'Assets generated to /dist'
   end
 end
 
