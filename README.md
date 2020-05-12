@@ -117,6 +117,11 @@ If the gem is being used in another project's Gemfile, the source can be locally
     When finish, just revert the Gemfile to the original version and `bundle install` again.
 
 
+### How do I use this outside a Ruby project?
+Run `rake assets:package`
+
+Check the `dist` directory for all the assets required and copy/paste them into your project!
+
 ### Running tests
 
 A small test suite is available—please add to it!
