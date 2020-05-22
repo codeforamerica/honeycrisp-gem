@@ -1,4 +1,5 @@
 require "fileutils"
+require "sassc"
 require "sprockets_extension/uglifier_source_maps_compressor"
 
 class Distribution
@@ -41,19 +42,17 @@ class Distribution
   end
 
   def compile_css
-    sprockets = create_sprockets_env
-    assets = sprockets.find_asset(STYLESHEET_PATH)
-    assets.write_to("#{CSS_PATH}/honeycrisp.css")
+    scss_file = File.read(Dir.pwd + "/app/assets/stylesheets/cfa_styleguide_main.scss")
 
-    sprockets = create_sprockets_env(compress: true)
-    assets = sprockets.find_asset(STYLESHEET_PATH)
-    assets.write_to("#{CSS_PATH}/honeycrisp.min.css")
+    load_paths = [
+      "#{Dir.pwd}/app/assets/stylesheets/",
+      "#{Dir.pwd}/vendor/assets/stylesheets/",
+      "#{DIST_PATH}/vendor/bourbon",
+      "#{DIST_PATH}/vendor/neat",
+    ]
 
-    `sass --scss --sourcemap=auto \
-      -I #{DIST_PATH}/vendor/bourbon \
-      -I #{DIST_PATH}/vendor/neat \
-      -I #{Dir.pwd}/vendor/assets/stylesheets \
-    #{STYLESHEET_PATH} dist/css/honeycrisp.min.css`
+    compile_css_with_sourcemaps(scss_file, "honeycrisp.css", load_paths)
+    compile_css_with_sourcemaps(scss_file, "honeycrisp.min.css", load_paths, compact: true)
   end
 
   def compile_js
@@ -74,7 +73,6 @@ class Distribution
   def create_sprockets_env(compress: false)
     Sprockets::Environment.new do |env|
       env.js_compressor = :uglify_with_source_maps if compress
-      env.css_compressor = :sass if compress
       env.append_path("#{jquery_path}/assets/javascripts/") # Can't find the method when inside ASSET_PATHS?
       ASSET_PATHS.each do |path|
         env.append_path(path)
@@ -101,5 +99,21 @@ class Distribution
         :uglify_with_source_maps,
         UglifierSourceMapsCompressor,
     )
+  end
+
+  def compile_css_with_sourcemaps(scss_file, css_filename, load_paths, compact: false)
+    options = { filename: css_filename,
+                output_path: "#{CSS_PATH}/#{css_filename}",
+                source_map_file: "#{CSS_PATH}/#{css_filename}.map",
+                load_paths: load_paths }
+
+    options[:style] = :compact if compact
+
+    engine = SassC::Engine.new(scss_file, options)
+    css = engine.render
+    File.write("#{CSS_PATH}/#{css_filename}", css)
+
+    map = engine.source_map
+    File.write("#{CSS_PATH}/#{css_filename}.map", map)
   end
 end

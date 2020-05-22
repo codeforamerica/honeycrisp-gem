@@ -13,6 +13,11 @@ describe "Distribution" do
       expect(File.exist?(Dir.pwd + "/dist/css/honeycrisp.css")).to be(true)
     end
 
+    it "creates css sourcemaps from assets" do
+      Distribution.new
+      expect(File.exist?(Dir.pwd + "/dist/css/honeycrisp.css.map")).to be(true)
+    end
+
     it "creates minified css from assets" do
       Distribution.new
       expect(File.exist?(Dir.pwd + "/dist/css/honeycrisp.min.css")).to be(true)
