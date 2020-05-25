@@ -52,7 +52,7 @@ class Distribution
     ]
 
     compile_css_with_sourcemaps(scss_file, "honeycrisp.css", load_paths)
-    compile_css_with_sourcemaps(scss_file, "honeycrisp.min.css", load_paths, compact: true)
+    compile_css_with_sourcemaps(scss_file, "honeycrisp.min.css", load_paths, compressed: true)
   end
 
   def compile_js
@@ -101,13 +101,13 @@ class Distribution
     )
   end
 
-  def compile_css_with_sourcemaps(scss_file, css_filename, load_paths, compact: false)
+  def compile_css_with_sourcemaps(scss_file, css_filename, load_paths, compressed: false)
     options = { filename: css_filename,
                 output_path: "#{CSS_PATH}/#{css_filename}",
                 source_map_file: "#{CSS_PATH}/#{css_filename}.map",
                 load_paths: load_paths }
 
-    options[:style] = :compact if compact
+    options[:style] = :compressed if compressed
 
     engine = SassC::Engine.new(scss_file, options)
     css = engine.render
