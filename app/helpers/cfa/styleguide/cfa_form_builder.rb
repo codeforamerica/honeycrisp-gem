@@ -229,11 +229,11 @@ module Cfa
             #{fieldset_label_contents(label_text: label_text, help_text: help_text)}
             <div class="input-group--range">
               <div class="form-group">
-                #{label_and_field(lower_method, I18n.t("honeycrisp.range_lower"), text_field(lower_method, text_field_options), options: { class: 'sr-only' })}
+                #{label_and_field(lower_method, I18n.t('honeycrisp.range_lower'), text_field(lower_method, text_field_options), options: { class: 'sr-only' })}
               </div>
-              <span class="range-text">#{I18n.t("honeycrisp.to")}</span>
+              <span class="range-text">#{I18n.t('honeycrisp.to')}</span>
               <div class="form-group">
-                #{label_and_field(upper_method, I18n.t("honeycrisp.range_upper"), text_field(upper_method, text_field_options), options: { class: 'sr-only' })}
+                #{label_and_field(upper_method, I18n.t('honeycrisp.range_upper'), text_field(upper_method, text_field_options), options: { class: 'sr-only' })}
               </div>
             </div>
             #{range_error_html if range_errors_present}
@@ -254,42 +254,42 @@ module Cfa
             #{fieldset_label_contents(label_text: label_text, help_text: help_text)}
             <div class="input-group--inline">
               <div class="select">
-                <label for="#{sanitized_id(method, 'month')}" class="sr-only">#{I18n.t("honeycrisp.month")}</label>
+                <label for="#{sanitized_id(method, 'month')}" class="sr-only">#{I18n.t('honeycrisp.month')}</label>
                 #{select_month(
-                  OpenStruct.new(month: object.send(subfield_name(method, 'month')).to_i), 
-                  { 
-                      field_name: subfield_name(method, 'month'), 
-                      field_id: subfield_id(method, 'month'), 
-                      prefix: object_name, 
-                      prompt: I18n.t("honeycrisp.month"),
-                  }.reverse_merge(options), 
-                  class: 'select__element', 
-                  autofocus: autofocus,
+                  OpenStruct.new(month: object.send(subfield_name(method, 'month')).to_i),
+            {
+              field_name: subfield_name(method, 'month'),
+              field_id: subfield_id(method, 'month'),
+              prefix: object_name,
+              prompt: I18n.t('honeycrisp.month'),
+            }.reverse_merge(options),
+            class: 'select__element',
+            autofocus: autofocus,
                 )}
               </div>
               <div class="select">
-                <label for="#{sanitized_id(method, 'day')}" class="sr-only">#{I18n.t("honeycrisp.day")}</label>
+                <label for="#{sanitized_id(method, 'day')}" class="sr-only">#{I18n.t('honeycrisp.day')}</label>
                  #{select_day(
-                   OpenStruct.new(day: object.send(subfield_name(method, 'day')).to_i), 
-                   { 
-                       field_name: subfield_name(method, 'day'), 
-                       field_id: subfield_id(method, 'day'), 
-                       prefix: object_name, 
-                       prompt: I18n.t("honeycrisp.day"),
-                   }.merge(options), 
+                   OpenStruct.new(day: object.send(subfield_name(method, 'day')).to_i),
+                   {
+                     field_name: subfield_name(method, 'day'),
+                     field_id: subfield_id(method, 'day'),
+                     prefix: object_name,
+                     prompt: I18n.t('honeycrisp.day'),
+                   }.merge(options),
                    class: 'select__element',
                  )}
               </div>
               <div class="select">
-                <label for="#{sanitized_id(method, 'year')}" class="sr-only">#{I18n.t("honeycrisp.year")}</label>
+                <label for="#{sanitized_id(method, 'year')}" class="sr-only">#{I18n.t('honeycrisp.year')}</label>
                 #{select_year(
-                  OpenStruct.new(year: object.send(subfield_name(method, 'year')).to_i), 
+                  OpenStruct.new(year: object.send(subfield_name(method, 'year')).to_i),
                   {
-                      field_name: subfield_name(method, 'year'), 
-                      field_id: subfield_id(method, 'year'), 
-                      prefix: object_name, 
-                      prompt: I18n.t("honeycrisp.year"),
-                  }.merge(options), 
+                    field_name: subfield_name(method, 'year'),
+                    field_id: subfield_id(method, 'year'),
+                    prefix: object_name,
+                    prompt: I18n.t('honeycrisp.year'),
+                  }.merge(options),
                   class: 'select__element',
                 )}
               </div>
