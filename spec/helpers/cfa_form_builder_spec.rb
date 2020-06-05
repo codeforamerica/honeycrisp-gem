@@ -479,7 +479,7 @@ RSpec.describe Cfa::Styleguide::CfaFormBuilder do
     it "renders two text inputs for a range" do
       form = SampleForm.new
       form.lower_hours_a_week_amount = "ten"
-      form.upper_hours_a_week_amount = "fourty"
+      form.upper_hours_a_week_amount = "forty"
 
       form_builder = described_class.new("form", form, template, {})
       output = form_builder.cfa_range_field(
@@ -505,7 +505,44 @@ RSpec.describe Cfa::Styleguide::CfaFormBuilder do
               <label class="sr-only" for="form_upper_hours_a_week_amount">
                 <p class="form-question">Upper amount</p>
               </label>
-              <input autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="text-input form-width--short" type="text" value="fourty" name="form[upper_hours_a_week_amount]" id="form_upper_hours_a_week_amount" />
+              <input autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="text-input form-width--short" type="text" value="forty" name="form[upper_hours_a_week_amount]" id="form_upper_hours_a_week_amount" />
+            </div>
+          </div>
+        </fieldset>
+      HTML
+    end
+
+    it "renders two text inputs for a range in Spanish" do
+      I18n.locale = :es
+      form = SampleForm.new
+      form.lower_hours_a_week_amount = "ten"
+      form.upper_hours_a_week_amount = "forty"
+
+      form_builder = described_class.new("form", form, template, {})
+      output = form_builder.cfa_range_field(
+        :lower_hours_a_week_amount,
+          :upper_hours_a_week_amount,
+          "¿Cuántas horas a la semana trabaja usted?",
+      )
+
+      expect(output).to be_html_safe
+
+      expect(output).to match_html <<~HTML
+        <fieldset class="form-group">
+          <legend class="form-question "> ¿Cuántas horas a la semana trabaja usted? </legend>
+          <div class="input-group--range">
+            <div class="form-group">
+              <label class="sr-only" for="form_lower_hours_a_week_amount">
+                <p class="form-question">Menor cantidad</p>
+              </label>
+              <input autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="text-input form-width--short" type="text" value="ten" name="form[lower_hours_a_week_amount]" id="form_lower_hours_a_week_amount" />
+            </div>
+            <span class="range-text">a</span>
+            <div class="form-group">
+              <label class="sr-only" for="form_upper_hours_a_week_amount">
+                <p class="form-question">Mayor cantidad</p>
+              </label>
+              <input autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="text-input form-width--short" type="text" value="forty" name="form[upper_hours_a_week_amount]" id="form_upper_hours_a_week_amount" />
             </div>
           </div>
         </fieldset>
@@ -645,6 +682,105 @@ RSpec.describe Cfa::Styleguide::CfaFormBuilder do
               <label for="form_birthday_year" class="sr-only">Year</label>
               <select id="form_birthday_year" name="form[birthday_year]" class="select__element">
                 <option value="">Year</option>
+                <option value="1990" selected="selected">1990</option>
+                <option value="1991">1991</option>
+                <option value="1992">1992</option>
+              </select>
+            </div>
+          </div>
+        </fieldset>
+      HTML
+    end
+
+    it "renders an accessible date select in Spanish" do
+      I18n.locale = :es
+      class SampleForm < Cfa::Styleguide::FormExample
+        attr_accessor :birthday_year,
+                      :birthday_month,
+                      :birthday_day
+      end
+
+      form = SampleForm.new
+      form.birthday_year = 1990
+      form.birthday_month = 3
+      form.birthday_day = 25
+      form_builder = described_class.new("form", form, template, {})
+      output = form_builder.cfa_date_select(
+        :birthday,
+          "¿Cuando es tu cumpleaños?",
+          help_text: "(por sorpresas)",
+          options: {
+            start_year: 1990,
+            end_year: 1992,
+            order: %i{month day year},
+          },
+      )
+      expect(output).to be_html_safe
+
+      expect(output).to match_html <<-HTML
+        <fieldset class="form-group">
+          <legend class="form-question "> ¿Cuando es tu cumpleaños? </legend>
+          <p class="text--help">(por sorpresas)</p>
+          <div class="input-group--inline">
+            <div class="select">
+              <label for="form_birthday_month" class="sr-only">Mes</label>
+              <select id="form_birthday_month" name="form[birthday_month]" class="select__element">
+                <option value="">Mes</option>
+                <option value="1">enero</option>
+                <option value="2">febrero</option>
+                <option value="3" selected="selected">marzo</option>
+                <option value="4">abril</option>
+                <option value="5">mayo</option>
+                <option value="6">junio</option>
+                <option value="7">julio</option>
+                <option value="8">agosto</option>
+                <option value="9">septiembre</option>
+                <option value="10">octubre</option>
+                <option value="11">noviembre</option>
+                <option value="12">diciembre</option>
+              </select>
+            </div>
+            <div class="select">
+              <label for="form_birthday_day" class="sr-only">Día</label>
+              <select id="form_birthday_day" name="form[birthday_day]" class="select__element">
+                <option value="">Día</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+                <option value="24">24</option>
+                <option value="25" selected="selected">25</option>
+                <option value="26">26</option>
+                <option value="27">27</option>
+                <option value="28">28</option>
+                <option value="29">29</option>
+                <option value="30">30</option>
+                <option value="31">31</option>
+              </select>
+            </div>
+            <div class="select">
+              <label for="form_birthday_year" class="sr-only">Año</label>
+              <select id="form_birthday_year" name="form[birthday_year]" class="select__element">
+                <option value="">Año</option>
                 <option value="1990" selected="selected">1990</option>
                 <option value="1991">1991</option>
                 <option value="1992">1992</option>
