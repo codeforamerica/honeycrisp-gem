@@ -520,10 +520,10 @@ RSpec.describe Cfa::Styleguide::CfaFormBuilder do
 
       form_builder = described_class.new("form", form, template, {})
       output = form_builder.cfa_range_field(
-          :lower_hours_a_week_amount,
+        :lower_hours_a_week_amount,
           :upper_hours_a_week_amount,
           "¿Cuántas horas a la semana trabaja usted?",
-          )
+      )
 
       expect(output).to be_html_safe
 
@@ -706,15 +706,15 @@ RSpec.describe Cfa::Styleguide::CfaFormBuilder do
       form.birthday_day = 25
       form_builder = described_class.new("form", form, template, {})
       output = form_builder.cfa_date_select(
-          :birthday,
+        :birthday,
           "¿Cuando es tu cumpleaños?",
           help_text: "(por sorpresas)",
           options: {
-              start_year: 1990,
-              end_year: 1992,
-              order: %i{month day year},
+            start_year: 1990,
+            end_year: 1992,
+            order: %i{month day year},
           },
-          )
+      )
       expect(output).to be_html_safe
 
       expect(output).to match_html <<-HTML
