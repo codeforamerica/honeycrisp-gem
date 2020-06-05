@@ -1,0 +1,9 @@
+es:
+  honeycrisp:
+    day: "Día"
+    month: "Mes"
+    optional: "Opcional"
+    range_lower: "Menor cantidad"
+    range_upper: "Mayor cantidad"
+    to: "a"
+    year: "Año"

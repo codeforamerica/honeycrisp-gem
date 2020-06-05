@@ -10,4 +10,6 @@ Rails.application.configure do
   config.action_dispatch.show_exceptions = false
   config.action_controller.allow_forgery_protection = false
   config.active_support.deprecation = :stderr
+  config.i18n.default_locale = :en
+  config.i18n.available_locales = [:en, :es]
 end
