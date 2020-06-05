@@ -133,6 +133,7 @@ To run, run `rake` or `rspec spec`.
 To release a new version, on `master` branch:
 * Update the version number in `version.rb` using [semantic versioning](https://semver.org/)
 * `bundle install` to update the Gemfile.lock
+* Update the [changelog configuration](./.github_changelog_generator) to set `since-tag` to previous version (e.g. `0.9.2`) and `future-release` to the new version (e.g. `0.9.3`). This will reduce the amount of changes fetched and unnecessary diffs to the generated changelog. 
 * Generate an addition to the [changelog](./CHANGELOG.md) using `bundle exec rake changelog`. (Note: you will need to provide a [Github token with public repo access](https://github.com/github-changelog-generator/github-changelog-generator#github-token)).
 * If updating the minor version, update the [migration guide](./MIGRATING.md) with any breaking changes and suggestions for what to do about them. If no breaking changes, just add 'no breaking changes'. 
 * Review, edit as necessary, and commit including the version update.

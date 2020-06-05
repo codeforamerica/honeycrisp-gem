@@ -1,6 +1,32 @@
 # Changelog
 
-## [v0.9.2](https://github.com/codeforamerica/honeycrisp-gem/tree/v0.9.2) (2020-01-13)
+## [v0.9.3](https://github.com/codeforamerica/honeycrisp-gem/tree/v0.9.3) (2020-06-05)
+
+[Full Changelog](https://github.com/codeforamerica/honeycrisp-gem/compare/v0.9.2...v0.9.3)
+
+**Fixed bugs:**
+
+- Outline isn't showing up for progress indicator [\#151](https://github.com/codeforamerica/honeycrisp-gem/issues/151)
+- Postfix in follow up question conflicts with follow up question styling [\#144](https://github.com/codeforamerica/honeycrisp-gem/issues/144)
+
+**Closed issues:**
+
+- Compile static assets into /dist directory [\#176](https://github.com/codeforamerica/honeycrisp-gem/issues/176)
+
+**Merged pull requests:**
+
+- I18n for strings in form builder [\#187](https://github.com/codeforamerica/honeycrisp-gem/pull/187) ([loumoore](https://github.com/loumoore))
+- Generate compiled stylesheets / js [\#183](https://github.com/codeforamerica/honeycrisp-gem/pull/183) ([bencalegari](https://github.com/bencalegari))
+- Fix ruby version for Heroku deployment [\#182](https://github.com/codeforamerica/honeycrisp-gem/pull/182) ([lkogler](https://github.com/lkogler))
+- Security upgrades [\#180](https://github.com/codeforamerica/honeycrisp-gem/pull/180) ([lkogler](https://github.com/lkogler))
+- Use `identifier` to return a path for desired template. [\#178](https://github.com/codeforamerica/honeycrisp-gem/pull/178) ([anule](https://github.com/anule))
+- Bump nokogiri from 1.10.5 to 1.10.8 [\#174](https://github.com/codeforamerica/honeycrisp-gem/pull/174) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Fixed spacing on text input groups [\#169](https://github.com/codeforamerica/honeycrisp-gem/pull/169) ([SymonneSingleton](https://github.com/SymonneSingleton))
+- Fix z-index on Progress Indicator Bar [\#168](https://github.com/codeforamerica/honeycrisp-gem/pull/168) ([SymonneSingleton](https://github.com/SymonneSingleton))
+- Update release instructions [\#164](https://github.com/codeforamerica/honeycrisp-gem/pull/164) ([mrotondo](https://github.com/mrotondo))
+- Add sidebar nav [\#156](https://github.com/codeforamerica/honeycrisp-gem/pull/156) ([akingcfa](https://github.com/akingcfa))
+
+## [v0.9.2](https://github.com/codeforamerica/honeycrisp-gem/tree/v0.9.2) (2020-01-14)
 
 [Full Changelog](https://github.com/codeforamerica/honeycrisp-gem/compare/v0.9.1...v0.9.2)
 
