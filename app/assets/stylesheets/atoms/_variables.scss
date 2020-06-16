@@ -59,6 +59,10 @@ $color-yellow-light: 	#FFF2D1 !default;
 
 $color-background:    	$color-grey-light !default;
 
+$color-link-default:    $color-teal !default;
+$color-link-hover:      $color-teal-dark !default;
+$color-link-visited:    $color-teal !default;
+$color-link-active:     $color-teal !default;
 
 // Breakpoints
 $small-mobile-up:     	320px !default;
