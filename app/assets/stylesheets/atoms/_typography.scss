@@ -59,6 +59,10 @@
 p {
   margin-top: 0;
   margin-bottom: $s25;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 h1 {
