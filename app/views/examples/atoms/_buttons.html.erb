@@ -25,12 +25,12 @@
   <button class="button button--danger">Danger Button</button>
   <button class="button button--danger button--disabled" disabled>Disabled Danger Button</button>
 </div>
-
-<div class="h4">Misc</div>
 <div>
   <button class="button">Button with icon <i class="button__icon icon-arrow_forward"></i></button>
   <button class="button"><i class="button__icon--left icon-arrow_back"></i> Button with icon</button>
 </div>
+
+<div class="h4">Buttons as links</div>
 <div>
   <button class="button--link">A button styled to look like a link</button>
 </div>
@@ -39,21 +39,10 @@
 <div>
   <%= link_to 'Link as button', '#', class: 'button' %>
   <%= link_to 'Link as primary button', '#', class: 'button button--primary' %>
+</div>
+<div>
   <%= link_to '#', class: 'button' do %>
     <i class="button__icon--left icon-arrow_back"></i> Button with icon
   <% end %>
   <%= link_to '#', class: 'button button--danger' do %>Danger Button<% end %>
-</div>
-
-<div class="pattern__explanation">
-  The teal primary is your default button. White buttons are for secondary actions.
-</div>
-<div class="pattern__explanation">
-  Danger buttons tell users to pause and make sure they’re certain of the action they’re about to take. It can be a way to signal that an action is discouraged (e.g. submitting a minimal application in GCF) , or irreversible (e.g. deleting a client in ClientComm).
-</div>
-<div class="pattern__explanation">
-  Disabled buttons are placeholders for actions that can’t be taken at the moment. Use these rather than hiding the button if you want to show that the action exits, or if your layout requires it.  Disabled buttons have a corresponding cursor state.
-</div>
-<div class="pattern__explanation">
-  When using the button styled like a link, don’t use the "button" class.
 </div>
