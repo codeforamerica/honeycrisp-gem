@@ -211,13 +211,14 @@ RSpec.describe Cfa::Styleguide::CfaFormBuilder do
         expect(output).to be_html_safe
 
         expect(output).to match_html <<-HTML
-        <fieldset class="input-group form-group form-group--error">
+        <fieldset class="input-group form-group form-group--error checkbox-none">
           <legend class="sr-only"> Which captains do you think are cool? </legend>
           <label class="checkbox"><input name="sample[tng]" type="hidden" value="0" /><input type="checkbox" value="1" name="sample[tng]" id="sample_tng"/> Picard </label>
           <label class="checkbox"><input name="sample[ds9]" type="hidden" value="0" /><input type="checkbox" value="1" name="sample[ds9]" id="sample_ds9"/> Sisko </label>
           <label class="checkbox"><input name="sample[voyager]" type="hidden" value="0" /><input type="checkbox" value="1" name="sample[voyager]" id="sample_voyager"/> Janeway </label>
           <label class="checkbox"><input name="sample[tos]" type="hidden" value="0" /><input type="checkbox" value="1" name="sample[tos]" id="sample_tos"/> Kirk </label>
-          <label class="checkbox"><input name="sample[none]" type="hidden" value="0" /><input id="none__checkbox" type="checkbox" value="1" name="sample[none]" /> None of the above </label>
+          <hr />
+          <label class="checkbox"><input name="sample[none]" type="hidden" value="0" /><input type="checkbox" value="1" checked="checked" name="sample[none]" id="sample_none" /> None of the above </label>
           <span class="text--error" id="sample_captains__errors"><i class="icon-warning"></i> Pick a captain. </span>
         </fieldset>
         HTML
@@ -243,11 +244,12 @@ RSpec.describe Cfa::Styleguide::CfaFormBuilder do
       expect(output).to be_html_safe
 
       expect(output).to match_html <<-HTML
-        <fieldset class="input-group form-group">
+        <fieldset class="input-group form-group checkbox-none">
           <legend class="sr-only"> What values does this member have? </legend>
           <label class="checkbox"><input name="sample[first]" type="hidden" value="0" /><input type="checkbox" value="1" checked="checked" name="sample[first]" id="sample_first" /> First value </label>
           <label class="checkbox"><input name="sample[second]" type="hidden" value="0" /><input type="checkbox" value="1" name="sample[second]" id="sample_second" /> Second value </label>
-          <label class="checkbox"><input name="sample[none]" type="hidden" value="0" /><input id="none__checkbox" type="checkbox" value="1" name="sample[none]" /> None of the above </label>
+          <hr />
+          <label class="checkbox"><input name="sample[none]" type="hidden" value="0" /><input type="checkbox" value="1" checked="checked" name="sample[none]" id="sample_none"/> None of the above </label>
         </fieldset>
       HTML
     end
@@ -273,11 +275,12 @@ RSpec.describe Cfa::Styleguide::CfaFormBuilder do
         expect(output).to be_html_safe
 
         expect(output).to match_html <<-HTML
-        <fieldset class="input-group form-group">
+        <fieldset class="input-group form-group checkbox-none">
           <legend class="sr-only"> What values does this member have? </legend>
           <label class="checkbox"><input name="sample[first]" type="hidden" value="no" /><input type="checkbox" value="yes" checked="checked" name="sample[first]" id="sample_first" /> First value </label>
           <label class="checkbox"><input name="sample[second]" type="hidden" value="no" /><input type="checkbox" value="yes" name="sample[second]" id="sample_second" /> Second value </label>
-          <label class="checkbox"><input name="sample[none]" type="hidden" value="0" /><input id="none__checkbox" type="checkbox" value="1" name="sample[none]" /> None of the above </label>
+          <hr />
+          <label class="checkbox"><input name="sample[none]" type="hidden" value="0" /><input type="checkbox" value="1" checked="checked" name="sample[none]" id="sample_none" /> None of the above </label>
         </fieldset>
         HTML
       end
@@ -304,11 +307,12 @@ RSpec.describe Cfa::Styleguide::CfaFormBuilder do
         expect(output).to be_html_safe
 
         expect(output).to match_html <<-HTML
-        <fieldset class="input-group form-group">
+        <fieldset class="input-group form-group checkbox-none">
           <legend class="sr-only"> What values does this member have? </legend>
           <label class="checkbox"><input name="sample[first]" type="hidden" value="0" /><input type="checkbox" value="1" checked="checked" name="sample[first]" id="sample_first" /> First value </label>
           <label class="checkbox"><input name="sample[second]" type="hidden" value="0" /><input type="checkbox" value="1" name="sample[second]" id="sample_second" /> Second value </label>
-          <label class="checkbox"><input name="sample[none]" type="hidden" value="0" /><input id="none__checkbox" type="checkbox" value="1" name="sample[none]" /> I don't have either of these </label>
+          <hr />
+          <label class="checkbox"><input name="sample[none]" type="hidden" value="0" /><input type="checkbox" value="1" checked="checked" name="sample[none]" id="sample_none" /> I don't have either of these </label>
         </fieldset>
         HTML
       end
