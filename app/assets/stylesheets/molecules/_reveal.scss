@@ -13,6 +13,7 @@
     position: relative;
     top: .1em;
     font-family: $font-icon;
+    vertical-align: -.1em;
     content: '\a0'+map_get($icons, keyboard_arrow_down);
   }
 }
