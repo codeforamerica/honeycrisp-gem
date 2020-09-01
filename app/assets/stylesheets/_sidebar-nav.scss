@@ -159,6 +159,14 @@ Sidebar Nav
     display: none;
   }
 
+  .sidebar.open {
+    display: inline-block;
+
+    .sidebar-nav {
+      width: 100%;
+    }
+  }
+
   .sidebar-collapse-toggle{
     display: block;
   }
