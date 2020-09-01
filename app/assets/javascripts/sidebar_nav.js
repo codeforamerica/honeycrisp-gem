@@ -88,11 +88,11 @@ function toggleNav() {
 function setSelectedState() {
   $('.sidebar-nav ul li .sidebar__sub-items li a').removeClass("active");
 
-  let url_array = window.location.toString().split("/");
-  let page = url_array[url_array.length - 1].split("#")[0];
+  var url_array = window.location.toString().split("/");
+  var page = url_array[url_array.length - 1].split("#")[0];
 
   if (page !== "styleguide") {
-    let sidebar_page_match = $('.sidebar-nav ul li .sidebar__sub-items li a[href*="' + page + '"]');
+    var sidebar_page_match = $('.sidebar-nav ul li .sidebar__sub-items li a[href*="' + page + '"]');
     if (sidebar_page_match.length) {
       sidebar_page_match.addClass('active');
     }
