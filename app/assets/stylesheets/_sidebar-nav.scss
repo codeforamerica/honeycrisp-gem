@@ -1,3 +1,5 @@
+$sidebar_width: $s250;
+
 /* -------------
 Color Class Updates
 ----------------*/
@@ -36,9 +38,6 @@ Sidebar
 ----------------*/
 .sidebar {
   position: absolute;
-  //width: 33.3333%;
-  width: 17em;
-  height: 100%;
   visibility: visible;
   -webkit-backface-visibility: hidden;
   float:left;
@@ -51,20 +50,12 @@ Sidebar
   }
 }
 
-/* .sidebar > a{
-  @include transition(all 0.6s ease);
-
-  &:hover{
-    @include transition(all 0.6s ease);
-  }
-} */
-
 /* -------------
 Sidebar Nav
 ----------------*/
 .sidebar-nav {
   position: fixed;
-  width: 12em;
+  width: $sidebar_width;
   height: 100%;
   padding-bottom: 6em;
   z-index: 9;
@@ -180,6 +171,10 @@ Sidebar Nav
   .main-header__title .main-header__logo{
     color: #fff !important;
   }
+
+  .main-footer {
+    left: 0;
+  }
 }
 
 @media screen and (min-width: $tablet-up) {
@@ -197,6 +192,10 @@ Sidebar Nav
   }
 
   .sidebar-nav {
-    width: 12em !important;
+    width: $sidebar_width !important;
+  }
+
+  .main-footer {
+    left: $sidebar_width;
   }
 }
