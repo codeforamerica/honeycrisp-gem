@@ -74,7 +74,6 @@ Sidebar Nav
 
     li{
       margin-left: 0;
-      //min-width: 13em;
       display:inline-block;
       width: 100%;
       line-height: 16px;
@@ -82,53 +81,33 @@ Sidebar Nav
       .section-header{
         display:block;
         background-color: $color-green-light;
-        padding: .75em 1em;
+        padding: .75em 1.5em;
         color: $color-grey-dark;
         width: 100% !important;
         line-height: 16px;
       }
 
-      $sidebar-a-tags: 'a, a:active, a:hover, a:visited';
-      $sidebar-a-tags-hover: 'a:hover';
-      $sidebar-a-tags-active: 'a:active';
-
-      #{$sidebar-a-tags} {
-        line-height: 16px;
-        text-decoration: none;
-      }
-
-      #{$sidebar-a-tags-active} {
-        border-right: $color-teal 2px;
-        font-weight: 900;
-      }
-
-      #{$sidebar-a-tags-hover} {
-        text-decoration: underline;
-      }
-
       .sidebar__sub-items{
         padding: .05em 1em;
-        li{
-          #{$sidebar-a-tags} {
+        li {
+          padding-left: 0.25em;
+
+          a, a:visited {
             color: $color-grey-darkest;
             line-height: 1.2em;
+            text-decoration: none;
           }
 
-          #{$sidebar-a-tags-active} {
-            /*border-left: 2px solid $color-teal;*/
-            font-weight: 700;
-          }
-
-          #{$sidebar-a-tags-hover} {
-            /*border-left: 2px solid $color-teal;*/
+          a:hover {
             text-decoration: underline;
           }
-          .active{
-            font-weight: 700;
+
+          &.active {
+            font-weight: $font-weight-bold;
+            border-left: 3px solid $color-teal;
           }
         }
       }
-
     }
   }
 }
