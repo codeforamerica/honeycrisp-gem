@@ -3,7 +3,12 @@ module Cfa
     class PagesController < ApplicationController
       layout "main"
 
-      def form_builder
+      def form_builder_v1
+        @form = Cfa::Styleguide::FormExample.new
+        @form.valid?
+      end
+
+      def form_builder_v2
         @form = Cfa::Styleguide::FormExample.new
         @form.valid?
       end
