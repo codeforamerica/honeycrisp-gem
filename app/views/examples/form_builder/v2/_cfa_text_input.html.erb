@@ -1,0 +1,9 @@
+<%= fields_for(:form, @form, builder: Cfa::Styleguide::CfaV2FormBuilder) do |f| %>
+  <%= f.cfa_text_input(:example_method_name, 'Example input') %>
+  <%= f.cfa_text_input(:example_method_name, 'Example input (required)', required: true) %>
+  <%= f.cfa_text_input(:example_method_name, 'Example input with help text', help_text: "You could answer this any way you like.") %>
+  <%= f.cfa_text_input(:example_method_name, 'Example input with wrapper class', wrapper_classes: ['blue']) %>
+  <%= f.cfa_text_input(:example_method_name, 'Example input with options', options: { placeholder: 'Enter text here.' }) %>
+
+  <%= f.cfa_text_input(:example_method_with_validation, 'Example input with error') %>
+<% end %>

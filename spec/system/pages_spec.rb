@@ -34,7 +34,7 @@ describe "Pages" do
 
   it "can use the CfaFormBuilder" do
     visit "/cfa/styleguide"
-    click_link "Form Builder"
+    click_link "Form Builder V1"
 
     expect(page).to have_content("Example input")
     expect(page).to have_content("Example textarea")
@@ -46,5 +46,21 @@ describe "Pages" do
     expect(page).to have_content("Example radio set (regular)")
     expect(page).to have_content("Example radio set with follow up")
     expect(page).to have_content("Example select")
+  end
+
+  it "can use the CfaFormV2Builder" do
+    visit "/cfa/styleguide"
+    click_link "Form Builder V2"
+
+    expect(page).to have_content("CfAV2FormBuilder")
+    #   expect(page).to have_content("Example textarea")
+    #   expect(page).to have_content("Example range")
+    #   expect(page).to have_content("Example date select")
+    #
+    #   expect(page).to have_content("Example choice 1")
+    #   expect(page).to have_content("Example choice 2")
+    #   expect(page).to have_content("Example radio set (regular)")
+    #   expect(page).to have_content("Example radio set with follow up")
+    #   expect(page).to have_content("Example select")
   end
 end
