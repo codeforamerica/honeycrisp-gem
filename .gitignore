@@ -19,3 +19,4 @@ Brewfile.lock.json
 /dist
 .sass-cache
 /tmp
+.idea
