@@ -262,6 +262,14 @@ var accordion = (function() {
   }
 })();
 
+var selectBodyBottomMargin = (function() {
+   var $compactFooter = $('body').find('.main-footer__compact');
+
+   if ($compactFooter) {
+     $('body').css("margin-bottom", $compactFooter.css("height"));
+   }
+})
+
 $(document).ready(function() {
   radioSelector.init();
   checkboxSelector.init();
@@ -272,4 +280,5 @@ $(document).ready(function() {
   noneOfTheAbove.init();
   showMore.init();
   accordion.init();
+  selectBodyBottomMargin();
 });
