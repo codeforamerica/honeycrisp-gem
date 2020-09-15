@@ -6,7 +6,7 @@
 defaults: &defaults
   working_directory: ~/repo
   docker:
-  - image: circleci/ruby:2.5.3-node-browsers
+  - image: circleci/ruby:2.6.6-node-browsers
 
 version: 2
 jobs:
@@ -23,6 +23,11 @@ jobs:
         keys:
         - v1-bundler-{{ checksum "Gemfile.lock" }}
         - v1-bundler-
+    - run:
+        name: Install bundler with appropriate version
+        command: |
+          gem update --system
+          gem install bundler:$(grep -A 1 "BUNDLED WITH" Gemfile.lock | tail -1 | tr -d " ")
     - run: bundle install --jobs=4 --retry=3 --path vendor/bundle
     - save_cache:
         paths:
@@ -43,6 +48,7 @@ jobs:
     <<: *defaults
     steps:
     - checkout
+    - install_dependencies
     - restore_cache:
         keys:
         - v1-bundler-{{ checksum "Gemfile.lock" }}
@@ -61,6 +67,8 @@ jobs:
         command: |
           curl -sSL "https://nodejs.org/dist/v14.15.0/node-v14.15.0-linux-x64.tar.xz" | sudo tar --strip-components=2 -xJ -C /usr/local/bin/ node-v14.15.0-linux-x64/bin/node
           curl https://www.npmjs.com/install.sh | sudo bash
+    - install_dependencies
+    - gem install
     - restore_cache:
         keys:
         - v1-bundler-{{ checksum "Gemfile.lock" }}

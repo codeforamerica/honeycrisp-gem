@@ -57,7 +57,7 @@ GEM
     ast (2.4.1)
     autoprefixer-rails (10.2.4.0)
       execjs
-    axe-matchers (2.2.1)
+    axe-matchers (2.6.1)
       dumb_delegator (~> 0.8)
       virtus (~> 1.0)
     axiom-types (0.1.1)
@@ -149,7 +149,6 @@ GEM
       byebug (~> 11.0)
       pry (~> 0.13.0)
     public_suffix (4.0.6)
-    racc (1.5.2)
     rack (2.2.3)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
