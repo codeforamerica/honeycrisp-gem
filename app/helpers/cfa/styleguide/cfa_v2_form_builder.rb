@@ -2,7 +2,7 @@ module Cfa
   module Styleguide
     class CfaV2FormBuilder < ActionView::Helpers::FormBuilder
       def cfa_text_input(method,
-                         label_text = nil,
+                         label_text,
                          required: false,
                          help_text: nil,
                          wrapper_classes: [],
@@ -23,14 +23,14 @@ module Cfa
         end
 
         <<~HTML.html_safe
-          <div class="cfa-text-input form-group #{wrapper_classes.join(' ')}">
-            <div class="form-question">
-              #{label(method, label_text)} #{optional_html unless required}
-            </div>
-            #{help_text_html}
-            #{text_field(method, input_options)}
-            #{error_html}
-          </div>
+           <div class="cfa-text-input form-group #{wrapper_classes.join(' ')}">
+             <div class="form-question">
+               #{label_with_optional_annotation(method, label_text, required)}
+             </div>
+             #{help_text_html}
+             #{text_field(method, input_options)}
+             #{error_html}
+           </div>
         HTML
       end
 
@@ -95,7 +95,7 @@ module Cfa
         html_output = <<~HTML
           <div class="cfa-select form-group #{wrapper_classes.join(' ')}">
             <div class="form-question">
-              #{label(method, label_text)} #{optional_html unless required}
+              #{label_with_optional_annotation(method, label_text, required)}
             </div>
              <div class="select">
                #{select(method, choices, options, html_options, &block)}
@@ -220,11 +220,17 @@ module Cfa
         HTML
       end
 
-      def optional_html
-        <<~HTML
-          <div class="form-question--optional"></div>
-          <span class="sr-only">(Optional)</span>
-        HTML
+      def label_with_optional_annotation(method, label_text, required)
+        label(method) do
+          @template.concat(<<~HTML.html_safe) if object.errors[method].any?
+            <span class="sr-only">Validation error</span>
+          HTML
+          @template.concat label_text
+          @template.concat(<<~HTML.html_safe) unless required
+            <div class="form-question--optional"></div>
+            <span class="sr-only">(Optional)</span>
+          HTML
+        end
       end
 
       def errors_for(object, method, error_id)
