@@ -46,7 +46,7 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
 
   describe ".cfa_text_input" do
     let(:output) do
-      form_builder.cfa_text_input(:example_method_with_validation)
+      form_builder.cfa_text_input(:example_method_with_validation, "Example method")
     end
 
     it "renders a text input with valid HTML" do
@@ -58,14 +58,17 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
       expect(html_component.classes).to include("cfa-text-input")
     end
 
-    it "falls back to the defaults used by the Rails form label" do
+    it "properly constructs a label with optional text" do
       label = Nokogiri::HTML.fragment(output).at_css("label")
-      expect(label.text).to eq("Example method with validation")
+      expect(label.text).to include("Example method")
+      expect(label.text).to include("(Optional)")
     end
 
     context "when options provided" do
       let(:output) do
-        form_builder.cfa_text_input(:example_method_with_validation, options: {
+        form_builder.cfa_text_input(:example_method_with_validation,
+                                    "Example method with validation",
+                                    options: {
                                       placeholder: "my text",
                                       disabled: true,
                                     })
@@ -78,24 +81,22 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
       end
     end
 
-    context "label_text is provided" do
-      it "uses the provided label text" do
-        output = form_builder.cfa_text_input(:example_method_with_validation, "My method name")
-
-        label = Nokogiri::HTML.fragment(output).at_css("label")
-        expect(label.text).to eq("My method name")
-      end
-    end
-
     context "errors" do
       let(:output) do
-        form_builder.cfa_text_input(:example_method_with_validation, options: {
+        form_builder.cfa_text_input(:example_method_with_validation,
+                                    "Example method with validation",
+                                    options: {
                                       'aria-describedby': "another-id",
                                     })
       end
 
       before do
         fake_model.validate
+      end
+
+      it "includes text in the label indicating there is an error" do
+        label_text = Nokogiri::HTML.fragment(output).at_css("label").text
+        expect(label_text).to start_with("Validation error")
       end
 
       it "associates form errors with input and appends error id to existing aria-describedby attributes" do
@@ -110,6 +111,7 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
       let(:output) do
         form_builder.cfa_text_input(
           :example_method_with_validation,
+          "Example method with validation",
           wrapper_classes: ["wrapper-class"],
         )
       end
@@ -124,13 +126,14 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
       let(:output) do
         form_builder.cfa_text_input(
           :example_method_with_validation,
+          "Example method with validation",
           required: true,
         )
       end
 
-      it "does not append the optional text after the label" do
-        html_component = Nokogiri::HTML.fragment(output).at_css(".form-question")
-        expect(html_component.text).to_not include("(Optional)")
+      it "does not append the optional text to the label" do
+        label = Nokogiri::HTML.fragment(output).at_css("label")
+        expect(label.text).to_not include("(Optional)")
       end
 
       it "sets the aria-required attribute on the select tag" do
@@ -141,7 +144,11 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
 
     context "help text is provided" do
       let(:output) do
-        form_builder.cfa_text_input(:example_method_with_validation, help_text: "Found on RAP sheet")
+        form_builder.cfa_text_input(
+          :example_method_with_validation,
+            "Example method with validation",
+            help_text: "Found on RAP sheet",
+        )
       end
 
       it "displays the help text" do
@@ -291,14 +298,10 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
       expect(html_component.classes).to include("cfa-select")
     end
 
-    it "by default appends optional text after the label" do
-      html_component = Nokogiri::HTML.fragment(output).at_css(".form-question")
-      expect(html_component.text).to include("(Optional)")
-    end
-
-    it "includes label with provided text" do
+    it "includes label with provided text and optional text" do
       label = Nokogiri::HTML.fragment(output).at_css("label")
-      expect(label.text).to eq("My select value")
+      expect(label.text).to include("My select value")
+      expect(label.text).to include("(Optional)")
     end
 
     context "when options provided" do
