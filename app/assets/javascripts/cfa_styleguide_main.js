@@ -274,7 +274,33 @@ var selectBodyBottomMargin = (function () {
   }
 })();
 
-$(document).ready(function() {
+var ssnFormat = (function () {
+  var ssnFunc = {
+    init: function () {
+      $('.ssn-input').each(function (index, input) {
+        $(input).keyup(function (e) {
+          var str = $(input).val()
+              .replace(/[^\d]/g, "")
+              .substring(0, 9);
+          var formattedStr = [];
+          for (var i = 0; i < str.length; i++) {
+            // Add a hyphen
+            if (i === 3 || i === 5) {
+              formattedStr.push("-");
+            }
+            formattedStr.push(str.charAt(i));
+          }
+          $(this).val(formattedStr.join(""));
+        })
+      })
+    }
+  }
+  return {
+    init: ssnFunc.init
+  }
+})();
+
+$(document).ready(function () {
   radioSelector.init();
   checkboxSelector.init();
   followUpQuestion.init();
@@ -285,4 +311,5 @@ $(document).ready(function() {
   showMore.init();
   accordion.init();
   selectBodyBottomMargin.init();
+  ssnFormat.init();
 });
