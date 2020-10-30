@@ -296,7 +296,7 @@ function formatNumericInput(selector, characterMap, maxDigits){
   var handler = autoformatEventHandler(characterMap, maxDigits);
   $(selector).each(function (_index, input){
     handler.call(this, null); // format existing value on page load (not yet tested, need JS testing first)
-    $(input).keyup(handler);
+    $(input).on('input', handler);
   });
 }
 
