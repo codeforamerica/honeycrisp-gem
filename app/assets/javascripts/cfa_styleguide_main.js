@@ -274,31 +274,38 @@ var selectBodyBottomMargin = (function () {
   }
 })();
 
-var ssnFormat = (function () {
-  var ssnFunc = {
-    init: function () {
-      $('.ssn-input').each(function (index, input) {
-        $(input).keyup(function (e) {
-          var str = $(input).val()
-              .replace(/[^\d]/g, "")
-              .substring(0, 9);
-          var formattedStr = [];
-          for (var i = 0; i < str.length; i++) {
-            // Add a hyphen
-            if (i === 3 || i === 5) {
-              formattedStr.push("-");
-            }
-            formattedStr.push(str.charAt(i));
-          }
-          $(this).val(formattedStr.join(""));
-        })
-      })
+var autoformatEventHandler = function(characterMap, maxDigits) {
+  return function (_e) {
+    var input = $(this);
+    var unformattedValue = input.val()
+      .replace(/[^\d]/g, "")
+      .substring(0, maxDigits);
+    var formattedStr = [];
+    for (var i = 0; i < unformattedValue.length; i++) {
+      var specialChar = characterMap[i];
+      if (specialChar !== undefined) {
+        formattedStr.push(specialChar);
+      }
+      formattedStr.push(unformattedValue.charAt(i));
     }
+    input.val(formattedStr.join(""));
   }
-  return {
-    init: ssnFunc.init
+};
+
+function formatNumericInput(selector, characterMap, maxDigits){
+  var handler = autoformatEventHandler(characterMap, maxDigits);
+  $(selector).each(function (_index, input){
+    // handler.call(this, null);
+    $(input).keyup(handler)
+  });
+}
+
+var numericFormatters = {
+  init: function(){
+    formatNumericInput('.phone-input', {0: '(', 3: ') ', 6: '-'}, 10);
+    formatNumericInput('.ssn-input', {3: '-', 5: '-'}, 9);
   }
-})();
+};
 
 $(document).ready(function () {
   radioSelector.init();
@@ -311,5 +318,5 @@ $(document).ready(function () {
   showMore.init();
   accordion.init();
   selectBodyBottomMargin.init();
-  ssnFormat.init();
+  numericFormatters.init();
 });
