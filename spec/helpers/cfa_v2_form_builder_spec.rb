@@ -42,6 +42,17 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
         expect(html_component.text).to_not include("Searching...")
       end
     end
+
+    context "wrapper_classes provided" do
+      let(:output) do
+        form_builder.cfa_button("my button", wrapper_classes: ["wrapper-class"])
+      end
+
+      it "assigns wrapper classes on the containing element" do
+        html_component = Nokogiri::HTML.fragment(output).child
+        expect(html_component.classes).to include("wrapper-class")
+      end
+    end
   end
 
   describe ".cfa_text_input" do
