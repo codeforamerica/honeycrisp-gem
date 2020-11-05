@@ -51,7 +51,7 @@ module Cfa
         HTML
       end
 
-      def cfa_radiogroup(method, legend_text = nil, wrapper_classes: [], options: {}, &block)
+      def cfa_radiogroup(method, legend_text, wrapper_classes: [], options: {}, &block)
         field_set_options = {}
         if object.errors[method].any?
           error_id = error_id(method)
