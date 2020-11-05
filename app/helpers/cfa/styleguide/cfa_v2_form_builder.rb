@@ -34,12 +34,10 @@ module Cfa
         HTML
       end
 
-      def cfa_button(label_text = nil, options: {})
-        full_options = {
-          class: "cfa-button button button--primary",
-        }.merge(options)
-
-        button(label_text, full_options)
+      def cfa_button(label_text, wrapper_classes: [], options: {})
+        @template.tag.div(class: "cfa-button #{wrapper_classes.join(' ')}") do
+          button(label_text, { class: "button button--primary" }.merge(options))
+        end
       end
 
       def cfa_radio(method, label_text, value, wrapper_classes: [], options: {})
