@@ -119,7 +119,7 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
         form_builder.cfa_text_input(
           :example_method_with_validation,
           "Example method with validation",
-          wrapper_options: { class: "wrapper-class", id: "wrapper-id" }
+          wrapper_options: { class: "wrapper-class", id: "wrapper-id" },
         )
       end
 
@@ -131,7 +131,7 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
       it "assigns wrapper options on the outermost element" do
         html_component = Nokogiri::HTML.fragment(output).child
         expect(html_component.classes).to include("wrapper-class")
-        expect(html_component.get_attribute('id')).to include("wrapper-id")
+        expect(html_component.get_attribute("id")).to include("wrapper-id")
       end
     end
 
@@ -140,14 +140,14 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
         form_builder.cfa_text_input(
           :example_method_with_validation,
           "Example method with validation",
-          label_options: { class: "label-class", id: "label-id" }
+          label_options: { class: "label-class", data: { spec: 'label-1' }},
         )
       end
 
       it "assigns label options on the label" do
         html_component = Nokogiri::HTML.fragment(output).at_css("label")
         expect(html_component.classes).to include("label-class")
-        expect(html_component.get_attribute('id')).to include("label-id")
+        expect(html_component.get_attribute("data-spec")).to include("label-1")
       end
     end
 
@@ -312,10 +312,10 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
   end
 
   describe ".cfa_select" do
-    let(:select_options) { ["thing one", "thing two"] }
-
     let(:output) do
-      form_builder.cfa_select(:example_method_with_validation, "My select value", select_options)
+      form_builder.cfa_select(:example_method_with_validation,
+                              "My select value",
+                              ["thing one", "thing two"])
     end
 
     it "renders a text input with valid HTML" do
@@ -333,54 +333,71 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
       expect(label.text).to include("(Optional)")
     end
 
-    context "when options provided" do
+    context "when select_options provided" do
       let(:output) do
         form_builder.cfa_select(
-          :example_method_with_validation, "My select value", select_options, options: { include_blank: "Choose an option" }
-        )
+            :example_method_with_validation,
+            "My select value",
+            ["thing one", "thing two"],
+            select_options: { include_blank: "Choose an option" },
+            )
       end
 
-      it "passes options to the select" do
-        first_option_html = Nokogiri::HTML.fragment(output).at_css("option")
-        expect(first_option_html.text).to eq("Choose an option")
-        expect(first_option_html.get_attribute("value")).to eq("")
+      it "passes select_options to the select" do
+        options_html = Nokogiri::HTML.fragment(output).at_css("option")
+        expect(options_html.text).to eq("Choose an option")
+        expect(options_html.get_attribute("value")).to eq("")
       end
     end
 
-    context "when html options provided" do
+    context "select_html_options provided" do
       let(:output) do
-        form_builder.cfa_select(:example_method_with_validation, "My select value", select_options, html_options: { disabled: true })
+        form_builder.cfa_select(:example_method_with_validation,
+                                "My select value",
+                                ["thing one", "thing two"],
+                                disabled: true,
+                                class: "input-class")
       end
 
       it "passes html_options to the select" do
         select_html = Nokogiri::HTML.fragment(output).at_css("select")
         expect(select_html.get_attribute("disabled")).to be_truthy
-      end
-    end
-
-    context "errors" do
-      before do
-        fake_model.validate
+        expect(select_html.classes).to include("input-class")
       end
 
-      let(:output) do
-        form_builder.cfa_select(:example_method_with_validation, "My select value", select_options, html_options: { 'aria-describedby': "another-id" })
-      end
-
-      it "should associate form errors with input and append error id to existing aria-describedby attributes" do
+      it "does not overwrite select__element class" do
         select_html = Nokogiri::HTML.fragment(output).at_css("select")
-        error_text_html = Nokogiri::HTML.fragment(output).at_css(".text--error")
-        expect(select_html.get_attribute("aria-describedby")).to include("another-id")
-        expect(select_html.get_attribute("aria-describedby")).to include(error_text_html.get_attribute("id"))
+        expect(select_html.classes).to include("select__element")
       end
     end
 
-    context "wrapper_classes provided" do
+    context "label_options provided" do
       let(:output) do
-        form_builder.cfa_select(:example_method_with_validation, "My select value", select_options, wrapper_classes: ["wrapper-class"])
+        form_builder.cfa_select(:example_method_with_validation,
+                                "My select value",
+                                ["thing one", "thing two"],
+                                label_options: {
+                                    class: "input-class",
+                                })
       end
 
-      it "assigns wrapper classes on the containing element" do
+      it "passes label_options to the label" do
+        label = Nokogiri::HTML.fragment(output).at_css("label")
+        expect(label.classes).to include("input-class")
+      end
+    end
+
+    context "wrapper_options provided" do
+      let(:output) do
+        form_builder.cfa_select(:example_method_with_validation,
+                                "My select value",
+                                ["thing one", "thing two"],
+                                wrapper_options: {
+                                    class: "wrapper-class",
+                                })
+      end
+
+      it "assigns wrapper options on the outermost element" do
         html_component = Nokogiri::HTML.fragment(output).child
         expect(html_component.classes).to include("wrapper-class")
       end
@@ -388,7 +405,10 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
 
     context "required is true" do
       let(:output) do
-        form_builder.cfa_select(:example_method_with_validation, "My select value", select_options, required: true)
+        form_builder.cfa_select(:example_method_with_validation,
+                                "My select value",
+                                ["thing one", "thing two"],
+                                required: true)
       end
 
       it "does not append the optional text after the label" do
@@ -399,6 +419,41 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
       it "sets the aria-required attribute on the select tag" do
         select_html = Nokogiri::HTML.fragment(output).at_css("select")
         expect(select_html.get_attribute("aria-required")).to be_truthy
+      end
+    end
+
+    context "errors" do
+      before do
+        fake_model.validate
+      end
+
+      let(:output) do
+        form_builder.cfa_select(:example_method_with_validation,
+                                "My select value",
+                                ["thing one", "thing two"],
+                                'aria-describedby': "another-id")
+      end
+
+      it "should associate form errors with input and append error id to existing aria-describedby attributes" do
+        select_html = Nokogiri::HTML.fragment(output).at_css("select")
+        error_text_html = Nokogiri::HTML.fragment(output).at_css(".text--error")
+        expect(select_html.get_attribute("aria-describedby")).to include("another-id")
+        expect(select_html.get_attribute("aria-describedby")).to include(error_text_html.get_attribute("id"))
+      end
+
+      context "with wrapper option classes" do
+        let(:output) do
+          form_builder.cfa_select(:example_method_with_validation,
+                                  "My select value",
+                                  ["thing one", "thing two"],
+                                  wrapper_options: { class: "foo" })
+        end
+
+        it "preserves the form-group--error class" do
+          html_component = Nokogiri::HTML.fragment(output).child
+          expect(html_component.classes).to include("foo")
+          expect(html_component.classes).to include("form-group--error")
+        end
       end
     end
   end

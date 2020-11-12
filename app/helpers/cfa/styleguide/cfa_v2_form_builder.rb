@@ -8,7 +8,7 @@ module Cfa
                          wrapper_options: {},
                          label_options: {},
                          **input_options)
-        input_options.merge!({ 'aria-required': true }) if required
+        input_options[:'aria-required'] = true if required
 
         if help_text.present?
           help_text_id = help_text_id(method)
@@ -17,15 +17,15 @@ module Cfa
         end
 
         if object.errors[method].any?
-          wrapper_options = append_to_value(wrapper_options, :class, 'form-group--error')
+          wrapper_options = append_to_value(wrapper_options, :class, "form-group--error")
           error_id = error_id(method)
           input_options = append_to_value(input_options, :'aria-describedby', error_id)
           error_html = errors_for(object, method, error_id)
         end
 
-        wrapper_options = append_to_value(wrapper_options, :class, 'cfa-text-input form-group')
+        wrapper_options = append_to_value(wrapper_options, :class, "cfa-text-input form-group")
         @template.tag.div(wrapper_options) do
-          @template.concat(@template.tag.div(class: 'form-question') do
+          @template.concat(@template.tag.div(class: "form-question") do
             label_with_optional_annotation(method, label_text, required, label_options)
           end)
           @template.concat(help_text_html&.html_safe)
@@ -73,36 +73,36 @@ module Cfa
           label_text,
           choices,
           required: false,
-          wrapper_classes: [],
-          options: {},
-          html_options: {},
+          select_options: {},
+          wrapper_options: {},
+          label_options: {},
+          **select_html_options,
           &block
         )
+        select_html_options ||= {}
 
         if object.errors[method].any?
-          wrapper_classes.push("form-group--error")
+          wrapper_options = append_to_value(wrapper_options, :class, "form-group--error")
           error_id = error_id(method)
           error_html = errors_for(object, method, error_id)
-          html_options = append_to_value(html_options, :'aria-describedby', error_id)
+          select_html_options = append_to_value(select_html_options, :'aria-describedby', error_id)
         end
 
         if required
-          html_options[:'aria-required'] = true
+          select_html_options[:'aria-required'] = true
         end
 
-        html_output = <<~HTML
-          <div class="cfa-select form-group #{wrapper_classes.join(' ')}">
-            <div class="form-question">
-              #{label_with_optional_annotation(method, label_text, required)}
-            </div>
-             <div class="select">
-               #{select(method, choices, options, html_options, &block)}
-             </div>
-              #{error_html}
-          </div>
-        HTML
-
-        html_output.html_safe
+        wrapper_options = append_to_value(wrapper_options, :class, "cfa-select form-group")
+        select_html_options = append_to_value(select_html_options, :class, "select__element")
+        @template.tag.div(wrapper_options) do
+          @template.concat(@template.tag.div(class: "form-question") do
+            label_with_optional_annotation(method, label_text, required, label_options)
+          end)
+          @template.concat(@template.tag.div(class: "select") do
+            select(method, choices, select_options, select_html_options, &block)
+          end)
+          @template.concat(error_html&.html_safe)
+        end
       end
 
       def cfa_date_input(method,

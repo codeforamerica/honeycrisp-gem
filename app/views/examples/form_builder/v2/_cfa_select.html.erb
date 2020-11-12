@@ -1,0 +1,26 @@
+<%= fields_for(:form, @form, builder: Cfa::Styleguide::CfaV2FormBuilder) do |f| %>
+  <%= f.cfa_select(:example_method_select_a,
+                   'Example select',
+                   [
+                       ['One', 1],
+                       ['Two', 2],
+                   ],  # also: Model.all or ['one', 'two']
+                   ) %>
+
+  <%= f.cfa_select(:example_method_select_b,
+                   'Example select - with html-impacting options',
+                   ['option a', 'option b'],
+                   autocomplete: "off", # html_options: autocomplete
+                   class: 'my-select-class', # html_options: class
+                   select_options: { include_blank: true },
+                   label_options: { data: { spec: 'label-1' } },
+                   wrapper_options: { class: 'my-wrapper-class' }
+  ) %>
+
+  <%= f.cfa_select(:example_method_with_validation_select,
+                   'Example select - required and with blank option',
+                   ['option a', 'option b'],
+                   required: true,
+                   select_options: { include_blank: '(blank)' }) %>
+
+<% end %>
