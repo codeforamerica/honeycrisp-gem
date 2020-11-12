@@ -1,4 +1,4 @@
-//= require jquery
+//= require jquery3
 $(document).ready(function() {
     $('.sidebar-nav').on('click', 'a', function ()
     {
