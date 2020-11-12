@@ -5,9 +5,10 @@ module Cfa
                          label_text,
                          required: false,
                          help_text: nil,
-                         wrapper_classes: [],
-                         options: {})
-        input_options = required ? options.merge({ 'aria-required': true }) : options
+                         wrapper_options: {},
+                         label_options: {},
+                         **input_options)
+        input_options.merge!({ 'aria-required': true }) if required
 
         if help_text.present?
           help_text_id = help_text_id(method)
@@ -16,22 +17,21 @@ module Cfa
         end
 
         if object.errors[method].any?
-          wrapper_classes.push("form-group--error")
+          wrapper_options = append_to_value(wrapper_options, :class, 'form-group--error')
           error_id = error_id(method)
           input_options = append_to_value(input_options, :'aria-describedby', error_id)
           error_html = errors_for(object, method, error_id)
         end
 
-        <<~HTML.html_safe
-           <div class="cfa-text-input form-group #{wrapper_classes.join(' ')}">
-             <div class="form-question">
-               #{label_with_optional_annotation(method, label_text, required)}
-             </div>
-             #{help_text_html}
-             #{text_field(method, input_options)}
-             #{error_html}
-           </div>
-        HTML
+        wrapper_options = append_to_value(wrapper_options, :class, 'cfa-text-input form-group')
+        @template.tag.div(wrapper_options) do
+          @template.concat(@template.tag.div(class: 'form-question') do
+            label_with_optional_annotation(method, label_text, required, label_options)
+          end)
+          @template.concat(help_text_html&.html_safe)
+          @template.concat(text_field(method, input_options))
+          @template.concat(error_html&.html_safe)
+        end
       end
 
       def cfa_button(label_text, wrapper_classes: [], options: {})
@@ -218,8 +218,8 @@ module Cfa
         HTML
       end
 
-      def label_with_optional_annotation(method, label_text, required)
-        label(method) do
+      def label_with_optional_annotation(method, label_text, required, label_options)
+        label(method, label_options) do
           @template.concat(<<~HTML.html_safe) if object.errors[method].any?
             <span class="sr-only">Validation error</span>
           HTML
