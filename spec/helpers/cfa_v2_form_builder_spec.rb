@@ -79,10 +79,8 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
       let(:output) do
         form_builder.cfa_text_input(:example_method_with_validation,
                                     "Example method with validation",
-                                    options: {
-                                      placeholder: "my text",
-                                      disabled: true,
-                                    })
+                                    placeholder: "my text",
+                                    disabled: true)
       end
 
       it "passes options to the input" do
@@ -96,9 +94,7 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
       let(:output) do
         form_builder.cfa_text_input(:example_method_with_validation,
                                     "Example method with validation",
-                                    options: {
-                                      'aria-describedby': "another-id",
-                                    })
+                                    'aria-describedby': "another-id")
       end
 
       before do
@@ -118,18 +114,40 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
       end
     end
 
-    context "wrapper_classes provided" do
+    context "wrapper_options provided" do
       let(:output) do
         form_builder.cfa_text_input(
           :example_method_with_validation,
           "Example method with validation",
-          wrapper_classes: ["wrapper-class"],
+          wrapper_options: { class: "wrapper-class", id: "wrapper-id" }
         )
       end
 
-      it "assigns wrapper classes on the containing element" do
+      it "does not overwrite existing classes" do
+        html_component = Nokogiri::HTML.fragment(output).child
+        expect(html_component.classes).to include("cfa-text-input")
+      end
+
+      it "assigns wrapper options on the outermost element" do
         html_component = Nokogiri::HTML.fragment(output).child
         expect(html_component.classes).to include("wrapper-class")
+        expect(html_component.get_attribute('id')).to include("wrapper-id")
+      end
+    end
+
+    context "label_options provided" do
+      let(:output) do
+        form_builder.cfa_text_input(
+          :example_method_with_validation,
+          "Example method with validation",
+          label_options: { class: "label-class", id: "label-id" }
+        )
+      end
+
+      it "assigns label options on the label" do
+        html_component = Nokogiri::HTML.fragment(output).at_css("label")
+        expect(html_component.classes).to include("label-class")
+        expect(html_component.get_attribute('id')).to include("label-id")
       end
     end
 
