@@ -17,11 +17,10 @@ module Cfa
                     :example_method_with_validation_year,
                     :none
 
-      validates_presence_of :example_method_with_validation, message: "This is an example error message."
-      validates_presence_of :example_method_with_validation_text, message: "This is an example error message."
-      validates_presence_of :example_method_with_validation_select, message: "This is an example error message."
-
       def method_missing(method_name, *args, **kwargs, &block)
+        if method_name.to_s.starts_with?("example_method_with_validation") && errors[method_name].empty?
+          errors.add(method_name, "This is an example error message.")
+        end
         return super unless method_name.to_s.starts_with?("example_method")
 
         nil
