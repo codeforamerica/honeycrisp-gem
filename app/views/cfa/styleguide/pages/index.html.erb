@@ -1,9 +1,75 @@
 <% content_for(:template_name) { "styleguide" } %>
+
+<% content_for :subnavigation do %>
+  <li class="spacing-below-0">
+    <span class="section-header heading-25-small spacing-below-10">Atoms</span>
+    <ul class="sidebar__sub-items spacing-below-10">
+      <li class="spacing-below-25"><%= link_to "Buttons", styleguide_main_path(anchor: "atoms-buttons") %></li>
+      <li class="spacing-below-25"><%= link_to "Card", styleguide_main_path(anchor: "atoms-card") %></li>
+      <li class="spacing-below-25"><%= link_to "Colors", styleguide_main_path(anchor: "atoms-colors") %></li>
+      <li class="spacing-below-25"><%= link_to "Example Pills", styleguide_main_path(anchor: "atoms-examples") %></li>
+      <li class="spacing-below-25"><%= link_to "Form Elements", styleguide_main_path(anchor: "atoms-form_elements") %></li>
+      <li class="spacing-below-25"><%= link_to "Grid Layout", styleguide_main_path(anchor: "atoms-grid") %></li>
+      <li class="spacing-below-25"><%= link_to "Icons", styleguide_main_path(anchor: "atoms-icons") %></li>
+      <li class="spacing-below-25"><%= link_to "Labels", styleguide_main_path(anchor: "atoms-labels") %></li>
+      <li class="spacing-below-25"><%= link_to "Notice", styleguide_main_path(anchor: "atoms-notices") %></li>
+      <li class="spacing-below-25"><%= link_to "Slab Layout", styleguide_main_path(anchor: "atoms-slab_layout") %></li>
+      <li class="spacing-below-25"><%= link_to "Spacing", styleguide_main_path(anchor: "atoms-spacing") %></li>
+      <li class="spacing-below-25"><%= link_to "Typography", styleguide_main_path(anchor: "atoms-typography") %></li>
+    </ul>
+  </li>
+  <li class="spacing-below-0">
+    <span class="section-header heading-25-small spacing-below-10">Molecules</span>
+    <ul class="sidebar__sub-items spacing-below-10">
+      <li class="spacing-below-25"><%= link_to "Accordion", styleguide_main_path(anchor: "molecules-accordion") %></li>
+      <li class="spacing-below-25"><%= link_to "Block Input Group", styleguide_main_path(anchor: "molecules-block_input_group") %></li>
+      <li class="spacing-below-25"><%= link_to "Data Table", styleguide_main_path(anchor: "molecules-data_table") %></li>
+      <li class="spacing-below-25"><%= link_to "Example Group", styleguide_main_path(anchor: "molecules-example_group") %></li>
+      <li class="spacing-below-25"><%= link_to "Flash Messages", styleguide_main_path(anchor: "molecules-flash_messages") %></li>
+      <li class="spacing-below-25"><%= link_to "Follow Up Question", styleguide_main_path(anchor: "molecules-follow_up_question") %></li>
+      <li class="spacing-below-25"><%= link_to "Form Group", styleguide_main_path(anchor: "molecules-form_group") %></li>
+      <li class="spacing-below-25"><%= link_to "Form Group Error State", styleguide_main_path(anchor: "molecules-form_group_error_state") %></li>
+      <li class="spacing-below-25"><%= link_to "Incrementer", styleguide_main_path(anchor: "molecules-incrementer") %></li>
+      <li class="spacing-below-25"><%= link_to "Inline Input Group", styleguide_main_path(anchor: "molecules-inline_input_group") %></li>
+      <li class="spacing-below-25"><%= link_to "Media Box", styleguide_main_path(anchor: "molecules-media_box") %></li>
+      <li class="spacing-below-25"><%= link_to "Progress Indicator", styleguide_main_path(anchor: "molecules-progress_indicator") %></li>
+      <li class="spacing-below-25"><%= link_to "Progress Step Bar", styleguide_main_path(anchor: "molecules-progress_step_bar") %></li>
+      <li class="spacing-below-25"><%= link_to "Reveal", styleguide_main_path(anchor: "molecules-reveal") %></li>
+      <li class="spacing-below-25"><%= link_to "Searchbar", styleguide_main_path(anchor: "molecules-searchbar") %></li>
+      <li class="spacing-below-25"><%= link_to "Show More", styleguide_main_path(anchor: "molecules-show_more") %></li>
+      <li class="spacing-below-25"><%= link_to "Summary Table", styleguide_main_path(anchor: "molecules-summary_table") %></li>
+      <li class="spacing-below-25"><%= link_to "Tab Bar", styleguide_main_path(anchor: "molecules-tab_bar") %></li>
+      <li class="spacing-below-25"><%= link_to "Text Input Group", styleguide_main_path(anchor: "molecules-text_input_group") %></li>
+      <li class="spacing-below-25"><%= link_to "Toolbar", styleguide_main_path(anchor: "molecules-toolbar") %></li>
+      <li class="spacing-below-25"><%= link_to "Two-up Input Group", styleguide_main_path(anchor: "molecules-two_up_input_group") %></li>
+    </ul>
+  </li>
+  <li class="spacing-below-0">
+    <span class="section-header heading-25-small spacing-below-10">Organisms</span>
+    <ul class="sidebar__sub-items spacing-below-10">
+      <li class="spacing-below-25"><%= link_to "Admin Application Card", styleguide_main_path(anchor: "organisms-admin_application_card") %></li>
+      <li class="spacing-below-25"><%= link_to "Form Card 1", styleguide_main_path(anchor: "organisms-form_card_1") %></li>
+      <li class="spacing-below-25"><%= link_to "Form Card 2", styleguide_main_path(anchor: "organisms-form_card_2") %></li>
+      <li class="spacing-below-25"><%= link_to "Form Card 3", styleguide_main_path(anchor: "organisms-form_card_3") %></li>
+      <li class="spacing-below-25"><%= link_to "Form Card 4", styleguide_main_path(anchor: "organisms-form_card_4") %></li>
+      <li class="spacing-below-25"><%= link_to "Pagination", styleguide_main_path(anchor: "organisms-pagination") %></li>
+      <li class="spacing-below-25"><%= link_to "Statistics Card", styleguide_main_path(anchor: "organisms-statistics_card") %></li>
+      <li class="spacing-below-25"><%= link_to "Steps", styleguide_main_path(anchor: "organisms-steps") %></li>
+      <li class="spacing-below-25"><%= link_to "Vertical Steps", styleguide_main_path(anchor: "organisms-vertical_steps") %></li>
+    </ul>
+  </li>
+<% end %>
+
 <div class="slab slab--hero">
   <div class="grid">
     <div class="grid__item width-two-thirds">
       <h1>Honeycrisp Design System</h1>
-      <p>This is the official design system for products at Code for America.</p>
+      <p>
+        Honeycrisp is the official design system for products at Code for America.
+        Use Honeycrisp for public facing products that require a welcoming and simple interface.
+        For internal tools and products for workers, use
+        <%= link_to "Honeycrisp Compact", styleguide_honeycrisp_compact_path %>.
+      </p>
       <p>Have a suggestion? <a href="https://github.com/codeforamerica/honeycrisp-gem/issues">Submit it as an issue</a> on <a href="https://github.com/codeforamerica/honeycrisp-gem">the Github repo!</a> Questions? Contact us at <a href="mailto:styleguide@codeforamerica.org">styleguide@codeforamerica.org</a>.</p>
     </div>
   </div>
@@ -21,17 +87,7 @@
   </div>
 </section>
 
-<section class="slab">
-  <div class="grid">
-    <div class="grid__item width-one-fourth">
-      <h3>Slab Layout</h3>
-    </div>
-    <div class="grid__item width-three-fourths">
-    <p>This is an example slab, it's used to section out content, especially on marketing pages. Inside of slabs, use the grid component to lay things out. Almost everything on this page is laid out using slabs and grids.</p>
-    </div>
-  </div>
-</section>
-
+<%= render 'section', title: 'Slab Layout', example: 'atoms/slab_layout' %>
 <%= render 'section', title: 'Grid Layout', example: 'atoms/grid' %>
 <%= render 'section', title: 'Card', example: 'atoms/card', explanation: "Cards are used to highlight and focus content. In core app pages (e.g. pages of a form), the primary content should be inside a card. Secondary pages (e.g. the homepage, an FAQ page) don't need cards. Multiple cards can be used on one page, but consider if the content can be broken into multiple pages." %>
 <%= render 'section', title: 'Notice', example: 'atoms/notices', explanation: "Notices are a way to highlight important information by separating it from the main copy. Warning notices are good for temporary scenarios (e.g. 'Counties are receiving more applications than usual. Interview scheduling may be delayed.') Warning notices can be used outside the card for extra emphasis. Both types of notices are only effective if they're used sparingly." %>

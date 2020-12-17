@@ -1,0 +1,29 @@
+<% content_for(:template_name) { "styleguide" } %>
+
+<% content_for :subnavigation do %>
+  <li class="spacing-below-0">
+    <span class="section-header heading-25-small spacing-below-10">Molecules</span>
+    <ul class="sidebar__sub-items spacing-below-10">
+      <li class="spacing-below-25"><%= link_to "Data Table", styleguide_honeycrisp_compact_path(anchor: "honeycrisp_compact-data_table") %></li>
+    </ul>
+  </li>
+<% end %>
+
+<section class="slab slab--styleguide">
+  <div class="grid">
+    <div class="grid__item">
+      <h1>Honeycrisp Compact</h1>
+      <p class="text--help">
+        Honeycrisp Compact is a variation of Honeycrisp.
+        While standard Honeycrisp is geared towards public facing products, Compact can be used to build internal tools
+        and products for workers.
+        Use Compact for things that people will use as part of their job.
+        Compact's components aim to be as accessible and usable as standard Honeycrisp, but with a more businesslike
+        visual design that allows for greater information density and more complex workflows.
+        These products might be used routinely, and by people who need workspaces that are optimized for efficiency.
+      </p>
+    </div>
+  </div>
+</section>
+
+<%= render 'section', title: 'Data Table', example: 'honeycrisp_compact/data_table' %>

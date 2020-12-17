@@ -14,6 +14,16 @@ describe "Pages" do
     expect(page).to have_content("Honeycrisp Design System v#{Cfa::Styleguide::VERSION}")
   end
 
+  it "can load the compact styleguide" do
+    visit "/cfa/styleguide"
+    within ".sidebar-nav" do
+      click_on "Honeycrisp Compact"
+    end
+
+    expect(page.status_code).to eq 200
+    expect(page).to have_content("Honeycrisp Compact is a variation of Honeycrisp.")
+  end
+
   it "can load emoji index" do
     visit "/cfa/styleguide"
     click_on "Emojis"
