@@ -1,0 +1,10 @@
+.honeycrisp-compact {
+  font-size: $font-size-19;
+  line-height: $s19;
+  .data-table {
+    font-size: inherit;
+    th, td {
+      padding: $s15;
+    }
+  }
+}
