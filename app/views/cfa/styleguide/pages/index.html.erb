@@ -1,3 +1,65 @@
+<% content_for :subnavigation do %>
+  <li class="spacing-below-0">
+    <span class="section-header heading-25-small spacing-below-10">Atoms</span>
+    <ul class="sidebar__sub-items spacing-below-10">
+      <li class="spacing-below-25"><%= link_to "Buttons", styleguide_main_path(anchor: "atoms-buttons") %></li>
+      <li class="spacing-below-25"><%= link_to "Card", styleguide_main_path(anchor: "atoms-card") %></li>
+      <li class="spacing-below-25"><%= link_to "Colors", styleguide_main_path(anchor: "atoms-colors") %></li>
+      <li class="spacing-below-25"><%= link_to "Example Pills", styleguide_main_path(anchor: "atoms-examples") %></li>
+      <li class="spacing-below-25"><%= link_to "Form Elements", styleguide_main_path(anchor: "atoms-form_elements") %></li>
+      <li class="spacing-below-25"><%= link_to "Grid Layout", styleguide_main_path(anchor: "atoms-grid") %></li>
+      <li class="spacing-below-25"><%= link_to "Icons", styleguide_main_path(anchor: "atoms-icons") %></li>
+      <li class="spacing-below-25"><%= link_to "Labels", styleguide_main_path(anchor: "atoms-labels") %></li>
+      <li class="spacing-below-25"><%= link_to "Notice", styleguide_main_path(anchor: "atoms-notices") %></li>
+      <li class="spacing-below-25"><%= link_to "Slab Layout", styleguide_main_path(anchor: "atoms") %></li>
+      <li class="spacing-below-25"><%= link_to "Spacing", styleguide_main_path(anchor: "atoms-spacing") %></li>
+      <li class="spacing-below-25"><%= link_to "Typography", styleguide_main_path(anchor: "atoms-typography") %></li>
+    </ul>
+  </li>
+  <li class="spacing-below-0">
+    <span class="section-header heading-25-small spacing-below-10">Molecules</span>
+    <ul class="sidebar__sub-items spacing-below-10">
+      <li class="spacing-below-25"><%= link_to "Accordion", styleguide_main_path(anchor: "molecules-accordion") %></li>
+      <li class="spacing-below-25"><%= link_to "Block Input Group", styleguide_main_path(anchor: "molecules-block_input_group") %></li>
+      <li class="spacing-below-25"><%= link_to "Data Table", styleguide_main_path(anchor: "molecules-data_table") %></li>
+      <li class="spacing-below-25"><%= link_to "Example Group", styleguide_main_path(anchor: "molecules-example_group") %></li>
+      <li class="spacing-below-25"><%= link_to "Flash Messages", styleguide_main_path(anchor: "molecules-flash_messages") %></li>
+      <li class="spacing-below-25"><%= link_to "Follow Up Question", styleguide_main_path(anchor: "molecules-follow_up_question") %></li>
+      <li class="spacing-below-25"><%= link_to "Form Group", styleguide_main_path(anchor: "molecules-form_group") %></li>
+      <li class="spacing-below-25"><%= link_to "Form Group Error State", styleguide_main_path(anchor: "molecules-form_group_error_state") %></li>
+      <li class="spacing-below-25"><%= link_to "Incrementer", styleguide_main_path(anchor: "molecules-incrementer") %></li>
+      <li class="spacing-below-25"><%= link_to "Inline Input Group", styleguide_main_path(anchor: "molecules-inline_input_group") %></li>
+      <li class="spacing-below-25"><%= link_to "Media Box", styleguide_main_path(anchor: "molecules-media_box") %></li>
+      <li class="spacing-below-25"><%= link_to "Progress Indicator", styleguide_main_path(anchor: "molecules-progress_indicator") %></li>
+      <li class="spacing-below-25"><%= link_to "Progress Step Bar", styleguide_main_path(anchor: "molecules-progress_step_bar") %></li>
+      <li class="spacing-below-25"><%= link_to "Reveal", styleguide_main_path(anchor: "molecules-reveal") %></li>
+      <li class="spacing-below-25"><%= link_to "Searchbar", styleguide_main_path(anchor: "molecules-searchbar") %></li>
+      <li class="spacing-below-25"><%= link_to "Show More", styleguide_main_path(anchor: "molecules-show_more") %></li>
+      <li class="spacing-below-25"><%= link_to "Summary Table", styleguide_main_path(anchor: "molecules-summary_table") %></li>
+      <li class="spacing-below-25"><%= link_to "Tab Bar", styleguide_main_path(anchor: "molecules-tab_bar") %></li>
+      <li class="spacing-below-25"><%= link_to "Text Input Group", styleguide_main_path(anchor: "molecules-text_input_group") %></li>
+      <li class="spacing-below-25"><%= link_to "Toolbar", styleguide_main_path(anchor: "molecules-toolbar") %></li>
+      <li class="spacing-below-25"><%= link_to "Two-up Input Group", styleguide_main_path(anchor: "molecules-two_up_input_group") %></li>
+    </ul>
+  </li>
+  <li class="spacing-below-0">
+    <span class="section-header heading-25-small spacing-below-10">Organisms</span>
+    <ul class="sidebar__sub-items spacing-below-10">
+      <li class="spacing-below-25"><%= link_to "Admin Application Card", styleguide_main_path(anchor: "organisms-admin_application_card") %></li>
+      <li class="spacing-below-25"><%= link_to "Form Card 1", styleguide_main_path(anchor: "organisms-form_card_1") %></li>
+      <li class="spacing-below-25"><%= link_to "Form Card 2", styleguide_main_path(anchor: "organisms-form_card_2") %></li>
+      <li class="spacing-below-25"><%= link_to "Form Card 3", styleguide_main_path(anchor: "organisms-form_card_3") %></li>
+      <li class="spacing-below-25"><%= link_to "Form Card 4", styleguide_main_path(anchor: "organisms-form_card_4") %></li>
+      <li class="spacing-below-25"><%= link_to "Pagination", styleguide_main_path(anchor: "organisms-pagination") %></li>
+      <li class="spacing-below-25"><%= link_to "Statistics Card", styleguide_main_path(anchor: "organisms-statistics_card") %></li>
+      <li class="spacing-below-25"><%= link_to "Steps", styleguide_main_path(anchor: "organisms-steps") %></li>
+      <li class="spacing-below-25"><%= link_to "Vertical Steps", styleguide_main_path(anchor: "organisms-vertical_steps") %></li>
+    </ul>
+  </li>
+<% end %>
+
+
+
 <% content_for(:template_name) { "styleguide" } %>
 <div class="slab slab--hero">
   <div class="grid">
