@@ -12,6 +12,10 @@
   .button {
     line-height: 2rem;
     padding: $s10;
+    margin-top: 0;
+    margin-left: $s10;
+    margin-right: $s10;
+    margin-bottom: 2rem;
     font-weight: normal;
     border-width: 1px;
     box-shadow: 0 1px 0px rgba(#000, .5);
