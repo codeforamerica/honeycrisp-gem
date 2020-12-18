@@ -1,10 +1,46 @@
 .honeycrisp-compact {
   font-size: $font-size-19;
   line-height: $s19;
+
   .data-table {
     font-size: inherit;
     th, td {
       padding: $s15;
     }
+  }
+
+  .form-question {
+    margin-bottom: $s15;
+  }
+
+  .button {
+    line-height: 2rem;
+    padding: $s10;
+    margin-top: 0;
+    margin-left: $s10;
+    margin-right: $s10;
+    margin-bottom: 2rem;
+    font-weight: normal;
+    border-width: 1px;
+    box-shadow: 0 1px 0px rgba(#000, .5);
+    border-radius: $border-radius;
+    font-size: $font-size-25-small;
+    [class^="icon-"], [class*=" icon-"] {
+      vertical-align: 0;
+    }
+  }
+
+  .select {
+    line-height: 4.6rem;
+    height: 4.6rem;
+    &:after {
+      width: 4.2rem;
+    }
+  }
+  .select__element {
+    font-size: $font-size-25-small;
+    font-weight: normal;
+    border: 1px solid $color-grey-darkest;
+    padding: 0 4.2rem 0 $s15;
   }
 }

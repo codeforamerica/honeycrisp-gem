@@ -1,7 +1,13 @@
 <% content_for(:template_name) { "styleguide" } %>
 
 <% content_for :subnavigation do %>
+
   <li class="spacing-below-0">
+    <span class="section-header heading-25-small spacing-below-10">Atoms</span>
+    <ul class="sidebar__sub-items spacing-below-10">
+      <li class="spacing-below-25"><%= link_to "Buttons", styleguide_honeycrisp_compact_path(anchor: "honeycrisp_compact-buttons") %></li>
+      <li class="spacing-below-25"><%= link_to "Form Elements", styleguide_honeycrisp_compact_path(anchor: "honeycrisp_compact-form_elements") %></li>
+    </ul>
     <span class="section-header heading-25-small spacing-below-10">Molecules</span>
     <ul class="sidebar__sub-items spacing-below-10">
       <li class="spacing-below-25"><%= link_to "Data Table", styleguide_honeycrisp_compact_path(anchor: "honeycrisp_compact-data_table") %></li>
@@ -26,4 +32,6 @@
   </div>
 </section>
 
+<%= render 'section', title: 'Buttons', example: 'honeycrisp_compact/buttons' %>
+<%= render 'section', title: 'Form Elements', example: 'honeycrisp_compact/form_elements' %>
 <%= render 'section', title: 'Data Table', example: 'honeycrisp_compact/data_table' %>
