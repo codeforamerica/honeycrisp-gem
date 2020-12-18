@@ -1,34 +1,82 @@
 <form action="POST">
-  <label class="form-question" for="example_text">Form question, usually posed as a question?</label>
   <h3>Text input fields</h3>
-  <input type="text" class="text-input" placeholder="Text input" name="example_text">
-  <input type="text" class="text-input form-width--long" placeholder="Long" name="example_text">
-  <input type="text" class="text-input form-width--med" placeholder="Medium" name="example_text">
-  <input type="text" class="text-input form-width--short" placeholder="Short" name="example_text">
-  <input type="text" class="text-input form-width--name" placeholder="Name" name="example_text">
-  <input type="text" class="text-input form-width--zip" placeholder="ZIP" name="example_text">
-  <h3>Masked (auto-formatted) text input fields</h3>
-  <input type="tel" class="text-input form-width--phone phone-input" placeholder="Phone #" name="example_text" id="example_phone_input">
-  <input type="tel" class="text-input form-width--ssn ssn-input" placeholder="SSN" name="example_text" id="example_ssn_input">
-  <h3>Other input types</h3>
-  <label for="example_radio" class="radio-button">
-    <input type="radio" name="example_radio" id="example_radio">
-    Example radio button
-  </label>
-  <label for="example_checkbox" class="checkbox">
-    <input type="checkbox" name="example_checkbox" id="example_checkbox">
-    Example checkbox
-  </label>
-  <div class="select">
-    <select class="select__element" name="example_select" id="example_select">
-      <option selected disabled>Choose a selection</option>
-      <option value="1">Selection 1</option>
-      <option value="2">Selection 2</option>
-      <option value="2">Selection 3</option>
-    </select>
+
+  <div class="form-group">
+    <label class="form-question" for="apple_comment">What would you like to tell us about apples?</label>
+    <input type="text" class="text-input" name="apple_comment" id="apple_comment">
   </div>
 
-  <textarea name="example_textarea" class="textarea" id="" cols="30" rows="10"></textarea>
+  <div class="form-group">
+    <label class="form-question" for="favorite_apples">What are your favorite apples?</label>
+    <input type="text" class="text-input form-width--long" name="favorite_apples" id="favorite_apples">
+  </div>
+
+  <div class="form-group">
+    <label class="form-question" for="them_apples">How about them apples?</label>
+    <input type="text" class="text-input form-width--med" name="them_apples" id="them_apples">
+  </div>
+
+  <div class="form-group">
+    <label class="form-question" for="apple_word">What is one word to describe an apple?</label>
+    <input type="text" class="text-input form-width--short" name="apple_word" id="apple_word">
+  </div>
+
+  <div class="form-group">
+    <label class="form-question" for="name">What is your name?</label>
+    <input type="text" class="text-input form-width--name" name="name" id="name">
+  </div>
+
+  <div class="form-group">
+    <label class="form-question" for="zip">What is your ZIP code?</label>
+    <input type="text" class="text-input form-width--zip" name="zip" id="zip">
+  </div>
+
+  <h3>Masked (auto-formatted) text input fields</h3>
+
+  <div class="form-group">
+    <label class="form-question" for="phone">What is your phone number?</label>
+    <input type="tel" class="text-input form-width--phone phone-input" name="phone" id="phone">
+  </div>
+
+
+  <div class="form-group">
+    <label class="form-question" for="ssn">What is your Social Security Number?</label>
+    <input type="tel" class="text-input form-width--ssn ssn-input" name="ssn" id="ssn">
+  </div>
+
+  <h3>Other input types</h3>
+
+  <div class="form-group">
+    <label for="example_radio" class="radio-button">
+      <input type="radio" name="example_radio" id="example_radio">
+      Example radio button
+    </label>
+  </div>
+
+  <div class="form-group">
+    <label for="example_checkbox" class="checkbox">
+      <input type="checkbox" name="example_checkbox" id="example_checkbox">
+      Example checkbox
+    </label>
+  </div>
+
+  <div class="form-group">
+    <label for="apple_quality" class="form-question">What's your favorite apple quality?</label>
+    <div class="select">
+      <select class="select__element" name="apple_quality" id="apple_quality">
+        <option selected disabled>Choose a selection</option>
+        <option value="crisp">Crisp</option>
+        <option value="sweet">Sweet</option>
+        <option value="tart">Tart</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="apple_story" class="form-question">Can you tell us about the last time you ate an apple?</label>
+    <textarea name="apple_story" id="apple_story" class="textarea" id="" cols="30" rows="10"></textarea>
+  </div>
+
   <div class="file-upload">
     <input type="file" id="example_file_upload" name="example_file_upload" class="file-upload__input">
     <label class="button" for="example_file_upload" class="file-upload__label">Upload documents <i class="button__icon icon-file_upload"></i></label>

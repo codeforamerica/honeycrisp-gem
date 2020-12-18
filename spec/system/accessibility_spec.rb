@@ -10,13 +10,6 @@ GENERAL_ACCESSIBILITY_SKIPS = [
   "region",
 ].freeze
 
-## Checks that aren't applicable to specific examples and can be ignored
-SPECIFIC_ACCESSIBILITY_SKIPS = {
-  "atoms/form_elements" => [
-    "label", # Example demonstrates various input atoms, not label+input molecule
-  ],
-}.freeze
-
 ## Examples with accessibility issues that must be fixed in the fullness of time
 FIXABLE_ACCESSIBILITY_EXAMPLES = [
   "form_builder/cfa_checkbox_set",
@@ -46,8 +39,7 @@ RSpec.describe "Acessibility", js: true do
 
         visit example_path
 
-        accessibility_skips = GENERAL_ACCESSIBILITY_SKIPS + SPECIFIC_ACCESSIBILITY_SKIPS.fetch(example, [])
-        expect(page).to be_accessible.skipping(*accessibility_skips)
+        expect(page).to be_accessible.skipping(*GENERAL_ACCESSIBILITY_SKIPS)
       end
     end
   end
