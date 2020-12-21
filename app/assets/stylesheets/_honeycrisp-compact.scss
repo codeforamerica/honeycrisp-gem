@@ -9,6 +9,10 @@
     }
   }
 
+  .form-group {
+    margin-bottom: $s35;
+  }
+
   .form-question {
     margin-bottom: $s15;
   }
@@ -28,6 +32,16 @@
     [class^="icon-"], [class*=" icon-"] {
       vertical-align: 0;
     }
+  }
+
+
+  .text-input {
+    padding: 0 $s15;
+    height: 4.5rem;
+    border-width: 1px;
+    font-size: $font-size-25-small;
+    font-weight: normal;
+    margin-bottom: 2rem;
   }
 
   .select {
