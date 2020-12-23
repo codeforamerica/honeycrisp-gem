@@ -1,0 +1,16 @@
+<%= fields_for(:form, @form, builder: Cfa::Styleguide::CfaV2FormBuilder) do |f| %>
+  <%= f.cfa_fieldset(:example_method_radio_a, "Radios with wrapper options") do %>
+    <%= f.cfa_radio(:example_method_radio_a, 'First option', :first_option, wrapper_options: { class: 'wrapper-class' }) %>
+    <%= f.cfa_radio(:example_method_radio_a, 'Second option', :second_option) %>
+  <% end %>
+
+  <%= f.cfa_fieldset(:example_method_radio_b, "Radios with label options") do %>
+    <%= f.cfa_radio(:example_method_radio_b, 'First option', :first_option, label_options: { class: 'wrapper-class' }) %>
+    <%= f.cfa_radio(:example_method_radio_b, 'Second option', :second_option) %>
+  <% end %>
+
+  <%= f.cfa_fieldset(:example_method_radio_c, "Radios with input options") do %>
+    <%= f.cfa_radio(:example_method_radio_c, 'First option', :first_option, required: true, class: 'my-radio-class') %>
+    <%= f.cfa_radio(:example_method_radio_c, 'Second option', :second_option, required: true, class: 'my-radio-class') %>
+  <% end %>
+<% end %>

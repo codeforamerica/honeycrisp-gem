@@ -89,6 +89,24 @@ module Cfa
         end
       end
 
+      def cfa_radio(method,
+                    label_text,
+                    value,
+                    wrapper_options: {},
+                    label_options: {},
+                    **input_options)
+
+        wrapper_options = append_to_value(wrapper_options, :class, 'cfa-radio')
+        @template.tag.div(wrapper_options) do
+          @template.tag.label(label_options) do
+            output_html = ""
+            output_html.concat(radio_button(method, value, input_options))
+            output_html.concat(label_text)
+            output_html.html_safe
+          end
+        end
+      end
+
       def cfa_date_input(method,
                          label_text,
                          required: false,
@@ -196,15 +214,6 @@ module Cfa
         @template.tag.div(class: "cfa-button #{wrapper_classes.join(' ')}") do
           button(label_text, { class: "button button--primary" }.merge(options))
         end
-      end
-
-      def cfa_radio(method, label_text, value, wrapper_classes: [], options: {})
-        <<~HTML.html_safe
-          <label class="cfa-radio radio-button #{wrapper_classes.join(' ')}">
-            #{radio_button(method, value, options)}
-            #{label_text}
-          </label>
-        HTML
       end
 
       private
