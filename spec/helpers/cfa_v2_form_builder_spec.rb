@@ -34,7 +34,7 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
 
     context "when options provided" do
       let(:output) do
-        form_builder.cfa_button("my button", options: { data: { "disable-with": "Searching..." } })
+        form_builder.cfa_button("my button", data: { "disable-with": "Searching..." })
       end
 
       it "passes options to the button" do
@@ -43,14 +43,20 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
       end
     end
 
-    context "wrapper_classes provided" do
+    context "wrapper_options provided" do
       let(:output) do
-        form_builder.cfa_button("my button", wrapper_classes: ["wrapper-class"])
+        form_builder.cfa_button("my button", wrapper_options: { class: "wrapper-class", id: 'wrapper-id' })
       end
 
-      it "assigns wrapper classes on the containing element" do
+      it "does not overwrite existing classes" do
+        html_component = Nokogiri::HTML.fragment(output).child
+        expect(html_component.classes).to include("cfa-button")
+      end
+
+      it "assigns wrapper options on the outermost element" do
         html_component = Nokogiri::HTML.fragment(output).child
         expect(html_component.classes).to include("wrapper-class")
+        expect(html_component.get_attribute("id")).to include("wrapper-id")
       end
     end
   end

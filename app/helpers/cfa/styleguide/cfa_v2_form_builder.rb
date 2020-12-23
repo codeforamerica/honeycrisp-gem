@@ -1,6 +1,13 @@
 module Cfa
   module Styleguide
     class CfaV2FormBuilder < ActionView::Helpers::FormBuilder
+      def cfa_button(label_text, wrapper_options: {}, **input_options)
+        wrapper_options = append_to_value(wrapper_options, :class, 'cfa-button')
+        @template.tag.div(wrapper_options) do
+          button(label_text, { class: "button button--primary" }.merge(input_options))
+        end
+      end
+
       def cfa_text_input(method,
                          label_text,
                          required: false,
@@ -207,12 +214,6 @@ module Cfa
             </label>
             #{error_html}
           HTML
-        end
-      end
-
-      def cfa_button(label_text, wrapper_classes: [], options: {})
-        @template.tag.div(class: "cfa-button #{wrapper_classes.join(' ')}") do
-          button(label_text, { class: "button button--primary" }.merge(options))
         end
       end
 
