@@ -25,46 +25,10 @@ module Cfa
 
         wrapper_options = append_to_value(wrapper_options, :class, "cfa-text-input form-group")
         @template.tag.div(wrapper_options) do
-          @template.concat(@template.tag.div(class: "form-question") do
-            label_with_optional_annotation(method, label_text, required, label_options)
-          end)
+          @template.concat(label(method, errors_and_optional_annotation(method, label_text, required), label_options))
           @template.concat(help_text_html&.html_safe)
           @template.concat(text_field(method, input_options))
           @template.concat(error_html&.html_safe)
-        end
-      end
-
-      def cfa_button(label_text, wrapper_classes: [], options: {})
-        @template.tag.div(class: "cfa-button #{wrapper_classes.join(' ')}") do
-          button(label_text, { class: "button button--primary" }.merge(options))
-        end
-      end
-
-      def cfa_radio(method, label_text, value, wrapper_classes: [], options: {})
-        <<~HTML.html_safe
-          <label class="cfa-radio radio-button #{wrapper_classes.join(' ')}">
-            #{radio_button(method, value, options)}
-            #{label_text}
-          </label>
-        HTML
-      end
-
-      def cfa_radiogroup(method, legend_text, wrapper_classes: [], options: {}, &block)
-        field_set_options = {}
-        if object.errors[method].any?
-          error_id = error_id(method)
-          field_set_options = append_to_value(field_set_options, :'aria-describedby', error_id)
-        end
-
-        @template.tag.div({ class: "cfa-radiogroup #{wrapper_classes.join(' ')}" }) do
-          @template.field_set_tag(legend_text, field_set_options) do
-            @template.tag.radiogroup(options) do
-              output_html = ""
-              output_html.concat(@template.capture(&block))
-              output_html.concat(errors_for(object, method, error_id)) if object.errors[method].any?
-              output_html.html_safe
-            end
-          end
         end
       end
 
@@ -78,7 +42,7 @@ module Cfa
           label_options: {},
           **select_html_options,
           &block
-        )
+      )
         select_html_options ||= {}
 
         if object.errors[method].any?
@@ -92,16 +56,36 @@ module Cfa
           select_html_options[:'aria-required'] = true
         end
 
-        wrapper_options = append_to_value(wrapper_options, :class, "cfa-select form-group")
-        select_html_options = append_to_value(select_html_options, :class, "select__element")
+        wrapper_options = append_to_value(wrapper_options, :class, "cfa-select")
         @template.tag.div(wrapper_options) do
-          @template.concat(@template.tag.div(class: "form-question") do
-            label_with_optional_annotation(method, label_text, required, label_options)
-          end)
-          @template.concat(@template.tag.div(class: "select") do
-            select(method, choices, select_options, select_html_options, &block)
-          end)
+          @template.concat(label(method, errors_and_optional_annotation(method, label_text, required), label_options))
+          @template.concat(select(method, choices, select_options, select_html_options, &block))
           @template.concat(error_html&.html_safe)
+        end
+      end
+
+      def cfa_fieldset(method,
+                       legend_text,
+                       required: false,
+                       wrapper_options: {},
+                       label_options: {},
+                       **fieldset_html_options,
+                       &block)
+
+        if object.errors[method].any?
+          error_id = error_id(method)
+          label_options = append_to_value(label_options, :'aria-describedby', error_id)
+        end
+
+        wrapper_options = append_to_value(wrapper_options, :class, 'cfa-fieldset')
+        @template.tag.div(wrapper_options) do
+          @template.tag.fieldset(fieldset_html_options) do
+            output_html = ""
+            output_html.concat(@template.tag.legend(errors_and_optional_annotation(method, legend_text, required), label_options))
+            output_html.concat(@template.capture(&block)) if block_given?
+            output_html.concat(errors_for(object, method, error_id)) if object.errors[method].any?
+            output_html.html_safe
+          end
         end
       end
 
@@ -208,6 +192,21 @@ module Cfa
         end
       end
 
+      def cfa_button(label_text, wrapper_classes: [], options: {})
+        @template.tag.div(class: "cfa-button #{wrapper_classes.join(' ')}") do
+          button(label_text, { class: "button button--primary" }.merge(options))
+        end
+      end
+
+      def cfa_radio(method, label_text, value, wrapper_classes: [], options: {})
+        <<~HTML.html_safe
+          <label class="cfa-radio radio-button #{wrapper_classes.join(' ')}">
+            #{radio_button(method, value, options)}
+            #{label_text}
+          </label>
+        HTML
+      end
+
       private
 
       def help_text_html(help_text, help_text_id)
@@ -218,17 +217,17 @@ module Cfa
         HTML
       end
 
-      def label_with_optional_annotation(method, label_text, required, label_options)
-        label(method, label_options) do
-          @template.concat(<<~HTML.html_safe) if object.errors[method].any?
-            <span class="sr-only">Validation error</span>
-          HTML
-          @template.concat label_text
-          @template.concat(<<~HTML.html_safe) unless required
-            <div class="form-question--optional"></div>
-            <span class="sr-only">(Optional)</span>
-          HTML
-        end
+      def errors_and_optional_annotation(method, label_text, required)
+        output_string = ''
+        output_string.concat(<<~HTML.html_safe) if object.errors[method].any?
+          <span class="sr-only">Validation error</span>
+        HTML
+        output_string.concat(label_text)
+        output_string.concat(<<~HTML.html_safe) unless required
+          <span class="form-question--optional"></span>
+          <span class="sr-only">(Optional)</span>
+        HTML
+        output_string.html_safe
       end
 
       def errors_for(object, method, error_id)
