@@ -1,0 +1,36 @@
+<%= fields_for(:form, @form, builder: Cfa::Styleguide::CfaV2FormBuilder) do |f| %>
+  <%= f.cfa_fieldset(:example_method_radio_a, "Fieldset - empty") %>
+
+  <%= f.cfa_fieldset(:example_method_radio_b,
+                     "Fieldset with wrapper options",
+                     wrapper_options: {
+                         class: 'wrapper-class',
+                         data: {spec: 'wrapper'}
+                     }) do %>
+    <%= f.cfa_radio(:example_method_radio_b, 'First option', :first_option) %>
+    <%= f.cfa_radio(:example_method_radio_b, 'Second option', :second_option) %>
+  <% end %>
+
+  <%= f.cfa_fieldset(:example_method_radio_c,
+                     "Fieldset with fieldset html options",
+                       class: 'my-fieldset-class',
+                       data: {spec: 'honeycrisp'}
+                     ) do %>
+    <%= f.cfa_radio(:example_method_radio_c, 'First option', :first_option) %>
+    <%= f.cfa_radio(:example_method_radio_c, 'Second option', :second_option) %>
+  <% end %>
+
+  <%= f.cfa_fieldset(:example_method_radio_d,
+                     "Fieldset with label_options",
+                     label_options: { data: { spec: 'label-1' } }) do %>
+    <%= f.cfa_radio(:example_method_radio_d, 'First option', :first_option) %>
+    <%= f.cfa_radio(:example_method_radio_d, 'Second option', :second_option) %>
+  <% end %>
+
+  <%= f.cfa_fieldset(:example_method_radio_e,
+                     "Fieldset - required",
+                     required: true) do %>
+    <%= f.cfa_radio(:example_method_radio_e, 'First option', :first_option) %>
+    <%= f.cfa_radio(:example_method_radio_e, 'Second option', :second_option) %>
+  <% end %>
+<% end %>
