@@ -479,12 +479,12 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
       expect(html_component.classes).to include("cfa-radio")
     end
 
-    context "when options provided" do
+    context "when input options provided" do
       let(:output) do
         form_builder.cfa_radio(:example_method_with_validation,
                                "Truthy value",
                                "true",
-                               options: { 'data-follow-up': "#follow-up-question" })
+                               'data-follow-up': "#follow-up-question")
       end
 
       it "passes options to the radio button" do
@@ -493,17 +493,23 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
       end
     end
 
-    context "wrapper_classes provided" do
+    context "wrapper options provided" do
       let(:output) do
         form_builder.cfa_radio(:example_method_with_validation,
                                "Truthy value",
                                "true",
-                               wrapper_classes: ["wrapper-class"])
+                               wrapper_options: { class: 'wrapper-class', id: 'wrapper-id' })
       end
 
-      it "assigns wrapper classes on the containing element" do
+      it "assigns wrapper classes on the containing element, preserving hook class" do
         html_component = Nokogiri::HTML.fragment(output).child
+        expect(html_component.classes).to include("cfa-radio")
         expect(html_component.classes).to include("wrapper-class")
+      end
+
+      it "assigns wrapper options on the outermost element" do
+        html_component = Nokogiri::HTML.fragment(output).child
+        expect(html_component.get_attribute("id")).to include("wrapper-id")
       end
     end
   end
