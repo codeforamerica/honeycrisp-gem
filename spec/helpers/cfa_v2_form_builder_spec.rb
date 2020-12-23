@@ -194,123 +194,6 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
     end
   end
 
-  describe ".cfa_radio" do
-    let(:output) do
-      form_builder.cfa_radio(:example_method_with_validation, "Truthy value", "true")
-    end
-
-    it "renders a radio buttons with valid HTML" do
-      expect(output).to be_html_safe
-    end
-
-    it "includes an identifying class on the containing element" do
-      html_component = Nokogiri::HTML.fragment(output).child
-      expect(html_component.classes).to include("cfa-radio")
-    end
-
-    context "when options provided" do
-      let(:output) do
-        form_builder.cfa_radio(:example_method_with_validation,
-                               "Truthy value",
-                               "true",
-                               options: { 'data-follow-up': "#follow-up-question" })
-      end
-
-      it "passes options to the radio button" do
-        input_html = Nokogiri::HTML.fragment(output).at_css("input")
-        expect(input_html.get_attribute("data-follow-up")).to eq("#follow-up-question")
-      end
-    end
-
-    context "wrapper_classes provided" do
-      let(:output) do
-        form_builder.cfa_radio(:example_method_with_validation,
-                               "Truthy value",
-                               "true",
-                               wrapper_classes: ["wrapper-class"])
-      end
-
-      it "assigns wrapper classes on the containing element" do
-        html_component = Nokogiri::HTML.fragment(output).child
-        expect(html_component.classes).to include("wrapper-class")
-      end
-    end
-  end
-
-  describe ".cfa_radiogroup" do
-    let(:output) do
-      form_builder.cfa_radiogroup(:example_method_with_validation, "Radio group") do
-        ERB.new(
-          "<%= form_builder.cfa_radio(:example_method_with_validation, 'First option', :first_option) %>
-           <%= form_builder.cfa_radio(:example_method_with_validation, 'Second option', :second_option) %>",
-        ).result(binding).html_safe
-      end
-    end
-
-    it "renders a radio group with valid HTML" do
-      expect(output).to be_html_safe
-    end
-
-    it "renders all items in passed block" do
-      html_component = Nokogiri::HTML.fragment(output).css(".cfa-radio")
-      expect(html_component.count).to eq 2
-    end
-
-    it "includes an identifying class on the containing element" do
-      html_component = Nokogiri::HTML.fragment(output).child
-      expect(html_component.classes).to include("cfa-radiogroup")
-    end
-
-    it "displays a legend" do
-      legend = Nokogiri::HTML.fragment(output).at_css("legend")
-      expect(legend.text).to include "Radio group"
-    end
-
-    context "when options provided" do
-      let(:output) do
-        form_builder.cfa_radiogroup(:example_method_with_validation, "Radio group", options: { 'data-option': "some-value" }) do
-          ERB.new(
-            "<%= form_builder.cfa_radio(:example_method_with_validation, 'First option', :first_option) %>
-            <%= form_builder.cfa_radio(:example_method_with_validation, 'Second option', :second_option) %>",
-          ).result(binding).html_safe
-        end
-      end
-
-      it "passes options to the radiogroup" do
-        radiogroup_html = Nokogiri::HTML.fragment(output).at_css("radiogroup")
-        expect(radiogroup_html.get_attribute("data-option")).to eq("some-value")
-      end
-    end
-
-    context "errors" do
-      before do
-        fake_model.validate
-      end
-
-      it "should associate form errors with fieldset" do
-        fieldset_html = Nokogiri::HTML.fragment(output).at_css("fieldset")
-        error_text_html = Nokogiri::HTML.fragment(output).at_css(".text--error")
-        expect(fieldset_html.get_attribute("aria-describedby")).to eq(error_text_html.get_attribute("id"))
-      end
-    end
-
-    context "wrapper_classes provided" do
-      let(:output) do
-        form_builder.cfa_radiogroup(:example_method_with_validation, "Radio group", wrapper_classes: ["wrapper-class"]) do
-          ERB.new(
-            "<%= form_builder.cfa_radio(:example_method_with_validation, 'First option', :first_option) %>
-            <%= form_builder.cfa_radio(:example_method_with_validation, 'Second option', :second_option) %>",
-          ).result(binding).html_safe
-        end
-      end
-
-      it "assigns wrapper classes on the containing element" do
-        html_component = Nokogiri::HTML.fragment(output).child
-        expect(html_component.classes).to include("wrapper-class")
-      end
-    end
-  end
-
   describe ".cfa_select" do
     let(:output) do
       form_builder.cfa_select(:example_method_with_validation,
@@ -412,7 +295,7 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
       end
 
       it "does not append the optional text after the label" do
-        html_component = Nokogiri::HTML.fragment(output).at_css(".form-question")
+        html_component = Nokogiri::HTML.fragment(output).at_css("label")
         expect(html_component.text).to_not include("(Optional)")
       end
 
@@ -454,6 +337,173 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
           expect(html_component.classes).to include("foo")
           expect(html_component.classes).to include("form-group--error")
         end
+      end
+    end
+  end
+
+  describe ".cfa_fieldset" do
+    let(:output) do
+      form_builder.cfa_fieldset(:example_method_with_validation, "My radio buttons") do
+        ERB.new(
+            "<%= form_builder.cfa_radio(:example_method_with_validation, 'First option', :first_option) %>
+           <%= form_builder.cfa_radio(:example_method_with_validation, 'Second option', :second_option) %>",
+            ).result(binding).html_safe
+      end
+    end
+
+    it "renders a fieldset with valid HTML" do
+      expect(output).to be_html_safe
+    end
+
+    it "renders all items in passed block" do
+      html_component = Nokogiri::HTML.fragment(output).css(".cfa-radio")
+      expect(html_component.count).to eq 2
+    end
+
+    it "includes an identifying class on the containing element" do
+      html_component = Nokogiri::HTML.fragment(output).child
+      expect(html_component.classes).to include("cfa-fieldset")
+    end
+
+    it "displays a legend" do
+      legend = Nokogiri::HTML.fragment(output).at_css("legend")
+      expect(legend.text).to include "My radio buttons"
+    end
+
+    context "wrapper_options provided" do
+      let(:output) do
+        form_builder.cfa_fieldset(:example_method_with_validation, "My radio buttons", wrapper_options: { id: 'wrapper-id', class: "wrapper-class" }) do
+          ERB.new(
+              "<%= form_builder.cfa_radio(:example_method_with_validation, 'First option', :first_option) %>
+            <%= form_builder.cfa_radio(:example_method_with_validation, 'Second option', :second_option) %>",
+              ).result(binding).html_safe
+        end
+      end
+
+      it "does not overwrite existing classes" do
+        html_component = Nokogiri::HTML.fragment(output).child
+        expect(html_component.classes).to include("cfa-fieldset")
+      end
+
+      it "assigns wrapper options on the outermost element" do
+        html_component = Nokogiri::HTML.fragment(output).child
+        expect(html_component.classes).to include("wrapper-class")
+        expect(html_component.get_attribute("id")).to include("wrapper-id")
+      end
+    end
+
+    context "when fieldset_html_options provided" do
+      let(:output) do
+        form_builder.cfa_fieldset(:example_method_with_validation, "My radio buttons", class: 'my-class', id: 'my-id') do
+          ERB.new(
+              "<%= form_builder.cfa_radio(:example_method_with_validation, 'First option', :first_option) %>
+            <%= form_builder.cfa_radio(:example_method_with_validation, 'Second option', :second_option) %>",
+              ).result(binding).html_safe
+        end
+      end
+
+      it "assigns wrapper options on the outermost element" do
+        html_component = Nokogiri::HTML.fragment(output).at_css("fieldset")
+        expect(html_component.classes).to include("my-class")
+        expect(html_component.get_attribute("id")).to include("my-id")
+      end
+    end
+
+    context "label_options provided" do
+      let(:output) do
+        form_builder.cfa_fieldset(:example_method_with_validation, "My radio buttons", label_options: { class: "label-class", data: { spec: 'label-1' }})
+      end
+
+      it "assigns label options on the legend" do
+        html_component = Nokogiri::HTML.fragment(output).at_css("legend")
+        expect(html_component.classes).to include("label-class")
+        expect(html_component.get_attribute("data-spec")).to include("label-1")
+      end
+    end
+
+    context 'when no block given' do
+      let(:output) do
+        form_builder.cfa_fieldset(:example_method_with_validation, "My radio buttons")
+      end
+
+      it 'does not raise an error' do
+        expect(output).to be_html_safe
+      end
+    end
+
+    context "errors" do
+      let(:output) do
+        form_builder.cfa_fieldset(:example_method_with_validation, "My radio buttons", label_options: { 'aria-describedby': "another-id" })
+      end
+
+      before do
+        fake_model.validate
+      end
+
+      it "includes text for screen readers in the legend indicating there is an error" do
+        label_text = Nokogiri::HTML.fragment(output).css("legend .sr-only").map(&:text).join(' ')
+        expect(label_text).to start_with("Validation error")
+      end
+
+      it "associates form errors with input and appends error id to existing aria-describedby attributes" do
+        input_html = Nokogiri::HTML.fragment(output).at_css("input")
+        error_text_html = Nokogiri::HTML.fragment(output).at_css(".text--error")
+        expect(input_html.get_attribute("aria-describedby")).to include("another-id")
+        expect(input_html.get_attribute("aria-describedby")).to include(error_text_html.get_attribute("id"))
+      end
+    end
+
+    context "required is true" do
+      let(:output) do
+        form_builder.cfa_fieldset(:example_method_with_validation, "My radio buttons", required: true)
+      end
+
+      it "does not append the optional sr-only text after the legend" do
+        html_component = Nokogiri::HTML.fragment(output).at_css("legend")
+        expect(html_component.text).to_not include("(Optional)")
+      end
+    end
+  end
+
+  describe ".cfa_radio" do
+    let(:output) do
+      form_builder.cfa_radio(:example_method_with_validation, "Truthy value", "true")
+    end
+
+    it "renders a radio buttons with valid HTML" do
+      expect(output).to be_html_safe
+    end
+
+    it "includes an identifying class on the containing element" do
+      html_component = Nokogiri::HTML.fragment(output).child
+      expect(html_component.classes).to include("cfa-radio")
+    end
+
+    context "when options provided" do
+      let(:output) do
+        form_builder.cfa_radio(:example_method_with_validation,
+                               "Truthy value",
+                               "true",
+                               options: { 'data-follow-up': "#follow-up-question" })
+      end
+
+      it "passes options to the radio button" do
+        input_html = Nokogiri::HTML.fragment(output).at_css("input")
+        expect(input_html.get_attribute("data-follow-up")).to eq("#follow-up-question")
+      end
+    end
+
+    context "wrapper_classes provided" do
+      let(:output) do
+        form_builder.cfa_radio(:example_method_with_validation,
+                               "Truthy value",
+                               "true",
+                               wrapper_classes: ["wrapper-class"])
+      end
+
+      it "assigns wrapper classes on the containing element" do
+        html_component = Nokogiri::HTML.fragment(output).child
+        expect(html_component.classes).to include("wrapper-class")
       end
     end
   end
