@@ -30,7 +30,7 @@ module Cfa
           error_html = errors_for(object, method, error_id)
         end
 
-        wrapper_options = append_to_value(wrapper_options, :class, "cfa-text-input form-group")
+        wrapper_options = append_to_value(wrapper_options, :class, "cfa-text-input")
         @template.tag.div(wrapper_options) do
           @template.concat(label(method, errors_and_optional_annotation(method, label_text, required), label_options))
           @template.concat(help_text_html&.html_safe)
@@ -82,16 +82,17 @@ module Cfa
         if object.errors[method].any?
           error_id = error_id(method)
           label_options = append_to_value(label_options, :'aria-describedby', error_id)
+          wrapper_options = append_to_value(wrapper_options, :class, "form-group--error")
         end
 
         wrapper_options = append_to_value(wrapper_options, :class, 'cfa-fieldset')
         @template.tag.div(wrapper_options) do
           @template.tag.fieldset(fieldset_html_options) do
-            output_html = ""
-            output_html.concat(@template.tag.legend(errors_and_optional_annotation(method, legend_text, required), label_options))
-            output_html.concat(@template.capture(&block)) if block_given?
-            output_html.concat(errors_for(object, method, error_id)) if object.errors[method].any?
-            output_html.html_safe
+            output_string = ""
+            output_string.concat(@template.tag.legend(errors_and_optional_annotation(method, legend_text, required), label_options))
+            output_string.concat(@template.capture(&block)) if block_given?
+            output_string.concat(errors_for(object, method, error_id)) if object.errors[method].any?
+            output_string.html_safe
           end
         end
       end
@@ -106,11 +107,38 @@ module Cfa
         wrapper_options = append_to_value(wrapper_options, :class, 'cfa-radio')
         @template.tag.div(wrapper_options) do
           @template.tag.label(label_options) do
-            output_html = ""
-            output_html.concat(radio_button(method, value, input_options))
-            output_html.concat(label_text)
-            output_html.html_safe
+            output_string = ""
+            output_string.concat(radio_button(method, value, input_options))
+            output_string.concat(label_text)
+            output_string.html_safe
           end
+        end
+      end
+
+      def cfa_checkbox(method,
+                       label_text,
+                       checked_value = "1",
+                       unchecked_value = "0",
+                       wrapper_options: {},
+                       label_options: {},
+                       **input_options)
+
+        if object.errors[method].any?
+          wrapper_options = append_to_value(wrapper_options, :class, "form-group--error")
+          error_id = error_id(method)
+          input_options = append_to_value(input_options, :'aria-describedby', error_id)
+          error_html = errors_for(object, method, error_id)
+        end
+
+        wrapper_options = append_to_value(wrapper_options, :class, "cfa-checkbox")
+        @template.tag.div(wrapper_options) do
+          @template.concat(label(method, label_options) do
+            output_string = ""
+            output_string.concat(check_box(method, input_options, checked_value, unchecked_value))
+            output_string.concat(label_text)
+            output_string.html_safe
+          end)
+          @template.concat(error_html&.html_safe)
         end
       end
 
@@ -137,31 +165,31 @@ module Cfa
         end
 
         month_field = text_field(method, base_options.merge(
-          value: object.send(method) ? object.send(method).month : nil,
-          id: "#{object_name}_#{method}_2i",
-          name: "#{object_name}[#{method}(2i)]",
-          "aria-label": "Month #{helper_text_array[0]}",
-          size: 2,
-          placeholder: helper_text_array[0],
-        ).merge(append_to_value(base_options, :class, "form-width--month")))
+            value: object.send(method) ? object.send(method).month : nil,
+            id: "#{object_name}_#{method}_2i",
+            name: "#{object_name}[#{method}(2i)]",
+            "aria-label": "Month #{helper_text_array[0]}",
+            size: 2,
+            placeholder: helper_text_array[0],
+            ).merge(append_to_value(base_options, :class, "form-width--month")))
 
         day_field = text_field(method, base_options.merge(
-          value: object.send(method) ? object.send(method).day : nil,
-          id: "#{object_name}_#{method}_3i",
-          name: "#{object_name}[#{method}(3i)]",
-          "aria-label": "Day #{helper_text_array[1]}",
-          size: 2,
-          placeholder: helper_text_array[1],
-        ).merge(append_to_value(base_options, :class, "form-width--day")))
+            value: object.send(method) ? object.send(method).day : nil,
+            id: "#{object_name}_#{method}_3i",
+            name: "#{object_name}[#{method}(3i)]",
+            "aria-label": "Day #{helper_text_array[1]}",
+            size: 2,
+            placeholder: helper_text_array[1],
+            ).merge(append_to_value(base_options, :class, "form-width--day")))
 
         year_field = text_field(method, base_options.merge(
-          value: object.send(method) ? object.send(method).year : nil,
-          id: "#{object_name}_#{method}_1i",
-          name: "#{object_name}[#{method}(1i)]",
-          "aria-label": "Year #{helper_text_array[2]}",
-          size: 4,
-          placeholder: helper_text_array[2],
-        ).merge(append_to_value(base_options, :class, "form-width--year")))
+            value: object.send(method) ? object.send(method).year : nil,
+            id: "#{object_name}_#{method}_1i",
+            name: "#{object_name}[#{method}(1i)]",
+            "aria-label": "Year #{helper_text_array[2]}",
+            size: 4,
+            placeholder: helper_text_array[2],
+            ).merge(append_to_value(base_options, :class, "form-width--year")))
 
         @template.tag.div({ class: "cfa-date-input form-group #{wrapper_classes.join(' ')}" }) do
           @template.tag.fieldset(field_set_options) do
@@ -184,36 +212,6 @@ module Cfa
               #{error_html}
             HTML
           end
-        end
-      end
-
-      def cfa_checkbox(method,
-                       label_text,
-                       checked_value = "1",
-                       unchecked_value = "0",
-                       wrapper_classes: [],
-                       options: {})
-
-        if object.errors[method].any?
-          wrapper_classes.push("form-group--error")
-          error_id = error_id(method)
-          options = append_to_value(options, :'aria-describedby', error_id)
-          error_html = errors_for(object, method, error_id)
-        end
-
-        label_classes = ["checkbox"]
-
-        if options[:disabled]
-          label_classes.push("is-disabled")
-        end
-
-        @template.tag.div({ class: "cfa-checkbox form-group input-group #{wrapper_classes.join(' ')}" }) do
-          <<~HTML.html_safe
-            <label class="#{label_classes.join(' ')}">
-              #{check_box(method, options, checked_value, unchecked_value)} #{label_text}
-            </label>
-            #{error_html}
-          HTML
         end
       end
 

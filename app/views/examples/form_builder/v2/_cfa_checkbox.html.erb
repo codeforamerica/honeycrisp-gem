@@ -1,0 +1,16 @@
+<%= fields_for(:form, @form, builder: Cfa::Styleguide::CfaV2FormBuilder) do |f| %>
+  <%= f.cfa_fieldset(:example_method_checkbox_a, "Checkbox with wrapper options") do %>
+    <%= f.cfa_checkbox(:example_method_checkbox_a, 'First option', :first_option, wrapper_options: { class: 'wrapper-class' }) %>
+    <%= f.cfa_checkbox(:example_method_checkbox_a, 'Second option', :second_option) %>
+  <% end %>
+
+  <%= f.cfa_fieldset(:example_method_checkbox_b, "Checkbox with label options") do %>
+    <%= f.cfa_checkbox(:example_method_checkbox_b, 'First option', :first_option, label_options: { class: 'wrapper-class' }) %>
+    <%= f.cfa_checkbox(:example_method_checkbox_b, 'Second option', :second_option) %>
+  <% end %>
+
+  <%= f.cfa_fieldset(:example_method_checkbox_c, "Checkbox with input options") do %>
+    <%= f.cfa_checkbox(:example_method_checkbox_c, 'First option', :first_option, required: true, class: 'my-checkbox-class') %>
+    <%= f.cfa_checkbox(:example_method_checkbox_c, 'Second option', :second_option, disabled: true, class: 'my-checkbox-class') %>
+  <% end %>
+<% end %>
