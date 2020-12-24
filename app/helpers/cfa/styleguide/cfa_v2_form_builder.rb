@@ -2,7 +2,7 @@ module Cfa
   module Styleguide
     class CfaV2FormBuilder < ActionView::Helpers::FormBuilder
       def cfa_button(label_text, wrapper_options: {}, **input_options)
-        wrapper_options = append_to_value(wrapper_options, :class, 'cfa-button')
+        wrapper_options = append_to_value(wrapper_options, :class, "cfa-button")
         @template.tag.div(wrapper_options) do
           button(label_text, { class: "button button--primary" }.merge(input_options))
         end
@@ -49,7 +49,7 @@ module Cfa
           label_options: {},
           **select_html_options,
           &block
-      )
+        )
         select_html_options ||= {}
 
         if object.errors[method].any?
@@ -85,7 +85,7 @@ module Cfa
           wrapper_options = append_to_value(wrapper_options, :class, "form-group--error")
         end
 
-        wrapper_options = append_to_value(wrapper_options, :class, 'cfa-fieldset')
+        wrapper_options = append_to_value(wrapper_options, :class, "cfa-fieldset")
         @template.tag.div(wrapper_options) do
           @template.tag.fieldset(fieldset_html_options) do
             output_string = ""
@@ -104,7 +104,7 @@ module Cfa
                     label_options: {},
                     **input_options)
 
-        wrapper_options = append_to_value(wrapper_options, :class, 'cfa-radio')
+        wrapper_options = append_to_value(wrapper_options, :class, "cfa-radio")
         @template.tag.div(wrapper_options) do
           @template.tag.label(label_options) do
             output_string = ""
@@ -165,31 +165,31 @@ module Cfa
         end
 
         month_field = text_field(method, base_options.merge(
-            value: object.send(method) ? object.send(method).month : nil,
-            id: "#{object_name}_#{method}_2i",
-            name: "#{object_name}[#{method}(2i)]",
-            "aria-label": "Month #{helper_text_array[0]}",
-            size: 2,
-            placeholder: helper_text_array[0],
-            ).merge(append_to_value(base_options, :class, "form-width--month")))
+          value: object.send(method) ? object.send(method).month : nil,
+          id: "#{object_name}_#{method}_2i",
+          name: "#{object_name}[#{method}(2i)]",
+          "aria-label": "Month #{helper_text_array[0]}",
+          size: 2,
+          placeholder: helper_text_array[0],
+        ).merge(append_to_value(base_options, :class, "form-width--month")))
 
         day_field = text_field(method, base_options.merge(
-            value: object.send(method) ? object.send(method).day : nil,
-            id: "#{object_name}_#{method}_3i",
-            name: "#{object_name}[#{method}(3i)]",
-            "aria-label": "Day #{helper_text_array[1]}",
-            size: 2,
-            placeholder: helper_text_array[1],
-            ).merge(append_to_value(base_options, :class, "form-width--day")))
+          value: object.send(method) ? object.send(method).day : nil,
+          id: "#{object_name}_#{method}_3i",
+          name: "#{object_name}[#{method}(3i)]",
+          "aria-label": "Day #{helper_text_array[1]}",
+          size: 2,
+          placeholder: helper_text_array[1],
+        ).merge(append_to_value(base_options, :class, "form-width--day")))
 
         year_field = text_field(method, base_options.merge(
-            value: object.send(method) ? object.send(method).year : nil,
-            id: "#{object_name}_#{method}_1i",
-            name: "#{object_name}[#{method}(1i)]",
-            "aria-label": "Year #{helper_text_array[2]}",
-            size: 4,
-            placeholder: helper_text_array[2],
-            ).merge(append_to_value(base_options, :class, "form-width--year")))
+          value: object.send(method) ? object.send(method).year : nil,
+          id: "#{object_name}_#{method}_1i",
+          name: "#{object_name}[#{method}(1i)]",
+          "aria-label": "Year #{helper_text_array[2]}",
+          size: 4,
+          placeholder: helper_text_array[2],
+        ).merge(append_to_value(base_options, :class, "form-width--year")))
 
         @template.tag.div({ class: "cfa-date-input form-group #{wrapper_classes.join(' ')}" }) do
           @template.tag.fieldset(field_set_options) do
@@ -226,7 +226,7 @@ module Cfa
       end
 
       def errors_and_optional_annotation(method, label_text, required)
-        output_string = ''
+        output_string = ""
         output_string.concat(<<~HTML.html_safe) if object.errors[method].any?
           <span class="sr-only">Validation error</span>
         HTML
