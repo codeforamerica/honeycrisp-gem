@@ -10,13 +10,10 @@ module Cfa
 
       def cfa_text_input(method,
                          label_text,
-                         required: false,
                          help_text: nil,
                          wrapper_options: {},
                          label_options: {},
                          **input_options)
-        input_options[:'aria-required'] = true if required
-
         if help_text.present?
           help_text_id = help_text_id(method)
           input_options = append_to_value(input_options, :'aria-describedby', help_text_id)
@@ -32,10 +29,10 @@ module Cfa
 
         wrapper_options = append_to_value(wrapper_options, :class, "cfa-text-input")
         @template.tag.div(wrapper_options) do
-          @template.concat(label(method, errors_and_optional_annotation(method, label_text, required), label_options))
-          @template.concat(help_text_html&.html_safe)
+          @template.concat(label(method, errors_and_optional_annotation(method, label_text, input_options[:required]), label_options))
+          @template.concat(help_text_html)
           @template.concat(text_field(method, input_options))
-          @template.concat(error_html&.html_safe)
+          @template.concat(error_html)
         end
       end
 
@@ -43,7 +40,6 @@ module Cfa
           method,
           label_text,
           choices,
-          required: false,
           select_options: {},
           wrapper_options: {},
           label_options: {},
@@ -59,13 +55,9 @@ module Cfa
           select_html_options = append_to_value(select_html_options, :'aria-describedby', error_id)
         end
 
-        if required
-          select_html_options[:'aria-required'] = true
-        end
-
         wrapper_options = append_to_value(wrapper_options, :class, "cfa-select")
         @template.tag.div(wrapper_options) do
-          @template.concat(label(method, errors_and_optional_annotation(method, label_text, required), label_options))
+          @template.concat(label(method, errors_and_optional_annotation(method, label_text, select_html_options[:required]), label_options))
           @template.concat(select(method, choices, select_options, select_html_options, &block))
           @template.concat(error_html&.html_safe)
         end
@@ -73,7 +65,6 @@ module Cfa
 
       def cfa_fieldset(method,
                        legend_text,
-                       required: false,
                        wrapper_options: {},
                        label_options: {},
                        **fieldset_html_options,
@@ -88,11 +79,9 @@ module Cfa
         wrapper_options = append_to_value(wrapper_options, :class, "cfa-fieldset")
         @template.tag.div(wrapper_options) do
           @template.tag.fieldset(fieldset_html_options) do
-            output_string = ""
-            output_string.concat(@template.tag.legend(errors_and_optional_annotation(method, legend_text, required), label_options))
-            output_string.concat(@template.capture(&block)) if block_given?
-            output_string.concat(errors_for(object, method, error_id)) if object.errors[method].any?
-            output_string.html_safe
+            @template.concat(@template.tag.legend(errors_and_optional_annotation(method, legend_text, fieldset_html_options[:required]), label_options))
+            @template.concat(@template.capture(&block)) if block_given?
+            @template.concat(errors_for(object, method, error_id)) if object.errors[method].any?
           end
         end
       end
@@ -107,10 +96,8 @@ module Cfa
         wrapper_options = append_to_value(wrapper_options, :class, "cfa-radio")
         @template.tag.div(wrapper_options) do
           @template.tag.label(label_options) do
-            output_string = ""
-            output_string.concat(radio_button(method, value, input_options))
-            output_string.concat(label_text)
-            output_string.html_safe
+            @template.concat(radio_button(method, value, input_options))
+            @template.concat(label_text)
           end
         end
       end
@@ -132,13 +119,11 @@ module Cfa
 
         wrapper_options = append_to_value(wrapper_options, :class, "cfa-checkbox")
         @template.tag.div(wrapper_options) do
-          @template.concat(label(method, label_options) do
-            output_string = ""
-            output_string.concat(check_box(method, input_options, checked_value, unchecked_value))
-            output_string.concat(label_text)
-            output_string.html_safe
+          @template.concat(@template.tag.label(label_options) do
+            @template.concat(check_box(method, input_options, checked_value, unchecked_value))
+            @template.concat(label_text)
           end)
-          @template.concat(error_html&.html_safe)
+          @template.concat(error_html)
         end
       end
 
@@ -218,7 +203,7 @@ module Cfa
       private
 
       def help_text_html(help_text, help_text_id)
-        <<~HTML
+        <<~HTML.html_safe
           <div class="text--help" id="#{help_text_id}">
             #{help_text}
           </div>
@@ -240,7 +225,7 @@ module Cfa
 
       def errors_for(object, method, error_id)
         errors = object.errors[method]
-        <<~HTML
+        <<~HTML.html_safe
           <div class="text--error" id="#{error_id}">
             <i class="icon-warning"></i>
             #{errors.join(', ')}
