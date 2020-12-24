@@ -176,9 +176,9 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
         expect(label.text).to_not include("(Optional)")
       end
 
-      it "sets the aria-required attribute on the select tag" do
+      it "sets the required attribute on the select tag" do
         input_html = Nokogiri::HTML.fragment(output).at_css("input")
-        expect(input_html.get_attribute("aria-required")).to be_truthy
+        expect(input_html.get_attribute("required")).to be_truthy
       end
     end
 
@@ -305,9 +305,9 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
         expect(html_component.text).to_not include("(Optional)")
       end
 
-      it "sets the aria-required attribute on the select tag" do
+      it "sets the required attribute on the select tag" do
         select_html = Nokogiri::HTML.fragment(output).at_css("select")
-        expect(select_html.get_attribute("aria-required")).to be_truthy
+        expect(select_html.get_attribute("required")).to be_truthy
       end
     end
 
