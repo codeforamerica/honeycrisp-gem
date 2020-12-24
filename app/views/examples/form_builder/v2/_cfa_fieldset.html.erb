@@ -27,10 +27,10 @@
     <%= f.cfa_radio(:example_method_fieldset_d, 'Second option', :second_option) %>
   <% end %>
 
-  <%= f.cfa_fieldset(:example_method_fieldset_e,
+  <%= f.cfa_fieldset(:example_method_with_validation_fieldset,
                      "Fieldset - required",
                      required: true) do %>
-    <%= f.cfa_radio(:example_method_fieldset_e, 'First option', :first_option) %>
-    <%= f.cfa_radio(:example_method_fieldset_e, 'Second option', :second_option) %>
+    <%= f.cfa_radio(:example_method_with_validation_fieldset, 'First option', :first_option) %>
+    <%= f.cfa_radio(:example_method_with_validation_fieldset, 'Second option', :second_option) %>
   <% end %>
 <% end %>
