@@ -112,6 +112,11 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
         expect(label_text).to start_with("Validation error")
       end
 
+      it 'adds an error class to containing element' do
+        html_component = Nokogiri::HTML.fragment(output).child
+        expect(html_component.classes).to include("form-group--error")
+      end
+
       it "associates form errors with input and appends error id to existing aria-describedby attributes" do
         input_html = Nokogiri::HTML.fragment(output).at_css("input")
         error_text_html = Nokogiri::HTML.fragment(output).at_css(".text--error")
@@ -253,11 +258,6 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
         expect(select_html.get_attribute("disabled")).to be_truthy
         expect(select_html.classes).to include("input-class")
       end
-
-      it "does not overwrite select__element class" do
-        select_html = Nokogiri::HTML.fragment(output).at_css("select")
-        expect(select_html.classes).to include("select__element")
-      end
     end
 
     context "label_options provided" do
@@ -328,6 +328,11 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
         error_text_html = Nokogiri::HTML.fragment(output).at_css(".text--error")
         expect(select_html.get_attribute("aria-describedby")).to include("another-id")
         expect(select_html.get_attribute("aria-describedby")).to include(error_text_html.get_attribute("id"))
+      end
+
+      it 'adds an error class to containing element' do
+        html_component = Nokogiri::HTML.fragment(output).child
+        expect(html_component.classes).to include("form-group--error")
       end
 
       context "with wrapper option classes" do
@@ -451,11 +456,18 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
         expect(label_text).to start_with("Validation error")
       end
 
-      it "associates form errors with input and appends error id to existing aria-describedby attributes" do
-        input_html = Nokogiri::HTML.fragment(output).at_css("input")
+      it 'adds an error class to containing element' do
+        html_component = Nokogiri::HTML.fragment(output).child
+        expect(html_component.classes).to include("form-group--error")
+      end
+
+      it "associates form errors with legend and appends error id to existing aria-describedby attributes" do
+        # Note: we're not sure if associating the errors to the legend is the best approach,
+        # but wasn't sure how best to do it since we don't have inputs in this block
+        legend_html = Nokogiri::HTML.fragment(output).at_css("legend")
         error_text_html = Nokogiri::HTML.fragment(output).at_css(".text--error")
-        expect(input_html.get_attribute("aria-describedby")).to include("another-id")
-        expect(input_html.get_attribute("aria-describedby")).to include(error_text_html.get_attribute("id"))
+        expect(legend_html.get_attribute("aria-describedby")).to include("another-id")
+        expect(legend_html.get_attribute("aria-describedby")).to include(error_text_html.get_attribute("id"))
       end
     end
 
@@ -465,6 +477,10 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
       end
 
       it "does not append the optional sr-only text after the legend" do
+        # This is another place where it's an awkward fit. I think we want to show "optional" visually
+        # and with screenreaders here with the legend, but "required" as an attribute can only be
+        # set on inputs, not fieldsets or legends.
+
         html_component = Nokogiri::HTML.fragment(output).at_css("legend")
         expect(html_component.text).to_not include("(Optional)")
       end
@@ -507,14 +523,14 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
                                wrapper_options: { class: 'wrapper-class', id: 'wrapper-id' })
       end
 
-      it "assigns wrapper classes on the containing element, preserving hook class" do
+      it "does not overwrite existing classes" do
         html_component = Nokogiri::HTML.fragment(output).child
         expect(html_component.classes).to include("cfa-radio")
-        expect(html_component.classes).to include("wrapper-class")
       end
 
       it "assigns wrapper options on the outermost element" do
         html_component = Nokogiri::HTML.fragment(output).child
+        expect(html_component.classes).to include("wrapper-class")
         expect(html_component.get_attribute("id")).to include("wrapper-id")
       end
     end
@@ -644,54 +660,64 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
       expect(html_component.classes).to include("cfa-checkbox")
     end
 
-    context "options are provided" do
+    context "input options provided" do
       let(:output) do
-        form_builder.cfa_checkbox(:example_method_with_validation, "Checkbox stuff", options: { disabled: true, 'data-some-attribute': "some-value" })
+        form_builder.cfa_checkbox(:example_method_with_validation, "Checkbox stuff", disabled: true, 'data-some-attribute': "some-value")
       end
 
-      it "passes options to the checkbox" do
+      it "passes input options to the checkbox" do
         checkbox_html = Nokogiri::HTML.fragment(output).at_css("input[type='checkbox']")
         expect(checkbox_html.get_attribute("disabled")).to be_truthy
         expect(checkbox_html.get_attribute("data-some-attribute")).to eq("some-value")
       end
     end
 
+    context "wrapper options provided" do
+      let(:output) do
+        form_builder.cfa_checkbox(:example_method_with_validation,
+                                  "Checkbox stuff",
+                                  wrapper_options: {
+                                    class: "wrapper-class",
+                                    id: "wrapper-id"
+                                  })
+      end
+
+      it "does not overwrite existing classes" do
+        html_component = Nokogiri::HTML.fragment(output).child
+        expect(html_component.classes).to include("cfa-checkbox")
+      end
+
+      it "assigns wrapper options on the outermost element" do
+        html_component = Nokogiri::HTML.fragment(output).child
+        expect(html_component.classes).to include("wrapper-class")
+        expect(html_component.get_attribute("id")).to include("wrapper-id")
+      end
+    end
+
     context "errors" do
       let(:output) do
-        form_builder.cfa_checkbox(:example_method_with_validation, "Checkbox stuff", options: { 'aria-describedby': "another-id" })
+        form_builder.cfa_checkbox(:example_method_with_validation,
+                                  "Checkbox stuff",
+                                  'aria-describedby': "another-id",
+                                  wrapper_options: { class: 'wrapper-class' })
       end
 
       before do
         fake_model.validate
       end
 
-      it "associates form errors with input and appends error id to existing aria-describedby attributes" do
+      it "associates form errors with input and appends error id to aria-describedby" do
         checkbox_html = Nokogiri::HTML.fragment(output).at_css("input[type='checkbox']")
         error_text_html = Nokogiri::HTML.fragment(output).at_css(".text--error")
+
         expect(checkbox_html.get_attribute("aria-describedby")).to include("another-id")
         expect(checkbox_html.get_attribute("aria-describedby")).to include(error_text_html.get_attribute("id"))
       end
-    end
 
-    context "wrapper_classes provided" do
-      let(:output) do
-        form_builder.cfa_checkbox(:example_method_with_validation, "Checkbox stuff", wrapper_classes: ["wrapper-class"])
-      end
-
-      it "assigns wrapper classes on the containing element" do
+      it "appends error class to wrapping classes" do
         html_component = Nokogiri::HTML.fragment(output).child
+        expect(html_component.classes).to include("form-group--error")
         expect(html_component.classes).to include("wrapper-class")
-      end
-    end
-
-    context "when disabled" do
-      let(:output) do
-        form_builder.cfa_checkbox(:example_method_with_validation, "Checkbox stuff", options: { disabled: true })
-      end
-
-      it "adds the correct class to the label" do
-        label_html = Nokogiri::HTML.fragment(output).at_css("label")
-        expect(label_html.classes).to include("is-disabled")
       end
     end
 
