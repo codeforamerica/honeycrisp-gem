@@ -319,4 +319,5 @@ $(document).ready(function () {
   accordion.init();
   selectBodyBottomMargin.init();
   numericFormatters.init();
+  incrementer.init();
 });
