@@ -202,21 +202,23 @@ var inputGroupSelector = (function() {
 
 var noneOfTheAbove = (function() {
   var noneOf = {
-    init: function () {
-      var $noneCheckbox = $('#none__checkbox');
-      var $otherCheckboxes = $('input[type=checkbox]').not('#none__checkbox');
+    init: function() {
+      for(i = 0; i < $('.checkbox-none').length; i++){
+          var $noneCheckbox = $('.checkbox-none').eq(i).find('input[type=checkbox]:last');
+          var $otherCheckboxes = $('.checkbox-none').eq(i).find('input[type=checkbox]:not(:last)');
 
-      // Uncheck None if another checkbox is checked
-      $otherCheckboxes.click(function(e) {
-        $noneCheckbox.prop('checked', false);
-        $noneCheckbox.parent().removeClass('is-selected');
-      });
+          // Uncheck None if another checkbox is checked
+          $otherCheckboxes.click(function(e) {
+              $noneCheckbox.prop('checked', false);
+              $noneCheckbox.parent().removeClass('is-selected');
+          });
 
-      // Uncheck all others if None is checked
-      $noneCheckbox.click(function(e) {
-        $otherCheckboxes.prop('checked', false);
-        $otherCheckboxes.parent().removeClass('is-selected');
-      });
+          // Uncheck all others if None is checked
+          $noneCheckbox.click(function(e) {
+              $otherCheckboxes.prop('checked', false);
+              $otherCheckboxes.parent().removeClass('is-selected');
+          });
+      }
     }
   };
   return {

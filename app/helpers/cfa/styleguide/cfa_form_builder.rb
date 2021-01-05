@@ -80,13 +80,14 @@ module Cfa
         end.join.html_safe
 
         <<~HTML.html_safe
-          <fieldset class="input-group form-group#{error_state(object, method)}">
+          <fieldset class="input-group form-group#{error_state(object, method)} checkbox-none">
             <legend class="sr-only">
               #{label_text}
             </legend>
             #{checkbox_collection_html}
+            <hr>
             <label class="checkbox">
-              #{check_box(:none, options.merge(id: 'none__checkbox'))} #{none_text}
+              #{check_box(:none, options.merge(checked: true))} #{none_text}
             </label>
             #{errors_for(object, method)}
           </fieldset>
