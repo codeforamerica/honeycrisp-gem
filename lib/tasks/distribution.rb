@@ -91,8 +91,7 @@ class Distribution
   end
 
   def install_dependencies
-    `bourbon install --path dist/vendor && neat install`
-    FileUtils.move("#{Dir.pwd}/neat", "#{DIST_PATH}/vendor")
+    `bourbon install --path dist/vendor`
 
     Sprockets.register_compressor(
       "application/javascript",
