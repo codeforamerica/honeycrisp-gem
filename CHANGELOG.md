@@ -1,5 +1,55 @@
 # Changelog
 
+## [v0.9.4](https://github.com/codeforamerica/honeycrisp-gem/tree/v0.9.4) (2021-01-26)
+
+[Full Changelog](https://github.com/codeforamerica/honeycrisp-gem/compare/v0.9.3...v0.9.4)
+
+**Implemented enhancements:**
+
+- Auto formatting for phone number and SSN [\#216](https://github.com/codeforamerica/honeycrisp-gem/issues/216)
+- Introduce Honeycrisp Compact [\#211](https://github.com/codeforamerica/honeycrisp-gem/issues/211)
+- Compact footer [\#203](https://github.com/codeforamerica/honeycrisp-gem/issues/203)
+- Compact style inputs [\#202](https://github.com/codeforamerica/honeycrisp-gem/issues/202)
+- How can we add a new icon to the icon set? [\#154](https://github.com/codeforamerica/honeycrisp-gem/issues/154)
+- Add sidebar navigation to styleguide page [\#112](https://github.com/codeforamerica/honeycrisp-gem/issues/112)
+
+**Fixed bugs:**
+
+- Tab bar does not work as described [\#214](https://github.com/codeforamerica/honeycrisp-gem/issues/214)
+- "Slab Layout" section behaves differently from others [\#206](https://github.com/codeforamerica/honeycrisp-gem/issues/206)
+
+**Closed issues:**
+
+- Need to relax "neat" gem dependency to allow usage in Rails 6.1 [\#232](https://github.com/codeforamerica/honeycrisp-gem/issues/232)
+- Discussion: Should sidebar navigation update its contents for different pages? [\#224](https://github.com/codeforamerica/honeycrisp-gem/issues/224)
+- Upgrade version of jQuery [\#217](https://github.com/codeforamerica/honeycrisp-gem/issues/217)
+- Documentation page for Compact Honeycrisp [\#208](https://github.com/codeforamerica/honeycrisp-gem/issues/208)
+- Document links styled like buttons [\#165](https://github.com/codeforamerica/honeycrisp-gem/issues/165)
+
+**Merged pull requests:**
+
+- Upgrade percy agent, associated js dependencies, and nokogiri to appease dependabot [\#234](https://github.com/codeforamerica/honeycrisp-gem/pull/234) ([tgrathwell](https://github.com/tgrathwell))
+- vendorize `neat` 1.8.0 to relax dependency on old thor [\#233](https://github.com/codeforamerica/honeycrisp-gem/pull/233) ([tgrathwell](https://github.com/tgrathwell))
+- Fix - Readd incrementer.init\(\) [\#231](https://github.com/codeforamerica/honeycrisp-gem/pull/231) ([sree-cfa](https://github.com/sree-cfa))
+- Add compact text input styling [\#228](https://github.com/codeforamerica/honeycrisp-gem/pull/228) ([bengolder](https://github.com/bengolder))
+- Add labels to form input examples [\#227](https://github.com/codeforamerica/honeycrisp-gem/pull/227) ([bengolder](https://github.com/bengolder))
+- Add compact drop down and button styles [\#226](https://github.com/codeforamerica/honeycrisp-gem/pull/226) ([bengolder](https://github.com/bengolder))
+- Honeycrisp compact [\#225](https://github.com/codeforamerica/honeycrisp-gem/pull/225) ([bengolder](https://github.com/bengolder))
+- MaterialIcon update [\#223](https://github.com/codeforamerica/honeycrisp-gem/pull/223) ([sree-cfa](https://github.com/sree-cfa))
+- Upgrade jquery and other dependencies to address security vulnerabilities [\#221](https://github.com/codeforamerica/honeycrisp-gem/pull/221) ([lkogler](https://github.com/lkogler))
+- Autoformatted inputs [\#218](https://github.com/codeforamerica/honeycrisp-gem/pull/218) ([bengolder](https://github.com/bengolder))
+- Use existing selected tab style [\#215](https://github.com/codeforamerica/honeycrisp-gem/pull/215) ([bengolder](https://github.com/bengolder))
+- Create `main-footer\_\_compact` class for compact footer [\#209](https://github.com/codeforamerica/honeycrisp-gem/pull/209) ([anule](https://github.com/anule))
+- Fix some issues with sidebar formatting and selection state [\#201](https://github.com/codeforamerica/honeycrisp-gem/pull/201) ([lkogler](https://github.com/lkogler))
+- Bump lodash from 4.17.14 to 4.17.20 [\#200](https://github.com/codeforamerica/honeycrisp-gem/pull/200) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Add fast wheelchair emoji and fast wheelchair with money emoji pair [\#197](https://github.com/codeforamerica/honeycrisp-gem/pull/197) ([stroopwafel79](https://github.com/stroopwafel79))
+- Style disabled buttons directly via disabled property [\#195](https://github.com/codeforamerica/honeycrisp-gem/pull/195) ([bensheldon](https://github.com/bensheldon))
+- None checkbox default checked, line above and function for multiple fieldsets [\#193](https://github.com/codeforamerica/honeycrisp-gem/pull/193) ([embarnard](https://github.com/embarnard))
+- Bump rails version to fix some CVEs [\#191](https://github.com/codeforamerica/honeycrisp-gem/pull/191) ([lkogler](https://github.com/lkogler))
+- Material icon font [\#190](https://github.com/codeforamerica/honeycrisp-gem/pull/190) ([lkogler](https://github.com/lkogler))
+- Add variables for link colors [\#188](https://github.com/codeforamerica/honeycrisp-gem/pull/188) ([jenny-heath](https://github.com/jenny-heath))
+- Clean up extraneous viewport charset tag and close html element  [\#166](https://github.com/codeforamerica/honeycrisp-gem/pull/166) ([bensheldon](https://github.com/bensheldon))
+
 ## [v0.9.3](https://github.com/codeforamerica/honeycrisp-gem/tree/v0.9.3) (2020-06-05)
 
 [Full Changelog](https://github.com/codeforamerica/honeycrisp-gem/compare/v0.9.2...v0.9.3)
