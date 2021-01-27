@@ -2,7 +2,7 @@
 $(document).ready(function() {
     $('.sidebar-nav').on('click', 'a', function ()
     {
-        if( $('.sidebar-collapse-toggle').is(':visible') ) {
+        if( $('.sidebar__collapse-toggle').is(':visible') ) {
             collapseSidebar();
         }
     });
@@ -26,12 +26,12 @@ function toggleNav() {
 }
 
 function collapseSidebar() {
-  $('.sidebar-collapse-toggle').text('Menu');
+  $('.sidebar__collapse-toggle').text('Menu');
   $(".sidebar").removeClass("open");
 }
 
 function openSidebar() {
-  $('.sidebar-collapse-toggle').text('Close');
+  $('.sidebar__collapse-toggle').text('Close');
   $(".sidebar").addClass("open");
 }
 

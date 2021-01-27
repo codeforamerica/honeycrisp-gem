@@ -16,13 +16,36 @@
 
 <body class="template--<%= content_for(:template_name) if content_for?(:template_name) %>">
   <div class="page-wrapper">
-    <%= render 'layouts/sidebar_nav' %>
-    <div class="left-sidebar-slab-container">
+    <header class="main-header">
+      <div class="toolbar toolbar--with-sidebar">
+        <h1 class="main-header__title">
+          <%= link_to "Honeycrisp Design System v#{Cfa::Styleguide::VERSION}", styleguide_main_path, class: %w{main-header__logo} %>
+        </h1>
+        <button class="button button--small sidebar__collapse-toggle" onclick="toggleNav()">Menu</button>
+      </div>
+    </header>
+    <aside class="sidebar">
+      <nav class="sidebar-nav">
+        <ul>
+          <li class="spacing-below-0">
+            <span class="section-header heading-25-small spacing-below-10">Sections</span>
+            <ul class="sidebar__sub-items spacing-below-10">
+              <li class="spacing-below-25"><%= link_to "Honeycrisp", styleguide_main_path %></li>
+              <li class="spacing-below-25"><%= link_to "Honeycrisp Compact", styleguide_honeycrisp_compact_path %></li>
+              <li class="spacing-below-25"><%= link_to "Emojis", styleguide_emojis_path %></li>
+              <li class="spacing-below-25"><%= link_to "Form Builder", styleguide_form_builder_path %></li>
+            </ul>
+          </li>
+          <%= content_for :subnavigation %>
+        </ul>
+      </nav>
+    </aside>
+    <div class="main-content--with-sidebar">
       <%= yield %>
     </div>
   </div>
 
-  <footer class="main-footer">
+  <footer class="main-footer main-footer--with-sidebar">
     <div class="grid">
       <div class="grid__item">
         <div class="main-footer__legal">
