@@ -61,6 +61,7 @@
 @import 'organisms/pagination';
 @import 'organisms/statistic-card';
 @import 'organisms/admin-application-card';
+@import 'organisms/sidebar';
 
 
 /* Templates */
@@ -75,9 +76,6 @@
 
 /* Compact Styles */
 @import 'honeycrisp-compact';
-
-/* Sidebar Nav */
-@import 'sidebar-nav';
 
 /* Shame */
 @import 'ie-hacks';

@@ -12,7 +12,7 @@
 //
 //= require jquery3
 //= require jquery_ujs
-//= require sidebar_nav
+//= require sidebar
 
 var incrementer = (function() {
   var i = {

@@ -1,0 +1,132 @@
+.sidebar {
+  display: none;
+
+  position: absolute;
+  visibility: visible;
+  -webkit-backface-visibility: hidden;
+  float:left;
+  vertical-align:top;
+
+  header{
+    width: 100%;
+    display:block;
+    padding: 0.75em	1em;
+  }
+
+  .main-content{
+    margin-left: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .sidebar-nav {
+    position: fixed;
+    width: $sidebar-width;
+    height: 100%;
+    padding-bottom: 6em;
+    z-index: 9;
+    overflow: hidden;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    background-color: #ffffff;
+    left: 0;
+
+    ul{
+      list-style:none;
+      display: block;
+      padding: 0;
+      margin: 0;
+      line-height: 16px;
+
+      li{
+        margin-left: 0;
+        display:inline-block;
+        width: 100%;
+        line-height: 16px;
+
+        .section-header{
+          display:block;
+          background-color: $color-green-light;
+          padding: .75em 1.5em;
+          color: $color-grey-dark;
+          width: 100% !important;
+          line-height: 16px;
+        }
+
+        .sidebar__sub-items{
+          padding: .05em 1em;
+          li {
+            padding-left: 0.25em;
+
+            a, a:visited {
+              color: $color-grey-darkest;
+              line-height: 1.2em;
+              text-decoration: none;
+            }
+
+            a:hover {
+              text-decoration: underline;
+            }
+
+            &.active {
+              font-weight: $font-weight-bold;
+              border-left: 3px solid $color-teal;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.open {
+    display: inline-block;
+
+    .sidebar-nav {
+      width: 100%;
+    }
+  }
+
+  // Open sidebar on larger screen sizes, by default
+  @include media($tablet-up + $sidebar-width) {
+    display: inline-block;
+
+    .sidebar-nav {
+      width: $sidebar-width;
+    }
+
+    .main-content{
+      margin-left: $s250 - $s35;
+      padding-left: $s35;
+    }
+  }
+}
+
+.sidebar__collapse-toggle {
+  display: block;
+  float: right;
+  margin-top: $s15;
+  margin-right: $s15;
+
+  @include media($tablet-up + $sidebar-width) {
+    display: none;
+  }
+}
+
+.main-content--with-sidebar {
+  @include media($tablet-up + $sidebar-width) {
+    margin-left: $s250 - $s35;
+    padding-left: $s35;
+  }
+}
+
+.toolbar--with-sidebar {
+  .main-header__logo {
+    color: rgba(0, 0, 0, 0); // Transparent on small sizes
+    margin-top: $s15;
+    margin-left: $s10;
+
+    @include media($tablet-up + $sidebar-width) {
+      color: $color-grey-darkest;
+    }
+  }
+}
