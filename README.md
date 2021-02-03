@@ -8,7 +8,7 @@ View the current version of the styleguide at [https://honeycrisp.herokuapp.com]
 
 We are not currently seeking contributions from the public.
 
-If you have any thoughts or questions about the project, get in touch at <a href="mailto:styleguide@codeforamerica.org">styleguide@codeforamerica.org</a> or the `#cfa-design-toolkit` channel in the Code for America Slack.
+If you have any thoughts or questions about the project, get in touch at <a href="mailto:styleguide@codeforamerica.org">styleguide@codeforamerica.org</a> or the `#honeycrisp-design-system` channel in the Code for America Slack.
 
 ## Installation
 
