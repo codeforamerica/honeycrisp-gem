@@ -1,6 +1,6 @@
 .honeycrisp-compact {
-  font-size: $font-size-19;
-  line-height: $s19;
+  font-size: $font-size-18;
+  line-height: $s18;
 
   .data-table {
     font-size: inherit;
@@ -11,6 +11,15 @@
 
   .form-group {
     margin-bottom: $s35;
+    p {
+      margin-bottom: $s15;
+    }
+
+    .text--help {
+      font-size: $font-size-18;
+      margin-top: 0px;
+      margin-bottom: $s15;
+    }
   }
 
   .form-question {
@@ -18,7 +27,7 @@
   }
 
   .button {
-    line-height: 2rem;
+    line-height: $s18;
     padding: $s10;
     margin-top: 0;
     margin-left: $s10;
@@ -26,35 +35,97 @@
     margin-bottom: 2rem;
     font-weight: normal;
     border-width: 1px;
-    box-shadow: 0 1px 0px rgba(#000, .5);
-    border-radius: $border-radius;
-    font-size: $font-size-25-small;
+    box-shadow: none;
+    border-radius: .4rem;
+    font-size: $font-size-18;
     [class^="icon-"], [class*=" icon-"] {
       vertical-align: 0;
     }
+    &:focus {
+      box-shadow: 0 0 0 5px $color-yellow, inset 0px 2px 0px rgba(#000, .15);
+    }
+    &:first-of-type {
+      margin-left: 0;
+    }
   }
 
+  .button--small {
+    font-size: $font-size-18;
+    border-radius: .4rem;
+    line-height: 1.5rem;
+    padding: .4rem $s10;
+  }
+
+  .button--big {
+    font-size: 1.8rem;
+    border-radius: .4rem;
+    line-height: $s25;
+    padding: .9rem $s15;
+  }
 
   .text-input {
     padding: 0 $s15;
-    height: 4.5rem;
+    height: 4rem;
     border-width: 1px;
-    font-size: $font-size-25-small;
+    font-size: $font-size-18;
     font-weight: normal;
     margin-bottom: 2rem;
   }
 
   .select {
-    line-height: 4.6rem;
-    height: 4.6rem;
+    line-height: 4rem;
+    border-width: 1px;
+    font-size: $font-size-18;
+    height: 4rem;
     &:after {
-      width: 4.2rem;
+      width: 4rem;
     }
   }
   .select__element {
-    font-size: $font-size-25-small;
+    font-size: $font-size-18;
     font-weight: normal;
     border: 1px solid $color-grey-darkest;
-    padding: 0 4.2rem 0 $s15;
+    height: 4rem;
+    padding: 0 4.0rem 0 $s15;
+  }
+
+  h1 {
+    font-size: 2.0rem;
+    line-height: 2.4rem;
+    margin-top: 4.0rem;
+    margin-bottom: 2.5rem;
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  h2 {
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+    margin-top: 4.0rem;
+    margin-bottom: 2.5rem;
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    line-height: 1.8rem;
+    margin-top: 4.0rem;
+    margin-bottom: 2.5rem;
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  .text--error {
+    @extend .text--red;
+    font-weight: $font-weight-bold;
+  }
+
+  .form-question {
+    font-size: $font-size-18;
+    line-height: $s18;
   }
 }
