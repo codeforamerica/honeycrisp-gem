@@ -6,6 +6,10 @@
     font-size: inherit;
     th, td {
       padding: $s15;
+      a {
+        color: $color-teal;
+        text-decoration: underline;
+      }
     }
   }
 
