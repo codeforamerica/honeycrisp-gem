@@ -11,6 +11,12 @@
         text-decoration: underline;
       }
     }
+
+    .row--error, .row--warning {
+      a {
+        color: $color-teal-dark;
+      }
+    }
   }
 
   .form-group {
@@ -46,7 +52,7 @@
       vertical-align: 0;
     }
     &:focus {
-      box-shadow: 0 0 0 5px $color-yellow, inset 0px 2px 0px rgba(#000, .15);
+      @include outline;
     }
     &:first-of-type {
       margin-left: 0;
