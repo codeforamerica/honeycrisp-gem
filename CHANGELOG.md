@@ -1,5 +1,20 @@
 # Changelog
 
+## [v0.9.5](https://github.com/codeforamerica/honeycrisp-gem/tree/v0.9.5) (2021-02-12)
+
+[Full Changelog](https://github.com/codeforamerica/honeycrisp-gem/compare/v0.9.4...v0.9.5)
+
+**Fixed bugs:**
+
+- Footer is shifted left by 25rem when there's no sidebar [\#236](https://github.com/codeforamerica/honeycrisp-gem/issues/236)
+- Footer is offset for all tablet-up screens [\#212](https://github.com/codeforamerica/honeycrisp-gem/issues/212)
+- Honeycrisp compact overrides focus styles for buttons [\#230](https://github.com/codeforamerica/honeycrisp-gem/issues/230)
+
+**Merged pull requests:**
+
+- Updating honeycrisp compact styles  [\#238](https://github.com/codeforamerica/honeycrisp-gem/pull/238) ([ash-rc](https://github.com/ash-rc))
+- Namespace sidebar-specific styles [\#237](https://github.com/codeforamerica/honeycrisp-gem/pull/237) ([hartsick](https://github.com/hartsick))
+
 ## [v0.9.4](https://github.com/codeforamerica/honeycrisp-gem/tree/v0.9.4) (2021-01-26)
 
 [Full Changelog](https://github.com/codeforamerica/honeycrisp-gem/compare/v0.9.3...v0.9.4)

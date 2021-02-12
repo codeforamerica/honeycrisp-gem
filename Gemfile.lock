@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    cfa-styleguide (0.9.4)
+    cfa-styleguide (0.9.5)
       autoprefixer-rails
       bourbon
       jquery-rails
@@ -55,7 +55,7 @@ GEM
       public_suffix (>= 2.0.2, < 5.0)
     arel (9.0.0)
     ast (2.4.1)
-    autoprefixer-rails (10.2.0.0)
+    autoprefixer-rails (10.2.4.0)
       execjs
     axe-matchers (2.2.1)
       dumb_delegator (~> 0.8)
