@@ -319,4 +319,7 @@ var Honeycrisp = function(){
     }
 }();
 
+Honeycrisp.init();
+
+
 
