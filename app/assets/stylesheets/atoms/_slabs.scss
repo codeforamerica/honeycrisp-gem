@@ -1,10 +1,8 @@
 .slab {
-  @include full-bleed();
+  margin-left: 0;
+  margin-right: 0;
   position: relative;
-  padding: {
-    top: $s60;
-    bottom: $s60;
-  }
+  padding: $s60 0;
 
   &:last-child {
     border-bottom: 0;

@@ -7,26 +7,20 @@
   }
 }
 
-// Use this if an element should take up the full width of the screen.
+// If a page/section has a wrapping component that adds default margin/padding (like page-wrapper on template--dashboard)
+// use this mixin to force a full-width child.
 @mixin full-bleed() {
-  margin: {
-    left: -$s15;
-    right: -$s15;
-  }
-  padding: {
-    left: $s15;
-    right: $s15;
-  }
+  margin-left: -$s15;
+  margin-right: -$s15;
+  padding-left: $s15;
+  padding-right: $s15;
+
 
   @include media($tablet-up) {
-    margin: {
-      left: -$s35;
-      right: -$s35;
-    }
-    padding: {
-      left: $s35;
-      right: $s35;
-    }
+    margin-left: -$s35;
+    margin-right: -$s35;
+    padding-left: $s35;
+    padding-right: $s35;
   }
 }
 
