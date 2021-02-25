@@ -3,6 +3,7 @@ AllCops:
   - bin/*
   - vendor/**/*
   - pkg/*
+  - node_modules/**/*
 
 #  Gemspec
 
@@ -172,6 +173,7 @@ Metrics/BlockLength:
   - "spec/**/*"
   - "config/**/*"
   - "*.gemspec"
+  - "Rakefile"
 
 Metrics/BlockNesting:
   Description: 'Avoid excessive block nesting'
