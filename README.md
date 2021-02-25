@@ -138,14 +138,22 @@ To run, run `rake` or `rspec spec`.
 
 ### Releasing new gem versions
 
-To release a new version, on `main` branch:
-* Update the version number in `version.rb` using [semantic versioning](https://semver.org/)
-* `bundle install` to update the Gemfile.lock
-* Update the [changelog configuration](./.github_changelog_generator) to set `since-tag` to previous version (e.g. `0.9.2`) and `future-release` to the new version (e.g. `0.9.3`). This will reduce the amount of changes fetched and unnecessary diffs to the generated changelog. 
-* Generate an addition to the [changelog](./CHANGELOG.md) using `bundle exec rake changelog`. (Note: you will need to provide a [Github token with public repo access](https://github.com/github-changelog-generator/github-changelog-generator#github-token)).
-* If updating the minor version, update the [migration guide](./MIGRATING.md) with any breaking changes and suggestions for what to do about them. If no breaking changes, just add 'no breaking changes'. 
-* Review, edit as necessary, and commit including the version update.
-* Run `gem_push=false bundle exec rake release`, which will create a git tag for the version, and push git commits and tags to Github. In the future, this will also push the `.gem` file to [rubygems.org](https://rubygems.org).
+Before you start:
+
+- Determine whether this is major, minor, or patch release according to [semantic versioning](https://semver.org/).
+- If a major or minor release, update and commit the [migration guide](./MIGRATING.md)
+- Ensure you have a `.env` file with a Github Personal Access Token (`CHANGELOG_GITHUB_TOKEN=`) so that the Changelog data can be retrieved from the Github API.
+
+To release a new version, on `main` branch run:
+
+```bash
+# Update version number, changelog, and create git commit:
+$ bundle exec rake release[patch] # major, minor, patch
+
+# ...and follow subsequent directions.
+```
+
+_If you see the error `zsh: no matches found`, escape the square brackets. e.g. `bundle exec rake release\[patch\].`_
 
 ## License
 
