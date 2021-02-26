@@ -356,8 +356,8 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
     let(:output) do
       form_builder.cfa_fieldset(:example_method_with_validation, "My radio buttons") do
         ERB.new(
-          "<%= form_builder.cfa_radio(:example_method_with_validation, 'First option', :first_option) %>
-         <%= form_builder.cfa_radio(:example_method_with_validation, 'Second option', :second_option) %>",
+          "<%= form_builder.cfa_radio_button(:example_method_with_validation, 'First option', :first_option) %>
+         <%= form_builder.cfa_radio_button(:example_method_with_validation, 'Second option', :second_option) %>",
         ).result(binding).html_safe
       end
     end
@@ -367,7 +367,7 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
     end
 
     it "renders all items in passed block" do
-      html_component = Nokogiri::HTML.fragment(output).css(".cfa-radio")
+      html_component = Nokogiri::HTML.fragment(output).css(".cfa-radio-button")
       expect(html_component.count).to eq 2
     end
 
@@ -385,8 +385,8 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
       let(:output) do
         form_builder.cfa_fieldset(:example_method_with_validation, "My radio buttons", wrapper_options: { id: "wrapper-id", class: "wrapper-class" }) do
           ERB.new(
-            "<%= form_builder.cfa_radio(:example_method_with_validation, 'First option', :first_option) %>
-          <%= form_builder.cfa_radio(:example_method_with_validation, 'Second option', :second_option) %>",
+            "<%= form_builder.cfa_radio_button(:example_method_with_validation, 'First option', :first_option) %>
+          <%= form_builder.cfa_radio_button(:example_method_with_validation, 'Second option', :second_option) %>",
           ).result(binding).html_safe
         end
       end
@@ -407,8 +407,8 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
       let(:output) do
         form_builder.cfa_fieldset(:example_method_with_validation, "My radio buttons", class: "my-class", id: "my-id") do
           ERB.new(
-            "<%= form_builder.cfa_radio(:example_method_with_validation, 'First option', :first_option) %>
-          <%= form_builder.cfa_radio(:example_method_with_validation, 'Second option', :second_option) %>",
+            "<%= form_builder.cfa_radio_button(:example_method_with_validation, 'First option', :first_option) %>
+          <%= form_builder.cfa_radio_button(:example_method_with_validation, 'Second option', :second_option) %>",
           ).result(binding).html_safe
         end
       end
@@ -489,7 +489,7 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
 
   describe ".cfa_radio" do
     let(:output) do
-      form_builder.cfa_radio(:example_method_with_validation, "Truthy value", "true")
+      form_builder.cfa_radio_button(:example_method_with_validation, "Truthy value", "true")
     end
 
     it "renders a radio buttons with valid HTML" do
@@ -498,12 +498,12 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
 
     it "includes an identifying class on the containing element" do
       html_component = Nokogiri::HTML.fragment(output).child
-      expect(html_component.classes).to include("cfa-radio")
+      expect(html_component.classes).to include("cfa-radio-button")
     end
 
     context "when input options provided" do
       let(:output) do
-        form_builder.cfa_radio(:example_method_with_validation,
+        form_builder.cfa_radio_button(:example_method_with_validation,
                                "Truthy value",
                                "true",
                                'data-follow-up': "#follow-up-question")
@@ -517,7 +517,7 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
 
     context "wrapper options provided" do
       let(:output) do
-        form_builder.cfa_radio(:example_method_with_validation,
+        form_builder.cfa_radio_button(:example_method_with_validation,
                                "Truthy value",
                                "true",
                                wrapper_options: { class: "wrapper-class", id: "wrapper-id" })
@@ -525,7 +525,7 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
 
       it "does not overwrite existing classes" do
         html_component = Nokogiri::HTML.fragment(output).child
-        expect(html_component.classes).to include("cfa-radio")
+        expect(html_component.classes).to include("cfa-radio-button")
       end
 
       it "assigns wrapper options on the outermost element" do
@@ -739,8 +739,8 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
     let(:output) do
       form_builder.cfa_collection_check_boxes(:example_method_with_validation,
                                               [
-                                                  Cfa::Styleguide::FormExample.new(id: 1, name: 'One'),
-                                                  Cfa::Styleguide::FormExample.new(id: 2, name: 'Two')
+                                                Cfa::Styleguide::FormExample.new(id: 1, name: "One"),
+                                                Cfa::Styleguide::FormExample.new(id: 2, name: "Two"),
                                               ],
                                               :id,
                                               :name)
@@ -759,13 +759,13 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
       let(:output) do
         form_builder.cfa_collection_check_boxes(:example_method_with_validation,
                                                 [
-                                                    Cfa::Styleguide::FormExample.new(id: 1, name: 'One'),
-                                                    Cfa::Styleguide::FormExample.new(id: 2, name: 'Two')
+                                                  Cfa::Styleguide::FormExample.new(id: 1, name: "One"),
+                                                  Cfa::Styleguide::FormExample.new(id: 2, name: "Two"),
                                                 ],
                                                 :id,
                                                 :name,
                                                 disabled: true,
-                                                'data-some-attribute': 'some-value')
+                                                'data-some-attribute': "some-value")
       end
 
       it "passes input options to the checkboxes" do
@@ -779,14 +779,14 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
       let(:output) do
         form_builder.cfa_collection_check_boxes(:example_method_with_validation,
                                                 [
-                                                    Cfa::Styleguide::FormExample.new(id: 1, name: 'One'),
-                                                    Cfa::Styleguide::FormExample.new(id: 2, name: 'Two')
+                                                  Cfa::Styleguide::FormExample.new(id: 1, name: "One"),
+                                                  Cfa::Styleguide::FormExample.new(id: 2, name: "Two"),
                                                 ],
                                                 :id,
                                                 :name,
                                                 wrapper_options: {
-                                                    class: "wrapper-class",
-                                                    id: "wrapper-id",
+                                                  class: "wrapper-class",
+                                                  id: "wrapper-id",
                                                 })
       end
 
