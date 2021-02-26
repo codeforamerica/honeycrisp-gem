@@ -110,10 +110,12 @@ var followUpQuestion = (function() {
                     $(self).find('.question-with-follow-up__follow-up').find('.radio-button, .checkbox').removeClass('is-selected');
                     $(self).find('.question-with-follow-up__follow-up').hide();
 
-                    // show the current follow up
-                    if($(this).is(':checked') && $(this).attr('data-follow-up') != null) {
-                        $($(this).attr('data-follow-up')).show();
-                    }
+                    $(self).find('.question-with-follow-up__question input').each(function(index, input) {
+                        // if any of the inputs with a data-follow-up is checked then show the follow-up
+                        if($(input).is(':checked') && $(input).attr('data-follow-up') != null) {
+                            $($(this).attr('data-follow-up')).show();
+                        }
+                    });
                 })
             });
         }

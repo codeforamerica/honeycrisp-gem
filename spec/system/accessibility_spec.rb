@@ -21,7 +21,6 @@ FIXABLE_ACCESSIBILITY_EXAMPLES = [
   "form_builder/cfa_range_field",
   "form_builder/cfa_select",
   "form_builder/cfa_textarea",
-  "molecules/follow_up_question",
   "molecules/form_group",
   "molecules/form_group_error_state",
   "molecules/incrementer",
