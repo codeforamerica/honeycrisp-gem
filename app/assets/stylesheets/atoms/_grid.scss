@@ -1,6 +1,5 @@
 .grid {
-	@include outer-container();
-	max-width: $site-max-width;
+	@include outer-container($site-max-width);
 
 	@include media($tablet-up) {
 		// Defines width of element
