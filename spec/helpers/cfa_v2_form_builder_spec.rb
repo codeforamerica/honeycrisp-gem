@@ -802,4 +802,72 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
       end
     end
   end
+
+  describe ".cfa_collection_radio_buttons" do
+    let(:output) do
+      form_builder.cfa_collection_radio_buttons(:example_method_with_validation,
+                                              [
+                                                Cfa::Styleguide::FormExample.new(id: 1, name: "One"),
+                                                Cfa::Styleguide::FormExample.new(id: 2, name: "Two"),
+                                              ],
+                                              :id,
+                                              :name)
+    end
+
+    it "renders a text input with valid HTML" do
+      expect(output).to be_html_safe
+    end
+
+    it "includes an identifying class on the containing element" do
+      html_component = Nokogiri::HTML.fragment(output).child
+      expect(html_component.classes).to include("cfa-collection-radio-buttons")
+    end
+
+    context "input options provided" do
+      let(:output) do
+        form_builder.cfa_collection_radio_buttons(:example_method_with_validation,
+                                                [
+                                                  Cfa::Styleguide::FormExample.new(id: 1, name: "One"),
+                                                  Cfa::Styleguide::FormExample.new(id: 2, name: "Two"),
+                                                ],
+                                                :id,
+                                                :name,
+                                                disabled: true,
+                                                'data-some-attribute': "some-value")
+      end
+
+      it "passes input options to the checkboxes" do
+        checkbox_html = Nokogiri::HTML.fragment(output).at_css("input[type='radio']")
+        expect(checkbox_html.get_attribute("disabled")).to be_truthy
+        expect(checkbox_html.get_attribute("data-some-attribute")).to eq("some-value")
+      end
+    end
+
+    context "wrapper options provided" do
+      let(:output) do
+        form_builder.cfa_collection_radio_buttons(:example_method_with_validation,
+                                                [
+                                                  Cfa::Styleguide::FormExample.new(id: 1, name: "One"),
+                                                  Cfa::Styleguide::FormExample.new(id: 2, name: "Two"),
+                                                ],
+                                                :id,
+                                                :name,
+                                                wrapper_options: {
+                                                  class: "wrapper-class",
+                                                  id: "wrapper-id",
+                                                })
+      end
+
+      it "does not overwrite existing classes" do
+        html_component = Nokogiri::HTML.fragment(output).child
+        expect(html_component.classes).to include("cfa-collection-radio-buttons")
+      end
+
+      it "assigns wrapper options on the outermost element" do
+        html_component = Nokogiri::HTML.fragment(output).child
+        expect(html_component.classes).to include("wrapper-class")
+        expect(html_component.get_attribute("id")).to include("wrapper-id")
+      end
+    end
+  end
 end
