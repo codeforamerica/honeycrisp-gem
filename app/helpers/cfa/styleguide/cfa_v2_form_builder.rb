@@ -102,7 +102,7 @@ module Cfa
         end
       end
 
-      def cfa_checkbox(method,
+      def cfa_check_box(method,
                        label_text,
                        checked_value = "1",
                        unchecked_value = "0",
@@ -117,13 +117,29 @@ module Cfa
           error_html = errors_for(object, method, error_id)
         end
 
-        wrapper_options = append_to_value(wrapper_options, :class, "cfa-checkbox")
+        wrapper_options = append_to_value(wrapper_options, :class, "cfa-check-box")
         @template.tag.div(wrapper_options) do
           @template.concat(@template.tag.label(label_options) do
             @template.concat(check_box(method, input_options, checked_value, unchecked_value))
             @template.concat(label_text)
           end)
           @template.concat(error_html)
+        end
+      end
+
+      def cfa_collection_check_boxes(method,
+                                     collection,
+                                     value_method,
+                                     text_method,
+                                     wrapper_options: {},
+                                     label_options: {},
+                                     **input_options)
+
+        wrapper_options = append_to_value(wrapper_options, :class, "cfa-collection-check-boxes")
+        @template.tag.div(wrapper_options) do
+          collection_check_boxes(method, collection, value_method, text_method) do |b|
+            b.label(label_options) { b.check_box(input_options) + b.text }
+          end
         end
       end
 
