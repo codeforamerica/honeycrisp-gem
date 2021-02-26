@@ -86,14 +86,14 @@ module Cfa
         end
       end
 
-      def cfa_radio(method,
-                    label_text,
-                    value,
-                    wrapper_options: {},
-                    label_options: {},
-                    **input_options)
+      def cfa_radio_button(method,
+                           label_text,
+                           value,
+                           wrapper_options: {},
+                           label_options: {},
+                           **input_options)
 
-        wrapper_options = append_to_value(wrapper_options, :class, "cfa-radio")
+        wrapper_options = append_to_value(wrapper_options, :class, "cfa-radio-button")
         @template.tag.div(wrapper_options) do
           @template.tag.label(label_options) do
             @template.concat(radio_button(method, value, input_options))
@@ -103,12 +103,12 @@ module Cfa
       end
 
       def cfa_check_box(method,
-                       label_text,
-                       checked_value = "1",
-                       unchecked_value = "0",
-                       wrapper_options: {},
-                       label_options: {},
-                       **input_options)
+                        label_text,
+                        checked_value = "1",
+                        unchecked_value = "0",
+                        wrapper_options: {},
+                        label_options: {},
+                        **input_options)
 
         if object.errors[method].any?
           wrapper_options = append_to_value(wrapper_options, :class, "form-group--error")
