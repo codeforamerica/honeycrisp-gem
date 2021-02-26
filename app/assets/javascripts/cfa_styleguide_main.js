@@ -14,5 +14,3 @@
 //= require jquery_ujs
 //= require sidebar
 //= require honeycrisp
-
-Honeycrisp.init();
