@@ -8,7 +8,7 @@
 }
 
 .tab-bar__tab {
-  background-color: $color-grey-light;
+  background-color: $unselected-tab-background;
   border: 2px solid $color-grey-darkest;
   color: $color-grey-darkest;
   display: block;
@@ -26,13 +26,13 @@
   }
 
   &.is-selected {
-    background-color: $color-background;
+    background-color: $selected-tab-background;
     color: $color-grey-darkest;
     font-weight: 600;
     z-index: 2;
 
     &:before {
-      background-color: $color-background;
+      background-color: $selected-tab-background;
       content: '';
       position: absolute;
       display: block;
