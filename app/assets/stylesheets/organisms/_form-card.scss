@@ -2,7 +2,7 @@
     box-shadow: $box-shadow;
     border-radius: $border-radius-large;
     padding: $s25 $s25;
-    background-color: #FFFFFF;
+    background-color: $color-white;
     margin-bottom: $s15;
     > *:last-child {
         margin-bottom: 0;

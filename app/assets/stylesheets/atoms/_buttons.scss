@@ -10,7 +10,7 @@
     font-weight: $font-weight-bold;
     border: 2px solid $color-grey-darkest;
     box-shadow: 0 2px 0px rgba(#000, .5);
-    background-color: #FFFFFF;
+    background-color: $color-white;
     padding: $s35/2 $s25;
     border-radius: $border-radius-large;
     margin: {
@@ -46,22 +46,22 @@
 }
 
 .button--primary {
-    color: #FFFFFF;
+    color: $color-white;
     background-color: $color-teal;
     border-color: $color-teal;
     box-shadow: 0 2px 0px $color-teal-dark;
     &:hover {
         background-color: $color-teal-dark;
         border-color: $color-teal-dark;
-        color: #FFFFFF;
+        color: $color-white;
     }
     &:active {
         background-color: $color-teal-dark;
         border-color: $color-teal-dark;
-        color: #FFFFFF;
+        color: $color-white;
     }
     &:visited {
-        color: #FFFFFF;
+        color: $color-white;
     }
 }
 
@@ -80,7 +80,7 @@
   }
   &:hover {
     background-color: $color-red;
-    color: #fff;
+    color: $color-white;
   }
 }
 

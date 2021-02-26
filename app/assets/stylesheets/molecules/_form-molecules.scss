@@ -175,10 +175,10 @@
     display: block;
     border-radius: $border-radius;
     &:before {
-      border: 1px solid #fff;
+      border: 1px solid $color-white;
       border-top-right-radius: $border-radius;
       border-bottom-right-radius: $border-radius;
-      background-color: #fff;
+      background-color: $color-white;
     }
 
     @include media($tablet-up) {
