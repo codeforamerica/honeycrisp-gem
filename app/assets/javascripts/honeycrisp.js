@@ -106,13 +106,13 @@ var followUpQuestion = (function() {
                 // add click listeners to initial question inputs
                 $(self).find('.question-with-follow-up__question input').click(function(e) {
                     // reset follow ups
-                    $(self).find('.question-with-follow-up__follow-up input').attr('checked', false);
-                    $(self).find('.question-with-follow-up__follow-up').find('.radio-button, .checkbox').removeClass('is-selected');
+                    $(self).find('.question-with-follow-up__follow-up input').attr('disabled', true);
                     $(self).find('.question-with-follow-up__follow-up').hide();
 
                     $(self).find('.question-with-follow-up__question input').each(function(index, input) {
                         // if any of the inputs with a data-follow-up is checked then show the follow-up
                         if($(input).is(':checked') && $(input).attr('data-follow-up') != null) {
+                            $(self).find('.question-with-follow-up__follow-up input').attr('disabled', false);
                             $($(this).attr('data-follow-up')).show();
                         }
                     });
