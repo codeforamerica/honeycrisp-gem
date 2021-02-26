@@ -8,7 +8,7 @@
 }
 
 .tab-bar__tab {
-  background-color: $color-grey-light;
+  background-color: darken($color-background, 5%);
   border: 2px solid $color-grey-darkest;
   color: $color-grey-darkest;
   display: block;
