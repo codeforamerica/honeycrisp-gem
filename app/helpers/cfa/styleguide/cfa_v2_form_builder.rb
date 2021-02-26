@@ -102,6 +102,22 @@ module Cfa
         end
       end
 
+      def cfa_collection_radio_buttons(method,
+                                       collection,
+                                       value_method,
+                                       text_method,
+                                       wrapper_options: {},
+                                       label_options: {},
+                                       **input_options)
+
+        wrapper_options = append_to_value(wrapper_options, :class, "cfa-collection-radio-buttons")
+        @template.tag.div(wrapper_options) do
+          collection_radio_buttons(method, collection, value_method, text_method) do |b|
+            b.label(label_options) { b.radio_button(input_options) + b.text }
+          end
+        end
+      end
+
       def cfa_check_box(method,
                         label_text,
                         checked_value = "1",
