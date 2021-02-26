@@ -7,7 +7,6 @@
       <li class="spacing-below-25"><%= link_to "Buttons", styleguide_main_path(anchor: "atoms-buttons") %></li>
       <li class="spacing-below-25"><%= link_to "Card", styleguide_main_path(anchor: "atoms-card") %></li>
       <li class="spacing-below-25"><%= link_to "Colors", styleguide_main_path(anchor: "atoms-colors") %></li>
-      <li class="spacing-below-25"><%= link_to "Example Pills", styleguide_main_path(anchor: "atoms-examples") %></li>
       <li class="spacing-below-25"><%= link_to "Form Elements", styleguide_main_path(anchor: "atoms-form_elements") %></li>
       <li class="spacing-below-25"><%= link_to "Grid Layout", styleguide_main_path(anchor: "atoms-grid") %></li>
       <li class="spacing-below-25"><%= link_to "Icons", styleguide_main_path(anchor: "atoms-icons") %></li>
@@ -24,7 +23,6 @@
       <li class="spacing-below-25"><%= link_to "Accordion", styleguide_main_path(anchor: "molecules-accordion") %></li>
       <li class="spacing-below-25"><%= link_to "Block Input Group", styleguide_main_path(anchor: "molecules-block_input_group") %></li>
       <li class="spacing-below-25"><%= link_to "Data Table", styleguide_main_path(anchor: "molecules-data_table") %></li>
-      <li class="spacing-below-25"><%= link_to "Example Group", styleguide_main_path(anchor: "molecules-example_group") %></li>
       <li class="spacing-below-25"><%= link_to "Flash Messages", styleguide_main_path(anchor: "molecules-flash_messages") %></li>
       <li class="spacing-below-25"><%= link_to "Follow Up Question", styleguide_main_path(anchor: "molecules-follow_up_question") %></li>
       <li class="spacing-below-25"><%= link_to "Form Group", styleguide_main_path(anchor: "molecules-form_group") %></li>
@@ -98,7 +96,6 @@
 <%= render 'section', title: 'Labels', example: 'atoms/labels' %>
 <%= render 'section', title: 'Buttons', example: 'atoms/buttons', explanation: "The teal primary is your default button. White buttons are for secondary actions.<br><br>Danger buttons tell users to pause and make sure they’re certain of the action they’re about to take. It can be a way to signal that an action is discouraged (e.g. submitting a minimal application in GCF) , or irreversible (e.g. deleting a client in ClientComm).<br><br>Disabled buttons are placeholders for actions that can’t be taken at the moment. Use these rather than hiding the button if you want to show that the action exits, or if your layout requires it.  Disabled buttons have a corresponding cursor state.<br><br>When using the button styled like a link, don’t use the \"button\" class." %>
 <%= render 'section', title: 'Form Elements', example: 'atoms/form_elements', explanation: "General atomic form elements have no knowledge about their size and default to full width. Form molecules and organisms or modifier classes should be used to define form element sizes and layout." %>
-<%= render 'section', title: 'Example Pills', example: 'atoms/examples', explanation: "Example pills are a way to show examples that support text (e.g. the types of care eligible for a childcare expense). They are a more visual alternative to a bullet point list. Use them when your layout won't accommodate bullet points, or you want to emphasize the examples." %>
 
 <section class="slab slab--styleguide" id="molecules">
   <div class="grid">
@@ -117,7 +114,6 @@
 <%= render 'section', title: 'Toolbar', example: 'molecules/toolbar' %>
 <%= render 'section', title: 'Tab bar', example: 'molecules/tab_bar' %>
 <%= render 'section', title: 'Flash messages', example: 'molecules/flash_messages' %>
-<%= render 'section', title: 'Example Group', example: 'molecules/example_group' %>
 <%= render 'section', title: 'Progress indicator', example: 'molecules/progress_indicator', explanation: 'The progress indicator shows the user how much of a flow they have completed. It helps set time expectations, as well as giving a sense of progress. Use this if you have a flow of more than a few pages, or when users won’t be able to guess how long a flow is. <br><br>The indicator may be used alone, or in conjunction with the <a href="#molecules-progress_step_bar">step bar</a>. The indicator is the more granular of the two, ticking forward on an individual page basis.' %>
 <%= render 'section', title: 'Progress step bar', example: 'molecules/progress_step_bar', explanation: 'The step bar shows users which steps they have completed, and what’s coming up. It serves a similar purpose to the <a href="#molecules-progress_indicator">progress indicator</a>, but it deals with sections rather than individual pages. Use this if your flow has defined steps or sections. It helps users mentally prepare for the section they’re about to start.' %>
 <%= render 'section', title: 'Reveal', example: 'molecules/reveal' %>
