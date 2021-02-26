@@ -3,7 +3,9 @@
   <div class="question-with-follow-up">
     <div class="question-with-follow-up__question">
       <fieldset class="form-group">
-        <label class="form-question" for="example_form_question">Did you have a CalFresh interview?</label>
+        <legend class="form-question">
+          Did you have a CalFresh interview?
+        </legend>
         <p class="text--help">Answering no will trigger a follow-up question.</p>
         <radiogroup class="input-group--inline">
           <label for="example_radio_inline_4_1" class="radio-button">
@@ -19,7 +21,7 @@
     </div>
     <div class="question-with-follow-up__follow-up" id="interview-follow-up">
       <fieldset class="form-group">
-        <label class="form-question" for="enrollment_survey_interview_follow_up">Do you know why?</label>
+        <legend class="form-question">Do you know why?</legend>
         <p class="text--help">Check all that apply</p>
         <radiogroup class="input-group--block">
           <label for="enrollment_survey_interview_follow_up_notified_too_late" class="radio-button">
@@ -43,22 +45,33 @@
     </div>
   </div>
 
-  <!-- Follow-up with a checkbox -->
+  <!-- Follow-up with a checkbox list -->
   <div class="question-with-follow-up">
     <div class="question-with-follow-up__question">
-      <fieldset class="form-group">
+      <fieldset class="input-group form-group">
+        <legend class="form-question ">
+          What are your favorite colors?
+        </legend>
+        <p class="text--help">Selecting 'Other' will trigger a follow-up question.</p>
+
         <label class="checkbox">
-          <input data-follow-up="#different-preferred-name-follow-up" type="checkbox" value="1" name="example_name_checkbox" id="example_name_checkbox">
-          I prefer a different first name
+          <input type="checkbox" value="blue" name="form[example_blue]" id="form_example_blue" /> Blue
+        </label>
+        <label class="checkbox">
+          <input type="checkbox" value="green" name="form[example_green]" id="form_example_green" /> Green
+        </label>
+        <label class="checkbox">
+          <input data-follow-up="#color_survey-follow-up" type="checkbox" value="other" name="form[example_other]" id="form_example_other">
+          Other
         </label>
       </fieldset>
     </div>
-    <div class="question-with-follow-up__follow-up" id="different-preferred-name-follow-up">
+    <div class="question-with-follow-up__follow-up" id="color_survey-follow-up">
       <div class="form-group">
-        <label for="member_preferred_first_name">
-          <p class="form-question">What is your preferred first name?</p>
+        <label for="color_survey_other_color">
+          <p class="form-question">Please specify</p>
         </label>
-        <input type="text" class="text-input" name="example_name_preferred" id="example_name_preferred">
+        <input type="text" class="text-input" name="color_survey_other_color" id="color_survey_other_color">
       </div>
     </div>
   </div>
