@@ -648,8 +648,8 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
     end
   end
 
-  describe ".cfa_checkbox" do
-    let(:output) { form_builder.cfa_checkbox(:example_method_with_validation, "Checkbox stuff") }
+  describe ".cfa_check_box" do
+    let(:output) { form_builder.cfa_check_box(:example_method_with_validation, "Checkbox stuff") }
 
     it "renders a text input with valid HTML" do
       expect(output).to be_html_safe
@@ -657,12 +657,12 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
 
     it "includes an identifying class on the containing element" do
       html_component = Nokogiri::HTML.fragment(output).child
-      expect(html_component.classes).to include("cfa-checkbox")
+      expect(html_component.classes).to include("cfa-check-box")
     end
 
     context "input options provided" do
       let(:output) do
-        form_builder.cfa_checkbox(:example_method_with_validation, "Checkbox stuff", disabled: true, 'data-some-attribute': "some-value")
+        form_builder.cfa_check_box(:example_method_with_validation, "Checkbox stuff", disabled: true, 'data-some-attribute': "some-value")
       end
 
       it "passes input options to the checkbox" do
@@ -674,7 +674,7 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
 
     context "wrapper options provided" do
       let(:output) do
-        form_builder.cfa_checkbox(:example_method_with_validation,
+        form_builder.cfa_check_box(:example_method_with_validation,
                                   "Checkbox stuff",
                                   wrapper_options: {
                                     class: "wrapper-class",
@@ -684,7 +684,7 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
 
       it "does not overwrite existing classes" do
         html_component = Nokogiri::HTML.fragment(output).child
-        expect(html_component.classes).to include("cfa-checkbox")
+        expect(html_component.classes).to include("cfa-check-box")
       end
 
       it "assigns wrapper options on the outermost element" do
@@ -696,7 +696,7 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
 
     context "errors" do
       let(:output) do
-        form_builder.cfa_checkbox(:example_method_with_validation,
+        form_builder.cfa_check_box(:example_method_with_validation,
                                   "Checkbox stuff",
                                   'aria-describedby': "another-id",
                                   wrapper_options: { class: "wrapper-class" })
@@ -723,7 +723,7 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
 
     context "checked and unchecked value" do
       let(:output) do
-        form_builder.cfa_checkbox(:example_method_with_validation, "Checkbox stuff", "yes", "no")
+        form_builder.cfa_check_box(:example_method_with_validation, "Checkbox stuff", "yes", "no")
       end
 
       it "uses the values in the generated inputs" do
@@ -731,6 +731,74 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
         visible_input = Nokogiri::HTML.fragment(output).at_css("input[type='checkbox']")
         expect(hidden_input.get_attribute("value")).to eq "no"
         expect(visible_input.get_attribute("value")).to eq "yes"
+      end
+    end
+  end
+
+  describe ".cfa_collection_check_boxes" do
+    let(:output) do
+      form_builder.cfa_collection_check_boxes(:example_method_with_validation,
+                                              [
+                                                  Cfa::Styleguide::FormExample.new(id: 1, name: 'One'),
+                                                  Cfa::Styleguide::FormExample.new(id: 2, name: 'Two')
+                                              ],
+                                              :id,
+                                              :name)
+    end
+
+    it "renders a text input with valid HTML" do
+      expect(output).to be_html_safe
+    end
+
+    it "includes an identifying class on the containing element" do
+      html_component = Nokogiri::HTML.fragment(output).child
+      expect(html_component.classes).to include("cfa-collection-check-boxes")
+    end
+
+    context "input options provided" do
+      let(:output) do
+        form_builder.cfa_collection_check_boxes(:example_method_with_validation,
+                                                [
+                                                    Cfa::Styleguide::FormExample.new(id: 1, name: 'One'),
+                                                    Cfa::Styleguide::FormExample.new(id: 2, name: 'Two')
+                                                ],
+                                                :id,
+                                                :name,
+                                                disabled: true,
+                                                'data-some-attribute': 'some-value')
+      end
+
+      it "passes input options to the checkboxes" do
+        checkbox_html = Nokogiri::HTML.fragment(output).at_css("input[type='checkbox']")
+        expect(checkbox_html.get_attribute("disabled")).to be_truthy
+        expect(checkbox_html.get_attribute("data-some-attribute")).to eq("some-value")
+      end
+    end
+
+    context "wrapper options provided" do
+      let(:output) do
+        form_builder.cfa_collection_check_boxes(:example_method_with_validation,
+                                                [
+                                                    Cfa::Styleguide::FormExample.new(id: 1, name: 'One'),
+                                                    Cfa::Styleguide::FormExample.new(id: 2, name: 'Two')
+                                                ],
+                                                :id,
+                                                :name,
+                                                wrapper_options: {
+                                                    class: "wrapper-class",
+                                                    id: "wrapper-id",
+                                                })
+      end
+
+      it "does not overwrite existing classes" do
+        html_component = Nokogiri::HTML.fragment(output).child
+        expect(html_component.classes).to include("cfa-collection-check-boxes")
+      end
+
+      it "assigns wrapper options on the outermost element" do
+        html_component = Nokogiri::HTML.fragment(output).child
+        expect(html_component.classes).to include("wrapper-class")
+        expect(html_component.get_attribute("id")).to include("wrapper-id")
       end
     end
   end

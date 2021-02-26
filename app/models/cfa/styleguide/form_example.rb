@@ -7,7 +7,9 @@ module Cfa
       include ActiveModel::AttributeAssignment
       include ActiveModel::Validations::Callbacks
 
-      attr_accessor :example_method_name,
+      attr_accessor :id,
+                    :name,
+                    :example_method_name,
                     :example_method_with_validation,
                     :example_method_name_month,
                     :example_method_name_day,
