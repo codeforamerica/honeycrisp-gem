@@ -17,14 +17,14 @@
 
   .emoji, .illustration {
     position: relative;
-    background-color: #fff;
+    background-color: $color-white;
     margin-bottom: 1em;
     &:before {
       content: '';
       z-index: 0;
       display: block;
       position: absolute;
-      border: 20px solid #fff;
+      border: 20px solid $color-white;
       top: -20px;
       right: -20px;
       bottom: -20px;

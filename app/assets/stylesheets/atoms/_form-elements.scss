@@ -63,7 +63,7 @@ label {
   min-height: $s60;
 	padding: $s35/2 $s25;
   padding-left: $s60;
-	background-color: #FFFFFF;
+	background-color: $color-white;
 	border: 2px solid $color-grey-darkest;
 	input[type='radio'] {
     @include outline;
@@ -72,7 +72,7 @@ label {
     left: $s25;
     appearance: none;
     display: inline-block;
-    background-color: #fff;
+    background-color: $color-white;
     border: 2px solid $color-grey-darkest;
     height: 20px;
     width: 20px;
@@ -114,7 +114,7 @@ label {
 	display: block;
 	font-size: $font-size-25;
 	font-weight: $font-weight-bold;
-	background-color: #FFFFFF;
+	background-color: $color-white;
   min-height: $s60;
 	margin-bottom: $s10;
 	padding: $s35/2 $s25;
@@ -127,7 +127,7 @@ label {
     left: $s25;
     appearance: none;
     display: inline-block;
-    background-color: #fff;
+    background-color: $color-white;
     border: 2px solid $color-grey-darkest;
     height: 20px;
     width: 20px;
@@ -175,7 +175,7 @@ label {
   font-size: $font-size-25;
   height: $s60;
   line-height: $s60;
-  background-color: #FFFFFF;
+  background-color: $color-white;
 
   &:after {
     transition: $animation-fast all;

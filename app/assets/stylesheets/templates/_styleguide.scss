@@ -3,7 +3,7 @@
   margin-top: 3em;
 
   .main-header {
-    background-color: #fff;
+    background-color: $color-white;
     position: fixed;
     top: 0;
     left: 0;
@@ -12,7 +12,7 @@
   }
 
   .slab {
-    background-color: #fff;
+    background-color: $color-white;
   }
 
   .slab--hero {
@@ -66,7 +66,7 @@
         display: block;
         font-size: $font-size-15;
         border: 1px solid $color-grey-light;
-        background: #fff;
+        background: $color-white;
         overflow-y: hidden;
         code {
           background-color: transparent;

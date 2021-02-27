@@ -19,12 +19,12 @@
     z-index: 2;
     overflow: visible;
     .toolbar__item {
-      color: #fff;
+      color: $color-white;
     }
   }
 
   .main-header__title a {
-    color: #FFFFFF;
+    color: $color-white;
 
     &:before {
       @include retina-bg(gcf_logomark_white, 100% auto);
@@ -35,7 +35,7 @@
     position: relative;
     background: rgba(shade($color-grey-dark, 80%), .6);
 
-    color: #FFFFFF;
+    color: $color-white;
 
       padding: {
         top: $s95+$s35;
