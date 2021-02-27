@@ -61,9 +61,9 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
     end
   end
 
-  describe ".cfa_text_input" do
+  describe ".cfa_text_field" do
     let(:output) do
-      form_builder.cfa_text_input(:example_method_with_validation, "Example method")
+      form_builder.cfa_text_field(:example_method_with_validation, "Example method")
     end
 
     it "renders a text input with valid HTML" do
@@ -72,7 +72,7 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
 
     it "includes an identifying class on the containing element" do
       html_component = Nokogiri::HTML.fragment(output).child
-      expect(html_component.classes).to include("cfa-text-input")
+      expect(html_component.classes).to include("cfa-text-field")
     end
 
     it "properly constructs a label with optional text" do
@@ -83,7 +83,7 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
 
     context "when options provided" do
       let(:output) do
-        form_builder.cfa_text_input(:example_method_with_validation,
+        form_builder.cfa_text_field(:example_method_with_validation,
                                     "Example method with validation",
                                     placeholder: "my text",
                                     disabled: true)
@@ -98,7 +98,7 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
 
     context "errors" do
       let(:output) do
-        form_builder.cfa_text_input(:example_method_with_validation,
+        form_builder.cfa_text_field(:example_method_with_validation,
                                     "Example method with validation",
                                     'aria-describedby': "another-id")
       end
@@ -127,7 +127,7 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
 
     context "wrapper_options provided" do
       let(:output) do
-        form_builder.cfa_text_input(
+        form_builder.cfa_text_field(
           :example_method_with_validation,
           "Example method with validation",
           wrapper_options: { class: "wrapper-class", id: "wrapper-id" },
@@ -136,7 +136,7 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
 
       it "does not overwrite existing classes" do
         html_component = Nokogiri::HTML.fragment(output).child
-        expect(html_component.classes).to include("cfa-text-input")
+        expect(html_component.classes).to include("cfa-text-field")
       end
 
       it "assigns wrapper options on the outermost element" do
@@ -148,7 +148,7 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
 
     context "label_options provided" do
       let(:output) do
-        form_builder.cfa_text_input(
+        form_builder.cfa_text_field(
           :example_method_with_validation,
           "Example method with validation",
           label_options: { class: "label-class", data: { spec: "label-1" } },
@@ -164,7 +164,7 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
 
     context "required is true" do
       let(:output) do
-        form_builder.cfa_text_input(
+        form_builder.cfa_text_field(
           :example_method_with_validation,
           "Example method with validation",
           required: true,
@@ -184,7 +184,7 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
 
     context "help text is provided" do
       let(:output) do
-        form_builder.cfa_text_input(
+        form_builder.cfa_text_field(
           :example_method_with_validation,
             "Example method with validation",
             help_text: "Found on RAP sheet",
