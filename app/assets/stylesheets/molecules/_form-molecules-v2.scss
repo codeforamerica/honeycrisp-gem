@@ -1,0 +1,23 @@
+.form-builder-v2 {
+  .cfa-text-field {
+    margin-bottom: $s60;
+    label {
+      display: block;
+      font-weight: $font-weight-bold;
+      margin-bottom: $s25;
+    }
+    input[type="text"] {
+      display: block;
+      border: 2px solid $color-grey-darkest;
+      box-shadow: $box-shadow-inset;
+      padding: 0 $s25;
+      width: 100%;
+      height: $s60;
+      background-color: $color-grey-light;
+      font-weight: $font-weight-bold;
+      font-size: $font-size-25;
+      margin-bottom: $s15;
+      @include outline;
+    }
+  }
+}
