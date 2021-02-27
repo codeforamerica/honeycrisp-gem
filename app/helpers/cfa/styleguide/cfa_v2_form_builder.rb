@@ -8,7 +8,7 @@ module Cfa
         end
       end
 
-      def cfa_text_input(method,
+      def cfa_text_field(method,
                          label_text,
                          help_text: nil,
                          wrapper_options: {},
@@ -27,7 +27,7 @@ module Cfa
           error_html = errors_for(object, method, error_id)
         end
 
-        wrapper_options = append_to_value(wrapper_options, :class, "cfa-text-input")
+        wrapper_options = append_to_value(wrapper_options, :class, "cfa-text-field")
         @template.tag.div(wrapper_options) do
           @template.concat(label(method, errors_and_optional_annotation(method, label_text, input_options[:required]), label_options))
           @template.concat(help_text_html)
