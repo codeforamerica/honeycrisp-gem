@@ -1,19 +1,10 @@
 <%= fields_for(:form, @form, builder: Cfa::Styleguide::CfaV2FormBuilder) do |f| %>
-  <%= f.cfa_check_box(:example_method_check_box_aa, 'I accept these terms') %>
-  <%= f.cfa_check_box(:example_method_with_validation_check_box_aa, 'I accept these terms', required: true) %>
+  <%= f.cfa_check_box(:example_method_check_box_a, 'I accept these terms') %>
 
-  <%= f.cfa_fieldset(:example_method_checkbox_a, "Checkbox with wrapper options") do %>
-      <%= f.cfa_check_box(:example_method_checkbox_a, 'First option', :first_option, wrapper_options: { class: 'wrapper-class' }) %>
-      <%= f.cfa_check_box(:example_method_checkbox_a, 'Second option', :second_option) %>
-    <% end %>
+  <%= f.cfa_check_box(:example_method_with_validation_check_box_b, 'I accept these terms - with input options', required: true, class: 'my-checkbox-class') %>
+  <%= f.cfa_check_box(:example_method_with_validation_check_box_c, 'I accept these terms - with wrapper options', wrapper_options: { class: 'wrapper-class' }) %>
+  <%= f.cfa_check_box(:example_method_with_validation_check_box_d, 'I accept these terms - with label options', label_options: { class: 'label-class' }) %>
 
-    <%= f.cfa_fieldset(:example_method_checkbox_b, "Checkbox with label options") do %>
-      <%= f.cfa_check_box(:example_method_checkbox_b, 'First option', :first_option, label_options: { class: 'wrapper-class' }) %>
-      <%= f.cfa_check_box(:example_method_checkbox_b, 'Second option', :second_option) %>
-    <% end %>
-
-    <%= f.cfa_fieldset(:example_method_checkbox_c, "Checkbox with input options") do %>
-      <%= f.cfa_check_box(:example_method_checkbox_c, 'First option', :first_option, required: true, class: 'my-checkbox-class') %>
-      <%= f.cfa_check_box(:example_method_checkbox_c, 'Second option', :second_option, disabled: true, class: 'my-checkbox-class') %>
-    <% end %>
+  <%= f.cfa_check_box(:example_method_with_validation_check_box_e, 'I accept these terms - with checked value', :yes, required: true) %>
+  <%= f.cfa_check_box(:example_method_with_validation_check_box_f, 'I accept these terms - with checked/unchecked value', :yes, :no, required: true) %>
 <% end %>

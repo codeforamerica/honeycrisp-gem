@@ -1,11 +1,13 @@
 <%= fields_for(:form, @form, builder: Cfa::Styleguide::CfaV2FormBuilder) do |f| %>
-  <%= f.cfa_collection_radio_buttons(:example_method_collection_radio_buttons_a,
+  <%= f.cfa_fieldset(:example_method_collection_radio_buttons_a, "Fieldset with collection radio boxes") do %>
+    <%= f.cfa_collection_radio_buttons(:example_method_collection_radio_buttons_a,
                                    [
                                        Cfa::Styleguide::FormExample.new(id: 1, name: 'One'),
                                        Cfa::Styleguide::FormExample.new(id: 2, name: 'Two')
                                    ],
                                    :id,
                                    :name) %>
+  <% end %>
 
   <%= f.cfa_fieldset(:example_method_with_validation_collection_radio_buttons, "Fieldset with collection radio boxes") do %>
     <%= f.cfa_collection_radio_buttons(:example_method_with_validation_collection_radio_buttons,
