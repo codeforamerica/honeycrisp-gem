@@ -4,8 +4,12 @@
 
   .data-table {
     font-size: inherit;
+
     th, td {
       padding: $s15;
+    }
+
+    td {
       a {
         color: $color-teal;
         text-decoration: underline;
@@ -15,6 +19,23 @@
     .row--error, .row--warning {
       a {
         color: $color-teal-dark;
+      }
+    }
+
+    .header--sortable {
+      white-space: nowrap;
+
+      .sort-icon::after {
+        display: inline-block;
+        margin-left: $s15;
+      }
+
+      .sort-icon--ascending::after {
+        content: '▲';
+      }
+
+      .sort-icon--descending::after {
+        content: '▼';
       }
     }
   }
