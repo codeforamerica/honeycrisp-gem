@@ -1,5 +1,37 @@
 # Changelog
 
+## [v0.9.6](https://github.com/codeforamerica/honeycrisp-gem/tree/v0.9.6) (2021-03-02)
+
+[Full Changelog](https://github.com/codeforamerica/honeycrisp-gem/compare/v0.9.5...v0.9.6)
+
+**Implemented enhancements:**
+
+- Compact button [\#205](https://github.com/codeforamerica/honeycrisp-gem/issues/205)
+- Remove example pills pattern and documentation  [\#170](https://github.com/codeforamerica/honeycrisp-gem/issues/170)
+- Make tab bar selected state match background color [\#152](https://github.com/codeforamerica/honeycrisp-gem/issues/152)
+
+**Fixed bugs:**
+
+- Accordion and Reveal js not working [\#247](https://github.com/codeforamerica/honeycrisp-gem/issues/247)
+- Help text has the wrong class in the documentation [\#240](https://github.com/codeforamerica/honeycrisp-gem/issues/240)
+- question-with-follow-up doesn't quite work for checkbox lists [\#219](https://github.com/codeforamerica/honeycrisp-gem/issues/219)
+
+**Closed issues:**
+
+- Update material icon font [\#222](https://github.com/codeforamerica/honeycrisp-gem/issues/222)
+
+**Merged pull requests:**
+
+- Add .header--sortable to honeycrisp\_compact data-table [\#257](https://github.com/codeforamerica/honeycrisp-gem/pull/257) ([tdooner](https://github.com/tdooner))
+- Uses variable $color-white instead of \#fff or \#FFFFFF [\#253](https://github.com/codeforamerica/honeycrisp-gem/pull/253) ([ash-rc](https://github.com/ash-rc))
+- Use text--help for help text in Honeycrisp guide [\#252](https://github.com/codeforamerica/honeycrisp-gem/pull/252) ([ash-rc](https://github.com/ash-rc))
+- Fix checkbox set with followup so that selecting additional checkboxes leaves followup open [\#251](https://github.com/codeforamerica/honeycrisp-gem/pull/251) ([wschaefer](https://github.com/wschaefer))
+- Darkens unselected tabs by 5% in tab bar [\#249](https://github.com/codeforamerica/honeycrisp-gem/pull/249) ([ash-rc](https://github.com/ash-rc))
+- Remove double init of honeycrisp javascript. [\#248](https://github.com/codeforamerica/honeycrisp-gem/pull/248) ([bytheway875](https://github.com/bytheway875))
+- Update readme with bundler troubleshooting [\#246](https://github.com/codeforamerica/honeycrisp-gem/pull/246) ([wschaefer](https://github.com/wschaefer))
+- Remove example pills pattern and documentation [\#244](https://github.com/codeforamerica/honeycrisp-gem/pull/244) ([wschaefer](https://github.com/wschaefer))
+- Pull JS in main sprockets file into its own file \(honeycrisp.js\) [\#241](https://github.com/codeforamerica/honeycrisp-gem/pull/241) ([bytheway875](https://github.com/bytheway875))
+
 ## [v0.9.5](https://github.com/codeforamerica/honeycrisp-gem/tree/v0.9.5) (2021-02-12)
 
 [Full Changelog](https://github.com/codeforamerica/honeycrisp-gem/compare/v0.9.4...v0.9.5)
@@ -8,7 +40,10 @@
 
 - Footer is shifted left by 25rem when there's no sidebar [\#236](https://github.com/codeforamerica/honeycrisp-gem/issues/236)
 - Footer is offset for all tablet-up screens [\#212](https://github.com/codeforamerica/honeycrisp-gem/issues/212)
-- Honeycrisp compact overrides focus styles for buttons [\#230](https://github.com/codeforamerica/honeycrisp-gem/issues/230)
+
+**Closed issues:**
+
+- Need to relax "neat" gem dependency to allow usage in Rails 6.1 [\#232](https://github.com/codeforamerica/honeycrisp-gem/issues/232)
 
 **Merged pull requests:**
 
@@ -35,7 +70,6 @@
 
 **Closed issues:**
 
-- Need to relax "neat" gem dependency to allow usage in Rails 6.1 [\#232](https://github.com/codeforamerica/honeycrisp-gem/issues/232)
 - Discussion: Should sidebar navigation update its contents for different pages? [\#224](https://github.com/codeforamerica/honeycrisp-gem/issues/224)
 - Upgrade version of jQuery [\#217](https://github.com/codeforamerica/honeycrisp-gem/issues/217)
 - Documentation page for Compact Honeycrisp [\#208](https://github.com/codeforamerica/honeycrisp-gem/issues/208)
@@ -211,7 +245,6 @@
 **Merged pull requests:**
 
 - Simplified step-bar-description [\#113](https://github.com/codeforamerica/honeycrisp-gem/pull/113) ([embarnard](https://github.com/embarnard))
-- Fix bug on step progress bar: increment current\_step on a 0 index system [\#110](https://github.com/codeforamerica/honeycrisp-gem/pull/110) ([embarnard](https://github.com/embarnard))
 - added student pair emoji [\#109](https://github.com/codeforamerica/honeycrisp-gem/pull/109) ([embarnard](https://github.com/embarnard))
 
 ## [v0.6.2](https://github.com/codeforamerica/honeycrisp-gem/tree/v0.6.2) (2019-06-25)
@@ -229,6 +262,7 @@
 
 **Merged pull requests:**
 
+- Fix bug on step progress bar: increment current\_step on a 0 index system [\#110](https://github.com/codeforamerica/honeycrisp-gem/pull/110) ([embarnard](https://github.com/embarnard))
 - Add new type of notice [\#103](https://github.com/codeforamerica/honeycrisp-gem/pull/103) ([jenny-heath](https://github.com/jenny-heath))
 
 ## [v0.6.0](https://github.com/codeforamerica/honeycrisp-gem/tree/v0.6.0) (2019-05-21)
