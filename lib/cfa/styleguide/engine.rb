@@ -9,6 +9,7 @@ module Cfa
           cfa_styleguide_main.js
           prism.css
           prism.js
+          calfresh_logo.png
         )
       end
 
