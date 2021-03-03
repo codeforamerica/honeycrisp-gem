@@ -26,16 +26,20 @@
       white-space: nowrap;
 
       .sort-icon::after {
+        background-image: image-url('icon_sort_neutral.svg');
+        content: '';
         display: inline-block;
         margin-left: $s15;
+        width: 10px;
+        height: 14px;
       }
 
       .sort-icon--ascending::after {
-        content: '▲';
+        background-image: image-url('icon_sort_up.svg');
       }
 
       .sort-icon--descending::after {
-        content: '▼';
+        background-image: image-url('icon_sort_down.svg');
       }
     }
   }
