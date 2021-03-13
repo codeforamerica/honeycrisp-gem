@@ -138,7 +138,7 @@ To run, run `rake` or `rspec spec`.
 
 ### Releasing new gem versions
 
-To release a new version, on `master` branch:
+To release a new version, on `main` branch:
 * Update the version number in `version.rb` using [semantic versioning](https://semver.org/)
 * `bundle install` to update the Gemfile.lock
 * Update the [changelog configuration](./.github_changelog_generator) to set `since-tag` to previous version (e.g. `0.9.2`) and `future-release` to the new version (e.g. `0.9.3`). This will reduce the amount of changes fetched and unnecessary diffs to the generated changelog. 
