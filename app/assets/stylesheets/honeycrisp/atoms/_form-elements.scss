@@ -13,38 +13,39 @@ legend + p {
   clear: both;
 }
 
-
 radiogroup {
   clear: both;
 }
 
 label {
-	line-height: $s25;
+  line-height: $s25;
   clear: both;
 }
 
 .form-question {
-	display: block;
-	margin-bottom: $s25;
+  display: block;
+  margin-bottom: $s25;
   font-weight: $font-weight-bold;
 }
 
 .text-input {
   @include outline;
-	display: block;
-	width: 100%;
-	font-size: $font-size-25;
-	font-weight: $font-weight-bold;
+  display: block;
+  width: 100%;
+  font-size: $font-size-25;
+  font-weight: $font-weight-bold;
   height: $s60;
-	padding: 0 $s25;
+  padding: 0 $s25;
   margin-bottom: $s15;
   box-shadow: inset 0px 2px 0px rgba(#000, .15);
-	border: 2px solid $color-grey-darkest;
+  border: 2px solid $color-grey-darkest;
   border-radius: 0;
-	background-color: $color-grey-light;
-    &::placeholder {
-		color: $color-grey-dark;
-	}
+  background-color: $color-grey-light;
+
+  &::placeholder {
+    color: $color-grey-dark;
+  }
+
   &:focus {
     box-shadow: 0 0 0 5px $color-yellow, inset 0px 2px 0px rgba(#000, .15);
   }
@@ -52,22 +53,22 @@ label {
 
 .radio-button {
   @include outline-within();
-	transition: $animation-fast all;
+  transition: $animation-fast all;
   user-select: none;
   position: relative;
-	display: block;
-	cursor: pointer;
-	font-size: $font-size-25;
-	font-weight: $font-weight-bold;
-	margin-bottom: $s10;
+  display: block;
+  cursor: pointer;
+  font-size: $font-size-25;
+  font-weight: $font-weight-bold;
+  margin-bottom: $s10;
   min-height: $s60;
-	padding: $s35/2 $s25;
+  padding: $s35/2 $s25;
   padding-left: $s60;
 	background-color: $color-white;
 	border: 2px solid $color-grey-darkest;
 	input[type='radio'] {
     @include outline;
-		position: absolute;
+    position: absolute;
     top: $s35/2 + .3rem;
     left: $s25;
     appearance: none;
@@ -78,6 +79,7 @@ label {
     width: 20px;
     margin-right: $s15;
     border-radius: 50%;
+
     &:checked {
       &:before {
         content: '';
@@ -93,34 +95,36 @@ label {
         background-color: $color-teal;
       }
     }
-	}
-	&:hover {
-		background-color: $color-grey-light;
-	}
+  }
 
-	&.is-selected {
-		background-color: $color-teal-light;
-		border-color: $color-grey-darkest;
-		color: $color-grey-darkest;
-	}
+  &:hover {
+    background-color: $color-grey-light;
+  }
+
+  &.is-selected {
+    background-color: $color-teal-light;
+    border-color: $color-grey-darkest;
+    color: $color-grey-darkest;
+  }
 }
 
 .checkbox {
   @include outline-within();
-	transition: $animation-fast all;
+  transition: $animation-fast all;
   user-select: none;
   position: relative;
-	cursor: pointer;
-	display: block;
-	font-size: $font-size-25;
-	font-weight: $font-weight-bold;
-	background-color: $color-white;
+  cursor: pointer;
+  display: block;
+  font-size: $font-size-25;
+  font-weight: $font-weight-bold;
+  background-color: $color-white;
   min-height: $s60;
-	margin-bottom: $s10;
-	padding: $s35/2 $s25;
+  margin-bottom: $s10;
+  padding: $s35/2 $s25;
   padding-left: $s60;
-	border: 2px solid $color-grey-darkest;
-	input[type='checkbox'] {
+  border: 2px solid $color-grey-darkest;
+
+  input[type='checkbox'] {
     @include outline;
     position: absolute;
     top: $s35/2 + .3rem;
@@ -131,6 +135,7 @@ label {
     border: 2px solid $color-grey-darkest;
     height: 20px;
     width: 20px;
+
     &:checked {
       &:before {
         font-family: $font-icon;
@@ -143,26 +148,29 @@ label {
       }
     }
   }
-	&:hover {
-		background-color: $color-grey-light;
-	}
-	&.is-selected {
+
+  &:hover {
+    background-color: $color-grey-light;
+  }
+
+  &.is-selected {
     background-color: $color-teal-light;
     border-color: $color-grey-darkest;
     color: $color-grey-darkest;
-	}
+  }
 }
 
 .textarea {
   @include outline;
-	border: 2px solid $color-grey-darkest;
+  border: 2px solid $color-grey-darkest;
   box-shadow: inset 0px 2px 0px rgba(#000, .15);
-	width: 100%;
-	padding: $s15;
-	line-height: $s25;
-	margin-bottom: $s15;
+  width: 100%;
+  padding: $s15;
+  line-height: $s25;
+  margin-bottom: $s15;
   font-weight: $font-weight-bold;
   background-color: $color-grey-light;
+
   &::placeholder {
     color: $color-grey-dark;
   }
@@ -223,10 +231,10 @@ label {
 }
 
 .file-upload__input {
-	width: .1px;
-	height: .1px;
-	opacity: 0;
-	overflow: hidden;
-	position: absolute;
-	z-index: -1;
+  width: .1px;
+  height: .1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
 }
