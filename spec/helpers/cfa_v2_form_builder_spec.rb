@@ -73,10 +73,12 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
     it "includes an identifying class on the containing element" do
       html_component = Nokogiri::HTML.fragment(output).child
       expect(html_component.classes).to include("cfa-text-field")
+      expect(html_component.classes).to include("form-group")
     end
 
     it "properly constructs a label with optional text" do
       label = Nokogiri::HTML.fragment(output).at_css("label")
+      expect(label.classes).to include("form-question")
       expect(label.text).to include("Example method")
       expect(label.text).to include("(Optional)")
     end
@@ -85,6 +87,7 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
       let(:output) do
         form_builder.cfa_text_field(:example_method_with_validation,
                                     "Example method with validation",
+                                    class: "foo",
                                     placeholder: "my text",
                                     disabled: true)
       end
@@ -93,6 +96,12 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
         input_html = Nokogiri::HTML.fragment(output).at_css("input")
         expect(input_html.get_attribute("disabled")).to be_truthy
         expect(input_html.get_attribute("placeholder")).to eq("my text")
+      end
+
+      it "does not override text-input class" do
+        input_html = Nokogiri::HTML.fragment(output).at_css("input")
+        expect(input_html.classes).to include("foo")
+        expect(input_html.classes).to include("text-input")
       end
     end
 
@@ -219,12 +228,20 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
     it "includes an identifying class on the containing element" do
       html_component = Nokogiri::HTML.fragment(output).child
       expect(html_component.classes).to include("cfa-select")
+      expect(html_component.classes).to include("form-group")
     end
 
     it "includes label with provided text and optional text" do
       label = Nokogiri::HTML.fragment(output).at_css("label")
+      expect(label.classes).to include("form-question")
       expect(label.text).to include("My select value")
       expect(label.text).to include("(Optional)")
+    end
+
+    it "sets select-related classes" do
+      select_html = Nokogiri::HTML.fragment(output).at_css("select")
+      expect(select_html.classes).to include("select__element")
+      expect(select_html.parent.classes).to include("select")
     end
 
     context "when select_options provided" do
@@ -374,11 +391,13 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
     it "includes an identifying class on the containing element" do
       html_component = Nokogiri::HTML.fragment(output).child
       expect(html_component.classes).to include("cfa-fieldset")
+      expect(html_component.classes).to include("form-group")
     end
 
     it "displays a legend" do
       legend = Nokogiri::HTML.fragment(output).at_css("legend")
       expect(legend.text).to include "My radio buttons"
+      expect(legend.classes).to include("form-question")
     end
 
     context "wrapper_options provided" do
@@ -501,6 +520,11 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
       expect(html_component.classes).to include("cfa-radio-button")
     end
 
+    it "includes identifying class on the label of radio button" do
+      label = Nokogiri::HTML.fragment(output).at_css("label")
+      expect(label.classes).to include("radio-button")
+    end
+
     context "when input options provided" do
       let(:output) do
         form_builder.cfa_radio_button(:example_method_with_validation,
@@ -548,6 +572,11 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
       expect(html_component.classes).to include("cfa-check-box")
     end
 
+    it "includes an identifying class on the label" do
+      checkbox = Nokogiri::HTML.fragment(output).at_css("label")
+      expect(checkbox.classes).to include("checkbox")
+    end
+
     context "input options provided" do
       let(:output) do
         form_builder.cfa_check_box(:example_method_with_validation, "Checkbox stuff", disabled: true, 'data-some-attribute': "some-value")
@@ -579,33 +608,6 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
         html_component = Nokogiri::HTML.fragment(output).child
         expect(html_component.classes).to include("wrapper-class")
         expect(html_component.get_attribute("id")).to include("wrapper-id")
-      end
-    end
-
-    context "errors" do
-      let(:output) do
-        form_builder.cfa_check_box(:example_method_with_validation,
-                                  "Checkbox stuff",
-                                  'aria-describedby': "another-id",
-                                  wrapper_options: { class: "wrapper-class" })
-      end
-
-      before do
-        fake_model.validate
-      end
-
-      it "associates form errors with input and appends error id to aria-describedby" do
-        checkbox_html = Nokogiri::HTML.fragment(output).at_css("input[type='checkbox']")
-        error_text_html = Nokogiri::HTML.fragment(output).at_css(".text--error")
-
-        expect(checkbox_html.get_attribute("aria-describedby")).to include("another-id")
-        expect(checkbox_html.get_attribute("aria-describedby")).to include(error_text_html.get_attribute("id"))
-      end
-
-      it "appends error class to wrapping classes" do
-        html_component = Nokogiri::HTML.fragment(output).child
-        expect(html_component.classes).to include("form-group--error")
-        expect(html_component.classes).to include("wrapper-class")
       end
     end
 
@@ -641,6 +643,11 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
     it "includes an identifying class on the containing element" do
       html_component = Nokogiri::HTML.fragment(output).child
       expect(html_component.classes).to include("cfa-collection-check-boxes")
+    end
+
+    it "includes an identifying class on the label" do
+      checkboxes = Nokogiri::HTML.fragment(output).at_css("label")
+      expect(checkboxes.classes).to include("checkbox")
     end
 
     context "input options provided" do
@@ -709,6 +716,11 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
     it "includes an identifying class on the containing element" do
       html_component = Nokogiri::HTML.fragment(output).child
       expect(html_component.classes).to include("cfa-collection-radio-buttons")
+    end
+
+    it "includes identifying class on the label of radio button" do
+      labels = Nokogiri::HTML.fragment(output).at_css("label")
+      expect(labels.classes).to include("radio-button")
     end
 
     context "input options provided" do
