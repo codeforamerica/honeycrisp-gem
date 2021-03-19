@@ -53,14 +53,13 @@ describe "Pages" do
     click_link "Form Builder V2"
 
     expect(page).to have_content("CfAV2FormBuilder")
-    #   expect(page).to have_content("Example textarea")
-    #   expect(page).to have_content("Example range")
-    #   expect(page).to have_content("Example date select")
-    #
-    #   expect(page).to have_content("Example choice 1")
-    #   expect(page).to have_content("Example choice 2")
-    #   expect(page).to have_content("Example radio set (regular)")
-    #   expect(page).to have_content("Example radio set with follow up")
-    #   expect(page).to have_content("Example select")
+    expect(page).to have_content("Example input")
+    expect(page).to have_content("Continue")
+    expect(page).to have_content("Example select")
+    expect(page).to have_content("Fieldset - empty")
+    expect(page).to have_content("Radios")
+    expect(page).to have_content("Fieldset with collection radio boxes")
+    expect(page).to have_content("Checkboxes")
+    expect(page).to have_content("Fieldset with collection check boxes")
   end
 end
