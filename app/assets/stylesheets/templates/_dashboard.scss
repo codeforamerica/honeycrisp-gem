@@ -2,7 +2,12 @@
   font-size: $font-size-25-small;
 
   .page-wrapper, .main-footer {
-    overflow: auto;
+    padding-left: $s15;
+    padding-right: $s15;
+    @include media($tablet-up) {
+      padding-left: $s35;
+      padding-right: $s35;
+    }
     min-width: $site-max-width;
   }
 

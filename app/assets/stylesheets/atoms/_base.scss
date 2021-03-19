@@ -18,11 +18,9 @@ body {
 }
 
 .page-wrapper {
-  overflow: hidden;
-  padding-left: $s15;
-  padding-right: $s15;
-  @include media($tablet-up) {
-    padding-left: $s35;
-    padding-right: $s35;
-  }
+  // usually page wrapper is wrapping everything in the page
+  // higher level wrapping classes like template--dashboard. 
+  // While we no longer need this to apply values in Honeycrisp,
+  // leaving it here because I'd like there to be an indicator to
+  // future developers that page-wrapper is a "honeycrisp thing".
 }
