@@ -1,10 +1,14 @@
 <%= fields_for(:form, @form, builder: Cfa::Styleguide::CfaV2FormBuilder) do |f| %>
-  <%= f.cfa_check_box(:example_method_check_box_a, 'I accept these terms') %>
+  <%= f.cfa_fieldset(:example_method_check_box_summary, "Checkboxes") do %>
+    <%= f.cfa_check_box(:example_method_check_box_a, 'Option 1') %>
+    <%= f.cfa_check_box(:example_method_check_box_c, 'Option 2 - with wrapper options', wrapper_options: { class: 'wrapper-class' }) %>
+    <%= f.cfa_check_box(:example_method_check_box_d, 'Option 3 - with label options', label_options: { class: 'label-class' }) %>
+    <%= f.cfa_check_box(:example_method_check_box_e, 'Option 4 - with checked value', :yes, required: true) %>
+    <%= f.cfa_check_box(:example_method_check_box_f, 'Option 5 - with checked/unchecked value', :yes, :no, required: true) %>
+  <% end %>
 
-  <%= f.cfa_check_box(:example_method_with_validation_check_box_b, 'I accept these terms - with input options', required: true, class: 'my-checkbox-class') %>
-  <%= f.cfa_check_box(:example_method_with_validation_check_box_c, 'I accept these terms - with wrapper options', wrapper_options: { class: 'wrapper-class' }) %>
-  <%= f.cfa_check_box(:example_method_with_validation_check_box_d, 'I accept these terms - with label options', label_options: { class: 'label-class' }) %>
-
-  <%= f.cfa_check_box(:example_method_with_validation_check_box_e, 'I accept these terms - with checked value', :yes, required: true) %>
-  <%= f.cfa_check_box(:example_method_with_validation_check_box_f, 'I accept these terms - with checked/unchecked value', :yes, :no, required: true) %>
+  <!--  Must wrap in fieldset to get errors for individual checkboxes-->
+  <%= f.cfa_fieldset(:example_method_with_validation_check_box_a, "I accept these terms", label_options: { class: 'is-hidden' }, required: true) do %>
+    <%= f.cfa_check_box(:example_method_with_validation_check_box_a, 'I accept these terms - with validation errors') %>
+  <% end %>
 <% end %>
