@@ -76,10 +76,10 @@ var checkboxSelector = (function() {
 
                 $(this).find('input').click(function(e) {
                     if($(this).is(':checked')) {
-                        $(this).parent().addClass('is-selected');
+                        $(this).closest('.checkbox').addClass('is-selected');
                     }
                     else {
-                        $(this).parent().removeClass('is-selected');
+                        $(this).closest('.checkbox').removeClass('is-selected');
                     }
                 })
             })
