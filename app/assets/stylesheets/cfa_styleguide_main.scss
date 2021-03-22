@@ -4,77 +4,76 @@
 @import "normalize";
 
 /* Variables */
-@import 'atoms/variables';
+@import 'honeycrisp/atoms/variables';
 
 /* Atoms */
-@import 'atoms/grid';
-@import 'atoms/base';
-@import 'atoms/spacing';
-@import 'atoms/utilities';
-@import 'atoms/typography';
-@import 'atoms/labels';
-@import 'atoms/icons';
-@import 'atoms/emoji-specs';
-@import 'atoms/emoji';
-@import 'atoms/images';
-@import 'atoms/illustrations';
-@import 'atoms/slabs';
-@import 'atoms/notices';
-@import 'atoms/buttons';
-@import 'atoms/form-elements';
-@import 'atoms/form-widths';
-@import 'atoms/screen-readers';
+@import 'honeycrisp/atoms/grid';
+@import 'honeycrisp/atoms/base';
+@import 'honeycrisp/atoms/spacing';
+@import 'honeycrisp/atoms/utilities';
+@import 'honeycrisp/atoms/typography';
+@import 'honeycrisp/atoms/labels';
+@import 'honeycrisp/atoms/icons';
+@import 'honeycrisp/atoms/emoji-specs';
+@import 'honeycrisp/atoms/emoji';
+@import 'honeycrisp/atoms/images';
+@import 'honeycrisp/atoms/illustrations';
+@import 'honeycrisp/atoms/slabs';
+@import 'honeycrisp/atoms/notices';
+@import 'honeycrisp/atoms/buttons';
+@import 'honeycrisp/atoms/form-elements';
+@import 'honeycrisp/atoms/form-widths';
+@import 'honeycrisp/atoms/screen-readers';
 
 
 /* Molecules */
-@import 'molecules/data-table';
-@import 'molecules/flashes';
-@import 'molecules/form-molecules';
-@import 'molecules/incrementer';
-@import 'molecules/media-box';
-@import 'molecules/progress-dots';
-@import 'molecules/progress-indicator';
-@import 'molecules/progress-step-bar';
-@import 'molecules/reveal';
-@import 'molecules/accordion';
-@import 'molecules/scroller';
-@import 'molecules/searchbar';
-@import 'molecules/steps';
-@import 'molecules/summary-table';
-@import 'molecules/tabs';
-@import 'molecules/toolbar';
-@import 'molecules/tooltip';
-@import 'molecules/complex-list';
-@import 'molecules/vertical-steps';
-@import 'molecules/show-more';
+@import 'honeycrisp/molecules/data-table';
+@import 'honeycrisp/molecules/flashes';
+@import 'honeycrisp/molecules/form-molecules';
+@import 'honeycrisp/molecules/incrementer';
+@import 'honeycrisp/molecules/media-box';
+@import 'honeycrisp/molecules/progress-dots';
+@import 'honeycrisp/molecules/progress-indicator';
+@import 'honeycrisp/molecules/progress-step-bar';
+@import 'honeycrisp/molecules/reveal';
+@import 'honeycrisp/molecules/accordion';
+@import 'honeycrisp/molecules/scroller';
+@import 'honeycrisp/molecules/searchbar';
+@import 'honeycrisp/molecules/steps';
+@import 'honeycrisp/molecules/summary-table';
+@import 'honeycrisp/molecules/tabs';
+@import 'honeycrisp/molecules/toolbar';
+@import 'honeycrisp/molecules/tooltip';
+@import 'honeycrisp/molecules/complex-list';
+@import 'honeycrisp/molecules/vertical-steps';
+@import 'honeycrisp/molecules/show-more';
 
 /* Organisms */
-@import 'organisms/assister-message';
-@import 'organisms/demo-banner';
-@import 'organisms/global-error-message';
-@import 'organisms/document-preview';
-@import 'organisms/form-card';
-@import 'organisms/legal';
-@import 'organisms/main-footer';
-@import 'organisms/main-header';
-@import 'organisms/pagination';
-@import 'organisms/statistic-card';
-@import 'organisms/admin-application-card';
-@import 'organisms/sidebar';
-
+@import 'honeycrisp/organisms/assister-message';
+@import 'honeycrisp/organisms/demo-banner';
+@import 'honeycrisp/organisms/global-error-message';
+@import 'honeycrisp/organisms/document-preview';
+@import 'honeycrisp/organisms/form-card';
+@import 'honeycrisp/organisms/legal';
+@import 'honeycrisp/organisms/main-footer';
+@import 'honeycrisp/organisms/main-header';
+@import 'honeycrisp/organisms/pagination';
+@import 'honeycrisp/organisms/statistic-card';
+@import 'honeycrisp/organisms/admin-application-card';
+@import 'honeycrisp/organisms/sidebar';
 
 /* Templates */
-@import 'templates/about';
-@import 'templates/dashboard';
-@import 'templates/error';
-@import 'templates/homepage';
-@import 'templates/numbers';
-@import 'templates/question';
-@import 'templates/static-page';
-@import 'templates/styleguide';
+@import 'honeycrisp/templates/about';
+@import 'honeycrisp/templates/dashboard';
+@import 'honeycrisp/templates/error';
+@import 'honeycrisp/templates/homepage';
+@import 'honeycrisp/templates/numbers';
+@import 'honeycrisp/templates/question';
+@import 'honeycrisp/templates/static-page';
+@import 'honeycrisp/templates/styleguide';
 
 /* Compact Styles */
-@import 'honeycrisp-compact';
+@import 'honeycrisp/honeycrisp-compact';
 
 /* Shame */
-@import 'ie-hacks';
+@import 'honeycrisp/ie-hacks';

@@ -42,7 +42,38 @@ If you encounter any breaking changes that we have not documented, please let us
 
 ## Usage
 
-1. Add `@import 'cfa_styleguide_main';` to application.scss.
+1. To use the Honeycrisp CSS, you have two options:
+    1. To use all, `@import 'cfa_styleguide_main';` to `application.scss`. This file includes all SCSS present in the gem.
+    1. To use selectively (recommended), import individual SCSS files into your `application.scss`. Here is an example:
+       ```       
+        /* Vendor */
+        @import 'bourbon';
+        @import 'neat/neat';
+        @import "normalize";
+       
+        @import 'honeycrisp/atoms/variables';
+        @import 'variables'; // example of in-app overide
+       
+        /* Atoms */
+        @import 'honeycrisp/atoms/grid';
+        @import 'honeycrisp/atoms/base';
+        @import 'honeycrisp/atoms/spacing';
+        @import 'honeycrisp/atoms/utilities';
+        @import 'honeycrisp/atoms/typography';
+        
+        /* Molecules */
+        @import 'honeycrisp/molecules/data-table';
+        
+        /* Organisms */
+        @import 'honeycrisp/organisms/sidebar';
+        
+        /* Templates */
+        @import 'honeycrisp/templates/styleguide';
+       
+        /* Your custom SCSS */
+       ```
+       
+       **Note**: If you take this approach, be sure to include `bourbon`, `neat`, and `normalize`, as they are vendorized dependencies for our grid system and other styles.
 
 1. Add `//= require cfa_styleguide_main` to application.js.
 
@@ -58,16 +89,15 @@ If you encounter any breaking changes that we have not documented, please let us
     `<your hostname>/cfa/styleguide/custom-docs`
     ```
 
-## Customizing Styles
+## Customizing Styles when using `cfa_styleguide_main.scss`
 
-To override the styleguide's variables (e.g. use `#000000` for `$color-background` rather than as defined in the gem), require your own file that redefines the variables in your application.scss like so:
+To override the styleguide's variables (e.g. use `#000000` for `$color-background` rather than as defined in the gem), require your own file that redefines the variables in your `application.scss` like so:
 
     ```scss
     @import 'my_variable_file'
     @import 'cfa_styleguide_main'
 
-    ```
-
+    ``` 
 
 To use variables provided by the style guide gem remove `require_tree` directives from your `application.scss` and use use `@import` statements instead ([from stack overflow](https://stackoverflow.com/questions/6269420/sass-global-variables-not-being-passed-to-partials/9055230#9055230))
 
