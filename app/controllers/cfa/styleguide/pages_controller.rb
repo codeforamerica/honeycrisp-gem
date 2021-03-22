@@ -9,7 +9,7 @@ module Cfa
       end
 
       def emojis
-        classes = Dir.chdir(File.expand_path("../../../assets/stylesheets/atoms", File.dirname(__FILE__))) do
+        classes = Dir.chdir(File.expand_path("../../../assets/stylesheets/honeycrisp/atoms", File.dirname(__FILE__))) do
           File.read("_emoji.scss").scan(/\.(\S*) {.*/)
         end
         @emojis = []
