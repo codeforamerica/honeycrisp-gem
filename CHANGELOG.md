@@ -1,5 +1,30 @@
 # Changelog
 
+## [v0.10.0](https://github.com/codeforamerica/honeycrisp-gem/tree/v0.10.0) (2021-03-23)
+
+[Full Changelog](https://github.com/codeforamerica/honeycrisp-gem/compare/v0.9.6...v0.10.0)
+
+**Implemented enhancements:**
+
+- Namespace stylesheet importing [\#260](https://github.com/codeforamerica/honeycrisp-gem/issues/260)
+
+**Fixed bugs:**
+
+- .grid max-width is defined twice [\#235](https://github.com/codeforamerica/honeycrisp-gem/issues/235)
+- Styleguide documentation requires calfresh\_logo.png, which is missing [\#229](https://github.com/codeforamerica/honeycrisp-gem/issues/229)
+
+**Closed issues:**
+
+- master -\> main [\#254](https://github.com/codeforamerica/honeycrisp-gem/issues/254)
+- Spike on improvements to Form Builder [\#186](https://github.com/codeforamerica/honeycrisp-gem/issues/186)
+
+**Merged pull requests:**
+
+- Namespace honeycrisp SCSS files for easy overrides [\#261](https://github.com/codeforamerica/honeycrisp-gem/pull/261) ([hartsick](https://github.com/hartsick))
+- Add arrow icons for sortable headers [\#259](https://github.com/codeforamerica/honeycrisp-gem/pull/259) ([tdooner](https://github.com/tdooner))
+- Consolidate max width logic [\#255](https://github.com/codeforamerica/honeycrisp-gem/pull/255) ([bytheway875](https://github.com/bytheway875))
+- Create a single build-and-release command [\#245](https://github.com/codeforamerica/honeycrisp-gem/pull/245) ([bensheldon](https://github.com/bensheldon))
+
 ## [v0.9.6](https://github.com/codeforamerica/honeycrisp-gem/tree/v0.9.6) (2021-03-02)
 
 [Full Changelog](https://github.com/codeforamerica/honeycrisp-gem/compare/v0.9.5...v0.9.6)
@@ -245,6 +270,7 @@
 **Merged pull requests:**
 
 - Simplified step-bar-description [\#113](https://github.com/codeforamerica/honeycrisp-gem/pull/113) ([embarnard](https://github.com/embarnard))
+- Fix bug on step progress bar: increment current\_step on a 0 index system [\#110](https://github.com/codeforamerica/honeycrisp-gem/pull/110) ([embarnard](https://github.com/embarnard))
 - added student pair emoji [\#109](https://github.com/codeforamerica/honeycrisp-gem/pull/109) ([embarnard](https://github.com/embarnard))
 
 ## [v0.6.2](https://github.com/codeforamerica/honeycrisp-gem/tree/v0.6.2) (2019-06-25)
@@ -262,7 +288,6 @@
 
 **Merged pull requests:**
 
-- Fix bug on step progress bar: increment current\_step on a 0 index system [\#110](https://github.com/codeforamerica/honeycrisp-gem/pull/110) ([embarnard](https://github.com/embarnard))
 - Add new type of notice [\#103](https://github.com/codeforamerica/honeycrisp-gem/pull/103) ([jenny-heath](https://github.com/jenny-heath))
 
 ## [v0.6.0](https://github.com/codeforamerica/honeycrisp-gem/tree/v0.6.0) (2019-05-21)
