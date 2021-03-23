@@ -1,5 +1,13 @@
 # Migration Guide
 
+## Migrating from <= 0.9.x to 0.10.0
+
+In `0.10.0`, SCSS files have now been namespaced into `stylesheets/honeycrisp`, from `stylesheets`.
+
+If you imported the manifest (ie as `import 'cfa_styleguide_main'` in `application.scss`), no changes are needed.
+
+If you imported SCSS files directly from Honeycrisp (e.g. `@import 'atoms/base';` in `application.scss`) then you will need to update your imports to have a `honeycrisp/` prefix (e.g. `@import 'atoms/base'` becomes `@import 'honeycrisp/atoms/base';`).
+
 ## Migrating from <= 0.8.x to 0.9.0
 
 For a full diff of changes, view the [pull request](https://github.com/codeforamerica/honeycrisp-gem/pull/123/files). A summary of significant changes is below.
