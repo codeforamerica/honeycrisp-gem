@@ -577,6 +577,11 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
       expect(checkbox.classes).to include("checkbox")
     end
 
+    it "includes a hook class around the label text" do
+      label = Nokogiri::HTML.fragment(output).at_css(".checkbox__label")
+      expect(label.text).to include("Checkbox stuff")
+    end
+
     context "input options provided" do
       let(:output) do
         form_builder.cfa_check_box(:example_method_with_validation, "Checkbox stuff", disabled: true, 'data-some-attribute': "some-value")
@@ -648,6 +653,11 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
     it "includes an identifying class on the label" do
       checkboxes = Nokogiri::HTML.fragment(output).at_css("label")
       expect(checkboxes.classes).to include("checkbox")
+    end
+
+    it "includes a hook class around the label text" do
+      labels = Nokogiri::HTML.fragment(output).css(".checkbox__label")
+      expect(labels.map(&:text)).to match_array(["One", "Two"])
     end
 
     context "input options provided" do
