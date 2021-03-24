@@ -150,7 +150,7 @@ module Cfa
         @template.tag.div(wrapper_options) do
           @template.concat(@template.tag.label(label_options) do
             @template.concat(check_box(method, input_options, checked_value, unchecked_value))
-            @template.concat(@template.tag.div(label_text, class: 'checkbox__label'))
+            @template.concat(@template.tag.div(label_text, class: "checkbox__label"))
           end)
         end
       end
@@ -168,7 +168,7 @@ module Cfa
         @template.tag.div(wrapper_options) do
           collection_check_boxes(method, collection, value_method, text_method) do |b|
             b.label(label_options) do
-              b.check_box(input_options) + @template.tag.div(b.text, class: 'checkbox__label')
+              b.check_box(input_options) + @template.tag.div(b.text, class: "checkbox__label")
             end
           end
         end
