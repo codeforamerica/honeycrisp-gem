@@ -132,8 +132,10 @@ module Cfa
         end
       end
 
-      # Note: there is no errored state for an individual checkbox.
-      # This is intended to be used within a cfa_fieldset
+      # Note: This is intended to be used as a standalone form input.
+      # Also, this method does not provide an errored state.
+      #
+      # If an errored state is desired, wrap inside a cfa_fieldset
       def cfa_check_box(method,
                         label_text,
                         checked_value = "1",
@@ -148,7 +150,7 @@ module Cfa
         @template.tag.div(wrapper_options) do
           @template.concat(@template.tag.label(label_options) do
             @template.concat(check_box(method, input_options, checked_value, unchecked_value))
-            @template.concat(label_text)
+            @template.concat(@template.tag.div(label_text, class: 'checkbox__label'))
           end)
         end
       end
@@ -165,7 +167,9 @@ module Cfa
         label_options = append_to_value(label_options, :class, "checkbox")
         @template.tag.div(wrapper_options) do
           collection_check_boxes(method, collection, value_method, text_method) do |b|
-            b.label(label_options) { b.check_box(input_options) + b.text }
+            b.label(label_options) do
+              b.check_box(input_options) + @template.tag.div(b.text, class: 'checkbox__label')
+            end
           end
         end
       end
