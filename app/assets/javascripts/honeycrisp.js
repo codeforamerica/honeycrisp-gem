@@ -55,8 +55,16 @@ var radioSelector = (function() {
                 }
 
                 $(this).find('input').click(function (e) {
-                    $(this).closest('.radio-button').siblings().removeClass('is-selected')
-                    $(this).closest('.radio-button').addClass('is-selected')
+                    var allRadioButtons;
+                    if ($(this).closest('.cfa-radio-button').length > 0) {
+                        // FormBuilder V2
+                        allRadioButtons = $(this).closest('.cfa-radio-button').siblings().children('.is-selected');
+                    } else {
+                        // FormBuilder V1 & GCF
+                        allRadioButtons = $(this).closest('.radio-button').siblings();
+                    }
+                    allRadioButtons.removeClass('is-selected');
+                    $(this).closest('.radio-button').addClass('is-selected');
                 })
             })
         }
