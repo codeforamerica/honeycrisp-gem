@@ -1,5 +1,13 @@
 # Changelog
 
+## [v0.10.1](https://github.com/codeforamerica/honeycrisp-gem/tree/v0.10.1) (2021-04-01)
+
+[Full Changelog](https://github.com/codeforamerica/honeycrisp-gem/compare/v0.10.0...v0.10.1)
+
+**Merged pull requests:**
+
+- New form builder [\#204](https://github.com/codeforamerica/honeycrisp-gem/pull/204) ([hartsick](https://github.com/hartsick))
+
 ## [v0.10.0](https://github.com/codeforamerica/honeycrisp-gem/tree/v0.10.0) (2021-03-23)
 
 [Full Changelog](https://github.com/codeforamerica/honeycrisp-gem/compare/v0.9.6...v0.10.0)
