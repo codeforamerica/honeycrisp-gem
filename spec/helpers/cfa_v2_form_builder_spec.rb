@@ -83,18 +83,28 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
       expect(label.text).to include("(Optional)")
     end
 
+    it "sets default options on the input" do
+      input_html = Nokogiri::HTML.fragment(output).at_css("input")
+      expect(input_html.get_attribute("autocomplete")).to eq("off")
+      expect(input_html.get_attribute("autocorrect")).to eq("off")
+      expect(input_html.get_attribute("autocapitalize")).to eq("off")
+      expect(input_html.get_attribute("spellcheck")).to eq("false")
+    end
+
     context "when options provided" do
       let(:output) do
         form_builder.cfa_text_field(:example_method_with_validation,
                                     "Example method with validation",
                                     class: "foo",
                                     placeholder: "my text",
-                                    disabled: true)
+                                    disabled: true,
+                                    autocomplete: true)
       end
 
       it "passes options to the input" do
         input_html = Nokogiri::HTML.fragment(output).at_css("input")
         expect(input_html.get_attribute("disabled")).to be_truthy
+        expect(input_html.get_attribute("autocomplete")).to be_truthy
         expect(input_html.get_attribute("placeholder")).to eq("my text")
       end
 
@@ -242,6 +252,11 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
       select_html = Nokogiri::HTML.fragment(output).at_css("select")
       expect(select_html.classes).to include("select__element")
       expect(select_html.parent.classes).to include("select")
+    end
+
+    it "sets default options on the input" do
+      select_html = Nokogiri::HTML.fragment(output).at_css("select")
+      expect(select_html.get_attribute("autocomplete")).to eq("off")
     end
 
     context "when select_options provided" do

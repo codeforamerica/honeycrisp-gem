@@ -14,6 +14,8 @@ module Cfa
                          wrapper_options: {},
                          label_options: {},
                          **input_options)
+        input_options = standard_options.merge(input_options)
+
         if help_text.present?
           help_text_id = help_text_id(method)
           help_text_html = help_text_html(help_text, help_text_id)
@@ -49,6 +51,8 @@ module Cfa
           **select_html_options,
           &block
         )
+        select_html_options = standard_options.merge(select_html_options)
+
         if object.errors[method].any?
           error_id = error_id(method)
           error_html = errors_for(object, method, error_id)
@@ -225,6 +229,15 @@ module Cfa
         name = object_name.to_s.gsub(/([\[\(])|(\]\[)/, "_").gsub(/[\]\)]/, "")
 
         position ? "#{name}_#{method}_#{position}" : "#{name}_#{method}"
+      end
+
+      def standard_options
+        {
+          autocomplete: "off",
+          autocorrect: "off",
+          autocapitalize: "off",
+          spellcheck: "false",
+        }
       end
     end
   end
