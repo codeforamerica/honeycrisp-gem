@@ -1,5 +1,17 @@
 # Changelog
 
+## [v0.10.2](https://github.com/codeforamerica/honeycrisp-gem/tree/v0.10.2) (2021-05-17)
+
+[Full Changelog](https://github.com/codeforamerica/honeycrisp-gem/compare/v0.10.1...v0.10.2)
+
+**Implemented enhancements:**
+
+- Do not autocomplete form fields by default in new Form Builder [\#263](https://github.com/codeforamerica/honeycrisp-gem/issues/263)
+
+**Merged pull requests:**
+
+- Set default attributes on relevant inputs [\#264](https://github.com/codeforamerica/honeycrisp-gem/pull/264) ([hartsick](https://github.com/hartsick))
+
 ## [v0.10.1](https://github.com/codeforamerica/honeycrisp-gem/tree/v0.10.1) (2021-04-01)
 
 [Full Changelog](https://github.com/codeforamerica/honeycrisp-gem/compare/v0.10.0...v0.10.1)
@@ -31,7 +43,6 @@
 - Namespace honeycrisp SCSS files for easy overrides [\#261](https://github.com/codeforamerica/honeycrisp-gem/pull/261) ([hartsick](https://github.com/hartsick))
 - Add arrow icons for sortable headers [\#259](https://github.com/codeforamerica/honeycrisp-gem/pull/259) ([tdooner](https://github.com/tdooner))
 - Consolidate max width logic [\#255](https://github.com/codeforamerica/honeycrisp-gem/pull/255) ([bytheway875](https://github.com/bytheway875))
-- Create a single build-and-release command [\#245](https://github.com/codeforamerica/honeycrisp-gem/pull/245) ([bensheldon](https://github.com/bensheldon))
 
 ## [v0.9.6](https://github.com/codeforamerica/honeycrisp-gem/tree/v0.9.6) (2021-03-02)
 
@@ -110,6 +121,7 @@
 
 **Merged pull requests:**
 
+- Create a single build-and-release command [\#245](https://github.com/codeforamerica/honeycrisp-gem/pull/245) ([bensheldon](https://github.com/bensheldon))
 - Upgrade percy agent, associated js dependencies, and nokogiri to appease dependabot [\#234](https://github.com/codeforamerica/honeycrisp-gem/pull/234) ([tgrathwell](https://github.com/tgrathwell))
 - vendorize `neat` 1.8.0 to relax dependency on old thor [\#233](https://github.com/codeforamerica/honeycrisp-gem/pull/233) ([tgrathwell](https://github.com/tgrathwell))
 - Fix - Readd incrementer.init\(\) [\#231](https://github.com/codeforamerica/honeycrisp-gem/pull/231) ([sree-cfa](https://github.com/sree-cfa))
