@@ -28,6 +28,17 @@ describe "Autoformatted input fields" do
 
       expect(page).to have_field("ssn", with: "111-26-245")
     end
+
+    it "can edit before special characters", js: true do
+      fill_in "ssn", with: "111223333"
+      find("#ssn").send_keys :left, :left, :left, :left, :left, :backspace, "4"
+
+      expect(find("#ssn").value).to eq("111-24-3333")
+
+      find("#ssn").send_keys :left, :left, :left, :left, :backspace, "5"
+
+      expect(find("#ssn").value).to eq("151-24-3333")
+    end
   end
 
   describe "Phone input fields" do

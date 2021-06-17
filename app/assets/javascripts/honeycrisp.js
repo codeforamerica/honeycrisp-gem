@@ -274,6 +274,18 @@ var selectBodyBottomMargin = (function () {
 var autoformatEventHandler = function(characterMap, maxDigits) {
     return function (_e) {
         var input = $(this);
+        var position = this.selectionStart;
+        // to the left of position, get the count of special characters that exist in the character map
+        // get an array of all characters in teh characterMap whose index key is less than position
+        // "1112|"
+        // var isToLeftOfPosition = function(keyValuePair){return Number(keyValuePair[0]) < position;}
+        // var charsPossiblyToLeft = Object.entries(characterMap).filter(isToLeftOfPosition)
+        //
+        // var adjustedPosition = position - charsPossiblyToLeft.length;
+        // console.log("🚀 🚀 🚀");
+        // console.log("position", position);
+        // console.log("specialCharCountBeforeCursor", charsPossiblyToLeft.length);
+
         var unformattedValue = input.val()
             .replace(/[^\d]/g, "")
             .substring(0, maxDigits);
@@ -282,10 +294,21 @@ var autoformatEventHandler = function(characterMap, maxDigits) {
             var specialChar = characterMap[i];
             if (specialChar !== undefined) {
                 formattedStr.push(specialChar);
+                position = position + 1;
+                // debugger;
             }
             formattedStr.push(unformattedValue.charAt(i));
         }
         input.val(formattedStr.join(""));
+        // console.log("adjustedPosition", adjustedPosition);
+        this.setSelectionRange(position, position)
+
+        // Options
+        // 1. keep special characters in the field at all times (no length change)
+        // 2. use blur as the event trigger
+        // 3. move cursor (not sure if feasible)
+        // 4. don't use auto-format
+        // 5. research other approaches or switch to a library
     }
 };
 
