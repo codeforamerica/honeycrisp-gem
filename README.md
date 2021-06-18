@@ -15,7 +15,7 @@ If you have any thoughts or questions about the project, get in touch at <a href
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'cfa-styleguide', git: 'https://github.com/codeforamerica/honeycrisp-gem'
+gem 'cfa-styleguide', git: 'https://github.com/codeforamerica/honeycrisp-gem', branch: :main
 ```
 
 And then execute:
