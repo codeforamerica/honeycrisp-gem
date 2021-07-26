@@ -2,7 +2,7 @@ ENV["RAILS_ENV"] ||= "test"
 
 require File.expand_path("test_app/config/environment.rb", __dir__)
 require "rspec/rails"
-require "axe/rspec"
+require "axe-rspec"
 
 Rails.backtrace_cleaner.remove_silencers!
 
