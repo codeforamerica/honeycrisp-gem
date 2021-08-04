@@ -1,5 +1,23 @@
 # Changelog
 
+## [v0.10.3](https://github.com/codeforamerica/honeycrisp-gem/tree/v0.10.3) (2021-08-04)
+
+[Full Changelog](https://github.com/codeforamerica/honeycrisp-gem/compare/v0.10.2...v0.10.3)
+
+**Fixed bugs:**
+
+- Fix reveal component [\#275](https://github.com/codeforamerica/honeycrisp-gem/issues/275)
+- Fix reveal and add tests [\#281](https://github.com/codeforamerica/honeycrisp-gem/pull/281) ([coltborg](https://github.com/coltborg))
+
+**Closed issues:**
+
+- Update axe-matchers to axe-core-gems [\#267](https://github.com/codeforamerica/honeycrisp-gem/issues/267)
+
+**Merged pull requests:**
+
+- Upgrade axe-matchers to axe-core-rspec [\#269](https://github.com/codeforamerica/honeycrisp-gem/pull/269) ([coltborg](https://github.com/coltborg))
+- update readme to specify 'main' as the branch name [\#268](https://github.com/codeforamerica/honeycrisp-gem/pull/268) ([fionatagious](https://github.com/fionatagious))
+
 ## [v0.10.2](https://github.com/codeforamerica/honeycrisp-gem/tree/v0.10.2) (2021-05-17)
 
 [Full Changelog](https://github.com/codeforamerica/honeycrisp-gem/compare/v0.10.1...v0.10.2)
@@ -43,6 +61,7 @@
 - Namespace honeycrisp SCSS files for easy overrides [\#261](https://github.com/codeforamerica/honeycrisp-gem/pull/261) ([hartsick](https://github.com/hartsick))
 - Add arrow icons for sortable headers [\#259](https://github.com/codeforamerica/honeycrisp-gem/pull/259) ([tdooner](https://github.com/tdooner))
 - Consolidate max width logic [\#255](https://github.com/codeforamerica/honeycrisp-gem/pull/255) ([bytheway875](https://github.com/bytheway875))
+- Create a single build-and-release command [\#245](https://github.com/codeforamerica/honeycrisp-gem/pull/245) ([bensheldon](https://github.com/bensheldon))
 
 ## [v0.9.6](https://github.com/codeforamerica/honeycrisp-gem/tree/v0.9.6) (2021-03-02)
 
@@ -121,7 +140,6 @@
 
 **Merged pull requests:**
 
-- Create a single build-and-release command [\#245](https://github.com/codeforamerica/honeycrisp-gem/pull/245) ([bensheldon](https://github.com/bensheldon))
 - Upgrade percy agent, associated js dependencies, and nokogiri to appease dependabot [\#234](https://github.com/codeforamerica/honeycrisp-gem/pull/234) ([tgrathwell](https://github.com/tgrathwell))
 - vendorize `neat` 1.8.0 to relax dependency on old thor [\#233](https://github.com/codeforamerica/honeycrisp-gem/pull/233) ([tgrathwell](https://github.com/tgrathwell))
 - Fix - Readd incrementer.init\(\) [\#231](https://github.com/codeforamerica/honeycrisp-gem/pull/231) ([sree-cfa](https://github.com/sree-cfa))
