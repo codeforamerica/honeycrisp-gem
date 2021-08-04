@@ -32,7 +32,7 @@
 
 .reveal {
   margin-bottom: 1em;
-  &.is-hidden {
+  &.is-hiding-content {
     .reveal__link {
       &:after {
         content: '\a0'+map_get($icons, keyboard_arrow_right);
