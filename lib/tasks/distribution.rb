@@ -33,6 +33,7 @@ class Distribution
     FileUtils.mkdir_p("#{DIST_PATH}/vendor")
     FileUtils.mkdir_p(CSS_PATH)
     FileUtils.mkdir_p(SCSS_PATH)
+    FileUtils.mkdir_p(JS_PATH)
   end
 
   def move_assets
@@ -57,13 +58,21 @@ class Distribution
 
   def compile_js
     sprockets = create_sprockets_env
-    js_assets = "#{Dir.pwd}/app/assets/javascripts/cfa_styleguide_main.js"
-    assets = sprockets.find_asset(js_assets)
-    assets.write_to("#{JS_PATH}/honeycrisp.js")
+    assets = "#{Dir.pwd}/app/assets/javascripts/cfa_styleguide_main.js"
+    js_assets = sprockets.find_asset(assets)
+    js = js_assets.to_s
+    add_version_comment(js)
+    File.write("#{JS_PATH}/honeycrisp.js", js)
 
     sprockets = create_sprockets_env(compress: true)
-    assets = sprockets.find_asset(js_assets)
-    assets.write_to("#{JS_PATH}/honeycrisp.min.js")
+    min_js_assets = sprockets.find_asset(assets)
+    min_js = min_js_assets.to_s
+    add_version_comment(min_js)
+    File.write("#{JS_PATH}/honeycrisp.min.js", min_js)
+  end
+
+  def add_version_comment(file)
+    file["Honeycrisp version placeholder"] = "Honeycrisp v#{Cfa::Styleguide::VERSION} built on #{Date.today}"
   end
 
   def jquery_path
@@ -110,6 +119,7 @@ class Distribution
 
     engine = SassC::Engine.new(scss_file, options)
     css = engine.render
+    add_version_comment(css)
     File.write("#{CSS_PATH}/#{css_filename}", css)
 
     map = engine.source_map

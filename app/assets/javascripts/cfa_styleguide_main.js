@@ -10,6 +10,7 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require version_comment
 //= require jquery3
 //= require jquery_ujs
 //= require sidebar

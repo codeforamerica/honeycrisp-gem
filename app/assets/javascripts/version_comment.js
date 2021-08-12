@@ -1,0 +1,1 @@
+/*! Honeycrisp version placeholder */
