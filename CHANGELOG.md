@@ -1,5 +1,22 @@
 # Changelog
 
+## [v0.10.4](https://github.com/codeforamerica/honeycrisp-gem/tree/v0.10.4) (2021-08-25)
+
+[Full Changelog](https://github.com/codeforamerica/honeycrisp-gem/compare/v0.10.3...v0.10.4)
+
+**Fixed bugs:**
+
+- Add autoprefix to asset:package [\#287](https://github.com/codeforamerica/honeycrisp-gem/issues/287)
+
+**Closed issues:**
+
+- Add version to CSS & JS assets [\#276](https://github.com/codeforamerica/honeycrisp-gem/issues/276)
+
+**Merged pull requests:**
+
+- Autoprefix CSS for distribution assets [\#289](https://github.com/codeforamerica/honeycrisp-gem/pull/289) ([coltborg](https://github.com/coltborg))
+- added version and date to packaged files [\#285](https://github.com/codeforamerica/honeycrisp-gem/pull/285) ([coltborg](https://github.com/coltborg))
+
 ## [v0.10.3](https://github.com/codeforamerica/honeycrisp-gem/tree/v0.10.3) (2021-08-04)
 
 [Full Changelog](https://github.com/codeforamerica/honeycrisp-gem/compare/v0.10.2...v0.10.3)
