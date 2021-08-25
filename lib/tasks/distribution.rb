@@ -1,6 +1,7 @@
 require "fileutils"
 require "sassc"
 require "sprockets_extension/uglifier_source_maps_compressor"
+require "autoprefixer-rails"
 
 class Distribution
   DIST_PATH = "#{Dir.pwd}/dist".freeze
@@ -118,7 +119,7 @@ class Distribution
     options[:style] = :compressed if compressed
 
     engine = SassC::Engine.new(scss_file, options)
-    css = engine.render
+    css = AutoprefixerRails.process(engine.render).css
     add_version_comment(css)
     File.write("#{CSS_PATH}/#{css_filename}", css)
 
