@@ -1,9 +1,9 @@
-require "percy"
+require "percy/capybara"
 
 module PercySnapshot
   def percy_snapshot(name)
     if ENV["PERCY_TOKEN"].present?
-      Percy.snapshot(page, name: name)
+      page.percy_snapshot(name)
     end
   end
 end

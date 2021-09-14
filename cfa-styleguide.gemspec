@@ -43,7 +43,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "dotenv"
   spec.add_development_dependency "gem-release"
   spec.add_development_dependency "github_changelog_generator"
-  spec.add_development_dependency "percy-capybara", "~> 4.0.0.pre.beta2"
+  spec.add_development_dependency "percy-capybara", "~> 5.0.0"
   spec.add_development_dependency "pry-byebug"
   spec.add_development_dependency "rails", "~> 5.2.4.5"
   spec.add_development_dependency "rake", ">= 12.3.3"
