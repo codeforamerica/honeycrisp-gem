@@ -152,7 +152,8 @@ GEM
     parallel (1.20.0)
     parser (2.7.2.0)
       ast (~> 2.4.1)
-    percy-capybara (4.0.2)
+    percy-capybara (5.0.0)
+      capybara (>= 3)
     powerpack (0.1.2)
     pry (0.13.1)
       coderay (~> 1.1)
@@ -289,7 +290,7 @@ DEPENDENCIES
   dotenv
   gem-release
   github_changelog_generator
-  percy-capybara (~> 4.0.0.pre.beta2)
+  percy-capybara (~> 5.0.0)
   pry-byebug
   rack (>= 2.0.8)
   rails (~> 5.2.4.5)

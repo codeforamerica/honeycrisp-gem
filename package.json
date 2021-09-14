@@ -1,6 +1,6 @@
 {
   "devDependencies": {
-    "@percy/agent": "^0.28.6"
+    "@percy/cli": "^1.0.0-beta.68"
   },
   "dependencies": {
     "jquery": "^3.5.1"
