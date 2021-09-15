@@ -19,6 +19,12 @@ jobs:
         command: |
           curl -sSL "https://nodejs.org/dist/v14.15.0/node-v14.15.0-linux-x64.tar.xz" | sudo tar --strip-components=2 -xJ -C /usr/local/bin/ node-v14.15.0-linux-x64/bin/node
           curl https://www.npmjs.com/install.sh | sudo bash
+    - run:
+        name: "Configure Bundler"
+        command: |
+          echo 'export BUNDLER_VERSION=$(cat Gemfile.lock | tail -1 | tr -d " ")' >> $BASH_ENV
+          source $BASH_ENV
+          gem install bundler
     - restore_cache:
         keys:
         - v1-bundler-{{ checksum "Gemfile.lock" }}
@@ -43,6 +49,12 @@ jobs:
     <<: *defaults
     steps:
     - checkout
+    - run:
+          name: "Configure Bundler"
+          command: |
+            echo 'export BUNDLER_VERSION=$(cat Gemfile.lock | tail -1 | tr -d " ")' >> $BASH_ENV
+            source $BASH_ENV
+            gem install bundler
     - restore_cache:
         keys:
         - v1-bundler-{{ checksum "Gemfile.lock" }}
@@ -61,6 +73,12 @@ jobs:
         command: |
           curl -sSL "https://nodejs.org/dist/v14.15.0/node-v14.15.0-linux-x64.tar.xz" | sudo tar --strip-components=2 -xJ -C /usr/local/bin/ node-v14.15.0-linux-x64/bin/node
           curl https://www.npmjs.com/install.sh | sudo bash
+    - run:
+        name: "Configure Bundler"
+        command: |
+          echo 'export BUNDLER_VERSION=$(cat Gemfile.lock | tail -1 | tr -d " ")' >> $BASH_ENV
+          source $BASH_ENV
+          gem install bundler
     - restore_cache:
         keys:
         - v1-bundler-{{ checksum "Gemfile.lock" }}
