@@ -1,5 +1,22 @@
 # Changelog
 
+## [v0.10.6](https://github.com/codeforamerica/honeycrisp-gem/tree/v0.10.6) (2022-02-09)
+
+[Full Changelog](https://github.com/codeforamerica/honeycrisp-gem/compare/v0.10.5...v0.10.6)
+
+**Fixed bugs:**
+
+- Fix keyboard focus on feedback survey component [\#300](https://github.com/codeforamerica/honeycrisp-gem/issues/300)
+- Internet Explorer 11 bugs [\#213](https://github.com/codeforamerica/honeycrisp-gem/issues/213)
+
+**Closed issues:**
+
+- Update dependencies and track release time [\#296](https://github.com/codeforamerica/honeycrisp-gem/issues/296)
+
+**Merged pull requests:**
+
+- Allow feedback survey radio to accept focus [\#301](https://github.com/codeforamerica/honeycrisp-gem/pull/301) ([coltborg](https://github.com/coltborg))
+
 ## [v0.10.5](https://github.com/codeforamerica/honeycrisp-gem/tree/v0.10.5) (2021-09-15)
 
 [Full Changelog](https://github.com/codeforamerica/honeycrisp-gem/compare/v0.10.4...v0.10.5)
