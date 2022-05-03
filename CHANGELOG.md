@@ -1,5 +1,13 @@
 # Changelog
 
+## [v0.10.7](https://github.com/codeforamerica/honeycrisp-gem/tree/v0.10.7) (2022-05-03)
+
+[Full Changelog](https://github.com/codeforamerica/honeycrisp-gem/compare/v0.10.6...v0.10.7)
+
+**Merged pull requests:**
+
+- Add skip links from SHIBA and provide example [\#303](https://github.com/codeforamerica/honeycrisp-gem/pull/303) ([coltborg](https://github.com/coltborg))
+
 ## [v0.10.6](https://github.com/codeforamerica/honeycrisp-gem/tree/v0.10.6) (2022-02-09)
 
 [Full Changelog](https://github.com/codeforamerica/honeycrisp-gem/compare/v0.10.5...v0.10.6)
