@@ -1,0 +1,10 @@
+#skip-to-content {
+  position: absolute;
+  left: -999px;
+  top: 0.7rem;
+  z-index: 99;
+}
+
+#skip-to-content:focus {
+  left: 8px;
+}
