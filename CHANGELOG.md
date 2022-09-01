@@ -1,5 +1,14 @@
 # Changelog
 
+## [v0.10.8](https://github.com/codeforamerica/honeycrisp-gem/tree/v0.10.8) (2022-09-01)
+
+[Full Changelog](https://github.com/codeforamerica/honeycrisp-gem/compare/v0.10.7...v0.10.8)
+
+**Merged pull requests:**
+
+- Update cfa\_logo\_dark currently used in GetCalFresh only [\#306](https://github.com/codeforamerica/honeycrisp-gem/pull/306) ([arinchoi03](https://github.com/arinchoi03))
+- Bump ansi-regex from 3.0.0 to 3.0.1 [\#305](https://github.com/codeforamerica/honeycrisp-gem/pull/305) ([dependabot[bot]](https://github.com/apps/dependabot))
+
 ## [v0.10.7](https://github.com/codeforamerica/honeycrisp-gem/tree/v0.10.7) (2022-05-03)
 
 [Full Changelog](https://github.com/codeforamerica/honeycrisp-gem/compare/v0.10.6...v0.10.7)
