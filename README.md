@@ -114,10 +114,10 @@ To use variables provided by the style guide gem remove `require_tree` directive
 
 ## Development
 
-1. Check out the repo
-1. Make sure you have the version of ruby specificed in `.ruby-version`
-1. Run `gem install bundler`
-   - if you see an error like `Can't find gem bundler (>= 0.a) with executable bundle (Gem::GemNotFoundException)` you can fix it by running `gem install bundler -v "$(grep -A 1 "BUNDLED WITH" Gemfile.lock | tail -n 1)"` [details here](https://bundler.io/blog/2019/05/14/solutions-for-cant-find-gem-bundler-with-executable-bundle.html)
+1. Check out the repo (e.g. `git clone`)
+1. Make sure you have the version of ruby specified in `.ruby-version`
+1. Run `gem install bundler -v "$(grep -A 1 "BUNDLED WITH" Gemfile.lock | tail -n 1)"`
+   - if you use `gem install bundler` you usually get `Can't find gem bundler (>= 0.a) with executable bundle (Gem::GemNotFoundException)`, [more details here](https://bundler.io/blog/2019/05/14/solutions-for-cant-find-gem-bundler-with-executable-bundle.html)
 1. run `bin/setup` to install dependencies.
 
 You must install Chromedriver to run tests; on MacOS with Homebrew, run `brew bundle install`
