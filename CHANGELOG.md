@@ -1,5 +1,14 @@
 # Changelog
 
+## [v0.10.9](https://github.com/codeforamerica/honeycrisp-gem/tree/v0.10.9) (2022-09-09)
+
+[Full Changelog](https://github.com/codeforamerica/honeycrisp-gem/compare/v0.10.8...v0.10.9)
+
+**Merged pull requests:**
+
+- Unsquish cfa\_logo\_dark in mobile [\#309](https://github.com/codeforamerica/honeycrisp-gem/pull/309) ([arinchoi03](https://github.com/arinchoi03))
+- Update deployment steps in readme [\#307](https://github.com/codeforamerica/honeycrisp-gem/pull/307) ([coltborg](https://github.com/coltborg))
+
 ## [v0.10.8](https://github.com/codeforamerica/honeycrisp-gem/tree/v0.10.8) (2022-09-01)
 
 [Full Changelog](https://github.com/codeforamerica/honeycrisp-gem/compare/v0.10.7...v0.10.8)
