@@ -17,7 +17,7 @@
 }
 
 .illustration--cfa-logo__dark {
-  @include retina-bg(cfa_logo_dark, 100px 41px);
+  @include retina-bg(cfa_logo_dark, 100% auto);
   margin-left: 0;
   width: 100px;
   height: 41px;
