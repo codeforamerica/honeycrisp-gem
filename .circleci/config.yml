@@ -6,7 +6,7 @@
 defaults: &defaults
   working_directory: ~/repo
   docker:
-  - image: circleci/ruby:2.5.3-node-browsers
+  - image: cimg/ruby:3.0.5-browsers
 
 version: 2
 jobs:
