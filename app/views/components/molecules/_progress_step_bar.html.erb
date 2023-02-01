@@ -3,7 +3,7 @@
 <% label_id = "progress-step-bar--#{current_step}-#{step_count}-label".downcase %>
 
 <div class="progress-step-bar">
-  <div class="progress-step-bar__bar" aria-labelledby="<%= label_id %>">
+  <div class="progress-step-bar__bar" role="progressbar" aria-labelledby="<%= label_id %>">
     <% (1..step_count).each do |step_number| %>
       <% if step_number < current_step %>
         <div class="progress-step-bar__step progress-step-bar__step--completed"></div>
