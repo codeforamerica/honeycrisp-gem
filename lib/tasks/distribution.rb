@@ -105,8 +105,8 @@ class Distribution
 
     Sprockets.register_compressor(
       "application/javascript",
-        :uglify_with_source_maps,
-        UglifierSourceMapsCompressor,
+      :uglify_with_source_maps,
+      UglifierSourceMapsCompressor,
     )
   end
 

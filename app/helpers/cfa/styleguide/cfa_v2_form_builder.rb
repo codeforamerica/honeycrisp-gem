@@ -42,7 +42,7 @@ module Cfa
       end
 
       def cfa_select(
-          method,
+        method,
           label_text,
           choices,
           select_options: {},
@@ -50,7 +50,7 @@ module Cfa
           label_options: {},
           **select_html_options,
           &block
-        )
+      )
         select_html_options = standard_options.merge(select_html_options)
 
         if object.errors[method].any?
@@ -226,7 +226,7 @@ module Cfa
       end
 
       def sanitized_id(method, position = nil)
-        name = object_name.to_s.gsub(/([\[\(])|(\]\[)/, "_").gsub(/[\]\)]/, "")
+        name = object_name.to_s.gsub(/([\[(])|(\]\[)/, "_").gsub(/[\])]/, "")
 
         position ? "#{name}_#{method}_#{position}" : "#{name}_#{method}"
       end

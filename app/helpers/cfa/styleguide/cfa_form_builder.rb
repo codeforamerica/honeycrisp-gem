@@ -142,8 +142,7 @@ module Cfa
 
       def cfa_radio_set(
         method,
-        label_text: "",
-        collection:,
+        collection:, label_text: "",
         help_text: nil,
         layouts: ["block"],
         legend_class: ""
@@ -163,8 +162,7 @@ module Cfa
 
       def cfa_radio_set_with_follow_up(
         method,
-        label_text: "",
-        collection:,
+        collection:, label_text: "",
         help_text: nil,
         layouts: ["block"],
         legend_class: "",
@@ -258,14 +256,14 @@ module Cfa
                 <label for="#{sanitized_id(method, 'month')}" class="sr-only">#{I18n.t('honeycrisp.month')}</label>
                 #{select_month(
                   OpenStruct.new(month: object.send(subfield_name(method, 'month')).to_i),
-            {
-              field_name: subfield_name(method, 'month'),
-              field_id: subfield_id(method, 'month'),
-              prefix: object_name,
-              prompt: I18n.t('honeycrisp.month'),
-            }.reverse_merge(options),
-            class: 'select__element',
-            autofocus: autofocus,
+                  {
+                    field_name: subfield_name(method, 'month'),
+                    field_id: subfield_id(method, 'month'),
+                    prefix: object_name,
+                    prompt: I18n.t('honeycrisp.month'),
+                  }.reverse_merge(options),
+                  class: 'select__element',
+                  autofocus: autofocus,
                 )}
               </div>
               <div class="select">
@@ -310,7 +308,7 @@ module Cfa
         hide_label: false,
         optional: false
       )
-        classes = classes.append(%w[textarea])
+        classes.append(%w[textarea])
         text_options = standard_options.merge(
           autofocus: autofocus,
           class: classes.join(" "),
@@ -546,7 +544,7 @@ module Cfa
       end
 
       def sanitized_id(method, position = nil)
-        name = object_name.to_s.gsub(/([\[\(])|(\]\[)/, "_").gsub(/[\]\)]/, "")
+        name = object_name.to_s.gsub(/([\[(])|(\]\[)/, "_").gsub(/[\])]/, "")
 
         position ? "#{name}_#{method}_#{position}" : "#{name}_#{method}"
       end

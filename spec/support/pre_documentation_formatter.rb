@@ -3,7 +3,7 @@ RSpec::Support.require_rspec_core "formatters/console_codes"
 
 class PreDocumentationFormatter < RSpec::Core::Formatters::BaseTextFormatter
   RSpec::Core::Formatters.register self, :example_started, :example_group_started, :example_group_finished,
-    :example_passed, :example_pending, :example_failed
+                                   :example_passed, :example_pending, :example_failed
 
   def initialize(output)
     super
@@ -27,7 +27,7 @@ class PreDocumentationFormatter < RSpec::Core::Formatters::BaseTextFormatter
 
   def example_pending(pending)
     output.puts pending_output(pending.example,
-      pending.example.execution_result.pending_message)
+                               pending.example.execution_result.pending_message)
   end
 
   def example_failed(failure)
@@ -47,13 +47,13 @@ class PreDocumentationFormatter < RSpec::Core::Formatters::BaseTextFormatter
   def pending_output(example, message)
     RSpec::Core::Formatters::ConsoleCodes.wrap("#{current_indentation}#{example.description.strip} " \
                             "(PENDING: #{message})",
-      :pending)
+                                               :pending)
   end
 
   def failure_output(example)
     RSpec::Core::Formatters::ConsoleCodes.wrap("#{current_indentation}#{example.description.strip} " \
                             "(FAILED - #{next_failure_index})",
-      :failure)
+                                               :failure)
   end
 
   def next_failure_index

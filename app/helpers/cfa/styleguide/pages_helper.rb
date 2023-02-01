@@ -19,9 +19,7 @@ module Cfa
         partial = lookup_context.find_template(partial_path, [], true)
 
         filepath = partial.identifier
-        partial_contents = File.open(filepath, "r", &:read)
-
-        partial_contents
+        File.open(filepath, "r", &:read)
       end
 
       def status_icon(icon, successful: false, failure: false, not_applicable: false)
