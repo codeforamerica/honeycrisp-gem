@@ -10,7 +10,7 @@ class UglifierSourceMapsCompressor < Sprockets::UglifierCompressor
     compressed_data, sourcemap_json = uglifier.compile_with_map(input[:data])
 
     sourcemap = JSON.parse(sourcemap_json)
-    sourcemap["sources"] = [name + ".js"]
+    sourcemap["sources"] = ["#{name}.js"]
     sourcemap["sourceRoot"] = Dir.pwd
     sourcemap["sourcesContent"] = [data]
     sourcemap_json = sourcemap.to_json

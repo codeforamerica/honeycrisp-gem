@@ -4,7 +4,7 @@ describe "Pages" do
   it "the test app root path redirects to /cfa/styleguide" do
     visit "/"
 
-    expect(current_path).to eq "/cfa/styleguide"
+    expect(page).to have_current_path "/cfa/styleguide"
   end
 
   it "can load styleguide" do

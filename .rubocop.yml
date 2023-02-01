@@ -1,9 +1,20 @@
+require:
+  - rubocop-performance
+  - rubocop-rails
+  - rubocop-rspec
+
 AllCops:
+  TargetRubyVersion: 3.0.5
   Exclude:
-  - bin/*
-  - vendor/**/*
-  - pkg/*
-  - node_modules/**/*
+    - bin/*
+    - vendor/**/*
+    - pkg/*
+    - node_modules/**/*
+    - Rakefile
+
+# Ideally this should be enabled - too many violations to deal with atm though
+Rails/OutputSafety:
+  Enabled: false
 
 #  Gemspec
 
@@ -18,7 +29,7 @@ Gemspec/RequiredRubyVersion:
 
 # Layout
 
-Layout/AlignParameters:
+Layout/ParameterAlignment:
   Description: 'Here we check if the parameters on a multi-line method call or definition are aligned.'
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#no-double-indent'
   Enabled: false
@@ -38,6 +49,9 @@ Layout/DotPosition:
 Layout/ExtraSpacing:
   Description: 'Do not use unnecessary spacing.'
   Enabled: true
+
+Layout/LineLength:
+  Enabled: false
 
 Layout/MultilineOperationIndentation:
   Description: >-
@@ -62,7 +76,7 @@ Layout/InitialIndentation:
 
 Lint/AmbiguousBlockAssociation:
   Exclude:
-  - "spec/**/*"
+    - "spec/**/*"
 
 Lint/AmbiguousOperator:
   Description: >-
@@ -86,11 +100,14 @@ Lint/CircularArgumentReference:
   Description: "Don't refer to the keyword argument in the default value."
   Enabled: false
 
+Lint/ConstantDefinitionInBlock:
+  Enabled: false
+
 Lint/DeprecatedClassMethods:
   Description: 'Check for deprecated class method calls.'
   Enabled: false
 
-Lint/DuplicatedKey:
+Lint/DuplicateHashKey:
   Description: 'Check for duplicate keys in hash literals.'
   Enabled: false
 
@@ -111,7 +128,7 @@ Lint/FormatParameterMismatch:
   Description: 'The number of parameters to format/sprint must match the fields.'
   Enabled: false
 
-Lint/HandleExceptions:
+Lint/SuppressedException:
   Description: "Don't suppress exception."
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#dont-hide-exceptions'
   Enabled: false
@@ -168,12 +185,12 @@ Metrics/AbcSize:
 Metrics/BlockLength:
   CountComments: true  # count full line comments?
   Max: 25
-  ExcludedMethods: []
+  AllowedMethods: [ ]
   Exclude:
-  - "spec/**/*"
-  - "config/**/*"
-  - "*.gemspec"
-  - "Rakefile"
+    - "spec/**/*"
+    - "config/**/*"
+    - "*.gemspec"
+    - "Rakefile"
 
 Metrics/BlockNesting:
   Description: 'Avoid excessive block nesting'
@@ -188,9 +205,6 @@ Metrics/CyclomaticComplexity:
 
 Metrics/ClassLength:
   Description: 'Avoid classes longer than 100 lines of code.'
-  Enabled: false
-
-Metrics/LineLength:
   Enabled: false
 
 Metrics/MethodLength:
@@ -232,10 +246,10 @@ Naming/MemoizedInstanceVariableName:
 Naming/PredicateName:
   Description: 'Check the names of predicate methods.'
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#bool-methods-qmark'
-  NamePrefixBlacklist:
-  - is_
+  ForbiddenPrefixes:
+    - is_
   Exclude:
-  - spec/**/*
+    - spec/**/*
 
 # Performance
 
@@ -270,13 +284,6 @@ Performance/FlatMap:
 Performance/ReverseEach:
   Description: 'Use `reverse_each` instead of `reverse.each`.'
   Reference: 'https://github.com/JuanitoFatas/fast-ruby#enumerablereverseeach-vs-enumerablereverse_each-code'
-  Enabled: false
-
-Performance/Sample:
-  Description: >-
-    Use `sample` instead of `shuffle.first`,
-    `shuffle.last`, and `shuffle[Fixnum]`.
-  Reference: 'https://github.com/JuanitoFatas/fast-ruby#arrayshufflefirst-vs-arraysample-code'
   Enabled: false
 
 Performance/Size:
@@ -366,9 +373,6 @@ Style/AsciiComments:
 Style/Attr:
   Description: 'Checks for uses of Module#attr.'
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#attr'
-  Enabled: false
-
-Style/BracesAroundHashParameters:
   Enabled: false
 
 Style/CaseEquality:
@@ -580,6 +584,13 @@ Style/RegexpLiteral:
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#percent-r'
   Enabled: false
 
+Style/Sample:
+  Description: >-
+    Use `sample` instead of `shuffle.first`,
+    `shuffle.last`, and `shuffle[Fixnum]`.
+  Reference: 'https://github.com/JuanitoFatas/fast-ruby#arrayshufflefirst-vs-arraysample-code'
+  Enabled: false
+
 Style/SelfAssignment:
   Description: >-
     Checks for places where self-assignment shorthand should have
@@ -618,9 +629,9 @@ Style/TrailingCommaInArguments:
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#no-trailing-array-commas'
   EnforcedStyleForMultiline: comma
   SupportedStylesForMultiline:
-  - comma
-  - consistent_comma
-  - no_comma
+    - comma
+    - consistent_comma
+    - no_comma
   Enabled: true
 
 Style/TrailingCommaInArrayLiteral:
@@ -630,9 +641,9 @@ Style/TrailingCommaInArrayLiteral:
   # non-empty array literals.
   EnforcedStyleForMultiline: comma
   SupportedStylesForMultiline:
-  - comma
-  - consistent_comma
-  - no_comma
+    - comma
+    - consistent_comma
+    - no_comma
   Enabled: true
 
 Style/TrailingCommaInHashLiteral:
@@ -642,9 +653,9 @@ Style/TrailingCommaInHashLiteral:
   # non-empty hash literals.
   EnforcedStyleForMultiline: comma
   SupportedStylesForMultiline:
-  - comma
-  - consistent_comma
-  - no_comma
+    - comma
+    - consistent_comma
+    - no_comma
   Enabled: true
 
 Style/TrivialAccessors:
@@ -675,3 +686,29 @@ Style/WordArray:
   Description: 'Use %w or %W for arrays of words.'
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#percent-w'
   Enabled: false
+
+
+
+# RSpec
+
+RSpec/ContextWording:
+  Enabled: false
+
+RSpec/ExampleLength:
+  Enabled: false
+
+RSpec/FilePath:
+  Enabled: false
+
+RSpec/LeakyConstantDeclaration:
+  Enabled: false
+
+RSpec/MultipleExpectations:
+  Enabled: false
+
+RSpec/NestedGroups:
+  Enabled: false
+
+RSpec/RepeatedDescription:
+  Enabled: false
+

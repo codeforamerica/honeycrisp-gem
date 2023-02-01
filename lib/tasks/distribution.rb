@@ -44,7 +44,7 @@ class Distribution
   end
 
   def compile_css
-    scss_file = File.read(Dir.pwd + "/app/assets/stylesheets/cfa_styleguide_main.scss")
+    scss_file = File.read("#{Dir.pwd}/app/assets/stylesheets/cfa_styleguide_main.scss")
 
     load_paths = [
       "#{Dir.pwd}/app/assets/stylesheets/",

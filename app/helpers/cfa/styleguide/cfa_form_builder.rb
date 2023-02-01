@@ -432,7 +432,7 @@ module Cfa
         label_html.html_safe
       end
 
-      def label_contents(label_text, help_text, optional = false)
+      def label_contents(label_text, help_text, optional: false)
         label_text = <<~HTML
           <p class="form-question">#{label_text + optional_text(optional)}</p>
         HTML
@@ -448,7 +448,7 @@ module Cfa
 
       def optional_text(optional)
         if optional
-          "<em class='card__optional'> " + I18n.t("honeycrisp.optional") + "</em>"
+          "<em class='card__optional'> #{I18n.t('honeycrisp.optional')}</em>"
         else
           ""
         end

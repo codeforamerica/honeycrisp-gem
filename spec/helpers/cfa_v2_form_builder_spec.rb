@@ -39,7 +39,7 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
 
       it "passes options to the button" do
         html_component = Nokogiri::HTML.fragment(output).at_css(".cfa-button")
-        expect(html_component.text).to_not include("Searching...")
+        expect(html_component.text).not_to include("Searching...")
       end
     end
 
@@ -192,7 +192,7 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
 
       it "does not append the optional text to the label" do
         label = Nokogiri::HTML.fragment(output).at_css("label")
-        expect(label.text).to_not include("(Optional)")
+        expect(label.text).not_to include("(Optional)")
       end
 
       it "sets the required attribute on the select tag" do
@@ -334,7 +334,7 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
 
       it "does not append the optional text after the label" do
         html_component = Nokogiri::HTML.fragment(output).at_css("label")
-        expect(html_component.text).to_not include("(Optional)")
+        expect(html_component.text).not_to include("(Optional)")
       end
 
       it "sets the required attribute on the select tag" do
@@ -516,7 +516,7 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
         # set on inputs, not fieldsets or legends.
 
         html_component = Nokogiri::HTML.fragment(output).at_css("legend")
-        expect(html_component.text).to_not include("(Optional)")
+        expect(html_component.text).not_to include("(Optional)")
       end
     end
   end
