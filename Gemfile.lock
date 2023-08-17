@@ -326,7 +326,7 @@ PLATFORMS
 
 DEPENDENCIES
   axe-core-rspec (~> 4.2.1)
-  bundler (~> 2.2.19)
+  bundler (~> 2.4)
   capybara
   capybara-selenium
   cfa-styleguide!
@@ -347,7 +347,7 @@ DEPENDENCIES
   uglifier
 
 RUBY VERSION
-   ruby 2.5.3p105
+   ruby 3.2.2p53
 
 BUNDLED WITH
-   2.2.19
+   2.4.18
