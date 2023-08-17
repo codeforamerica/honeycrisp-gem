@@ -37,7 +37,7 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency "jquery-rails"
   spec.add_runtime_dependency "sass"
   spec.add_development_dependency "axe-core-rspec", "~> 4.2.1"
-  spec.add_development_dependency "bundler", "~> 2.2.19"
+  spec.add_development_dependency "bundler", "~> 2.4"
   spec.add_development_dependency "capybara"
   spec.add_development_dependency "capybara-selenium"
   spec.add_development_dependency "dotenv"
