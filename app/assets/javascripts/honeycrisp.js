@@ -112,24 +112,26 @@ var followUpQuestion = (function() {
                 });
 
                 // add click listeners to initial question inputs
-                $(self).find('.question-with-follow-up__question input').click(function(e) {
-                    // reset follow ups
-                    $(self).find('.question-with-follow-up__follow-up input').attr('disabled', true);
-                    $(self).find('.question-with-follow-up__follow-up').hide();
+                $(self).find('.question-with-follow-up__question input').click(function(e) {fUQ.update($(self))})
+            });
+        },
+        update: function ($container){
+            // reset follow ups
+            $container.find('.question-with-follow-up__follow-up input').attr('disabled', true);
+            $container.find('.question-with-follow-up__follow-up').hide();
 
-                    $(self).find('.question-with-follow-up__question input').each(function(index, input) {
-                        // if any of the inputs with a data-follow-up is checked then show the follow-up
-                        if($(input).is(':checked') && $(input).attr('data-follow-up') != null) {
-                            $(self).find('.question-with-follow-up__follow-up input').attr('disabled', false);
-                            $($(this).attr('data-follow-up')).show();
-                        }
-                    });
-                })
+            $container.find('.question-with-follow-up__question input').each(function(index, input) {
+                // if any of the inputs with a data-follow-up is checked then show the follow-up
+                if($(input).is(':checked') && $(input).attr('data-follow-up') != null) {
+                    $container.find('.question-with-follow-up__follow-up input').attr('disabled', false);
+                    $($(this).attr('data-follow-up')).show();
+                }
             });
         }
     }
     return {
-        init: fUQ.init
+        init: fUQ.init,
+        update: fUQ.update
     }
 })();
 
@@ -213,7 +215,15 @@ var noneOfTheAbove = (function() {
             $noneCheckbox.click(function(e) {
                 $otherCheckboxes.prop('checked', false);
                 $otherCheckboxes.parent().removeClass('is-selected');
+
+                // If we just unchecked an <input> with a follow-up, let's reset the follow-up questions
+                // so it hides properly.
+                var $enclosingFollowUp = $noneCheckbox.closest('.question-with-follow-up');
+                if ($enclosingFollowUp) {
+                    followUpQuestion.update($enclosingFollowUp);
+                }
             });
+
         }
     };
     return {
