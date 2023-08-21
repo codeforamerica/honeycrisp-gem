@@ -46,13 +46,13 @@ class PreDocumentationFormatter < RSpec::Core::Formatters::BaseTextFormatter
 
   def pending_output(example, message)
     RSpec::Core::Formatters::ConsoleCodes.wrap("#{current_indentation}#{example.description.strip} " \
-                            "(PENDING: #{message})",
+                                               "(PENDING: #{message})",
       :pending)
   end
 
   def failure_output(example)
     RSpec::Core::Formatters::ConsoleCodes.wrap("#{current_indentation}#{example.description.strip} " \
-                            "(FAILED - #{next_failure_index})",
+                                               "(FAILED - #{next_failure_index})",
       :failure)
   end
 

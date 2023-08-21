@@ -44,7 +44,7 @@ class Distribution
   end
 
   def compile_css
-    scss_file = File.read(Dir.pwd + "/app/assets/stylesheets/cfa_styleguide_main.scss")
+    scss_file = File.read("#{Dir.pwd}/app/assets/stylesheets/cfa_styleguide_main.scss")
 
     load_paths = [
       "#{Dir.pwd}/app/assets/stylesheets/",
@@ -105,8 +105,8 @@ class Distribution
 
     Sprockets.register_compressor(
       "application/javascript",
-        :uglify_with_source_maps,
-        UglifierSourceMapsCompressor,
+      :uglify_with_source_maps,
+      UglifierSourceMapsCompressor,
     )
   end
 

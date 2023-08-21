@@ -19,9 +19,7 @@ module Cfa
         partial = lookup_context.find_template(partial_path, [], true)
 
         filepath = partial.identifier
-        partial_contents = File.open(filepath, "r", &:read)
-
-        partial_contents
+        File.read(filepath)
       end
 
       def status_icon(icon, successful: false, failure: false, not_applicable: false)
@@ -29,7 +27,7 @@ module Cfa
         classes << "successful" if successful
         classes << "failure" if failure
         classes << "not-applicable" if not_applicable
-        classes << "icon-" + icon
+        classes << ("icon-#{icon}")
 
         <<-HTML.html_safe
       <i class="#{classes.join(' ')}" aria-hidden='true'></i>

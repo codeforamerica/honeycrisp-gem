@@ -94,11 +94,11 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
     context "when options provided" do
       let(:output) do
         form_builder.cfa_text_field(:example_method_with_validation,
-                                    "Example method with validation",
-                                    class: "foo",
-                                    placeholder: "my text",
-                                    disabled: true,
-                                    autocomplete: true)
+          "Example method with validation",
+          class: "foo",
+          placeholder: "my text",
+          disabled: true,
+          autocomplete: true)
       end
 
       it "passes options to the input" do
@@ -118,8 +118,8 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
     context "errors" do
       let(:output) do
         form_builder.cfa_text_field(:example_method_with_validation,
-                                    "Example method with validation",
-                                    'aria-describedby': "another-id")
+          "Example method with validation",
+          "aria-describedby": "another-id")
       end
 
       before do
@@ -205,8 +205,8 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
       let(:output) do
         form_builder.cfa_text_field(
           :example_method_with_validation,
-            "Example method with validation",
-            help_text: "Found on RAP sheet",
+          "Example method with validation",
+          help_text: "Found on RAP sheet",
         )
       end
 
@@ -227,8 +227,8 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
   describe ".cfa_select" do
     let(:output) do
       form_builder.cfa_select(:example_method_with_validation,
-                              "My select value",
-                              ["thing one", "thing two"])
+        "My select value",
+        ["thing one", "thing two"])
     end
 
     it "renders a text input with valid HTML" do
@@ -263,9 +263,9 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
       let(:output) do
         form_builder.cfa_select(
           :example_method_with_validation,
-            "My select value",
-            ["thing one", "thing two"],
-            select_options: { include_blank: "Choose an option" },
+          "My select value",
+          ["thing one", "thing two"],
+          select_options: { include_blank: "Choose an option" },
         )
       end
 
@@ -279,10 +279,10 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
     context "select_html_options provided" do
       let(:output) do
         form_builder.cfa_select(:example_method_with_validation,
-                                "My select value",
-                                ["thing one", "thing two"],
-                                disabled: true,
-                                class: "input-class")
+          "My select value",
+          ["thing one", "thing two"],
+          disabled: true,
+          class: "input-class")
       end
 
       it "passes html_options to the select" do
@@ -295,11 +295,11 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
     context "label_options provided" do
       let(:output) do
         form_builder.cfa_select(:example_method_with_validation,
-                                "My select value",
-                                ["thing one", "thing two"],
-                                label_options: {
-                                  class: "input-class",
-                                })
+          "My select value",
+          ["thing one", "thing two"],
+          label_options: {
+            class: "input-class",
+          })
       end
 
       it "passes label_options to the label" do
@@ -311,11 +311,11 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
     context "wrapper_options provided" do
       let(:output) do
         form_builder.cfa_select(:example_method_with_validation,
-                                "My select value",
-                                ["thing one", "thing two"],
-                                wrapper_options: {
-                                  class: "wrapper-class",
-                                })
+          "My select value",
+          ["thing one", "thing two"],
+          wrapper_options: {
+            class: "wrapper-class",
+          })
       end
 
       it "assigns wrapper options on the outermost element" do
@@ -327,9 +327,9 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
     context "required is true" do
       let(:output) do
         form_builder.cfa_select(:example_method_with_validation,
-                                "My select value",
-                                ["thing one", "thing two"],
-                                required: true)
+          "My select value",
+          ["thing one", "thing two"],
+          required: true)
       end
 
       it "does not append the optional text after the label" do
@@ -350,9 +350,9 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
 
       let(:output) do
         form_builder.cfa_select(:example_method_with_validation,
-                                "My select value",
-                                ["thing one", "thing two"],
-                                'aria-describedby': "another-id")
+          "My select value",
+          ["thing one", "thing two"],
+          "aria-describedby": "another-id")
       end
 
       it "should associate form errors with input and append error id to existing aria-describedby attributes" do
@@ -370,9 +370,9 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
       context "with wrapper option classes" do
         let(:output) do
           form_builder.cfa_select(:example_method_with_validation,
-                                  "My select value",
-                                  ["thing one", "thing two"],
-                                  wrapper_options: { class: "foo" })
+            "My select value",
+            ["thing one", "thing two"],
+            wrapper_options: { class: "foo" })
         end
 
         it "preserves the form-group--error class" do
@@ -478,7 +478,7 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
 
     context "errors" do
       let(:output) do
-        form_builder.cfa_fieldset(:example_method_with_validation, "My radio buttons", label_options: { 'aria-describedby': "another-id" })
+        form_builder.cfa_fieldset(:example_method_with_validation, "My radio buttons", label_options: { "aria-describedby": "another-id" })
       end
 
       before do
@@ -543,9 +543,9 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
     context "when input options provided" do
       let(:output) do
         form_builder.cfa_radio_button(:example_method_with_validation,
-                               "Truthy value",
-                               "true",
-                               'data-follow-up': "#follow-up-question")
+          "Truthy value",
+          "true",
+          "data-follow-up": "#follow-up-question")
       end
 
       it "passes options to the radio button" do
@@ -557,9 +557,9 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
     context "wrapper options provided" do
       let(:output) do
         form_builder.cfa_radio_button(:example_method_with_validation,
-                               "Truthy value",
-                               "true",
-                               wrapper_options: { class: "wrapper-class", id: "wrapper-id" })
+          "Truthy value",
+          "true",
+          wrapper_options: { class: "wrapper-class", id: "wrapper-id" })
       end
 
       it "does not overwrite existing classes" do
@@ -599,7 +599,7 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
 
     context "input options provided" do
       let(:output) do
-        form_builder.cfa_check_box(:example_method_with_validation, "Checkbox stuff", disabled: true, 'data-some-attribute': "some-value")
+        form_builder.cfa_check_box(:example_method_with_validation, "Checkbox stuff", disabled: true, "data-some-attribute": "some-value")
       end
 
       it "passes input options to the checkbox" do
@@ -612,11 +612,11 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
     context "wrapper options provided" do
       let(:output) do
         form_builder.cfa_check_box(:example_method_with_validation,
-                                  "Checkbox stuff",
-                                  wrapper_options: {
-                                    class: "wrapper-class",
-                                    id: "wrapper-id",
-                                  })
+          "Checkbox stuff",
+          wrapper_options: {
+            class: "wrapper-class",
+            id: "wrapper-id",
+          })
       end
 
       it "does not overwrite existing classes" do
@@ -648,12 +648,12 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
   describe ".cfa_collection_check_boxes" do
     let(:output) do
       form_builder.cfa_collection_check_boxes(:example_method_with_validation,
-                                              [
-                                                Cfa::Styleguide::FormExample.new(id: 1, name: "One"),
-                                                Cfa::Styleguide::FormExample.new(id: 2, name: "Two"),
-                                              ],
-                                              :id,
-                                              :name)
+        [
+          Cfa::Styleguide::FormExample.new(id: 1, name: "One"),
+          Cfa::Styleguide::FormExample.new(id: 2, name: "Two"),
+        ],
+        :id,
+        :name)
     end
 
     it "renders a text input with valid HTML" do
@@ -678,14 +678,14 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
     context "input options provided" do
       let(:output) do
         form_builder.cfa_collection_check_boxes(:example_method_with_validation,
-                                                [
-                                                  Cfa::Styleguide::FormExample.new(id: 1, name: "One"),
-                                                  Cfa::Styleguide::FormExample.new(id: 2, name: "Two"),
-                                                ],
-                                                :id,
-                                                :name,
-                                                disabled: true,
-                                                'data-some-attribute': "some-value")
+          [
+            Cfa::Styleguide::FormExample.new(id: 1, name: "One"),
+            Cfa::Styleguide::FormExample.new(id: 2, name: "Two"),
+          ],
+          :id,
+          :name,
+          disabled: true,
+          "data-some-attribute": "some-value")
       end
 
       it "passes input options to the checkboxes" do
@@ -698,16 +698,16 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
     context "wrapper options provided" do
       let(:output) do
         form_builder.cfa_collection_check_boxes(:example_method_with_validation,
-                                                [
-                                                  Cfa::Styleguide::FormExample.new(id: 1, name: "One"),
-                                                  Cfa::Styleguide::FormExample.new(id: 2, name: "Two"),
-                                                ],
-                                                :id,
-                                                :name,
-                                                wrapper_options: {
-                                                  class: "wrapper-class",
-                                                  id: "wrapper-id",
-                                                })
+          [
+            Cfa::Styleguide::FormExample.new(id: 1, name: "One"),
+            Cfa::Styleguide::FormExample.new(id: 2, name: "Two"),
+          ],
+          :id,
+          :name,
+          wrapper_options: {
+            class: "wrapper-class",
+            id: "wrapper-id",
+          })
       end
 
       it "does not overwrite existing classes" do
@@ -726,12 +726,12 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
   describe ".cfa_collection_radio_buttons" do
     let(:output) do
       form_builder.cfa_collection_radio_buttons(:example_method_with_validation,
-                                              [
-                                                Cfa::Styleguide::FormExample.new(id: 1, name: "One"),
-                                                Cfa::Styleguide::FormExample.new(id: 2, name: "Two"),
-                                              ],
-                                              :id,
-                                              :name)
+        [
+          Cfa::Styleguide::FormExample.new(id: 1, name: "One"),
+          Cfa::Styleguide::FormExample.new(id: 2, name: "Two"),
+        ],
+        :id,
+        :name)
     end
 
     it "renders a text input with valid HTML" do
@@ -751,14 +751,14 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
     context "input options provided" do
       let(:output) do
         form_builder.cfa_collection_radio_buttons(:example_method_with_validation,
-                                                [
-                                                  Cfa::Styleguide::FormExample.new(id: 1, name: "One"),
-                                                  Cfa::Styleguide::FormExample.new(id: 2, name: "Two"),
-                                                ],
-                                                :id,
-                                                :name,
-                                                disabled: true,
-                                                'data-some-attribute': "some-value")
+          [
+            Cfa::Styleguide::FormExample.new(id: 1, name: "One"),
+            Cfa::Styleguide::FormExample.new(id: 2, name: "Two"),
+          ],
+          :id,
+          :name,
+          disabled: true,
+          "data-some-attribute": "some-value")
       end
 
       it "passes input options to the checkboxes" do
@@ -771,16 +771,16 @@ describe Cfa::Styleguide::CfaV2FormBuilder, type: :view do
     context "wrapper options provided" do
       let(:output) do
         form_builder.cfa_collection_radio_buttons(:example_method_with_validation,
-                                                [
-                                                  Cfa::Styleguide::FormExample.new(id: 1, name: "One"),
-                                                  Cfa::Styleguide::FormExample.new(id: 2, name: "Two"),
-                                                ],
-                                                :id,
-                                                :name,
-                                                wrapper_options: {
-                                                  class: "wrapper-class",
-                                                  id: "wrapper-id",
-                                                })
+          [
+            Cfa::Styleguide::FormExample.new(id: 1, name: "One"),
+            Cfa::Styleguide::FormExample.new(id: 2, name: "Two"),
+          ],
+          :id,
+          :name,
+          wrapper_options: {
+            class: "wrapper-class",
+            id: "wrapper-id",
+          })
       end
 
       it "does not overwrite existing classes" do

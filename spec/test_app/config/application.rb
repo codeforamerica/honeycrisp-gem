@@ -12,8 +12,8 @@ module TestApp
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
     config.to_prepare do
-      STDERR.puts "Loaded Rails #{Rails::VERSION::STRING}, Sprockets #{Sprockets::VERSION}",
-                  "Asset paths: #{Rails.application.config.assets.paths}"
+      warn "Loaded Rails #{Rails::VERSION::STRING}, Sprockets #{Sprockets::VERSION}",
+        "Asset paths: #{Rails.application.config.assets.paths}"
     end
   end
 end

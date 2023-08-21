@@ -19,14 +19,14 @@ module Cfa
         if help_text.present?
           help_text_id = help_text_id(method)
           help_text_html = help_text_html(help_text, help_text_id)
-          input_options = append_to_value(input_options, :'aria-describedby', help_text_id)
+          input_options = append_to_value(input_options, :"aria-describedby", help_text_id)
         end
 
         if object.errors[method].any?
           error_id = error_id(method)
           error_html = errors_for(object, method, error_id)
           wrapper_options = append_to_value(wrapper_options, :class, "form-group--error")
-          input_options = append_to_value(input_options, :'aria-describedby', error_id)
+          input_options = append_to_value(input_options, :"aria-describedby", error_id)
         end
 
         wrapper_options = append_to_value(wrapper_options, :class, "cfa-text-field form-group")
@@ -42,7 +42,7 @@ module Cfa
       end
 
       def cfa_select(
-          method,
+        method,
           label_text,
           choices,
           select_options: {},
@@ -50,14 +50,14 @@ module Cfa
           label_options: {},
           **select_html_options,
           &block
-        )
+      )
         select_html_options = standard_options.merge(select_html_options)
 
         if object.errors[method].any?
           error_id = error_id(method)
           error_html = errors_for(object, method, error_id)
           wrapper_options = append_to_value(wrapper_options, :class, "form-group--error")
-          select_html_options = append_to_value(select_html_options, :'aria-describedby', error_id)
+          select_html_options = append_to_value(select_html_options, :"aria-describedby", error_id)
         end
 
         wrapper_options = append_to_value(wrapper_options, :class, "cfa-select form-group")
@@ -82,7 +82,7 @@ module Cfa
 
         if object.errors[method].any?
           error_id = error_id(method)
-          label_options = append_to_value(label_options, :'aria-describedby', error_id)
+          label_options = append_to_value(label_options, :"aria-describedby", error_id)
           wrapper_options = append_to_value(wrapper_options, :class, "form-group--error")
         end
 
