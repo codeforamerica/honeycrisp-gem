@@ -323,6 +323,7 @@ RSpec.describe Cfa::Styleguide::CfaFormBuilder do
     it "renders an accessible set of radio inputs" do
       class SampleForm < Cfa::Styleguide::FormExample
         attr_accessor :selected_county_location
+
         validates_presence_of :selected_county_location
       end
 
@@ -362,6 +363,7 @@ RSpec.describe Cfa::Styleguide::CfaFormBuilder do
     it "renders an accessible set of radio inputs" do
       class SampleForm < Cfa::Styleguide::FormExample
         attr_accessor :hourly, :wage, :salary
+
         validates_presence_of :hourly
       end
 
@@ -370,13 +372,13 @@ RSpec.describe Cfa::Styleguide::CfaFormBuilder do
       form_builder = described_class.new("form", form, template, {})
       output = form_builder.cfa_radio_set_with_follow_up(
         :hourly,
-          label_text: "Do you work hourly?",
-          collection: [
-            { value: :yes, label: "Yes" },
-            { value: :no, label: "No" },
-          ],
-          first_follow_up: -> { form_builder.cfa_input_field(:wage, "What is your hourly wage?") },
-          second_follow_up: -> { form_builder.cfa_input_field(:salary, "What is your salary?") },
+        label_text: "Do you work hourly?",
+        collection: [
+          { value: :yes, label: "Yes" },
+          { value: :no, label: "No" },
+        ],
+        first_follow_up: -> { form_builder.cfa_input_field(:wage, "What is your hourly wage?") },
+        second_follow_up: -> { form_builder.cfa_input_field(:salary, "What is your salary?") },
       )
       expect(output).to be_html_safe
 
@@ -442,6 +444,7 @@ RSpec.describe Cfa::Styleguide::CfaFormBuilder do
     it "adds help text and error ids to aria-labelledby" do
       class SampleForm < Cfa::Styleguide::FormExample
         attr_accessor :name
+
         validates_presence_of :name
       end
 
@@ -475,7 +478,7 @@ RSpec.describe Cfa::Styleguide::CfaFormBuilder do
   describe "#cfa_range_field" do
     class SampleForm < Cfa::Styleguide::FormExample
       attr_accessor :lower_hours_a_week_amount,
-                    :upper_hours_a_week_amount
+        :upper_hours_a_week_amount
 
       validates_presence_of :lower_hours_a_week_amount, :upper_hours_a_week_amount, message: "Please enter a range."
     end
@@ -525,8 +528,8 @@ RSpec.describe Cfa::Styleguide::CfaFormBuilder do
       form_builder = described_class.new("form", form, template, {})
       output = form_builder.cfa_range_field(
         :lower_hours_a_week_amount,
-          :upper_hours_a_week_amount,
-          "¿Cuántas horas a la semana trabaja usted?",
+        :upper_hours_a_week_amount,
+        "¿Cuántas horas a la semana trabaja usted?",
       )
 
       expect(output).to be_html_safe
@@ -601,8 +604,8 @@ RSpec.describe Cfa::Styleguide::CfaFormBuilder do
     it "renders an accessible date select" do
       class SampleForm < Cfa::Styleguide::FormExample
         attr_accessor :birthday_year,
-                      :birthday_month,
-                      :birthday_day
+          :birthday_month,
+          :birthday_day
       end
 
       form = SampleForm.new
@@ -700,8 +703,8 @@ RSpec.describe Cfa::Styleguide::CfaFormBuilder do
       I18n.locale = :es
       class SampleForm < Cfa::Styleguide::FormExample
         attr_accessor :birthday_year,
-                      :birthday_month,
-                      :birthday_day
+          :birthday_month,
+          :birthday_day
       end
 
       form = SampleForm.new
@@ -711,13 +714,13 @@ RSpec.describe Cfa::Styleguide::CfaFormBuilder do
       form_builder = described_class.new("form", form, template, {})
       output = form_builder.cfa_date_select(
         :birthday,
-          "¿Cuando es tu cumpleaños?",
-          help_text: "(por sorpresas)",
-          options: {
-            start_year: 1990,
-            end_year: 1992,
-            order: %i{month day year},
-          },
+        "¿Cuando es tu cumpleaños?",
+        help_text: "(por sorpresas)",
+        options: {
+          start_year: 1990,
+          end_year: 1992,
+          order: %i{month day year},
+        },
       )
       expect(output).to be_html_safe
 
@@ -800,6 +803,7 @@ RSpec.describe Cfa::Styleguide::CfaFormBuilder do
     it "renders a label with the sr-only class when hide_label set to true" do
       class SampleForm < Cfa::Styleguide::FormExample
         attr_accessor :description
+
         validates_presence_of :description
       end
       sample = SampleForm.new
@@ -840,9 +844,9 @@ RSpec.describe Cfa::Styleguide::CfaFormBuilder do
       form = described_class.new("sample", sample, template, {})
       output = form.cfa_single_tap_button(
         :anyone_home,
-          "Yes",
-          true,
-          classes: ["foo"],
+        "Yes",
+        true,
+        classes: ["foo"],
       )
 
       expect(output).to be_html_safe
@@ -857,6 +861,7 @@ RSpec.describe Cfa::Styleguide::CfaFormBuilder do
     it "renders a range of numeric options with a screen-reader only label" do
       class SampleForm < Cfa::Styleguide::FormExample
         attr_accessor :how_many
+
         validates_presence_of :how_many
       end
 

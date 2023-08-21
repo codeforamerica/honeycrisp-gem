@@ -11,7 +11,8 @@ Gem::Specification.new do |spec|
   spec.summary       = "A design system created for Code for America services."
   spec.description   = "Honeycrisp Design System"
   spec.homepage      = "https://github.com/codeforamerica/honeycrisp-gem"
-  spec.metadata      = { "documentation_uri" => "https://honeycrisp.herokuapp.com" }
+  spec.metadata      = { "documentation_uri" => "https://honeycrisp.herokuapp.com",
+                         "rubygems_mfa_required" => "true" }
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
@@ -20,7 +21,7 @@ Gem::Specification.new do |spec|
     spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
   else
     raise "RubyGems 2.0 or newer is required to protect against " \
-      "public gem pushes."
+          "public gem pushes."
   end
 
   # Specify which files should be added to the gem when it is released.
@@ -48,9 +49,9 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rails", "~> 7.0"
   spec.add_development_dependency "rake", ">= 12.3.3"
   spec.add_development_dependency "rspec"
-  spec.add_development_dependency "rspec-rails"
   spec.add_development_dependency "rspec_junit_formatter"
-  spec.add_development_dependency "rubocop", "~> 0.64.0"
+  spec.add_development_dependency "rspec-rails"
+  spec.add_development_dependency "rubocop"
   spec.add_development_dependency "sassc-rails"
   spec.add_development_dependency "selenium-webdriver"
   spec.add_development_dependency "uglifier"

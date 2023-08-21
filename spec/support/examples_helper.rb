@@ -4,7 +4,7 @@ module ExamplesHelper
 
     example_files.each do |example_file|
       example_filepath = example_file.match(/app\/views\/examples\/(.*)\.html.erb/)[1]
-      example_path = File.dirname(example_filepath) + "/" + File.basename(example_filepath).sub(/^_/, "")
+      example_path = "#{File.dirname(example_filepath)}/#{File.basename(example_filepath).sub(/^_/, '')}"
       example_viewpath = "/cfa/styleguide/examples/#{example_path}"
 
       yield(example_path, example_viewpath, example_file)

@@ -142,8 +142,7 @@ module Cfa
 
       def cfa_radio_set(
         method,
-        label_text: "",
-        collection:,
+        collection:, label_text: "",
         help_text: nil,
         layouts: ["block"],
         legend_class: ""
@@ -163,8 +162,7 @@ module Cfa
 
       def cfa_radio_set_with_follow_up(
         method,
-        label_text: "",
-        collection:,
+        collection:, label_text: "",
         help_text: nil,
         layouts: ["block"],
         legend_class: "",
@@ -197,11 +195,11 @@ module Cfa
           <div class="question-with-follow-up">
             <div class="question-with-follow-up__question">
               #{cfa_radio_set(method,
-                              label_text: label_text,
-                              collection: collection,
-                              help_text: help_text,
-                              layouts: layouts,
-                              legend_class: legend_class)}
+                label_text: label_text,
+                collection: collection,
+                help_text: help_text,
+                layouts: layouts,
+                legend_class: legend_class)}
             </div>
             #{[first_follow_up_html, second_follow_up_html].compact.join}
           </div>
@@ -258,14 +256,14 @@ module Cfa
                 <label for="#{sanitized_id(method, 'month')}" class="sr-only">#{I18n.t('honeycrisp.month')}</label>
                 #{select_month(
                   OpenStruct.new(month: object.send(subfield_name(method, 'month')).to_i),
-            {
-              field_name: subfield_name(method, 'month'),
-              field_id: subfield_id(method, 'month'),
-              prefix: object_name,
-              prompt: I18n.t('honeycrisp.month'),
-            }.reverse_merge(options),
-            class: 'select__element',
-            autofocus: autofocus,
+                  {
+                    field_name: subfield_name(method, 'month'),
+                    field_id: subfield_id(method, 'month'),
+                    prefix: object_name,
+                    prompt: I18n.t('honeycrisp.month'),
+                  }.reverse_merge(options),
+                  class: 'select__element',
+                  autofocus: autofocus,
                 )}
               </div>
               <div class="select">
@@ -310,7 +308,7 @@ module Cfa
         hide_label: false,
         optional: false
       )
-        classes = classes.append(%w[textarea])
+        classes.append(%w[textarea])
         text_options = standard_options.merge(
           autofocus: autofocus,
           class: classes.join(" "),
@@ -343,7 +341,7 @@ module Cfa
         label_text,
         collection,
         options = {},
-        &block
+        &
       )
 
         html_options = {
@@ -355,7 +353,7 @@ module Cfa
           label_contents(
             label_text,
             options[:help_text],
-            options[:optional],
+            optional: options[:optional],
           ),
           class: options[:hide_label] ? "sr-only" : "",
         )
@@ -365,7 +363,7 @@ module Cfa
           <div class="form-group#{error_state(object, method)}">
             #{formatted_label}
             <div class="select">
-              #{select(method, collection, options, html_options_with_errors, &block)}
+              #{select(method, collection, options, html_options_with_errors, &)}
             </div>
             #{errors_for(object, method)}
           </div>
@@ -432,7 +430,7 @@ module Cfa
         label_html.html_safe
       end
 
-      def label_contents(label_text, help_text, optional = false)
+      def label_contents(label_text, help_text, optional: false)
         label_text = <<~HTML
           <p class="form-question">#{label_text + optional_text(optional)}</p>
         HTML
@@ -448,7 +446,7 @@ module Cfa
 
       def optional_text(optional)
         if optional
-          "<em class='card__optional'> " + I18n.t("honeycrisp.optional") + "</em>"
+          "<em class='card__optional'> #{I18n.t('honeycrisp.optional')}</em>"
         else
           ""
         end
@@ -476,7 +474,7 @@ module Cfa
 
         formatted_label = label(
           method,
-          label_contents(label_text, help_text, optional),
+          label_contents(label_text, help_text, optional: optional),
           (for_options || options),
         )
         formatted_label += notice_html(notice).html_safe if notice

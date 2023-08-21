@@ -10,7 +10,7 @@ class UglifierSourceMapsCompressor < Sprockets::UglifierCompressor
     compressed_data, sourcemap_json = uglifier.compile_with_map(input[:data])
 
     sourcemap = JSON.parse(sourcemap_json)
-    sourcemap["sources"] = [name + ".js"]
+    sourcemap["sources"] = ["#{name}.js"]
     sourcemap["sourceRoot"] = Dir.pwd
     sourcemap["sourcesContent"] = [data]
     sourcemap_json = sourcemap.to_json
@@ -20,7 +20,7 @@ class UglifierSourceMapsCompressor < Sprockets::UglifierCompressor
     sourcemap_url = sourcemap_filename
 
     FileUtils.mkdir_p File.dirname(sourcemap_path)
-    File.open(sourcemap_path, "w") { |f| f.write sourcemap_json }
+    File.write(sourcemap_path, sourcemap_json)
 
     compressed_data.concat "\n//# sourceMappingURL=#{sourcemap_url}\n"
   end
