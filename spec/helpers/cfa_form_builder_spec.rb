@@ -30,7 +30,7 @@ RSpec.describe Cfa::Styleguide::CfaFormBuilder do
       expect(output).to match_html <<-HTML
       <fieldset class="input-group form-group form-group--error">
         <label class="checkbox">
-          <input name="sample[read_tos]" type="hidden" value="0" />
+          <input name="sample[read_tos]" type="hidden" value="0" autocomplete="off" />
           <div class="field_with_errors">
             <input aria-describedby="sample_read_tos__errors" type="checkbox" value="1" name="sample[read_tos]" id="sample_read_tos"/>
           </div>
@@ -63,7 +63,7 @@ RSpec.describe Cfa::Styleguide::CfaFormBuilder do
         expect(output).to match_html <<-HTML
         <fieldset class="input-group form-group">
           <label class="checkbox">
-            <input name="sample[read_tos]" type="hidden" value="no" />
+            <input name="sample[read_tos]" type="hidden" value="no" autocomplete="off" />
             <input checked_value="yes" unchecked_value="no" type="checkbox" value="yes" checked="checked" name="sample[read_tos]" id="sample_read_tos" />
             Confirm that you agree to Terms of Service
           </label>
@@ -93,7 +93,7 @@ RSpec.describe Cfa::Styleguide::CfaFormBuilder do
         expect(output).to match_html <<-HTML
         <fieldset class="input-group form-group">
           <label class="checkbox is-selected is-disabled">
-            <input name="sample[read_tos]" disabled="disabled" type="hidden" value="no" />
+            <input name="sample[read_tos]" disabled="disabled" type="hidden" value="no" autocomplete="off" />
             <input checked_value="yes" unchecked_value="no" disabled="disabled" type="checkbox" value="yes" checked="checked" name="sample[read_tos]" id="sample_read_tos" />
             Confirm that you agree to Terms of Service
           </label>
@@ -137,10 +137,10 @@ RSpec.describe Cfa::Styleguide::CfaFormBuilder do
         <fieldset class="input-group form-group form-group--error">
           <legend class="form-question "> Which captains do you think are cool? </legend>
           <p class="text--help">like, really cool</p>
-          <label class="checkbox"><input name="sample[tng]" type="hidden" value="0" /><input type="checkbox" value="1" name="sample[tng]" id="sample_tng"/> Picard </label>
-          <label class="checkbox"><input name="sample[ds9]" type="hidden" value="0" /><input type="checkbox" value="1" name="sample[ds9]" id="sample_ds9"/> Sisko </label>
-          <label class="checkbox"><input name="sample[voyager]" type="hidden" value="0" /><input type="checkbox" value="1" name="sample[voyager]" id="sample_voyager"/> Janeway </label>
-          <label class="checkbox"><input name="sample[tos]" type="hidden" value="0" /><input type="checkbox" value="1" name="sample[tos]" id="sample_tos"/> Kirk </label>
+          <label class="checkbox"><input name="sample[tng]" type="hidden" value="0" autocomplete="off" /><input type="checkbox" value="1" name="sample[tng]" id="sample_tng"/> Picard </label>
+          <label class="checkbox"><input name="sample[ds9]" type="hidden" value="0" autocomplete="off" /><input type="checkbox" value="1" name="sample[ds9]" id="sample_ds9"/> Sisko </label>
+          <label class="checkbox"><input name="sample[voyager]" type="hidden" value="0" autocomplete="off" /><input type="checkbox" value="1" name="sample[voyager]" id="sample_voyager"/> Janeway </label>
+          <label class="checkbox"><input name="sample[tos]" type="hidden" value="0" autocomplete="off" /><input type="checkbox" value="1" name="sample[tos]" id="sample_tos"/> Kirk </label>
           <span class="text--error" id="sample_captains__errors"><i class="icon-warning"></i> Pick a captain. </span>
         </fieldset>
         HTML
@@ -172,10 +172,10 @@ RSpec.describe Cfa::Styleguide::CfaFormBuilder do
         <fieldset class="input-group form-group">
           <legend class="form-question "> Which captains do you think are cool? </legend>
           <p class="text--help">like, really cool</p>
-          <label class="checkbox"><input name="sample[tng]" type="hidden" value="0" /><input type="checkbox" value="1" name="sample[tng]" id="sample_tng"/> Picard </label>
-          <label class="checkbox"><input name="sample[ds9]" type="hidden" value="0" /><input type="checkbox" value="1" name="sample[ds9]" id="sample_ds9"/> Sisko </label>
-          <label class="checkbox"><input name="sample[voyager]" type="hidden" value="0" /><input type="checkbox" value="1" name="sample[voyager]" id="sample_voyager"/> Janeway </label>
-          <label class="checkbox"><input name="sample[tos]" type="hidden" value="0" /><input type="checkbox" value="1" name="sample[tos]" id="sample_tos"/> Kirk </label>
+          <label class="checkbox"><input name="sample[tng]" type="hidden" value="0" autocomplete="off" /><input type="checkbox" value="1" name="sample[tng]" id="sample_tng"/> Picard </label>
+          <label class="checkbox"><input name="sample[ds9]" type="hidden" value="0" autocomplete="off" /><input type="checkbox" value="1" name="sample[ds9]" id="sample_ds9"/> Sisko </label>
+          <label class="checkbox"><input name="sample[voyager]" type="hidden" value="0" autocomplete="off" /><input type="checkbox" value="1" name="sample[voyager]" id="sample_voyager"/> Janeway </label>
+          <label class="checkbox"><input name="sample[tos]" type="hidden" value="0" autocomplete="off" /><input type="checkbox" value="1" name="sample[tos]" id="sample_tos"/> Kirk </label>
         </fieldset>
       HTML
     end
@@ -213,12 +213,12 @@ RSpec.describe Cfa::Styleguide::CfaFormBuilder do
         expect(output).to match_html <<-HTML
         <fieldset class="input-group form-group form-group--error checkbox-none">
           <legend class="sr-only"> Which captains do you think are cool? </legend>
-          <label class="checkbox"><input name="sample[tng]" type="hidden" value="0" /><input type="checkbox" value="1" name="sample[tng]" id="sample_tng"/> Picard </label>
-          <label class="checkbox"><input name="sample[ds9]" type="hidden" value="0" /><input type="checkbox" value="1" name="sample[ds9]" id="sample_ds9"/> Sisko </label>
-          <label class="checkbox"><input name="sample[voyager]" type="hidden" value="0" /><input type="checkbox" value="1" name="sample[voyager]" id="sample_voyager"/> Janeway </label>
-          <label class="checkbox"><input name="sample[tos]" type="hidden" value="0" /><input type="checkbox" value="1" name="sample[tos]" id="sample_tos"/> Kirk </label>
+          <label class="checkbox"><input name="sample[tng]" type="hidden" value="0" autocomplete="off" /><input type="checkbox" value="1" name="sample[tng]" id="sample_tng"/> Picard </label>
+          <label class="checkbox"><input name="sample[ds9]" type="hidden" value="0" autocomplete="off" /><input type="checkbox" value="1" name="sample[ds9]" id="sample_ds9"/> Sisko </label>
+          <label class="checkbox"><input name="sample[voyager]" type="hidden" value="0" autocomplete="off" /><input type="checkbox" value="1" name="sample[voyager]" id="sample_voyager"/> Janeway </label>
+          <label class="checkbox"><input name="sample[tos]" type="hidden" value="0" autocomplete="off" /><input type="checkbox" value="1" name="sample[tos]" id="sample_tos"/> Kirk </label>
           <hr />
-          <label class="checkbox"><input name="sample[none]" type="hidden" value="0" /><input type="checkbox" value="1" checked="checked" name="sample[none]" id="sample_none" /> None of the above </label>
+          <label class="checkbox"><input name="sample[none]" type="hidden" value="0" autocomplete="off" /><input type="checkbox" value="1" checked="checked" name="sample[none]" id="sample_none" /> None of the above </label>
           <span class="text--error" id="sample_captains__errors"><i class="icon-warning"></i> Pick a captain. </span>
         </fieldset>
         HTML
@@ -246,10 +246,10 @@ RSpec.describe Cfa::Styleguide::CfaFormBuilder do
       expect(output).to match_html <<-HTML
         <fieldset class="input-group form-group checkbox-none">
           <legend class="sr-only"> What values does this member have? </legend>
-          <label class="checkbox"><input name="sample[first]" type="hidden" value="0" /><input type="checkbox" value="1" checked="checked" name="sample[first]" id="sample_first" /> First value </label>
-          <label class="checkbox"><input name="sample[second]" type="hidden" value="0" /><input type="checkbox" value="1" name="sample[second]" id="sample_second" /> Second value </label>
+          <label class="checkbox"><input name="sample[first]" type="hidden" value="0" autocomplete="off" /><input type="checkbox" value="1" checked="checked" name="sample[first]" id="sample_first" /> First value </label>
+          <label class="checkbox"><input name="sample[second]" type="hidden" value="0" autocomplete="off" /><input type="checkbox" value="1" name="sample[second]" id="sample_second" /> Second value </label>
           <hr />
-          <label class="checkbox"><input name="sample[none]" type="hidden" value="0" /><input type="checkbox" value="1" checked="checked" name="sample[none]" id="sample_none"/> None of the above </label>
+          <label class="checkbox"><input name="sample[none]" type="hidden" value="0" autocomplete="off" /><input type="checkbox" value="1" checked="checked" name="sample[none]" id="sample_none"/> None of the above </label>
         </fieldset>
       HTML
     end
@@ -277,10 +277,10 @@ RSpec.describe Cfa::Styleguide::CfaFormBuilder do
         expect(output).to match_html <<-HTML
         <fieldset class="input-group form-group checkbox-none">
           <legend class="sr-only"> What values does this member have? </legend>
-          <label class="checkbox"><input name="sample[first]" type="hidden" value="no" /><input type="checkbox" value="yes" checked="checked" name="sample[first]" id="sample_first" /> First value </label>
-          <label class="checkbox"><input name="sample[second]" type="hidden" value="no" /><input type="checkbox" value="yes" name="sample[second]" id="sample_second" /> Second value </label>
+          <label class="checkbox"><input name="sample[first]" type="hidden" value="no" autocomplete="off" /><input type="checkbox" value="yes" checked="checked" name="sample[first]" id="sample_first" /> First value </label>
+          <label class="checkbox"><input name="sample[second]" type="hidden" value="no" autocomplete="off" /><input type="checkbox" value="yes" name="sample[second]" id="sample_second" /> Second value </label>
           <hr />
-          <label class="checkbox"><input name="sample[none]" type="hidden" value="0" /><input type="checkbox" value="1" checked="checked" name="sample[none]" id="sample_none" /> None of the above </label>
+          <label class="checkbox"><input name="sample[none]" type="hidden" value="0" autocomplete="off" /><input type="checkbox" value="1" checked="checked" name="sample[none]" id="sample_none" /> None of the above </label>
         </fieldset>
         HTML
       end
@@ -309,10 +309,10 @@ RSpec.describe Cfa::Styleguide::CfaFormBuilder do
         expect(output).to match_html <<-HTML
         <fieldset class="input-group form-group checkbox-none">
           <legend class="sr-only"> What values does this member have? </legend>
-          <label class="checkbox"><input name="sample[first]" type="hidden" value="0" /><input type="checkbox" value="1" checked="checked" name="sample[first]" id="sample_first" /> First value </label>
-          <label class="checkbox"><input name="sample[second]" type="hidden" value="0" /><input type="checkbox" value="1" name="sample[second]" id="sample_second" /> Second value </label>
+          <label class="checkbox"><input name="sample[first]" type="hidden" value="0" autocomplete="off" /><input type="checkbox" value="1" checked="checked" name="sample[first]" id="sample_first" /> First value </label>
+          <label class="checkbox"><input name="sample[second]" type="hidden" value="0" autocomplete="off" /><input type="checkbox" value="1" name="sample[second]" id="sample_second" /> Second value </label>
           <hr />
-          <label class="checkbox"><input name="sample[none]" type="hidden" value="0" /><input type="checkbox" value="1" checked="checked" name="sample[none]" id="sample_none" /> I don't have either of these </label>
+          <label class="checkbox"><input name="sample[none]" type="hidden" value="0" autocomplete="off" /><input type="checkbox" value="1" checked="checked" name="sample[none]" id="sample_none" /> I don't have either of these </label>
         </fieldset>
         HTML
       end
