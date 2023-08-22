@@ -341,7 +341,7 @@ module Cfa
         label_text,
         collection,
         options = {},
-        &
+        &block
       )
 
         html_options = {
@@ -363,7 +363,7 @@ module Cfa
           <div class="form-group#{error_state(object, method)}">
             #{formatted_label}
             <div class="select">
-              #{select(method, collection, options, html_options_with_errors, &)}
+              #{select(method, collection, options, html_options_with_errors, &block)}
             </div>
             #{errors_for(object, method)}
           </div>
