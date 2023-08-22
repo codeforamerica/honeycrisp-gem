@@ -21,7 +21,7 @@ module Cfa
 
       validates_presence_of :example_method_with_validation # For tests
 
-      def method_missing(method_name, *args, **kwargs, &)
+      def method_missing(method_name, *args, **kwargs, &block)
         if method_name.to_s.starts_with?("example_method_with_validation") && errors[method_name].empty?
           errors.add(method_name, "This is an example error message.")
         end
