@@ -1,5 +1,9 @@
 # Migration Guide
 
+## Migrating from <= 0.10.x to 0.11.0
+Honeycrisp version `0.11.0` requires Ruby 3.0 or higher, so make sure you're
+using a modern Ruby.
+
 ## Migrating from <= 0.9.x to 0.10.0
 
 In `0.10.0`, SCSS files have now been namespaced into `stylesheets/honeycrisp`, from `stylesheets`.
