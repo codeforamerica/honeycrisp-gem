@@ -141,9 +141,19 @@ var revealer = (function() {
             $('.reveal').each(function(index, revealer) {
                 var self = revealer;
                 $(self).addClass('is-hiding-content');
+                var revealLink = $(self).find('.reveal__link')
+                $(self).find('.reveal__link').each(function(i, link) {
+                   link.setAttribute('aria-expanded', 'false')
+                })
                 $(self).find('.reveal__link').click(function(e) {
                     e.preventDefault();
                     $(self).toggleClass('is-hiding-content');
+
+                    if (this.getAttribute('aria-expanded') === 'false') {
+                        this.setAttribute('aria-expanded', 'true');
+                    } else {
+                        this.setAttribute('aria-expanded', 'false')
+                    }
                 });
             });
         }
