@@ -1,6 +1,6 @@
 <div class="reveal">
-  <p><a href="#" class="reveal__link"><%= title %></a></p>
-  <div class="reveal__content">
+  <p><button href="#" class="reveal__link" aria-controls="reveal__content_id"><%= title %></button></p>
+  <div class="reveal__content" id="reveal__content_id">
     <%= yield %>
   </div>
 </div>
