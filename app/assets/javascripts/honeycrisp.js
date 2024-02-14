@@ -142,10 +142,10 @@ var revealer = (function() {
                 var self = revealer;
                 $(self).addClass('is-hiding-content');
                 var revealLink = $(self).find('.reveal__link')
-                $(self).find('.reveal__link').each(function(i, link) {
-                   link.setAttribute('aria-expanded', 'false')
+                revealLink.each(function(i, link) {
+                   link.setAttribute('aria-expanded', false)
                 })
-                $(self).find('.reveal__link').click(function(e) {
+                revealLink.click(function(e) {
                     e.preventDefault();
                     $(self).toggleClass('is-hiding-content');
 
