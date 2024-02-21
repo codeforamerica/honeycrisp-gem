@@ -1,5 +1,6 @@
 .reveal__link {
   @include outline;
+  cursor: pointer;
   display: inline-block;
   text-decoration: none;
   color: $color-teal-dark;
