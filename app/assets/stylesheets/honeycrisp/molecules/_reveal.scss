@@ -1,4 +1,4 @@
-.reveal__link {
+.reveal__button {
   @include outline;
   cursor: pointer;
   display: inline-block;
@@ -34,7 +34,7 @@
 .reveal {
   margin-bottom: 1em;
   &.is-hiding-content {
-    .reveal__link {
+    .reveal__button {
       &:after {
         content: '\a0'+map_get($icons, keyboard_arrow_right);
       }
