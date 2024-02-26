@@ -1,5 +1,12 @@
 # Migration Guide
 
+## Migrating from <= 0.11.x to 0.12.0
+In `0.12.0` we improved the accessibility of the Reveal component. Now the link that opened the reveal is a button with `aria-expanded` attributes which enables VoiceOver to announce the collapsed/expanded state of the reveal when clicked/toggled via keyboard in Safari.
+
+*Note*: this does not currently work in Chrome/Firefox.
+
+See [pull request](https://github.com/codeforamerica/honeycrisp-gem/pull/317/files) for full details.
+
 ## Migrating from <= 0.10.x to 0.11.0
 Honeycrisp version `0.11.0` requires Ruby 3.0 or higher, so make sure you're
 using a modern Ruby.
