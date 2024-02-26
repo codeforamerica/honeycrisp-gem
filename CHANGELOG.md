@@ -1,5 +1,14 @@
 # Changelog
 
+## [v0.12.0](https://github.com/codeforamerica/honeycrisp-gem/tree/v0.12.0) (2024-02-26)
+
+[Full Changelog](https://github.com/codeforamerica/honeycrisp-gem/compare/v0.11.0...v0.12.0)
+
+**Merged pull requests:**
+
+- Add migration notes for 0.12.0 release [\#318](https://github.com/codeforamerica/honeycrisp-gem/pull/318) ([arinchoi03](https://github.com/arinchoi03))
+- Make reveal more accessible [\#317](https://github.com/codeforamerica/honeycrisp-gem/pull/317) ([arinchoi03](https://github.com/arinchoi03))
+
 ## [v0.11.0](https://github.com/codeforamerica/honeycrisp-gem/tree/v0.11.0) (2023-08-22)
 
 [Full Changelog](https://github.com/codeforamerica/honeycrisp-gem/compare/v0.10.9...v0.11.0)
