@@ -2,6 +2,7 @@
 
 ## Migrating from <= 0.11.x to 0.12.0
 In `0.12.0` we improved the accessibility of the Reveal component. Now the link that opened the reveal is a button with `aria-expanded` attributes which enables VoiceOver to announce the collapsed/expanded state of the reveal when clicked/toggled via keyboard in Safari.
+Make sure to update any references to `.reveal__link` to `.reveal__button` in your repository if present.
 
 *Note*: this does not currently work in Chrome/Firefox.
 
