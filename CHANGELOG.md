@@ -1,5 +1,13 @@
 # Changelog
 
+## [v0.12.1](https://github.com/codeforamerica/honeycrisp-gem/tree/v0.12.1) (2024-03-04)
+
+[Full Changelog](https://github.com/codeforamerica/honeycrisp-gem/compare/v0.12.0...v0.12.1)
+
+**Merged pull requests:**
+
+- Set text align start on reveal button [\#319](https://github.com/codeforamerica/honeycrisp-gem/pull/319) ([arinchoi03](https://github.com/arinchoi03))
+
 ## [v0.12.0](https://github.com/codeforamerica/honeycrisp-gem/tree/v0.12.0) (2024-02-26)
 
 [Full Changelog](https://github.com/codeforamerica/honeycrisp-gem/compare/v0.11.0...v0.12.0)
