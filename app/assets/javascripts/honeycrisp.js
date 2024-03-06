@@ -212,23 +212,27 @@ var inputGroupSelector = (function() {
 var noneOfTheAbove = (function() {
     var noneOf = {
         init: function () {
-            var $noneCheckbox = $('#none__checkbox');
-            var $otherCheckboxes = $('input[type=checkbox]').not('#none__checkbox');
+            var $noneCheckboxes = $('input[id^=none__checkbox]');
+            var $otherCheckboxes = $('input[type=checkbox]').not('[id^=none__checkbox]');
 
             // Uncheck None if another checkbox is checked
-            $otherCheckboxes.click(function(e) {
+            $otherCheckboxes.click(function (e) {
+                var $name = this.name
+                var $noneCheckbox = $('#none__checkbox-' + $name.substring(0, $name.length - 2));
                 $noneCheckbox.prop('checked', false);
                 $noneCheckbox.parent().removeClass('is-selected');
             });
 
             // Uncheck all others if None is checked
-            $noneCheckbox.click(function(e) {
-                $otherCheckboxes.prop('checked', false);
-                $otherCheckboxes.parent().removeClass('is-selected');
+            $noneCheckboxes.click(function (e) {
+                var $id = $(this).attr('id')
+                var $noneSiblingCheckboxes = $('input[id^=' + $id.substring(15));
+                $noneSiblingCheckboxes.prop('checked', false);
+                $noneSiblingCheckboxes.parent().removeClass('is-selected');
 
                 // If we just unchecked an <input> with a follow-up, let's reset the follow-up questions
                 // so it hides properly.
-                var $enclosingFollowUp = $noneCheckbox.closest('.question-with-follow-up');
+                var $enclosingFollowUp = $(this).closest('.question-with-follow-up');
                 if ($enclosingFollowUp) {
                     followUpQuestion.update($enclosingFollowUp);
                 }
