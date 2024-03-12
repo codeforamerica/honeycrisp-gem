@@ -1,5 +1,12 @@
 # Migration Guide
 
+## Breaking changes: Migrating from <= 0.12.x to 0.13.0
+In `0.13.0` we fixed the use case when there are multiple checkbox sets on the page, the "none of the above" toggle was applying the toggle to every checkbox set on the page.
+
+⚠️ Breaking change for folks using `id="none__checkbox"` without the "input name" appended. ex: `id="none__checkbox-programSelection"`
+
+See [pull request](https://github.com/codeforamerica/honeycrisp-gem/pull/320/files) for full details.
+
 ## Migrating from <= 0.11.x to 0.12.0
 In `0.12.0` we improved the accessibility of the Reveal component. Now the link that opened the reveal is a button with `aria-expanded` attributes which enables VoiceOver to announce the collapsed/expanded state of the reveal when clicked/toggled via keyboard in Safari.
 Make sure to update any references to `.reveal__link` to `.reveal__button` in your repository if present.
