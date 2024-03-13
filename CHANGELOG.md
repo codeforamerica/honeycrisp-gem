@@ -1,5 +1,28 @@
 # Changelog
 
+## [v0.13.1](https://github.com/codeforamerica/honeycrisp-gem/tree/v0.13.1) (2024-03-13)
+
+[Full Changelog](https://github.com/codeforamerica/honeycrisp-gem/compare/v0.13.0...v0.13.1)
+
+**Closed issues:**
+
+- 🚨 Update to heroku-22 stack by 2023-04-30 🚨  [\#308](https://github.com/codeforamerica/honeycrisp-gem/issues/308)
+
+**Merged pull requests:**
+
+- Update rails in the format recommended [\#327](https://github.com/codeforamerica/honeycrisp-gem/pull/327) ([arinchoi03](https://github.com/arinchoi03))
+- Update migration notes for 0.13.0 [\#326](https://github.com/codeforamerica/honeycrisp-gem/pull/326) ([arinchoi03](https://github.com/arinchoi03))
+- Bump rails version to 7.0.8.1 [\#325](https://github.com/codeforamerica/honeycrisp-gem/pull/325) ([sree-cfa](https://github.com/sree-cfa))
+- Bump rack from 2.2.8 to 2.2.8.1 [\#324](https://github.com/codeforamerica/honeycrisp-gem/pull/324) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump nokogiri from 1.15.4 to 1.16.2 [\#323](https://github.com/codeforamerica/honeycrisp-gem/pull/323) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump protocol-http1 from 0.14.2 to 0.18.0 [\#322](https://github.com/codeforamerica/honeycrisp-gem/pull/322) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump minimatch from 3.0.4 to 3.1.2 [\#321](https://github.com/codeforamerica/honeycrisp-gem/pull/321) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Fix - "None of the above" in checkbox set \(Breaking\) [\#320](https://github.com/codeforamerica/honeycrisp-gem/pull/320) ([sree-cfa](https://github.com/sree-cfa))
+
+## [v0.13.0](https://github.com/codeforamerica/honeycrisp-gem/tree/v0.13.0) (2024-03-12)
+
+[Full Changelog](https://github.com/codeforamerica/honeycrisp-gem/compare/v0.12.1...v0.13.0)
+
 ## [v0.12.1](https://github.com/codeforamerica/honeycrisp-gem/tree/v0.12.1) (2024-03-04)
 
 [Full Changelog](https://github.com/codeforamerica/honeycrisp-gem/compare/v0.12.0...v0.12.1)
