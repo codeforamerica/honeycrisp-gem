@@ -1,5 +1,14 @@
 # Changelog
 
+## [v0.13.2](https://github.com/codeforamerica/honeycrisp-gem/tree/v0.13.2) (2024-05-16)
+
+[Full Changelog](https://github.com/codeforamerica/honeycrisp-gem/compare/v0.13.1...v0.13.2)
+
+**Merged pull requests:**
+
+- Bump nokogiri from 1.16.2 to 1.16.5 [\#329](https://github.com/codeforamerica/honeycrisp-gem/pull/329) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Updating heroku stack config [\#328](https://github.com/codeforamerica/honeycrisp-gem/pull/328) ([sree-cfa](https://github.com/sree-cfa))
+
 ## [v0.13.1](https://github.com/codeforamerica/honeycrisp-gem/tree/v0.13.1) (2024-03-13)
 
 [Full Changelog](https://github.com/codeforamerica/honeycrisp-gem/compare/v0.13.0...v0.13.1)
