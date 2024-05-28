@@ -1,5 +1,12 @@
 # Migration Guide
 
+## Breaking changes: Migrating from <= 0.13.x to 0.14.0
+⚠️ For `0.14.0`, we are reverting the change implemented in 0.13.0 since this broke the functionality of "none of the above" checkboxes for rails projects that utilize Rails form builder. For the use cases in which multiple checkboxes are on a single page, the toggle will be broken.
+
+We will work on a fix that works universally in the future.
+
+See [pull request](https://github.com/codeforamerica/honeycrisp-gem/pull/331/files) for full details.
+
 ## Breaking changes: Migrating from <= 0.12.x to 0.13.0
 In `0.13.0` we fixed the use case when there are multiple checkbox sets on the page, the "none of the above" toggle was applying the toggle to every checkbox set on the page.
 
