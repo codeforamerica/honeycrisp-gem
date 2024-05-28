@@ -1,12 +1,18 @@
 # Changelog
 
-## [v0.13.3](https://github.com/codeforamerica/honeycrisp-gem/tree/v0.13.3) (2024-05-17)
+## [v0.14.0](https://github.com/codeforamerica/honeycrisp-gem/tree/v0.14.0) (2024-05-28)
 
-[Full Changelog](https://github.com/codeforamerica/honeycrisp-gem/compare/v0.13.2...v0.13.3)
+[Full Changelog](https://github.com/codeforamerica/honeycrisp-gem/compare/v0.13.3...v0.14.0)
 
 **Merged pull requests:**
 
+- Update migration notes for 0.14.0 [\#332](https://github.com/codeforamerica/honeycrisp-gem/pull/332) ([arinchoi03](https://github.com/arinchoi03))
+- Revert "Fix - "None of the above" in checkbox set \(Breaking\)" [\#331](https://github.com/codeforamerica/honeycrisp-gem/pull/331) ([arinchoi03](https://github.com/arinchoi03))
 - Bump rexml from 3.2.6 to 3.2.8 [\#330](https://github.com/codeforamerica/honeycrisp-gem/pull/330) ([dependabot[bot]](https://github.com/apps/dependabot))
+
+## [v0.13.3](https://github.com/codeforamerica/honeycrisp-gem/tree/v0.13.3) (2024-05-17)
+
+[Full Changelog](https://github.com/codeforamerica/honeycrisp-gem/compare/v0.13.2...v0.13.3)
 
 ## [v0.13.2](https://github.com/codeforamerica/honeycrisp-gem/tree/v0.13.2) (2024-05-16)
 
