@@ -19,7 +19,7 @@ class UglifierSourceMapsCompressor < Sprockets::UglifierCompressor
     sourcemap_json = sourcemap.to_json
 
     sourcemap_filename = "honeycrisp.min.js.map"
-    sourcemap_path = File.join(Dir.pwd, 'dist', 'js', sourcemap_filename)
+    sourcemap_path = File.join(Dir.pwd, "dist", "js", sourcemap_filename)
 
     write_sourcemap(sourcemap_path, sourcemap_json)
 
