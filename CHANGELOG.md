@@ -1,5 +1,14 @@
 # Changelog
 
+## [v0.14.2](https://github.com/codeforamerica/honeycrisp-gem/tree/v0.14.2) (2024-06-07)
+
+[Full Changelog](https://github.com/codeforamerica/honeycrisp-gem/compare/v0.14.1...v0.14.2)
+
+**Merged pull requests:**
+
+- Bump actiontext from 7.0.8.1 to 7.0.8.4 [\#337](https://github.com/codeforamerica/honeycrisp-gem/pull/337) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump actionpack from 7.0.8.1 to 7.0.8.4 [\#336](https://github.com/codeforamerica/honeycrisp-gem/pull/336) ([dependabot[bot]](https://github.com/apps/dependabot))
+
 ## [v0.14.1](https://github.com/codeforamerica/honeycrisp-gem/tree/v0.14.1) (2024-06-07)
 
 [Full Changelog](https://github.com/codeforamerica/honeycrisp-gem/compare/v0.14.0...v0.14.1)
