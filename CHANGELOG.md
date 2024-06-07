@@ -1,5 +1,15 @@
 # Changelog
 
+## [v0.14.1](https://github.com/codeforamerica/honeycrisp-gem/tree/v0.14.1) (2024-06-07)
+
+[Full Changelog](https://github.com/codeforamerica/honeycrisp-gem/compare/v0.14.0...v0.14.1)
+
+**Merged pull requests:**
+
+- Fix rubocop errors [\#335](https://github.com/codeforamerica/honeycrisp-gem/pull/335) ([arinchoi03](https://github.com/arinchoi03))
+- Move the `uglifier` initialization out of the method to avoid re-initializing it every time the method is called. [\#334](https://github.com/codeforamerica/honeycrisp-gem/pull/334) ([Montana](https://github.com/Montana))
+- `Rakefile` update and improvements. [\#333](https://github.com/codeforamerica/honeycrisp-gem/pull/333) ([Montana](https://github.com/Montana))
+
 ## [v0.14.0](https://github.com/codeforamerica/honeycrisp-gem/tree/v0.14.0) (2024-05-28)
 
 [Full Changelog](https://github.com/codeforamerica/honeycrisp-gem/compare/v0.13.3...v0.14.0)
