@@ -1,5 +1,5 @@
 .button {
-    @include outline;
+    @include outline-with-offset;
     box-sizing: border-box;
     line-height: $s25;
     margin-bottom: $s25;

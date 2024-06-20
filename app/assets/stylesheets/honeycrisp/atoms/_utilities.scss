@@ -83,7 +83,12 @@
 
 @mixin outline-unconditional() {
   outline: none;
-  box-shadow: 0 0 0 5px $color-yellow;
+  box-shadow: 0 0 0 5px $color-gold;
+}
+
+@mixin outline-unconditional-with-offset() {
+  outline: none;
+  box-shadow: 0 0 0 3px $color-white, 0px 0px 0px 8px $color-gold;
 }
 
 @mixin outline() {
@@ -92,9 +97,21 @@
   }
 }
 
+@mixin outline-with-offset() {
+  &:focus {
+    @include outline-unconditional-with-offset;
+  }
+}
+
 @mixin outline-within() {
   &:focus-within {
     @include outline-unconditional;
+  }
+}
+
+@mixin outline-within-with-offset() {
+  &:focus-within {
+    @include outline-unconditional-with-offset;
   }
 }
 
