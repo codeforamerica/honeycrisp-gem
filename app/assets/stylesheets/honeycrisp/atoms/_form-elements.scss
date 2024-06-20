@@ -29,7 +29,7 @@ label {
 }
 
 .text-input {
-  @include outline;
+  @include outline-with-offset;
   display: block;
   width: 100%;
   font-size: $font-size-25;
@@ -45,14 +45,10 @@ label {
   &::placeholder {
     color: $color-grey-dark;
   }
-
-  &:focus {
-    box-shadow: 0 0 0 5px $color-yellow, inset 0px 2px 0px rgba(#000, .15);
-  }
 }
 
 .radio-button {
-  @include outline-within();
+  @include outline-within-with-offset();
   transition: $animation-fast all;
   user-select: none;
   position: relative;
@@ -67,7 +63,7 @@ label {
 	background-color: $color-white;
 	border: 2px solid $color-grey-darkest;
 	input[type='radio'] {
-    @include outline;
+    @include outline-with-offset;
     position: absolute;
     top: $s35/2 + .3rem;
     left: $s25;
@@ -109,7 +105,7 @@ label {
 }
 
 .checkbox {
-  @include outline-within();
+  @include outline-within-with-offset();
   transition: $animation-fast all;
   user-select: none;
   position: relative;
@@ -125,7 +121,7 @@ label {
   border: 2px solid $color-grey-darkest;
 
   input[type='checkbox'] {
-    @include outline;
+    @include outline-with-offset;
     position: absolute;
     top: $s35/2 + .3rem;
     left: $s25;
@@ -161,9 +157,8 @@ label {
 }
 
 .textarea {
-  @include outline;
+  @include outline-with-offset;
   border: 2px solid $color-grey-darkest;
-  box-shadow: inset 0px 2px 0px rgba(#000, .15);
   width: 100%;
   padding: $s15;
   line-height: $s25;
@@ -204,7 +199,7 @@ label {
 }
 
 .select__element {
-  @include outline;
+  @include outline-with-offset;
   appearance: none;
   position: relative;
   z-index: 1;
@@ -226,7 +221,7 @@ label {
   //  This rule expects that an element with class .button will occur after a focused input element as children
   //  of the .file-upload element, as is the case in the example HTML in the styleguide.
   input:focus ~ .button {
-    @include outline-unconditional;
+    @include outline-unconditional-with-offset;
   }
 }
 
