@@ -1,4 +1,6 @@
 .illustration {
+  @include outline-with-offset;
+
   text-indent: -9999px;
   background-repeat: no-repeat;
   background-size: 100% auto;
