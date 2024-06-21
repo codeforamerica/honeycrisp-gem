@@ -1,5 +1,14 @@
 # Changelog
 
+## [v0.14.3](https://github.com/codeforamerica/honeycrisp-gem/tree/v0.14.3) (2024-06-21)
+
+[Full Changelog](https://github.com/codeforamerica/honeycrisp-gem/compare/v0.14.2...v0.14.3)
+
+**Merged pull requests:**
+
+- Bump braces from 3.0.2 to 3.0.3 [\#339](https://github.com/codeforamerica/honeycrisp-gem/pull/339) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump ws from 8.2.2 to 8.17.1 [\#338](https://github.com/codeforamerica/honeycrisp-gem/pull/338) ([dependabot[bot]](https://github.com/apps/dependabot))
+
 ## [v0.14.2](https://github.com/codeforamerica/honeycrisp-gem/tree/v0.14.2) (2024-06-07)
 
 [Full Changelog](https://github.com/codeforamerica/honeycrisp-gem/compare/v0.14.1...v0.14.2)
