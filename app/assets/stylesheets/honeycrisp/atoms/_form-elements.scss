@@ -60,9 +60,10 @@ label {
   min-height: $s60;
   padding: $s35/2 $s25;
   padding-left: $s60;
-	background-color: $color-white;
-	border: 2px solid $color-grey-darkest;
-	input[type='radio'] {
+  background-color: $color-white;
+  border: 2px solid $color-grey-darkest;
+
+  input[type='radio'] {
     @include outline-with-offset;
     position: absolute;
     top: $s35/2 + .3rem;
