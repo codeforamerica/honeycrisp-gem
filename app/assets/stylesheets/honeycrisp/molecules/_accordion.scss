@@ -2,11 +2,12 @@
 	background-color: $color-grey-light;
 	border: 2px solid $color-grey;
 	border-radius: $border-radius-large;
-	padding: $s15;
 	margin-bottom: $s15;
 }
 
 .accordion__button {
+	@include outline-with-offset;
+	border-radius: $s10 $s10 0 0;
 	background: transparent;
 	border: none;
 	box-shadow: none;
@@ -19,12 +20,12 @@
 	text-align: left;
 	font-weight: bold;
 	text-decoration: none;
-	padding-right: $s35;
+	padding: $s15 $s35 $s15 $s15;
 	&:after {
 		content: '';
 		display: block;
 		position: absolute;
-		right: 0;
+		right: $s15;
 		top: 50%;
 		margin-top: -$s15/2;
 		width: $s15;
@@ -35,6 +36,7 @@
 	}
 
 	.accordion--is-closed & {
+		border-radius: $s10;
 		&:after {
 			background-image: image-url('icon_accordion_open.svg');
 		}
@@ -44,6 +46,7 @@
 .accordion__content {
 	margin-top: $s35;
 	display: block;
+	padding: 0 $s15 $s15 $s15;
 
 	.accordion--is-closed & {
 		display: none;
