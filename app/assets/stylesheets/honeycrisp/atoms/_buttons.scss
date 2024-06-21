@@ -126,3 +126,10 @@
 p .button {
   margin-bottom: 0;
 }
+
+.illustration--gcf-logo {
+  @include retina-bg(gcf_logomark_black, 100% auto);
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+}
