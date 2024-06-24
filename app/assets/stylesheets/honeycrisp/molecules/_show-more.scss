@@ -37,6 +37,7 @@
 }
 
 .show-more__button {
+  @include outline-with-offset;
   font-size: $font-size-25-small;
   display: inline-block;
   padding: .2em .4em;
