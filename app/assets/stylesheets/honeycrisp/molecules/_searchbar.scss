@@ -1,5 +1,5 @@
 .searchbar {
-  @include outline-within;
+  @include outline-within-with-offset;
   display: table;
   width: 100%;
   border-collapse: separate;
