@@ -67,7 +67,7 @@
 }
 
 .text-input-group {
-    @include outline-within;
+    @include outline-within-with-offset;
     webkit-appearance: none;
     display: table;
     margin-bottom: 0;
