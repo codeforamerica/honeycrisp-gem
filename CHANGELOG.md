@@ -1,5 +1,13 @@
 # Changelog
 
+## [v0.15.0](https://github.com/codeforamerica/honeycrisp-gem/tree/v0.15.0) (2024-06-27)
+
+[Full Changelog](https://github.com/codeforamerica/honeycrisp-gem/compare/v0.14.4...v0.15.0)
+
+**Merged pull requests:**
+
+- Update migration notes 0.14.3 -\> 0.15.0 [\#341](https://github.com/codeforamerica/honeycrisp-gem/pull/341) ([arinchoi03](https://github.com/arinchoi03))
+
 ## [v0.14.4](https://github.com/codeforamerica/honeycrisp-gem/tree/v0.14.4) (2024-06-27)
 
 [Full Changelog](https://github.com/codeforamerica/honeycrisp-gem/compare/v0.14.3...v0.14.4)
