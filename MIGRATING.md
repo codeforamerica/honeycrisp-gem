@@ -1,4 +1,10 @@
 # Migration Guide
+## Migrating from <= 0.14.3 to 0.15.0
+For `0.14.4`, we updated the focus outline behavior to have a darker outline color (new color `$color-gold`) and an offset against focusable elements.
+The focus on accordion component was also updated (previously only the baseline blue outline was applied on focus on the `.accordion__button` element).
+This accessibility improvement was necessary to meet WCAG 2.2 SC 1.4.11 Non-text Contrast (Level AA) criterion.
+
+See [pull request](https://github.com/codeforamerica/honeycrisp-gem/pull/340/files) for full details.
 
 ## Breaking changes: Migrating from <= 0.13.x to 0.14.0
 ⚠️ For `0.14.0`, we are reverting the change implemented in 0.13.0 since this broke the functionality of "none of the above" checkboxes for rails projects that utilize Rails form builder. For the use cases in which multiple checkboxes are on a single page, the toggle will be broken.
