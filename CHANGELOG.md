@@ -1,5 +1,13 @@
 # Changelog
 
+## [v0.15.1](https://github.com/codeforamerica/honeycrisp-gem/tree/v0.15.1) (2024-07-10)
+
+[Full Changelog](https://github.com/codeforamerica/honeycrisp-gem/compare/v0.15.0...v0.15.1)
+
+**Merged pull requests:**
+
+- Set `.select__element` color to inherit instead of using safari default for `select` elements [\#342](https://github.com/codeforamerica/honeycrisp-gem/pull/342) ([arinchoi03](https://github.com/arinchoi03))
+
 ## [v0.15.0](https://github.com/codeforamerica/honeycrisp-gem/tree/v0.15.0) (2024-06-27)
 
 [Full Changelog](https://github.com/codeforamerica/honeycrisp-gem/compare/v0.14.4...v0.15.0)
