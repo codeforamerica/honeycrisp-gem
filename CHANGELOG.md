@@ -1,5 +1,13 @@
 # Changelog
 
+## [v0.15.2](https://github.com/codeforamerica/honeycrisp-gem/tree/v0.15.2) (2024-08-06)
+
+[Full Changelog](https://github.com/codeforamerica/honeycrisp-gem/compare/v0.15.1...v0.15.2)
+
+**Merged pull requests:**
+
+- Bump rexml from 3.2.8 to 3.3.3 [\#344](https://github.com/codeforamerica/honeycrisp-gem/pull/344) ([dependabot[bot]](https://github.com/apps/dependabot))
+
 ## [v0.15.1](https://github.com/codeforamerica/honeycrisp-gem/tree/v0.15.1) (2024-07-10)
 
 [Full Changelog](https://github.com/codeforamerica/honeycrisp-gem/compare/v0.15.0...v0.15.1)
