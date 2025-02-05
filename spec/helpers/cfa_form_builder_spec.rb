@@ -877,17 +877,17 @@ RSpec.describe Cfa::Styleguide::CfaFormBuilder do
       )
       expect(output).to be_html_safe
 
-      expect(output).to match_html <<-HTML
+      expect(output).to match_html <<~HTML
         <div class="form-group form-group--error">
           <div class="field_with_errors">
             <label class="sr-only" for="sample_how_many">
               <span class="form-question">This is for screen readers!</span>
             </label>
           </div>
-          <div class="text--help">Choose how many</div>
+          <div class="text--help" id="sample_how_many__help-text">Choose how many</div>
           <div class="select">
             <div class="field_with_errors">
-              <select class="select__element" aria-describedby="sample_how_many__errors" name="sample[how_many]" id="sample_how_many">
+              <select class="select__element" aria-describedby="sample_how_many__help-text sample_how_many__errors" name="sample[how_many]" id="sample_how_many">
                 <option value="0">0 things</option>
                 <option value="1">1 thing</option>
                 <option value="2">2 things</option>

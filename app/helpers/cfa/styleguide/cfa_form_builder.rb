@@ -346,26 +346,29 @@ module Cfa
         &block
       )
 
+        help_text = options[:help_text]
+
         html_options = {
           class: "select__element",
+          "aria-describedby": get_describedby(method, help_text: help_text),
         }
 
         formatted_label = label(
           method,
           label_contents(
             label_text,
-            options[:help_text],
             optional: options[:optional],
           ),
           class: options[:hide_label] ? "sr-only" : "",
         )
-        html_options_with_errors = html_options.merge(error_attributes(method: method))
+
+        formatted_label += help_text_html(help_text, method)
 
         html_output = <<~HTML
           <div class="form-group#{error_state(object, method)}">
             #{formatted_label}
             <div class="select">
-              #{select(method, collection, options, html_options_with_errors, &block)}
+              #{select(method, collection, options, html_options, &block)}
             </div>
             #{errors_for(object, method)}
           </div>
