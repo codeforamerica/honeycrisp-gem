@@ -42,13 +42,16 @@ module Cfa
           HTML
         end.join.html_safe
 
+        describedby = get_describedby(method, help_text: help_text)
+
         <<~HTML.html_safe
-          <fieldset class="input-group form-group#{error_state(object, method)}">
+          <fieldset class="input-group form-group#{error_state(object, method)}" aria-describedby="#{describedby}">
             #{fieldset_label_contents(
               label_text: label_text,
               help_text: help_text,
               legend_class: legend_class,
               optional: optional,
+              method: method,
             )}
             #{checkbox_html}
             #{errors_for(object, method)}
@@ -107,7 +110,7 @@ module Cfa
         optional: false,
         notice: nil
       )
-        text_field_options = standard_options.merge(
+        text_field_options = standard_options.merge(error_attributes(method: method)).merge(
           autofocus: autofocus,
           type: type,
           class: (classes + ["text-input"]).join(" "),
@@ -148,12 +151,15 @@ module Cfa
         layouts: ["block"],
         legend_class: ""
       )
+        describedby = get_describedby(method, help_text: help_text)
+
         <<~HTML.html_safe
-          <fieldset class="form-group#{error_state(object, method)}">
+          <fieldset class="form-group#{error_state(object, method)}" aria-describedby="#{describedby}">
             #{fieldset_label_contents(
               label_text: label_text,
               help_text: help_text,
               legend_class: legend_class,
+              method: method,
             )}
           #{cfa_radio_button(method, collection, layouts)}
           #{errors_for(object, method)}
@@ -249,9 +255,11 @@ module Cfa
         autofocus: nil
       )
 
+        describedby = get_describedby(method, help_text: help_text)
+
         <<~HTML.html_safe
-          <fieldset class="form-group#{error_state(object, method)}">
-            #{fieldset_label_contents(label_text: label_text, help_text: help_text)}
+          <fieldset class="form-group#{error_state(object, method)}" aria-describedby="#{describedby}">
+            #{fieldset_label_contents(label_text: label_text, help_text: help_text, method: method)}
             <div class="input-group--inline">
               <div class="select">
                 <label for="#{sanitized_id(method, 'month')}" class="sr-only">#{I18n.t('honeycrisp.month')}</label>
@@ -416,6 +424,7 @@ module Cfa
       def fieldset_label_contents(
         label_text:,
         help_text:,
+        method:,
         legend_class: "",
         optional: false
       )
@@ -428,7 +437,7 @@ module Cfa
 
         if help_text
           label_html += <<~HTML
-            <p class="text--help">#{help_text}</p>
+            <p class="text--help" id="#{help_text_id(method)}">#{help_text}</p>
           HTML
         end
 
