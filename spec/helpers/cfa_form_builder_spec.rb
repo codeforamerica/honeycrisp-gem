@@ -819,16 +819,16 @@ RSpec.describe Cfa::Styleguide::CfaFormBuilder do
       expect(output).to be_html_safe
       expect(output).to match_html <<-HTML
         <div class="form-group form-group--error">
-         <div class="field_with_errors">
-           <label class="sr-only" for="sample_description">
-             <p class="form-question">Write a lot?</p>
-             <p class="text--help">Name for texting</p>
-           </label>
-         </div>
-         <div class="field_with_errors">
-           <textarea autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="textarea" aria-describedby="sample_description__errors" name="sample[description]" id="sample_description"></textarea>
-         </div>
-         <span class="text--error" id="sample_description__errors"><i class="icon-warning"></i> can't be blank </span>
+          <div class="field_with_errors">
+            <label class="sr-only" for="sample_description">
+              <span class="form-question">Write a lot?</span>
+            </label>
+          </div>
+        <div class="text--help" id="sample_description__help-text">Name for texting</div>
+        <div class="field_with_errors">
+          <textarea autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="textarea" aria-describedby="sample_description__help-text sample_description__errors" name="sample[description]" id="sample_description"></textarea>
+        </div>
+        <span class="text--error" id="sample_description__errors"><i class="icon-warning"></i> can't be blank </span>
        </div>
       HTML
     end
