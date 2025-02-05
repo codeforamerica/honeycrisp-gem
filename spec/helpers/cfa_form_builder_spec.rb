@@ -348,7 +348,7 @@ RSpec.describe Cfa::Styleguide::CfaFormBuilder do
             Do you live in Arapahoe County?
           </legend>
           <p class="text--help" id="form_selected_county_location__help-text">This is help text.</p>
-          <div class="input-group--block cfa-radiogroup-element">
+          <div class="input-group--block honeycrisp-radiogroup">
             <label class="radio-button"><div class="field_with_errors"><input type="radio" value="arapahoe" name="form[selected_county_location]" id="form_selected_county_location_arapahoe"/></div> Yes </label>
             <label class="radio-button"><div class="field_with_errors"><input type="radio" value="not_arapahoe" name="form[selected_county_location]" id="form_selected_county_location_not_arapahoe"/></div> No </label>
             <label class="radio-button"><div class="field_with_errors"><input type="radio" value="not_sure" name="form[selected_county_location]" id="form_selected_county_location_not_sure"/></div> I'm not sure </label>
@@ -387,7 +387,7 @@ RSpec.describe Cfa::Styleguide::CfaFormBuilder do
           <div class="question-with-follow-up__question">
             <fieldset class="form-group form-group--error" aria-describedby="form_hourly__errors">
             <legend class="form-question "> Do you work hourly? </legend>
-              <div class="input-group--block cfa-radiogroup-element">
+              <div class="input-group--block honeycrisp-radiogroup">
                 <label class="radio-button"><div class="field_with_errors"><input data-follow-up="#hourly-first-follow-up" type="radio" value="yes" name="form[hourly]" id="form_hourly_yes" /></div> Yes </label>
                 <label class="radio-button"><div class="field_with_errors"><input data-follow-up="#hourly-second-follow-up" type="radio" value="no" name="form[hourly]" id="form_hourly_no" /></div> No </label>
               </div>
