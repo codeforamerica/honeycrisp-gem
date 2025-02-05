@@ -398,7 +398,7 @@ module Cfa
       end
 
       def cfa_radio_button(method, collection, layouts)
-        classes = layouts.map { |layout| "input-group--#{layout}" }.join(" ")
+        classes = (layouts.map { |layout| "input-group--#{layout}" } << "cfa-radiogroup-element").join(" ")
         options = { class: classes }
 
         radiogroup_tag = @template.tag(:div, options, true)
