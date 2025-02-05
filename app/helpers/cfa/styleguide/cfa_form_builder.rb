@@ -154,22 +154,23 @@ module Cfa
         describedby = get_describedby(method, help_text: help_text)
 
         <<~HTML.html_safe
-          <fieldset class="form-group#{error_state(object, method)}" aria-describedby="#{describedby}">
-            #{fieldset_label_contents(
-              label_text: label_text,
-              help_text: help_text,
-              legend_class: legend_class,
-              method: method,
-            )}
-          #{cfa_radio_button(method, collection, layouts)}
-          #{errors_for(object, method)}
+            <fieldset class="form-group#{error_state(object, method)}" aria-describedby="#{describedby}">
+              #{fieldset_label_contents(
+                label_text: label_text,
+                help_text: help_text,
+                legend_class: legend_class,
+                method: method,
+              )}
+            #{cfa_radio_button(method, collection, layouts)}
+            #{errors_for(object, method)}
           </fieldset>
         HTML
       end
 
       def cfa_radio_set_with_follow_up(
         method,
-        collection:, label_text: "",
+        collection:,
+        label_text: "",
         help_text: nil,
         layouts: ["block"],
         legend_class: "",

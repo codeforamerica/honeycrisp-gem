@@ -364,7 +364,7 @@ RSpec.describe Cfa::Styleguide::CfaFormBuilder do
       class SampleForm < Cfa::Styleguide::FormExample
         attr_accessor :hourly, :wage, :salary
 
-        validates_presence_of :hourly
+        validates_presence_of :hourly, :wage
       end
 
       form = SampleForm.new
@@ -382,7 +382,7 @@ RSpec.describe Cfa::Styleguide::CfaFormBuilder do
       )
       expect(output).to be_html_safe
 
-      expect(output).to match_html <<-HTML
+      expect(output).to match_html <<~HTML
         <div class="question-with-follow-up">
           <div class="question-with-follow-up__question">
             <fieldset class="form-group form-group--error" aria-describedby="form_hourly__errors">>
@@ -395,11 +395,16 @@ RSpec.describe Cfa::Styleguide::CfaFormBuilder do
             </fieldset>
           </div>
           <div class="question-with-follow-up__follow-up" id="hourly-first-follow-up">
-            <div class="form-group">
-              <label for="form_wage">
-                <span class="form-question">What is your hourly wage?</span>
-              </label>
-              <input autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" type="text" class="text-input" aria-describedby="form_wage__errors" id="form_wage" name="form[wage]" />
+            <div class="form-group form-group--error">
+              <div class="field_with_errors">
+                <label for="form_wage">
+                  <span class="form-question">What is your hourly wage?</span>
+                </label>
+              </div>
+              <div class="field_with_errors">
+                <input autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" aria-describedby="form_wage__errors" type="text" class="text-input" id="form_wage" name="form[wage]" />
+              </div>
+              <span class="text--error" id="form_wage__errors"><i class="icon-warning"></i> can't be blank </span>
             </div>
           </div>
           <div class="question-with-follow-up__follow-up" id="hourly-second-follow-up">
@@ -407,7 +412,7 @@ RSpec.describe Cfa::Styleguide::CfaFormBuilder do
               <label for="form_salary">
                 <span class="form-question">What is your salary?</span>
               </label>
-              <input autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" type="text" class="text-input" aria-describedby="form_salary__errors" id="form_salary" name="form[salary]" />
+              <input autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" type="text" class="text-input" id="form_salary" name="form[salary]" />
             </div>
           </div>
         </div>
