@@ -425,7 +425,7 @@ module Cfa
       def fieldset_label_contents(
         label_text:,
         help_text:,
-        method:,
+        method: nil,
         legend_class: "",
         optional: false
       )
@@ -436,7 +436,7 @@ module Cfa
           </legend>
         HTML
 
-        if help_text
+        if help_text && method
           label_html += <<~HTML
             <p class="text--help" id="#{help_text_id(method)}">#{help_text}</p>
           HTML

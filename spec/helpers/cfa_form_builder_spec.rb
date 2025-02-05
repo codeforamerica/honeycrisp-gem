@@ -343,11 +343,11 @@ RSpec.describe Cfa::Styleguide::CfaFormBuilder do
       expect(output).to be_html_safe
 
       expect(output).to match_html <<-HTML
-        <fieldset class="form-group form-group--error">
+        <fieldset class="form-group form-group--error" aria-describedby="form_selected_county_location__help-text form_selected_county_location__errors">
           <legend class="form-question ">
             Do you live in Arapahoe County?
           </legend>
-          <p class="text--help">This is help text.</p>
+          <p class="text--help" id="form_selected_county_location__help-text">This is help text.</p>
           <radiogroup class="input-group--block" aria-describedby="form_selected_county_location__errors">
             <label class="radio-button"><div class="field_with_errors"><input type="radio" value="arapahoe" name="form[selected_county_location]" id="form_selected_county_location_arapahoe"/></div> Yes </label>
             <label class="radio-button"><div class="field_with_errors"><input type="radio" value="not_arapahoe" name="form[selected_county_location]" id="form_selected_county_location_not_arapahoe"/></div> No </label>
@@ -508,14 +508,14 @@ RSpec.describe Cfa::Styleguide::CfaFormBuilder do
           <div class="input-group--range">
             <div class="form-group">
               <label class="sr-only" for="form_lower_hours_a_week_amount">
-                <p class="form-question">Lower amount</p>
+                <span class="form-question">Lower amount</span>
               </label>
               <input autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="text-input form-width--short" type="text" value="ten" name="form[lower_hours_a_week_amount]" id="form_lower_hours_a_week_amount" />
             </div>
             <span class="range-text">to</span>
             <div class="form-group">
               <label class="sr-only" for="form_upper_hours_a_week_amount">
-                <p class="form-question">Upper amount</p>
+                <span class="form-question">Upper amount</span>
               </label>
               <input autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="text-input form-width--short" type="text" value="forty" name="form[upper_hours_a_week_amount]" id="form_upper_hours_a_week_amount" />
             </div>
@@ -545,14 +545,14 @@ RSpec.describe Cfa::Styleguide::CfaFormBuilder do
           <div class="input-group--range">
             <div class="form-group">
               <label class="sr-only" for="form_lower_hours_a_week_amount">
-                <p class="form-question">Menor cantidad</p>
+                <span class="form-question">Menor cantidad</span>
               </label>
               <input autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="text-input form-width--short" type="text" value="ten" name="form[lower_hours_a_week_amount]" id="form_lower_hours_a_week_amount" />
             </div>
             <span class="range-text">a</span>
             <div class="form-group">
               <label class="sr-only" for="form_upper_hours_a_week_amount">
-                <p class="form-question">Mayor cantidad</p>
+                <span class="form-question">Mayor cantidad</span>
               </label>
               <input autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="text-input form-width--short" type="text" value="forty" name="form[upper_hours_a_week_amount]" id="form_upper_hours_a_week_amount" />
             </div>
@@ -582,7 +582,7 @@ RSpec.describe Cfa::Styleguide::CfaFormBuilder do
             <div class="input-group--range">
               <div class="form-group">
                 <label class="sr-only" for="form_lower_hours_a_week_amount">
-                  <p class="form-question">Lower amount</p>
+                  <span class="form-question">Lower amount</span>
                 </label>
                 <input autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="text-input form-width--short" aria-describedby="form_lower_hours_a_week_amount_upper_hours_a_week_amount__errors" type="text" value="ten" name="form[lower_hours_a_week_amount]" id="form_lower_hours_a_week_amount" />
               </div>
@@ -590,7 +590,7 @@ RSpec.describe Cfa::Styleguide::CfaFormBuilder do
               <div class="form-group">
                 <div class="field_with_errors">
                   <label class="sr-only" for="form_upper_hours_a_week_amount">
-                    <p class="form-question">Upper amount</p>
+                    <span class="form-question">Upper amount</span>
                   </label>
                 </div>
                 <div class="field_with_errors">
