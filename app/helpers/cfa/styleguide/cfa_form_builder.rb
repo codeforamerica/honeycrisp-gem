@@ -111,7 +111,8 @@ module Cfa
           autofocus: autofocus,
           type: type,
           class: (classes + ["text-input"]).join(" "),
-        ).merge(options).merge(error_attributes(method: method))
+          "aria-describedby": get_describedby(method, help_text: help_text),
+        ).merge(options)
 
         text_field_options[:id] ||= sanitized_id(method)
         options[:input_id] ||= sanitized_id(method)
@@ -430,14 +431,14 @@ module Cfa
         label_html.html_safe
       end
 
-      def label_contents(label_text, help_text, optional: false)
+      def label_contents(label_text, help_text = nil, optional: false)
         label_text = <<~HTML
-          <p class="form-question">#{label_text + optional_text(optional)}</p>
+          <span class="form-question">#{label_text + optional_text(optional)}</span>
         HTML
 
         if help_text
           label_text << <<~HTML
-            <p class="text--help">#{help_text}</p>
+            <span class="text--help">#{help_text}</span>
           HTML
         end
 
@@ -474,10 +475,12 @@ module Cfa
 
         formatted_label = label(
           method,
-          label_contents(label_text, help_text, optional: optional),
+          label_contents(label_text, optional: optional),
           (for_options || options),
         )
         formatted_label += notice_html(notice).html_safe if notice
+
+        formatted_label += help_text_html(help_text, method)
 
         formatted_label + formatted_field(prefix, field, postfix, wrapper_classes).html_safe
       end
@@ -565,6 +568,35 @@ module Cfa
       # and capitalization to snake case, using the same logic as Rails
       def sanitized_value(value)
         value.to_s.gsub(/\s/, "_").gsub(/[^-[[:word:]]]/, "").mb_chars.downcase.to_s
+      end
+
+      def help_text_html(help_text, method)
+        return nil if !help_text
+
+        id = help_text_id(method)
+        <<~HTML.html_safe
+          <div class="text--help" id="#{id}">#{help_text}</div>
+        HTML
+      end
+
+      # Copied from v2 form builder
+      def help_text_id(method)
+        "#{sanitized_id(method)}__help-text"
+      end
+
+      def get_describedby(method, help_text: nil)
+        describedby_ids = []
+
+        if help_text
+          help_id = help_text_id(method)
+          describedby_ids << help_id
+        end
+
+        if object.errors[method].any?
+          describedby_ids << error_label(method)
+        end
+
+        describedby_ids.join(" ") if describedby_ids.length.positive?
       end
     end
   end

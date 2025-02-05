@@ -428,7 +428,7 @@ RSpec.describe Cfa::Styleguide::CfaFormBuilder do
       expect(output).to match_html <<-HTML
         <div class="form-group">
           <label for="form_money">
-            <p class="form-question">How much do you make?</p>
+            <span class="form-question">How much do you make?</span>
           </label>
           <div class="text-input-group-container">
             <div class="text-input-group">
@@ -462,12 +462,12 @@ RSpec.describe Cfa::Styleguide::CfaFormBuilder do
         <div class="form-group form-group--error">
           <div class="field_with_errors">
             <label for="form_name">
-              <p class="form-question">How is name?</p>
-              <p class="text--help"">Name is name</p>
+              <span class="form-question">How is name?</span>
             </label>
           </div>
+          <div class="text--help" id="form_name__help-text">Name is name</div>
           <div class="field_with_errors">
-            <input autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" type="text" class="text-input" aria-describedby="form_name__errors" id="form_name" name="form[name]" />
+            <input autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" type="text" class="text-input" aria-describedby="form_name__help-text form_name__errors" id="form_name" name="form[name]" />
           </div>
           <span class="text--error" id="form_name__errors"><i class="icon-warning"></i> can't be blank </div>
         </div>
@@ -881,10 +881,10 @@ RSpec.describe Cfa::Styleguide::CfaFormBuilder do
         <div class="form-group form-group--error">
           <div class="field_with_errors">
             <label class="sr-only" for="sample_how_many">
-              <p class="form-question">This is for screen readers!</p>
-              <p class="text--help">Choose how many</p>
+              <span class="form-question">This is for screen readers!</span>
             </label>
           </div>
+          <div class="text--help">Choose how many</div>
           <div class="select">
             <div class="field_with_errors">
               <select class="select__element" aria-describedby="sample_how_many__errors" name="sample[how_many]" id="sample_how_many">
