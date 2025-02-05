@@ -385,7 +385,7 @@ RSpec.describe Cfa::Styleguide::CfaFormBuilder do
       expect(output).to match_html <<-HTML
         <div class="question-with-follow-up">
           <div class="question-with-follow-up__question">
-            <fieldset class="form-group form-group--error">
+            <fieldset class="form-group form-group--error" aria-describedby="form_hourly__errors">>
               <legend class="form-question "> Do you work hourly? </legend>
               <radiogroup class="input-group--block" aria-describedby="form_hourly__errors">
                 <label class="radio-button"><div class="field_with_errors"><input data-follow-up="#hourly-first-follow-up" type="radio" value="yes" name="form[hourly]" id="form_hourly_yes" /></div> Yes </label>
@@ -397,7 +397,7 @@ RSpec.describe Cfa::Styleguide::CfaFormBuilder do
           <div class="question-with-follow-up__follow-up" id="hourly-first-follow-up">
             <div class="form-group">
               <label for="form_wage">
-                <p class="form-question">What is your hourly wage?</p>
+                <span class="form-question">What is your hourly wage?</span>
               </label>
               <input autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" type="text" class="text-input" aria-describedby="form_wage__errors" id="form_wage" name="form[wage]" />
             </div>
@@ -405,7 +405,7 @@ RSpec.describe Cfa::Styleguide::CfaFormBuilder do
           <div class="question-with-follow-up__follow-up" id="hourly-second-follow-up">
             <div class="form-group">
               <label for="form_salary">
-                <p class="form-question">What is your salary?</p>
+                <span class="form-question">What is your salary?</span>
               </label>
               <input autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" type="text" class="text-input" aria-describedby="form_salary__errors" id="form_salary" name="form[salary]" />
             </div>
@@ -441,7 +441,7 @@ RSpec.describe Cfa::Styleguide::CfaFormBuilder do
       HTML
     end
 
-    it "adds help text and error ids to aria-labelledby" do
+    it "adds help text and error ids to aria-describedby" do
       class SampleForm < Cfa::Styleguide::FormExample
         attr_accessor :name
 
@@ -458,7 +458,7 @@ RSpec.describe Cfa::Styleguide::CfaFormBuilder do
         help_text: "Name is name",
       )
       expect(output).to be_html_safe
-      expect(output).to match_html <<-HTML
+      expect(output).to match_html <<~HTML
         <div class="form-group form-group--error">
           <div class="field_with_errors">
             <label for="form_name">
@@ -467,7 +467,7 @@ RSpec.describe Cfa::Styleguide::CfaFormBuilder do
           </div>
           <div class="text--help" id="form_name__help-text">Name is name</div>
           <div class="field_with_errors">
-            <input autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" type="text" class="text-input" aria-describedby="form_name__help-text form_name__errors" id="form_name" name="form[name]" />
+            <input autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" aria-describedby="form_name__help-text form_name__errors" type="text" class="text-input" id="form_name" name="form[name]" />
           </div>
           <span class="text--error" id="form_name__errors"><i class="icon-warning"></i> can't be blank </div>
         </div>
@@ -626,9 +626,9 @@ RSpec.describe Cfa::Styleguide::CfaFormBuilder do
       expect(output).to be_html_safe
 
       expect(output).to match_html <<-HTML
-        <fieldset class="form-group">
+        <fieldset class="form-group" aria-describedby="form_birthday__help-text">
           <legend class="form-question "> What is your birthday? </legend>
-          <p class="text--help">(For surprises)</p>
+          <p class="text--help" id="form_birthday__help-text">(For surprises)</p>
           <div class="input-group--inline">
             <div class="select">
               <label for="form_birthday_month" class="sr-only">Month</label>
@@ -725,9 +725,9 @@ RSpec.describe Cfa::Styleguide::CfaFormBuilder do
       expect(output).to be_html_safe
 
       expect(output).to match_html <<-HTML
-        <fieldset class="form-group">
+        <fieldset class="form-group" aria-describedby="form_birthday__help-text">
           <legend class="form-question "> ¿Cuando es tu cumpleaños? </legend>
-          <p class="text--help">(por sorpresas)</p>
+          <p class="text--help" id="form_birthday__help-text">(por sorpresas)</p>
           <div class="input-group--inline">
             <div class="select">
               <label for="form_birthday_month" class="sr-only">Mes</label>
