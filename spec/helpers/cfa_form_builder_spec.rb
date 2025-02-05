@@ -348,11 +348,11 @@ RSpec.describe Cfa::Styleguide::CfaFormBuilder do
             Do you live in Arapahoe County?
           </legend>
           <p class="text--help" id="form_selected_county_location__help-text">This is help text.</p>
-          <radiogroup class="input-group--block" aria-describedby="form_selected_county_location__errors">
+          <div class="input-group--block">
             <label class="radio-button"><div class="field_with_errors"><input type="radio" value="arapahoe" name="form[selected_county_location]" id="form_selected_county_location_arapahoe"/></div> Yes </label>
             <label class="radio-button"><div class="field_with_errors"><input type="radio" value="not_arapahoe" name="form[selected_county_location]" id="form_selected_county_location_not_arapahoe"/></div> No </label>
             <label class="radio-button"><div class="field_with_errors"><input type="radio" value="not_sure" name="form[selected_county_location]" id="form_selected_county_location_not_sure"/></div> I'm not sure </label>
-          </radiogroup>
+          </div>
           <span class="text--error" id="form_selected_county_location__errors"><i class="icon-warning"></i> can't be blank </span>
         </fieldset>
       HTML
@@ -382,15 +382,15 @@ RSpec.describe Cfa::Styleguide::CfaFormBuilder do
       )
       expect(output).to be_html_safe
 
-      expect(output).to match_html <<~HTML
+      expect(output).to match_html <<-HTML
         <div class="question-with-follow-up">
           <div class="question-with-follow-up__question">
-            <fieldset class="form-group form-group--error" aria-describedby="form_hourly__errors">>
-              <legend class="form-question "> Do you work hourly? </legend>
-              <radiogroup class="input-group--block" aria-describedby="form_hourly__errors">
+            <fieldset class="form-group form-group--error" aria-describedby="form_hourly__errors">
+            <legend class="form-question "> Do you work hourly? </legend>
+              <div class="input-group--block">
                 <label class="radio-button"><div class="field_with_errors"><input data-follow-up="#hourly-first-follow-up" type="radio" value="yes" name="form[hourly]" id="form_hourly_yes" /></div> Yes </label>
                 <label class="radio-button"><div class="field_with_errors"><input data-follow-up="#hourly-second-follow-up" type="radio" value="no" name="form[hourly]" id="form_hourly_no" /></div> No </label>
-              </radiogroup>
+              </div>
               <span class="text--error" id="form_hourly__errors"><i class="icon-warning"></i> can't be blank </span>
             </fieldset>
           </div>

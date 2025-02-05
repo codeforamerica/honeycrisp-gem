@@ -154,13 +154,13 @@ module Cfa
         describedby = get_describedby(method, help_text: help_text)
 
         <<~HTML.html_safe
-            <fieldset class="form-group#{error_state(object, method)}" aria-describedby="#{describedby}">
-              #{fieldset_label_contents(
-                label_text: label_text,
-                help_text: help_text,
-                legend_class: legend_class,
-                method: method,
-              )}
+          <fieldset class="form-group#{error_state(object, method)}" aria-describedby="#{describedby}">
+            #{fieldset_label_contents(
+              label_text: label_text,
+              help_text: help_text,
+              legend_class: legend_class,
+              method: method,
+            )}
             #{cfa_radio_button(method, collection, layouts)}
             #{errors_for(object, method)}
           </fieldset>
@@ -399,9 +399,9 @@ module Cfa
 
       def cfa_radio_button(method, collection, layouts)
         classes = layouts.map { |layout| "input-group--#{layout}" }.join(" ")
-        options = { class: classes }.merge(error_attributes(method: method))
+        options = { class: classes }
 
-        radiogroup_tag = @template.tag(:radiogroup, options, true)
+        radiogroup_tag = @template.tag(:div, options, true)
 
         radio_collection = collection.map do |item|
           item = { value: item, label: item } unless item.is_a?(Hash)
@@ -418,7 +418,7 @@ module Cfa
         <<~HTML.html_safe
           #{radiogroup_tag}
             #{radio_collection.join}
-          </radiogroup>
+          </div>
         HTML
       end
 
