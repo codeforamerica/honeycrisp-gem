@@ -313,7 +313,8 @@ module Cfa
         text_options = standard_options.merge(
           autofocus: autofocus,
           class: classes.join(" "),
-        ).merge(options).merge(error_attributes(method: method))
+          "aria-describedby": get_describedby(method, help_text: help_text),
+        ).merge(options)
 
         <<~HTML.html_safe
           <div class="form-group#{error_state(object, method)}">
