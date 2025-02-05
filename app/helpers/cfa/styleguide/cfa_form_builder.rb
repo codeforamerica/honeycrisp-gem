@@ -416,8 +416,8 @@ module Cfa
         end
         <<~HTML.html_safe
           #{radiogroup_tag}
-                  #{radio_collection.join}
-                      </radiogroup>
+            #{radio_collection.join}
+          </radiogroup>
         HTML
       end
 

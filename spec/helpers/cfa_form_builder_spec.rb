@@ -134,9 +134,9 @@ RSpec.describe Cfa::Styleguide::CfaFormBuilder do
         expect(output).to be_html_safe
 
         expect(output).to match_html <<-HTML
-        <fieldset class="input-group form-group form-group--error">
+        <fieldset class="input-group form-group form-group--error" aria-describedby="sample_captains__help-text sample_captains__errors">
           <legend class="form-question "> Which captains do you think are cool? </legend>
-          <p class="text--help">like, really cool</p>
+          <p class="text--help" id="sample_captains__help-text">like, really cool</p>
           <label class="checkbox"><input name="sample[tng]" type="hidden" value="0" autocomplete="off" /><input type="checkbox" value="1" name="sample[tng]" id="sample_tng"/> Picard </label>
           <label class="checkbox"><input name="sample[ds9]" type="hidden" value="0" autocomplete="off" /><input type="checkbox" value="1" name="sample[ds9]" id="sample_ds9"/> Sisko </label>
           <label class="checkbox"><input name="sample[voyager]" type="hidden" value="0" autocomplete="off" /><input type="checkbox" value="1" name="sample[voyager]" id="sample_voyager"/> Janeway </label>
@@ -169,9 +169,9 @@ RSpec.describe Cfa::Styleguide::CfaFormBuilder do
       expect(output).to be_html_safe
 
       expect(output).to match_html <<-HTML
-        <fieldset class="input-group form-group">
+        <fieldset class="input-group form-group" aria-describedby="sample_captains__help-text">
           <legend class="form-question "> Which captains do you think are cool? </legend>
-          <p class="text--help">like, really cool</p>
+          <p class="text--help" id="sample_captains__help-text">like, really cool</p>
           <label class="checkbox"><input name="sample[tng]" type="hidden" value="0" autocomplete="off" /><input type="checkbox" value="1" name="sample[tng]" id="sample_tng"/> Picard </label>
           <label class="checkbox"><input name="sample[ds9]" type="hidden" value="0" autocomplete="off" /><input type="checkbox" value="1" name="sample[ds9]" id="sample_ds9"/> Sisko </label>
           <label class="checkbox"><input name="sample[voyager]" type="hidden" value="0" autocomplete="off" /><input type="checkbox" value="1" name="sample[voyager]" id="sample_voyager"/> Janeway </label>
