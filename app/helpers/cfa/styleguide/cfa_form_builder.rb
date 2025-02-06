@@ -44,8 +44,10 @@ module Cfa
 
         describedby = get_describedby(method, help_text: help_text)
 
+        fieldset_tag = @template.tag(:fieldset, { class: "input-group form-group#{error_state(object, method)}", "aria-describedby": describedby }, true)
+
         <<~HTML.html_safe
-          <fieldset class="input-group form-group#{error_state(object, method)}" aria-describedby="#{describedby}">
+          #{fieldset_tag}
             #{fieldset_label_contents(
               label_text: label_text,
               help_text: help_text,
@@ -153,8 +155,10 @@ module Cfa
       )
         describedby = get_describedby(method, help_text: help_text)
 
+        fieldset_tag = @template.tag(:fieldset, { class: "form-group#{error_state(object, method)}", "aria-describedby": describedby }, true)
+
         <<~HTML.html_safe
-          <fieldset class="form-group#{error_state(object, method)}" aria-describedby="#{describedby}">
+          #{fieldset_tag}
             #{fieldset_label_contents(
               label_text: label_text,
               help_text: help_text,
@@ -231,9 +235,16 @@ module Cfa
           class: "text-input form-width--short",
         ).merge(error_attributes(method: range_error_methods))
 
+        if help_text
+          method_for_help_text_id = :"#{lower_method}_#{upper_method}"
+          help_id = help_text_id(method_for_help_text_id)
+        end
+
+        fieldset_tag = @template.tag(:fieldset, { class: "form-group#{' form-group--error' if range_errors_present}", "aria-describedby": help_id }, true)
+
         <<~HTML.html_safe
-          <fieldset class="form-group#{' form-group--error' if range_errors_present}">
-            #{fieldset_label_contents(label_text: label_text, help_text: help_text)}
+          #{fieldset_tag}
+            #{fieldset_label_contents(label_text: label_text, help_text: help_text, method: method_for_help_text_id)}
             <div class="input-group--range">
               <div class="form-group">
                 #{label_and_field(lower_method, I18n.t('honeycrisp.range_lower'), text_field(lower_method, text_field_options), options: { class: 'sr-only' })}
@@ -257,9 +268,10 @@ module Cfa
       )
 
         describedby = get_describedby(method, help_text: help_text)
+        fieldset_tag = @template.tag(:fieldset, { class: "form-group#{error_state(object, method)}", "aria-describedby": describedby }, true)
 
         <<~HTML.html_safe
-          <fieldset class="form-group#{error_state(object, method)}" aria-describedby="#{describedby}">
+          #{fieldset_tag}
             #{fieldset_label_contents(label_text: label_text, help_text: help_text, method: method)}
             <div class="input-group--inline">
               <div class="select">
