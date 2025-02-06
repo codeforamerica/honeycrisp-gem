@@ -1,6 +1,6 @@
 <%= fields_for(:form, @form, builder: Cfa::Styleguide::CfaFormBuilder) do |f| %>
   <%= f.cfa_input_field(:example_method_name, 'Example input') %>
-  <%= f.cfa_input_field(:example_method_name, 'Example input (with prefix and postfix)', prefix: '$', postfix: '/hr', classes: ['form-width--phone']) %>
+  <%= f.cfa_input_field(:example_method_name_prefix_postfix, 'Example input (with prefix and postfix)', prefix: '$', postfix: '/hr', classes: ['form-width--phone']) %>
 
   <%= f.cfa_input_field(:example_method_with_validation, 'Example input with error') %>
 <% end %>

@@ -3,7 +3,7 @@
     :example_method_name,
     [
       { method: :example_method_name, label: "Example choice 1" },
-      { method: :example_method_name, label: "Example choice 2" }
+      { method: :example_method_name_2, label: "Example choice 2" }
     ],
     label_text: "Checkbox set"
   ) %>
@@ -11,8 +11,8 @@
   <%= f.cfa_checkbox_set(
     :example_method_with_validation,
     [
-      { method: :example_method_name, label: "Example choice 1" },
-      { method: :example_method_name, label: "Example choice 2" }
+      { method: :example_method_name_validation, label: "Example choice 1" },
+      { method: :example_method_name_validation_2, label: "Example choice 2" }
     ],
     label_text: "Checkbox set with error"
   ) %>

@@ -7,7 +7,7 @@
       { value: :no, label: "No" },
     ],
     first_follow_up: ->{ f.cfa_input_field :example_method_name, "Example input 1" },
-    second_follow_up: ->{ f.cfa_input_field :example_method_name, "Example input 2" }
+    second_follow_up: ->{ f.cfa_input_field :example_method_name_two, "Example input 2" }
   )
   %>
   <%= f.cfa_radio_set_with_follow_up(
@@ -17,8 +17,8 @@
       { value: :yes, label: "Yes" },
       { value: :no, label: "No" },
     ],
-    first_follow_up: ->{ f.cfa_input_field :example_method_name, "Example input 1" },
-    second_follow_up: ->{ f.cfa_input_field :example_method_name, "Example input 2" }
+    first_follow_up: ->{ f.cfa_input_field :example_method_name_with_errors, "Example input 1" },
+    second_follow_up: ->{ f.cfa_input_field :example_method_name_with_errors_two, "Example input 2" }
   )
   %>
 <% end %>

@@ -12,12 +12,6 @@ GENERAL_ACCESSIBILITY_SKIPS = [
 
 ## Examples with accessibility issues that must be fixed in the fullness of time
 FAILING_ACCESSIBILITY_EXAMPLES = [
-  "form_builder/v1/cfa_checkbox_set",
-  "form_builder/v1/cfa_checkbox_set_with_none",
-  "form_builder/v1/cfa_input_field",
-  "form_builder/v1/cfa_radio_set_with_follow_up",
-  "form_builder/v1/cfa_range_field",
-  "form_builder/v1/cfa_select",
   "molecules/incrementer",
   # New issues coming from axe-core-rspec upgrade
   "molecules/progress_step_bar",
