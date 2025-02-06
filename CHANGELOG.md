@@ -1,5 +1,24 @@
 # Changelog
 
+## [v0.16.0](https://github.com/codeforamerica/honeycrisp-gem/tree/v0.16.0) (2025-02-06)
+
+[Full Changelog](https://github.com/codeforamerica/honeycrisp-gem/compare/v0.15.2...v0.16.0)
+
+**Merged pull requests:**
+
+- Migration notes version 0.16.0 [\#360](https://github.com/codeforamerica/honeycrisp-gem/pull/360) ([arinchoi03](https://github.com/arinchoi03))
+- Bump webrick from 1.8.1 to 1.8.2 [\#359](https://github.com/codeforamerica/honeycrisp-gem/pull/359) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump rails-html-sanitizer from 1.6.0 to 1.6.1 [\#357](https://github.com/codeforamerica/honeycrisp-gem/pull/357) ([dependabot[bot]](https://github.com/apps/dependabot))
+- V1 forms a11y updates [\#356](https://github.com/codeforamerica/honeycrisp-gem/pull/356) ([mmazanec22](https://github.com/mmazanec22))
+- Address Javascript XSS vulnerability [\#355](https://github.com/codeforamerica/honeycrisp-gem/pull/355) ([ash-rc](https://github.com/ash-rc))
+- Bump cross-spawn from 7.0.3 to 7.0.6 [\#354](https://github.com/codeforamerica/honeycrisp-gem/pull/354) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump rexml from 3.3.3 to 3.3.9 [\#351](https://github.com/codeforamerica/honeycrisp-gem/pull/351) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump actionpack from 7.0.8.4 to 7.0.8.5 [\#350](https://github.com/codeforamerica/honeycrisp-gem/pull/350) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump actionmailer from 7.0.8.4 to 7.0.8.5 [\#349](https://github.com/codeforamerica/honeycrisp-gem/pull/349) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump actiontext from 7.0.8.4 to 7.0.8.5 [\#348](https://github.com/codeforamerica/honeycrisp-gem/pull/348) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump path-to-regexp from 6.2.0 to 6.3.0 [\#347](https://github.com/codeforamerica/honeycrisp-gem/pull/347) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump micromatch from 4.0.4 to 4.0.8 [\#346](https://github.com/codeforamerica/honeycrisp-gem/pull/346) ([dependabot[bot]](https://github.com/apps/dependabot))
+
 ## [v0.15.2](https://github.com/codeforamerica/honeycrisp-gem/tree/v0.15.2) (2024-08-06)
 
 [Full Changelog](https://github.com/codeforamerica/honeycrisp-gem/compare/v0.15.1...v0.15.2)
@@ -141,7 +160,7 @@
 **Merged pull requests:**
 
 - Unsquish cfa\_logo\_dark in mobile [\#309](https://github.com/codeforamerica/honeycrisp-gem/pull/309) ([arinchoi03](https://github.com/arinchoi03))
-- Update deployment steps in readme [\#307](https://github.com/codeforamerica/honeycrisp-gem/pull/307) ([coltborg](https://github.com/coltborg))
+- Update deployment steps in readme [\#307](https://github.com/codeforamerica/honeycrisp-gem/pull/307) ([cy-by](https://github.com/cy-by))
 
 ## [v0.10.8](https://github.com/codeforamerica/honeycrisp-gem/tree/v0.10.8) (2022-09-01)
 
@@ -158,7 +177,7 @@
 
 **Merged pull requests:**
 
-- Add skip links from SHIBA and provide example [\#303](https://github.com/codeforamerica/honeycrisp-gem/pull/303) ([coltborg](https://github.com/coltborg))
+- Add skip links from SHIBA and provide example [\#303](https://github.com/codeforamerica/honeycrisp-gem/pull/303) ([cy-by](https://github.com/cy-by))
 
 ## [v0.10.6](https://github.com/codeforamerica/honeycrisp-gem/tree/v0.10.6) (2022-02-09)
 
@@ -175,7 +194,7 @@
 
 **Merged pull requests:**
 
-- Allow feedback survey radio to accept focus [\#301](https://github.com/codeforamerica/honeycrisp-gem/pull/301) ([coltborg](https://github.com/coltborg))
+- Allow feedback survey radio to accept focus [\#301](https://github.com/codeforamerica/honeycrisp-gem/pull/301) ([cy-by](https://github.com/cy-by))
 
 ## [v0.10.5](https://github.com/codeforamerica/honeycrisp-gem/tree/v0.10.5) (2021-09-15)
 
@@ -201,8 +220,8 @@
 
 **Merged pull requests:**
 
-- Update gem dependencies that have security risks [\#298](https://github.com/codeforamerica/honeycrisp-gem/pull/298) ([coltborg](https://github.com/coltborg))
-- Update @percy/agent to @percy/cli [\#297](https://github.com/codeforamerica/honeycrisp-gem/pull/297) ([coltborg](https://github.com/coltborg))
+- Update gem dependencies that have security risks [\#298](https://github.com/codeforamerica/honeycrisp-gem/pull/298) ([cy-by](https://github.com/cy-by))
+- Update @percy/agent to @percy/cli [\#297](https://github.com/codeforamerica/honeycrisp-gem/pull/297) ([cy-by](https://github.com/cy-by))
 
 ## [v0.10.4](https://github.com/codeforamerica/honeycrisp-gem/tree/v0.10.4) (2021-08-25)
 
@@ -218,8 +237,8 @@
 
 **Merged pull requests:**
 
-- Autoprefix CSS for distribution assets [\#289](https://github.com/codeforamerica/honeycrisp-gem/pull/289) ([coltborg](https://github.com/coltborg))
-- added version and date to packaged files [\#285](https://github.com/codeforamerica/honeycrisp-gem/pull/285) ([coltborg](https://github.com/coltborg))
+- Autoprefix CSS for distribution assets [\#289](https://github.com/codeforamerica/honeycrisp-gem/pull/289) ([cy-by](https://github.com/cy-by))
+- added version and date to packaged files [\#285](https://github.com/codeforamerica/honeycrisp-gem/pull/285) ([cy-by](https://github.com/cy-by))
 
 ## [v0.10.3](https://github.com/codeforamerica/honeycrisp-gem/tree/v0.10.3) (2021-08-04)
 
@@ -228,7 +247,7 @@
 **Fixed bugs:**
 
 - Fix reveal component [\#275](https://github.com/codeforamerica/honeycrisp-gem/issues/275)
-- Fix reveal and add tests [\#281](https://github.com/codeforamerica/honeycrisp-gem/pull/281) ([coltborg](https://github.com/coltborg))
+- Fix reveal and add tests [\#281](https://github.com/codeforamerica/honeycrisp-gem/pull/281) ([cy-by](https://github.com/cy-by))
 
 **Closed issues:**
 
@@ -236,7 +255,7 @@
 
 **Merged pull requests:**
 
-- Upgrade axe-matchers to axe-core-rspec [\#269](https://github.com/codeforamerica/honeycrisp-gem/pull/269) ([coltborg](https://github.com/coltborg))
+- Upgrade axe-matchers to axe-core-rspec [\#269](https://github.com/codeforamerica/honeycrisp-gem/pull/269) ([cy-by](https://github.com/cy-by))
 - update readme to specify 'main' as the branch name [\#268](https://github.com/codeforamerica/honeycrisp-gem/pull/268) ([fionatagious](https://github.com/fionatagious))
 
 ## [v0.10.2](https://github.com/codeforamerica/honeycrisp-gem/tree/v0.10.2) (2021-05-17)
