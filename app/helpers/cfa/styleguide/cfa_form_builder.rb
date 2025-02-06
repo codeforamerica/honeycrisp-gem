@@ -215,9 +215,9 @@ module Cfa
       end
 
       def cfa_range_field(lower_method, upper_method, label_text, help_text: nil)
-        e_messages = object.errors.messages
-        lower_error = e_messages[lower_method.to_sym]
-        upper_error = e_messages[upper_method.to_sym]
+        error_messages = object.errors.messages
+        lower_error = error_messages[lower_method.to_sym]
+        upper_error = error_messages[upper_method.to_sym]
         range_error_methods = [lower_method, upper_method].join("_")
         range_errors_present = lower_error.present? || upper_error.present?
         range_error_html = <<~HTML.html_safe
