@@ -467,7 +467,7 @@ RSpec.describe Cfa::Styleguide::CfaFormBuilder do
         <div class="form-group form-group--error">
           <div class="field_with_errors">
             <label for="form_name">
-              <span class="form-question">How is name?</span>
+              <span class="form-question has-help">How is name?</span>
             </label>
           </div>
           <p class="text--help" id="form_name__help-text">Name is name</p>
@@ -828,10 +828,10 @@ RSpec.describe Cfa::Styleguide::CfaFormBuilder do
         <div class="form-group form-group--error">
           <div class="field_with_errors">
             <label class="sr-only" for="sample_description">
-              <span class="form-question">Write a lot?</span>
+              <span class="form-question has-help">Write a lot?</span>
             </label>
           </div>
-        <p class="text--help" id="sample_description__help-text">Name for texting</p>
+        <p class="text--help sr-only" id="sample_description__help-text">Name for texting</p>
         <div class="field_with_errors">
           <textarea autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="textarea" aria-describedby="sample_description__help-text sample_description__errors" name="sample[description]" id="sample_description"></textarea>
         </div>
@@ -888,10 +888,10 @@ RSpec.describe Cfa::Styleguide::CfaFormBuilder do
         <div class="form-group form-group--error">
           <div class="field_with_errors">
             <label class="sr-only" for="sample_how_many">
-              <span class="form-question">This is for screen readers!</span>
+              <span class="form-question has-help">This is for screen readers!</span>
             </label>
           </div>
-          <p class="text--help" id="sample_how_many__help-text">Choose how many</p>
+          <p class="text--help sr-only" id="sample_how_many__help-text">Choose how many</p>
           <div class="select">
             <div class="field_with_errors">
               <select class="select__element" aria-describedby="sample_how_many__help-text sample_how_many__errors" name="sample[how_many]" id="sample_how_many">
