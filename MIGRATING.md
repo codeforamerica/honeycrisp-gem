@@ -1,4 +1,7 @@
 # Migration Guide
+## Migrating from <= 0.15.2 to 0.16.0
+⚠️ In `0.16.0` we are improving accessibilty for several of our CfaFormBuilder elements (`cfa_checkbox_set`, `cfa_input_field`, `cfa_radio_set`, `cfa_radio_set_with_follow_up`, `cfa_range_field`, `cfa_date_select`, `cfa_textarea`, `cfa_select`) by utilizing the `aria-describedby` attribute to incorporate `help_text_id` (copied over from v2 form builder). The help text is also moved out of the label (see `label_contents` method which no longer takes in `help_text` argument) which allows the label and the help text to be read as separate pieces of information. Due to the change in the `label_contents` method, we recommend all those migrating to the new version to audit the codebase for the use fo this method and update accordingly.
+
 ## Migrating from <= 0.14.3 to 0.15.0
 For `0.14.4`, we updated the focus outline behavior to have a darker outline color (new color `$color-gold`) and an offset against focusable elements.
 The focus on accordion component was also updated (previously only the baseline blue outline was applied on focus on the `.accordion__button` element).
