@@ -498,13 +498,15 @@ RSpec.describe Cfa::Styleguide::CfaFormBuilder do
         :lower_hours_a_week_amount,
         :upper_hours_a_week_amount,
         "How many hours a week do you work?",
+        help_text: "This is help text",
       )
 
       expect(output).to be_html_safe
 
       expect(output).to match_html <<~HTML
-        <fieldset class="form-group">
+        <fieldset class="form-group" aria-describedby="form_lower_hours_a_week_amount_upper_hours_a_week_amount__help-text">
           <legend class="form-question "> How many hours a week do you work? </legend>
+          <p class="text--help" id="form_lower_hours_a_week_amount_upper_hours_a_week_amount__help-text">This is help text</p>
           <div class="input-group--range">
             <div class="form-group">
               <label class="sr-only" for="form_lower_hours_a_week_amount">
