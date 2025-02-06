@@ -379,6 +379,7 @@ module Cfa
           label_contents(
             label_text,
             optional: options[:optional],
+            has_help_text: !!help_text,
           ),
           class: options[:hide_label] ? "sr-only" : "",
         )
@@ -457,9 +458,13 @@ module Cfa
         label_html.html_safe
       end
 
-      def label_contents(label_text, optional: false)
+      def label_contents(label_text, optional: false, has_help_text: false)
+        classes = ["form-question"]
+        if has_help_text
+          classes << "has-help"
+        end
         label_text = <<~HTML
-          <span class="form-question">#{label_text + optional_text(optional)}</span>
+          <span class="#{classes.join(' ')}">#{label_text + optional_text(optional)}</span>
         HTML
 
         label_text.html_safe
@@ -495,7 +500,7 @@ module Cfa
 
         formatted_label = label(
           method,
-          label_contents(label_text, optional: optional),
+          label_contents(label_text, optional: optional, has_help_text: !!help_text),
           (for_options || options),
         )
         formatted_label += notice_html(notice).html_safe if notice

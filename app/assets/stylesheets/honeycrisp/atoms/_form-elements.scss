@@ -26,6 +26,9 @@ label {
   display: block;
   margin-bottom: $s25;
   font-weight: $font-weight-bold;
+  &.has-help {
+    margin-bottom: unset;
+  }
 }
 
 .text-input {
