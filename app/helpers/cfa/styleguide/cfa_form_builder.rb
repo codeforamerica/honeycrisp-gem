@@ -572,7 +572,7 @@ module Cfa
         object.errors.present? ? { "aria-describedby": error_label(method) } : {}
       end
 
-      # copied from ActionView::FormHelpers in order to coerce strings with spaces
+      # Copied from ActionView::FormHelpers in order to coerce strings with spaces
       # and capitalization to snake case, using the same logic as Rails
       def sanitized_value(value)
         value.to_s.gsub(/\s/, "_").gsub(/[^-[[:word:]]]/, "").mb_chars.downcase.to_s
