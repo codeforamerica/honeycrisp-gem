@@ -595,7 +595,7 @@ module Cfa
 
         id = help_text_id(method)
         <<~HTML.html_safe
-          <div class="text--help" id="#{id}">#{help_text}</div>
+          <p class="text--help" id="#{id}">#{help_text}</p>
         HTML
       end
 

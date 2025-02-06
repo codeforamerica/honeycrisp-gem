@@ -470,7 +470,7 @@ RSpec.describe Cfa::Styleguide::CfaFormBuilder do
               <span class="form-question">How is name?</span>
             </label>
           </div>
-          <div class="text--help" id="form_name__help-text">Name is name</div>
+          <p class="text--help" id="form_name__help-text">Name is name</p>
           <div class="field_with_errors">
             <input autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" aria-describedby="form_name__help-text form_name__errors" type="text" class="text-input" id="form_name" name="form[name]" />
           </div>
@@ -831,7 +831,7 @@ RSpec.describe Cfa::Styleguide::CfaFormBuilder do
               <span class="form-question">Write a lot?</span>
             </label>
           </div>
-        <div class="text--help" id="sample_description__help-text">Name for texting</div>
+        <p class="text--help" id="sample_description__help-text">Name for texting</p>
         <div class="field_with_errors">
           <textarea autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="textarea" aria-describedby="sample_description__help-text sample_description__errors" name="sample[description]" id="sample_description"></textarea>
         </div>
@@ -891,7 +891,7 @@ RSpec.describe Cfa::Styleguide::CfaFormBuilder do
               <span class="form-question">This is for screen readers!</span>
             </label>
           </div>
-          <div class="text--help" id="sample_how_many__help-text">Choose how many</div>
+          <p class="text--help" id="sample_how_many__help-text">Choose how many</p>
           <div class="select">
             <div class="field_with_errors">
               <select class="select__element" aria-describedby="sample_how_many__help-text sample_how_many__errors" name="sample[how_many]" id="sample_how_many">
