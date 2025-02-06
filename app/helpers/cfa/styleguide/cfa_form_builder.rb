@@ -445,8 +445,7 @@ module Cfa
         label_html.html_safe
       end
 
-      # Adding help text to label is deprecated; leaving the arg here for backwards compatability
-      def label_contents(label_text, _help_text = nil, optional: false)
+      def label_contents(label_text, optional: false)
         label_text = <<~HTML
           <span class="form-question">#{label_text + optional_text(optional)}</span>
         HTML
