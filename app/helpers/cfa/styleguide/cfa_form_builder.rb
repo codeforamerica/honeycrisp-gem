@@ -348,6 +348,7 @@ module Cfa
               ),
               help_text: help_text,
               optional: optional,
+              hide_label: hide_label,
               options: { class: hide_label ? 'sr-only' : '' },
             )}
             #{errors_for(object, method)}
@@ -384,7 +385,7 @@ module Cfa
           class: options[:hide_label] ? "sr-only" : "",
         )
 
-        formatted_label += help_text_html(help_text, method)
+        formatted_label += help_text_html(help_text, method, hidden: options[:hide_label])
 
         html_output = <<~HTML
           <div class="form-group#{error_state(object, method)}">
@@ -488,6 +489,7 @@ module Cfa
         optional: false,
         options: {},
         notice: nil,
+        hide_label: false,
         wrapper_classes: []
       )
         if options[:input_id]
@@ -505,7 +507,7 @@ module Cfa
         )
         formatted_label += notice_html(notice).html_safe if notice
 
-        formatted_label += help_text_html(help_text, method)
+        formatted_label += help_text_html(help_text, method, hidden: hide_label)
 
         formatted_label + formatted_field(prefix, field, postfix, wrapper_classes).html_safe
       end
@@ -595,12 +597,17 @@ module Cfa
         value.to_s.gsub(/\s/, "_").gsub(/[^-[[:word:]]]/, "").mb_chars.downcase.to_s
       end
 
-      def help_text_html(help_text, method)
+      def help_text_html(help_text, method, hidden: false)
         return nil if !help_text
 
         id = help_text_id(method)
+        classes = ["text--help"]
+        if hidden
+          classes << "sr-only"
+        end
+
         <<~HTML.html_safe
-          <p class="text--help" id="#{id}">#{help_text}</p>
+          <p class="#{classes.join(' ')}" id="#{id}">#{help_text}</p>
         HTML
       end
 
