@@ -56,11 +56,11 @@
   font-family: 'Material Icons';
   font-style: normal;
   font-weight: normal;
-  src: font-url('MaterialIcons-Regular.eot'); /* For IE6-8 */
-  src: font-url('MaterialIcons-Regular.eot?#iefix') format('embedded-opentype'),
-    font-url('MaterialIcons-Regular.ttf') format('truetype'),
-    font-url('MaterialIcons-Regular.woff') format('woff'),
-    font-url('MaterialIcons-Regular.svg') format('svg');
+  src: url('MaterialIcons-Regular.eot'); /* For IE6-8 */
+  src: url('MaterialIcons-Regular.eot?#iefix') format('embedded-opentype'),
+    url('MaterialIcons-Regular.ttf') format('truetype'),
+    url('MaterialIcons-Regular.woff') format('woff'),
+    url('MaterialIcons-Regular.svg') format('svg');
 }
 
 [class^="icon-"], [class*=" icon-"] {
