@@ -173,6 +173,7 @@ Before you start:
 - Determine whether this is major, minor, or patch release according to [semantic versioning](https://semver.org/).
 - If a major or minor release, update and commit the [migration guide](./MIGRATING.md)
 - Ensure you have a `.env` file with a Github Personal Access Token (`CHANGELOG_GITHUB_TOKEN=`) so that the Changelog data can be retrieved from the Github API.
+  - In your Developer Settings, create a "Classic" token with all repo, package write/delete access
 
 To release a new version, on `main` branch run:
 
