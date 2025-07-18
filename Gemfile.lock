@@ -387,7 +387,6 @@ DEPENDENCIES
   capybara
   capybara-selenium
   cfa-styleguide!
-  concurrent-ruby
   dotenv
   gem-release
   github_changelog_generator
