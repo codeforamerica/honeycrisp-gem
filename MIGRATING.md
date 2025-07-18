@@ -1,4 +1,9 @@
 # Migration Guide
+
+## Migrating from <= 0.16.x to 0.17.0
+In `0.17.0`, we want to support Material Icons in Rails 8 Projects by utilizing `url` instead of `font-url` which is a sprockets-rails based method (utilizes [`asset_path` defined in sprockets-rails gem](https://github.com/rails/sprockets-rails/blob/266ec49f3c7c96018dd75f9dc4f9b62fe3f7eecf/lib/sprockets/rails/helper.rb#L286)).
+We noticed that the icons did not get compiled correctly for Rails 8 projects since it does not use sprockets, so here we're utilizing the url() method that should be supported in both Rails 7 and 8.
+
 ## Migrating from <= 0.15.2 to 0.16.0
 ⚠️ In `0.16.0` we are improving accessibilty for several of our CfaFormBuilder elements (`cfa_checkbox_set`, `cfa_input_field`, `cfa_radio_set`, `cfa_radio_set_with_follow_up`, `cfa_range_field`, `cfa_date_select`, `cfa_textarea`, `cfa_select`) by utilizing the `aria-describedby` attribute to incorporate `help_text_id` (copied over from v2 form builder). The help text is also moved out of the label (see `label_contents` method which no longer takes in `help_text` argument) which allows the label and the help text to be read as separate pieces of information. Due to the change in the `label_contents` method, we recommend all those migrating to the new version to audit the codebase for the use fo this method and update accordingly.
 
