@@ -193,6 +193,7 @@ GEM
       thor (>= 0.14, < 2.0)
     json (2.6.3)
     language_server-protocol (3.17.0.3)
+    logger (1.7.0)
     loofah (2.24.1)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
@@ -387,10 +388,10 @@ DEPENDENCIES
   capybara
   capybara-selenium
   cfa-styleguide!
-  concurrent-ruby
   dotenv
   gem-release
   github_changelog_generator
+  logger
   percy-capybara (~> 5.0.0)
   pry-byebug
   rack (>= 2.0.8)
