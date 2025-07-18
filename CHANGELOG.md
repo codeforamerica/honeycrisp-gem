@@ -1,5 +1,22 @@
 # Changelog
 
+## [v0.16.1](https://github.com/codeforamerica/honeycrisp-gem/tree/v0.16.1) (2025-07-18)
+
+[Full Changelog](https://github.com/codeforamerica/honeycrisp-gem/compare/v0.16.0...v0.16.1)
+
+**Closed issues:**
+
+- DOM text reinterpreted as HTML on radioSelector code [\#352](https://github.com/codeforamerica/honeycrisp-gem/issues/352)
+
+**Merged pull requests:**
+
+- More info about how to create token [\#371](https://github.com/codeforamerica/honeycrisp-gem/pull/371) ([arinchoi03](https://github.com/arinchoi03))
+- \[TBE-235\] Use `url()` instead of `font-url()` since Rails 8 does not use sprockets [\#370](https://github.com/codeforamerica/honeycrisp-gem/pull/370) ([arinchoi03](https://github.com/arinchoi03))
+- Bump rack from 2.2.8.1 to 2.2.14 [\#369](https://github.com/codeforamerica/honeycrisp-gem/pull/369) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump net-imap from 0.4.17 to 0.4.20 [\#368](https://github.com/codeforamerica/honeycrisp-gem/pull/368) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump nokogiri from 1.18.2 to 1.18.8 [\#367](https://github.com/codeforamerica/honeycrisp-gem/pull/367) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump actionpack from 7.0.8.5 to 7.0.8.7 [\#358](https://github.com/codeforamerica/honeycrisp-gem/pull/358) ([dependabot[bot]](https://github.com/apps/dependabot))
+
 ## [v0.16.0](https://github.com/codeforamerica/honeycrisp-gem/tree/v0.16.0) (2025-02-06)
 
 [Full Changelog](https://github.com/codeforamerica/honeycrisp-gem/compare/v0.15.2...v0.16.0)
