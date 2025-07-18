@@ -1,8 +1,8 @@
 # Changelog
 
-## [v0.16.1](https://github.com/codeforamerica/honeycrisp-gem/tree/v0.16.1) (2025-07-18)
+## [v0.17.0](https://github.com/codeforamerica/honeycrisp-gem/tree/v0.17.0) (2025-07-18)
 
-[Full Changelog](https://github.com/codeforamerica/honeycrisp-gem/compare/v0.16.0...v0.16.1)
+[Full Changelog](https://github.com/codeforamerica/honeycrisp-gem/compare/v0.16.0...v0.17.0)
 
 **Closed issues:**
 
