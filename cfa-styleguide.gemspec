@@ -13,7 +13,7 @@ Gem::Specification.new do |spec|
   spec.homepage      = "https://github.com/codeforamerica/honeycrisp-gem"
   spec.metadata      = { "documentation_uri" => "https://honeycrisp.herokuapp.com",
                          "rubygems_mfa_required" => "true" }
-  spec.license       = "MIT"
+  spec.license       = "PolyForm-Noncommercial-1.0.0"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.
