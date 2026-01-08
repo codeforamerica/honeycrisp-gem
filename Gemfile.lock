@@ -225,6 +225,7 @@ GEM
     octokit (4.21.0)
       faraday (>= 0.9)
       sawyer (~> 0.8.0, >= 0.5.3)
+    openssl (3.3.2)
     parallel (1.23.0)
     parser (3.2.2.3)
       ast (~> 2.4.1)
@@ -390,6 +391,7 @@ DEPENDENCIES
   dotenv
   gem-release
   github_changelog_generator
+  openssl (~> 3.3.1)
   percy-capybara (~> 5.0.0)
   pry-byebug
   rack (>= 2.0.8)
