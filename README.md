@@ -188,7 +188,7 @@ _If you see the error `zsh: no matches found`, escape the square brackets. e.g. 
 
 ## License
 
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+The gem is available under the terms of the [PolyForm Noncommercial License](https://polyformproject.org/licenses/noncommercial/1.0.0/). Do you need a different license? We can grant alternative licenses to our partners - get in touch at [partnerships@codeforamerica.org](mailto:partnerships@codeforamerica.org)
 
 ## Code of Conduct
 
