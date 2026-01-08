@@ -1,5 +1,8 @@
 # Migration Guide
 
+## Migrating from <= 0.17.0 to 0.18.0
+The project switched to the [PolyForm Noncommerical license](https://polyformproject.org/licenses/noncommercial/1.0.0). Please review `LICENSE.txt` to ensure your project falls within the license guidelines. There are no functionality or API changes in this version otherwise.
+
 ## Migrating from <= 0.16.x to 0.17.0
 In `0.17.0`, we want to support Material Icons in Rails 8 Projects by utilizing `url` instead of `font-url` which is a sprockets-rails based method (utilizes [`asset_path` defined in sprockets-rails gem](https://github.com/rails/sprockets-rails/blob/266ec49f3c7c96018dd75f9dc4f9b62fe3f7eecf/lib/sprockets/rails/helper.rb#L286)).
 We noticed that the icons did not get compiled correctly for Rails 8 projects since it does not use sprockets, so here we're utilizing the url() method that should be supported in both Rails 7 and 8.
