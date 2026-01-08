@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    cfa-styleguide (0.17.1)
+    cfa-styleguide (0.18.0)
       autoprefixer-rails
       bourbon
       jquery-rails

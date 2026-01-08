@@ -1,5 +1,16 @@
 # Changelog
 
+## [v0.18.0](https://github.com/codeforamerica/honeycrisp-gem/tree/v0.18.0) (2026-01-08)
+
+[Full Changelog](https://github.com/codeforamerica/honeycrisp-gem/compare/v0.17.1...v0.18.0)
+
+**Merged pull requests:**
+
+- Adds openssl gem as a dev dependency to resolve certificate verification error [\#384](https://github.com/codeforamerica/honeycrisp-gem/pull/384) ([jnf](https://github.com/jnf))
+- updates license to PFNC 1.0 [\#383](https://github.com/codeforamerica/honeycrisp-gem/pull/383) ([jnf](https://github.com/jnf))
+- Bump thor from 1.2.2 to 1.4.0 [\#375](https://github.com/codeforamerica/honeycrisp-gem/pull/375) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump nokogiri from 1.18.8 to 1.18.9 [\#374](https://github.com/codeforamerica/honeycrisp-gem/pull/374) ([dependabot[bot]](https://github.com/apps/dependabot))
+
 ## [v0.17.1](https://github.com/codeforamerica/honeycrisp-gem/tree/v0.17.1) (2025-07-18)
 
 [Full Changelog](https://github.com/codeforamerica/honeycrisp-gem/compare/v0.17.0...v0.17.1)
